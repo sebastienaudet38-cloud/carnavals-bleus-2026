@@ -559,12 +559,12 @@ thead th:hover .tt{visibility:visible;opacity:1;}
 <svg id="sc-svg" viewBox="0 30 320 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
 <rect x="0" y="30" width="320" height="300" fill="#0F1E38"/>
 <path d="M237.6,229.3 C228.4,195.0 197.2,169.7 160,169.7 C122.8,169.7 91.5,195.0 82.4,229.4 L1,148.2 C27.4,86.5 88.6,43 160,43 C231.4,43 292.6,86.5 319,148.2 Z" fill="#1B5E2E" opacity="0.85"/>
-<path d="M160,270 L211,246 L160,195 L109,246 Z" fill="#6B4B22" opacity="0.8"/>
+<path d="M160,292 L211,246 L160,195 L109,246 Z" fill="#6B4B22" opacity="0.8"/>
 <path d="M237.6,229.3 C228.4,195.0 197.2,169.7 160,169.7 C122.8,169.7 91.5,195.0 82.4,229.4 L1,148.2 C27.4,86.5 88.6,43 160,43 C231.4,43 292.6,86.5 319,148.2 L237.6,229.3" stroke="#667C8C" stroke-width="0.75" fill="none"/>
-<line x1="160" y1="270" x2="211" y2="246" stroke="#556" stroke-width="0.75"/>
+<line x1="160" y1="292" x2="211" y2="246" stroke="#556" stroke-width="0.75"/>
 <line x1="211" y1="246" x2="160" y2="195" stroke="#556" stroke-width="0.75"/>
 <line x1="160" y1="195" x2="109" y2="246" stroke="#556" stroke-width="0.75"/>
-<line x1="109" y1="246" x2="160" y2="270" stroke="#556" stroke-width="0.75"/>
+<line x1="109" y1="246" x2="160" y2="292" stroke="#556" stroke-width="0.75"/>
 <polygon points="155.4,291.9 155.4,296.5 159.9,301.0 164.4,296.5 164.5,291.9" fill="#9DB2C4"/>
 <polygon points="214.9,246.0 211.3,249.7 207.6,246.0 211.3,242.4" fill="#9DB2C4"/>
 <polygon points="163.6,194.7 160.0,198.3 156.4,194.7 160.0,191.0" fill="#9DB2C4"/>
@@ -874,17 +874,30 @@ function renderSpraySelects(){
   if(!sel) return;
   var has=Object.keys(sprayData);
   var opts='<option value="">-- Choisir un joueur --</option>';
+  if(has.length>0){
+    opts='<option value="all">⚾ Tous les joueurs';
+    if(has.length>1) opts+=' ('+has.length+' joueurs)';
+    opts+='</option><option disabled>───────────</option>';
+  }
   PLAYERS.forEach(function(p){
     var hasc=has.indexOf(p.num)!==-1;
     opts+='<option value="'+p.num+'"'+(hasc?'':' disabled')+'>'+p.num+' – '+p.last+(hasc?' ✓':' (pas de données)')+'</option>';
   });
   sel.innerHTML=opts;
-  if(has.length){sel.value=has[0];renderSprayChart(has[0]);}
+  if(has.length){sel.value='all';renderSprayChart('all');}
   sel.addEventListener('change',function(){if(this.value)renderSprayChart(this.value);});
 }
 
 function renderSprayChart(playerNum){
-  var data=sprayData[playerNum]||[];
+  var data;
+  if(playerNum==='all'){
+    data=[];
+    Object.keys(sprayData).forEach(function(k){
+      (sprayData[k]||[]).forEach(function(d){data.push(d);});
+    });
+  }else{
+    data=sprayData[playerNum]||[];
+  }
   var g=document.getElementById('sc-markers');
   if(!g) return;
   g.innerHTML=data.map(function(d){
