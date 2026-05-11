@@ -763,7 +763,7 @@ function renderMatches(){
     var lbl=fmtDate(m.date,{weekday:'short',month:'short',day:'numeric'});
     var links='';
     if(m.link) links+='<a href="'+m.link+'" target="_blank" rel="noopener" class="lnk">Spordle &#8599;</a> ';
-    if(m.ytid) links+='<button class="lnk vid-btn" data-ytid="'+m.ytid+'">&#9654; Vid\u00e9o</button>';
+    if(m.ytid) links+='<a href="https://www.youtube.com/watch?v='+m.ytid+'" target="_blank" rel="noopener" class="lnk">&#9654; Vid\u00e9o YouTube &#8599;</a>';
     return '<div class="mc">'
       +'<div class="mdate">'+lbl+'</div>'
       +'<div class="mteams">'
@@ -775,16 +775,7 @@ function renderMatches(){
       +'<div style="display:flex;gap:5px;align-items:center;">'+links+'</div>'
       +'</div>';
   }).join('');
-  // Boutons vidéo -> onglet vidéos
-  document.querySelectorAll('.vid-btn').forEach(function(b){
-    b.addEventListener('click', function(){
-      document.querySelectorAll('.sec').forEach(function(s){s.classList.remove('on');});
-      document.querySelectorAll('.nav-link').forEach(function(a){a.classList.remove('active');});
-      document.getElementById('videos').classList.add('on');
-      var vl=document.querySelector('.nav-link[data-target="videos"]');
-      if(vl) vl.classList.add('active');
-    });
-  });
+
 }
 
 function renderVideos(){
