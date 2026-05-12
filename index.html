@@ -556,11 +556,11 @@ thead th:hover .tt{visibility:visible;opacity:1;}
 <div style="display:flex;justify-content:center;padding:0 0 2rem;">
 <div style="width:100%;max-width:440px;">
 <div style="background:var(--nm);border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;">
-<svg id="sc-svg" viewBox="0 88 320 248" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+<svg id="sc-svg" viewBox="0 78 320 258" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
 <rect x="0" y="30" width="320" height="300" fill="#0F1E38"/>
-<path d="M237.6,229.3 C228.4,195.0 197.2,169.7 160,169.7 C122.8,169.7 91.5,195.0 82.4,229.4 L42,190 C42,148 95,113 160,113 C225,113 278,148 278,190 Z" fill="#1B5E2E" opacity="0.85"/>
+<path d="M237.6,229.3 C228.4,195.0 197.2,169.7 160,169.7 C122.8,169.7 91.5,195.0 82.4,229.4 L39,187 C39,143 90,98 160,98 C230,98 281,143 281,187 Z" fill="#1B5E2E" opacity="0.85"/>
 <path d="M160,292 L211,246 L160,195 L109,246 Z" fill="#6B4B22" opacity="0.8"/>
-<path d="M237.6,229.3 C228.4,195.0 197.2,169.7 160,169.7 C122.8,169.7 91.5,195.0 82.4,229.4 L42,190 C42,148 95,113 160,113 C225,113 278,148 278,190 L237.6,229.3" stroke="#667C8C" stroke-width="0.75" fill="none"/>
+<path d="M237.6,229.3 C228.4,195.0 197.2,169.7 160,169.7 C122.8,169.7 91.5,195.0 82.4,229.4 L39,187 C39,143 90,98 160,98 C230,98 281,143 281,187 L237.6,229.3" stroke="#667C8C" stroke-width="0.75" fill="none"/>
 <line x1="160" y1="292" x2="211" y2="246" stroke="#556" stroke-width="0.75"/>
 <line x1="211" y1="246" x2="160" y2="195" stroke="#556" stroke-width="0.75"/>
 <line x1="160" y1="195" x2="109" y2="246" stroke="#556" stroke-width="0.75"/>
@@ -570,6 +570,10 @@ thead th:hover .tt{visibility:visible;opacity:1;}
 <polygon points="163.6,194.7 160.0,198.3 156.4,194.7 160.0,191.0" fill="#9DB2C4"/>
 <polygon points="112.4,246.0 108.7,249.7 105.1,246.0 108.7,242.4" fill="#9DB2C4"/>
 <g id="sc-markers"></g>
+<g id="sc-tip" display="none" pointer-events="none">
+  <rect id="sc-tip-bg" rx="5" ry="5" fill="#0F1E38" stroke="rgba(255,255,255,0.2)" stroke-width="0.75"/>
+  <text id="sc-tip-txt" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="10.5" fill="white" font-weight="600"></text>
+</g>
 </svg>
 </div>
 <div style="display:flex;gap:1.5rem;justify-content:center;padding:.6rem 0;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:1px;color:var(--gr);">
@@ -893,17 +897,23 @@ function renderSprayChart(playerNum){
   if(playerNum==='all'){
     data=[];
     Object.keys(sprayData).forEach(function(k){
-      (sprayData[k]||[]).forEach(function(d){data.push(d);});
+      var pname='';
+      PLAYERS.forEach(function(p){if(p.num===k)pname=p.last+', '+p.first[0]+'.';});
+      (sprayData[k]||[]).forEach(function(d){
+        data.push({cx:d.cx,cy:d.cy,type:d.type,pnum:k,pname:pname});
+      });
     });
   }else{
     data=sprayData[playerNum]||[];
   }
   var g=document.getElementById('sc-markers');
   if(!g) return;
+  var isAll=playerNum==='all';
   g.innerHTML=data.map(function(d){
     var c=d.type==='hit'?'#00D682':'#B90018';
     var s=d.type==='hit'?'#009B4D':'#61000D';
-    return '<circle cx="'+d.cx+'" cy="'+d.cy+'" r="4" fill="'+c+'" stroke="'+s+'" stroke-width="1.143"/>';
+    var tip=isAll?' data-tip="#'+d.pnum+' '+d.pname+'"':'';
+    return '<circle cx="'+d.cx+'" cy="'+d.cy+'" r="5" fill="'+c+'" stroke="'+s+'" stroke-width="1.143"'+tip+'/>';
   }).join('');
   var hits=data.filter(function(d){return d.type==='hit';}).length;
   var outs=data.filter(function(d){return d.type==='out';}).length;
@@ -912,6 +922,40 @@ function renderSprayChart(playerNum){
   var h=document.getElementById('sc-hits'),o=document.getElementById('sc-outs'),a=document.getElementById('sc-avg');
   if(h)h.textContent=hits; if(o)o.textContent=outs; if(a)a.textContent=avg;
 }
+
+// ── SPRAY CHART TOOLTIP ──
+(function(){
+  var svg=document.getElementById('sc-svg');
+  if(!svg) return;
+  svg.addEventListener('mouseover',function(e){
+    var tip=e.target.getAttribute('data-tip');
+    if(!tip) return;
+    var cx=parseFloat(e.target.getAttribute('cx'));
+    var cy=parseFloat(e.target.getAttribute('cy'));
+    var tipEl=document.getElementById('sc-tip');
+    var tipTxt=document.getElementById('sc-tip-txt');
+    var tipBg=document.getElementById('sc-tip-bg');
+    tipTxt.textContent=tip;
+    var w=Math.max(90,tip.length*6.5+16);
+    var h=20;
+    var tx=Math.min(Math.max(cx,w/2+4),316-w/2);
+    var ty=cy-h-10<78?cy+10:cy-h-10;
+    tipBg.setAttribute('x',tx-w/2);
+    tipBg.setAttribute('y',ty);
+    tipBg.setAttribute('width',w);
+    tipBg.setAttribute('height',h);
+    tipTxt.setAttribute('x',tx);
+    tipTxt.setAttribute('y',ty+13.5);
+    tipEl.setAttribute('display','block');
+    e.target.setAttribute('r','6');
+  });
+  svg.addEventListener('mouseout',function(e){
+    if(e.target.getAttribute('data-tip')){
+      document.getElementById('sc-tip').setAttribute('display','none');
+      e.target.setAttribute('r','5');
+    }
+  });
+})();
 
 // ── INIT ──
 renderBat(); initBatCharts();
