@@ -665,6 +665,8 @@ function renderAll(){
   renderPit();initPitCharts();
   renderMatches();renderVideos();renderSpraySelects();
 }
+// Expose auth functions au scope global (requis pour les onclick HTML)
+window.doCheckAuth=doCheckAuth;
 
 // ── NAVIGATION ──
 document.querySelectorAll('.nav-link').forEach(function(a){
