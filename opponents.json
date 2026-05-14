@@ -5,17 +5,17 @@
       "players": {}
     },
     "combattant": {
-      "name": "combattant",
+      "name": "Combattants 13AA 2026",
       "players": {}
     }
   },
   "matches": [
     {
-      "id": "2026-05-07_monarques_bleus_uaa_vs_combattant",
+      "id": "2026-05-07_monarques_bleus_uaa_vs_combattants_aa",
       "date": "2026-05-07",
       "gameNum": 1,
       "team1": "Monarques Bleus 13UAA 2026",
-      "team2": "combattant",
+      "team2": "Combattants 13AA 2026",
       "parserVersion": "1.1",
       "score": {
         "top": 0,
@@ -163,7 +163,7 @@
         "combattant_charles_carrier": {
           "name": "Charles Carrier",
           "num": null,
-          "team": "combattant",
+          "team": "Combattants 13AA 2026",
           "AB": 4,
           "H": 2,
           "BB": 0,
@@ -195,7 +195,7 @@
         "combattant_liam_perron": {
           "name": "Liam Perron",
           "num": null,
-          "team": "combattant",
+          "team": "Combattants 13AA 2026",
           "AB": 3,
           "H": 2,
           "BB": 0,
@@ -222,7 +222,7 @@
         "combattant_charles_labbe": {
           "name": "Charles Labbé",
           "num": null,
-          "team": "combattant",
+          "team": "Combattants 13AA 2026",
           "AB": 4,
           "H": 2,
           "BB": 0,
@@ -249,7 +249,7 @@
         "combattant_louisdavid_carrier": {
           "name": "Louis-David Carrier",
           "num": null,
-          "team": "combattant",
+          "team": "Combattants 13AA 2026",
           "AB": 3,
           "H": 2,
           "BB": 0,
@@ -276,7 +276,7 @@
         "combattant_mathias_grenier": {
           "name": "Mathias Grenier",
           "num": null,
-          "team": "combattant",
+          "team": "Combattants 13AA 2026",
           "AB": 4,
           "H": 4,
           "BB": 0,
@@ -308,7 +308,7 @@
         "combattant_william_langevin": {
           "name": "William Langevin",
           "num": null,
-          "team": "combattant",
+          "team": "Combattants 13AA 2026",
           "AB": 4,
           "H": 2,
           "BB": 0,
@@ -340,7 +340,7 @@
         "combattant_gabriel_lachance": {
           "name": "Gabriel Lachance",
           "num": null,
-          "team": "combattant",
+          "team": "Combattants 13AA 2026",
           "AB": 2,
           "H": 0,
           "BB": 1,
@@ -357,7 +357,7 @@
         "combattant_edouard_chabot": {
           "name": "Édouard Chabot",
           "num": null,
-          "team": "combattant",
+          "team": "Combattants 13AA 2026",
           "AB": 3,
           "H": 2,
           "BB": 0,
@@ -379,7 +379,7 @@
         "combattant_santiago_vachon_ocho": {
           "name": "Santiago Vachon Ochoa",
           "num": null,
-          "team": "combattant",
+          "team": "Combattants 13AA 2026",
           "AB": 3,
           "H": 0,
           "BB": 0,
