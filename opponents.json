@@ -3,6 +3,16 @@
     "monarques bleus 13uaa 2026": {
       "name": "Monarques Bleus 13UAA 2026",
       "players": {
+        "4": "Milan Bouzaza",
+        "13": "Elliot Laberge",
+        "14": "Émile Lehoux",
+        "16": "James Audy",
+        "19": "Adam Matthews",
+        "22": "Daniel Cloutier",
+        "28": "Frédérick Hudon",
+        "32": "Nicolas Lessard",
+        "47": "Elliot Nadeau-Bouffard",
+        "99": "Edouard Luneau",
         "frederick_hudon": "Frédérick Hudon",
         "elliot_laberge": "Elliot Laberge",
         "elliot_nadeaubouffard": "Elliot Nadeau-Bouffard",
@@ -17,8 +27,556 @@
     },
     "combattant": {
       "name": "Combattants 13AA 2026",
-      "players": {}
+      "players": {
+        "3": "Gabriel Lachance",
+        "4": "Charles Carrier",
+        "8": "Édouard Chabot",
+        "9": "Charles Labbé",
+        "16": "Louis-David Carrier",
+        "23": "Santiago Vachon Ochoa",
+        "28": "Mathias Grenier",
+        "44": "Liam Perron",
+        "88": "William Langevin"
+      }
     }
   },
-  "matches": []
+  "matches": [
+    {
+      "id": "2026-05-07_monarques_bleus_uaa_vs_combattants_aa",
+      "date": "2026-05-07",
+      "gameNum": 1,
+      "team1": "Monarques Bleus 13UAA 2026",
+      "team2": "Combattants 13AA 2026",
+      "parserVersion": "1.1",
+      "score": {
+        "top": 0,
+        "bottom": 0,
+        "lastLine": "MNRQ 1 - CMBT 0"
+      },
+      "players": {
+        "monarques_bleus_13ua_28": {
+          "name": "Frédérick Hudon",
+          "num": "28",
+          "team": "Monarques Bleus 13UAA 2026",
+          "AB": 2,
+          "H": 0,
+          "BB": 1,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 6
+            },
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 2
+            }
+          ]
+        },
+        "monarques_bleus_13ua_13": {
+          "name": "Elliot Laberge",
+          "num": "13",
+          "team": "Monarques Bleus 13UAA 2026",
+          "AB": 3,
+          "H": 0,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 6
+            },
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 4
+            },
+            {
+              "type": "Fly Out",
+              "position": 7,
+              "inning": 2
+            }
+          ]
+        },
+        "monarques_bleus_13ua_47": {
+          "name": "Elliot Nadeau-Bouffard",
+          "num": "47",
+          "team": "Monarques Bleus 13UAA 2026",
+          "AB": 3,
+          "H": 2,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Single",
+              "position": 8,
+              "inning": 6
+            },
+            {
+              "type": "Single",
+              "position": 6,
+              "inning": 4
+            },
+            {
+              "type": "Fly Out",
+              "position": 7,
+              "inning": 2
+            }
+          ]
+        },
+        "monarques_bleus_13ua_22": {
+          "name": "Daniel Cloutier",
+          "num": "22",
+          "team": "Monarques Bleus 13UAA 2026",
+          "AB": 2,
+          "H": 0,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 1,
+          "battedBalls": [
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 1
+            }
+          ]
+        },
+        "monarques_bleus_13ua_99": {
+          "name": "Edouard Luneau",
+          "num": "99",
+          "team": "Monarques Bleus 13UAA 2026",
+          "AB": 3,
+          "H": 1,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Single",
+              "position": 9,
+              "inning": 6
+            },
+            {
+              "type": "Ground Out",
+              "position": 5,
+              "inning": 4
+            }
+          ]
+        },
+        "monarques_bleus_13ua_4": {
+          "name": "Milan Bouzaza",
+          "num": "4",
+          "team": "Monarques Bleus 13UAA 2026",
+          "AB": 3,
+          "H": 0,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Fly Out",
+              "position": 5,
+              "inning": 6
+            },
+            {
+              "type": "Fly Out",
+              "position": 8,
+              "inning": 3
+            }
+          ]
+        },
+        "combattants_13aa_202_4": {
+          "name": "Charles Carrier",
+          "num": "4",
+          "team": "Combattants 13AA 2026",
+          "AB": 4,
+          "H": 2,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Fly Out",
+              "position": 3,
+              "inning": 5
+            },
+            {
+              "type": "Single",
+              "position": 4,
+              "inning": 4
+            },
+            {
+              "type": "Double",
+              "position": 8,
+              "inning": 4
+            },
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 1
+            }
+          ]
+        },
+        "combattants_13aa_202_44": {
+          "name": "Liam Perron",
+          "num": "44",
+          "team": "Combattants 13AA 2026",
+          "AB": 3,
+          "H": 2,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Double",
+              "position": 8,
+              "inning": 5
+            },
+            {
+              "type": "Single",
+              "position": 6,
+              "inning": 4
+            },
+            {
+              "type": "Ground Out",
+              "position": 1,
+              "inning": 1
+            }
+          ]
+        },
+        "combattants_13aa_202_9": {
+          "name": "Charles Labbé",
+          "num": "9",
+          "team": "Combattants 13AA 2026",
+          "AB": 4,
+          "H": 2,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Fly Out",
+              "position": 9,
+              "inning": 5
+            },
+            {
+              "type": "Single",
+              "position": 6,
+              "inning": 4
+            },
+            {
+              "type": "Home Run",
+              "position": 9,
+              "inning": 1
+            }
+          ]
+        },
+        "combattants_13aa_202_16": {
+          "name": "Louis-David Carrier",
+          "num": "16",
+          "team": "Combattants 13AA 2026",
+          "AB": 3,
+          "H": 2,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Single",
+              "position": 6,
+              "inning": 4
+            },
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 3
+            },
+            {
+              "type": "Double",
+              "position": 9,
+              "inning": 1
+            }
+          ]
+        },
+        "combattants_13aa_202_28": {
+          "name": "Mathias Grenier",
+          "num": "28",
+          "team": "Combattants 13AA 2026",
+          "AB": 4,
+          "H": 4,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Double",
+              "position": 8,
+              "inning": 5
+            },
+            {
+              "type": "Single",
+              "position": 8,
+              "inning": 4
+            },
+            {
+              "type": "Double",
+              "position": 7,
+              "inning": 3
+            },
+            {
+              "type": "Double",
+              "position": 8,
+              "inning": 1
+            }
+          ]
+        },
+        "combattants_13aa_202_88": {
+          "name": "William Langevin",
+          "num": "88",
+          "team": "Combattants 13AA 2026",
+          "AB": 4,
+          "H": 2,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Single",
+              "position": 4,
+              "inning": 5
+            },
+            {
+              "type": "Single",
+              "position": 6,
+              "inning": 4
+            },
+            {
+              "type": "Fly Out",
+              "position": 8,
+              "inning": 3
+            },
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 1
+            }
+          ]
+        },
+        "combattants_13aa_202_3": {
+          "name": "Gabriel Lachance",
+          "num": "3",
+          "team": "Combattants 13AA 2026",
+          "AB": 2,
+          "H": 0,
+          "BB": 1,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Ground Out",
+              "position": 1,
+              "inning": 2
+            }
+          ]
+        },
+        "combattants_13aa_202_8": {
+          "name": "Édouard Chabot",
+          "num": "8",
+          "team": "Combattants 13AA 2026",
+          "AB": 3,
+          "H": 2,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Single",
+              "position": 6,
+              "inning": 5
+            },
+            {
+              "type": "Single",
+              "position": 9,
+              "inning": 4
+            }
+          ]
+        },
+        "combattants_13aa_202_23": {
+          "name": "Santiago Vachon Ochoa",
+          "num": "23",
+          "team": "Combattants 13AA 2026",
+          "AB": 3,
+          "H": 0,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Fly Out",
+              "position": 5,
+              "inning": 5
+            },
+            {
+              "type": "Ground Out",
+              "position": 1,
+              "inning": 4
+            }
+          ]
+        },
+        "monarques_bleus_13ua_14": {
+          "name": "Émile Lehoux",
+          "num": "14",
+          "team": "Monarques Bleus 13UAA 2026",
+          "AB": 2,
+          "H": 1,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 1,
+          "battedBalls": [
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 5
+            },
+            {
+              "type": "Single",
+              "position": 7,
+              "inning": 1
+            }
+          ]
+        },
+        "monarques_bleus_13ua_32": {
+          "name": "Nicolas Lessard",
+          "num": "32",
+          "team": "Monarques Bleus 13UAA 2026",
+          "AB": 3,
+          "H": 2,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 5
+            },
+            {
+              "type": "Single",
+              "position": 9,
+              "inning": 3
+            },
+            {
+              "type": "Single",
+              "position": 5,
+              "inning": 1
+            }
+          ]
+        },
+        "monarques_bleus_13ua_16": {
+          "name": "James Audy",
+          "num": "16",
+          "team": "Monarques Bleus 13UAA 2026",
+          "AB": 2,
+          "H": 1,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Single",
+              "position": 6,
+              "inning": 5
+            }
+          ]
+        },
+        "monarques_bleus_13ua_19": {
+          "name": "Adam Matthews",
+          "num": "19",
+          "team": "Monarques Bleus 13UAA 2026",
+          "AB": 2,
+          "H": 1,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Fly Out",
+              "position": 8,
+              "inning": 5
+            },
+            {
+              "type": "Single",
+              "position": 9,
+              "inning": 3
+            }
+          ]
+        }
+      },
+      "pitchers": {
+        "monarques_bleus_13ua_4": {
+          "name": "Milan Bouzaza",
+          "num": "4",
+          "team": "Monarques Bleus 13UAA 2026",
+          "balls": 13,
+          "strikes": 3,
+          "fouls": 4,
+          "outs": 1,
+          "R": 4,
+          "H": 6,
+          "BB": 1,
+          "SO": 0,
+          "HBP": 0
+        },
+        "monarques_bleus_13ua_14": {
+          "name": "Émile Lehoux",
+          "num": "14",
+          "team": "Monarques Bleus 13UAA 2026",
+          "balls": 9,
+          "strikes": 4,
+          "fouls": 1,
+          "outs": 2,
+          "R": 1,
+          "H": 3,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0
+        },
+        "monarques_bleus_13ua_19": {
+          "name": "Adam Matthews",
+          "num": "19",
+          "team": "Monarques Bleus 13UAA 2026",
+          "balls": 6,
+          "strikes": 4,
+          "fouls": 2,
+          "outs": 3,
+          "R": 0,
+          "H": 1,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0
+        },
+        "monarques_bleus_13ua_13": {
+          "name": "Elliot Laberge",
+          "num": "13",
+          "team": "Monarques Bleus 13UAA 2026",
+          "balls": 10,
+          "strikes": 10,
+          "fouls": 4,
+          "outs": 6,
+          "R": 2,
+          "H": 3,
+          "BB": 0,
+          "SO": 2,
+          "HBP": 0
+        }
+      },
+      "unknownEvents": []
+    }
+  ]
 }
