@@ -988,13 +988,6 @@ function renderSprayChart(playerNum){
     var c=d.type==='hit'?'#00D682':'#B90018';
     var s=d.type==='hit'?'#009B4D':'#61000D';
     var tip=isAll?' data-tip="#'+d.pnum+' '+d.pname+'"':'';
-    if(d.hr){
-      // Circuit : cercle plus grand avec étiquette "HR"
-      return '<g>'
-        +'<circle cx="'+d.cx+'" cy="'+d.cy+'" r="9" fill="'+c+'" stroke="'+s+'" stroke-width="1.143"'+tip+'/>'
-        +'<text x="'+d.cx+'" y="'+(d.cy+3.5)+'" text-anchor="middle" font-size="7" font-weight="bold" fill="#fff" pointer-events="none">HR</text>'
-        +'</g>';
-    }
     return '<circle cx="'+d.cx+'" cy="'+d.cy+'" r="5" fill="'+c+'" stroke="'+s+'" stroke-width="1.143"'+tip+'/>';
   }).join('');
   var hits=data.filter(function(d){return d.type==='hit';}).length;
