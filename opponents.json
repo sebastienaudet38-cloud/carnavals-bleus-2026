@@ -42,9 +42,7 @@
         "43": "Alexis C",
         "50": "Hubert M",
         "66": "Alexandre D",
-        "99": "Léon G",
-        "current_inning_overridden_by": "Current inning overridden by",
-        "alexis_c_out_on": "Alexis C out on"
+        "99": "Léon G"
       }
     },
     "carnavals_blancs": {
@@ -83,19 +81,7 @@
         "44": "Antoine G",
         "60": "Justin D",
         "67": "Xavier R",
-        "75": "Félix R",
-        "ludovic_g": "Ludovic G",
-        "emile_b": "Émile B",
-        "samuel_l": "Samuel L",
-        "justin_d": "Justin D",
-        "antoine_g": "Antoine G",
-        "emile_d": "Émile D",
-        "antoine_r": "Antoine R",
-        "felix_r": "Félix R",
-        "justin_a": "Justin A",
-        "xavier_r": "Xavier R",
-        "justin_a_out_at": "Justin A out at",
-        "ludovic_g_out_at": "Ludovic G out at"
+        "75": "Félix R"
       }
     },
     "carnavals_rouges_u_aa": {
@@ -125,8 +111,7 @@
         "29": "William B",
         "30": "Gabriel C",
         "34": "Thomas F",
-        "44": "Antoine G",
-        "maddox_m_out_at": "Maddox M out at"
+        "44": "Antoine G"
       }
     }
   },
