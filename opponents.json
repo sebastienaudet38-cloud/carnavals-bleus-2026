@@ -111,6 +111,22 @@
         "36": "Alexis C",
         "41": "Alexis L"
       }
+    },
+    "aigles_noirs": {
+      "name": "Aigles noirs",
+      "players": {
+        "12": "Nolan P",
+        "16": "Zack L",
+        "17": "Mathis R",
+        "18": "Juiien D",
+        "20": "Olivier M",
+        "24": "Maddox M",
+        "29": "William B",
+        "30": "Gabriel C",
+        "34": "Thomas F",
+        "44": "Antoine G",
+        "maddox_m_out_at": "Maddox M out at"
+      }
     }
   },
   "matches": [
@@ -2977,6 +2993,530 @@
           "H": 2,
           "BB": 0,
           "SO": 1,
+          "HBP": 0
+        }
+      },
+      "unknownEvents": []
+    },
+    {
+      "id": "2026-05-10_aigles_noirs_vs_monarques_oranges_uaa",
+      "date": "2026-05-10",
+      "gameNum": 1,
+      "team1": "Aigles noirs",
+      "team2": "Monarques Oranges 13UAA 2026",
+      "parserVersion": "1.1",
+      "score": {
+        "top": 0,
+        "bottom": 0,
+        "lastLine": "AGLS 0 - MNRQ 2"
+      },
+      "players": {
+        "aigles_noirs_12": {
+          "name": "Nolan P",
+          "num": "12",
+          "team": "Aigles noirs",
+          "AB": 3,
+          "H": 0,
+          "BB": 0,
+          "SO": 3,
+          "HBP": 0,
+          "battedBalls": []
+        },
+        "aigles_noirs_34": {
+          "name": "Thomas F",
+          "num": "34",
+          "team": "Aigles noirs",
+          "AB": 3,
+          "H": 2,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Double",
+              "position": 7,
+              "inning": 6
+            },
+            {
+              "type": "Single",
+              "position": 7,
+              "inning": 5
+            },
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 3
+            }
+          ]
+        },
+        "aigles_noirs_24": {
+          "name": "Maddox M",
+          "num": "24",
+          "team": "Aigles noirs",
+          "AB": 2,
+          "H": 1,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Single",
+              "position": 7,
+              "inning": 6
+            },
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 4
+            }
+          ]
+        },
+        "aigles_noirs_18": {
+          "name": "Juiien D",
+          "num": "18",
+          "team": "Aigles noirs",
+          "AB": 2,
+          "H": 1,
+          "BB": 1,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Single",
+              "position": 8,
+              "inning": 4
+            }
+          ]
+        },
+        "aigles_noirs_29": {
+          "name": "William B",
+          "num": "29",
+          "team": "Aigles noirs",
+          "AB": 3,
+          "H": 0,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Ground Out",
+              "position": 1,
+              "inning": 6
+            },
+            {
+              "type": "Line Out",
+              "position": 8,
+              "inning": 4
+            }
+          ]
+        },
+        "aigles_noirs_30": {
+          "name": "Gabriel C",
+          "num": "30",
+          "team": "Aigles noirs",
+          "AB": 2,
+          "H": 1,
+          "BB": 1,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 6
+            },
+            {
+              "type": "Single",
+              "position": 9,
+              "inning": 2
+            }
+          ]
+        },
+        "monarques_oranges_13_27": {
+          "name": "Justin A",
+          "num": "27",
+          "team": "Monarques Oranges 13UAA 2026",
+          "AB": 3,
+          "H": 1,
+          "BB": 1,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Fly Out",
+              "position": 8,
+              "inning": 5
+            },
+            {
+              "type": "Triple",
+              "position": 8,
+              "inning": 4
+            },
+            {
+              "type": "Fly Out",
+              "position": 8,
+              "inning": 2
+            }
+          ]
+        },
+        "monarques_oranges_13_67": {
+          "name": "Xavier R",
+          "num": "67",
+          "team": "Monarques Oranges 13UAA 2026",
+          "AB": 2,
+          "H": 0,
+          "BB": 1,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": []
+        },
+        "monarques_oranges_13_12": {
+          "name": "Ludovic G",
+          "num": "12",
+          "team": "Monarques Oranges 13UAA 2026",
+          "AB": 2,
+          "H": 0,
+          "BB": 2,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Fly Out",
+              "position": 7,
+              "inning": 5
+            },
+            {
+              "type": "Pop Out",
+              "position": 6,
+              "inning": 1
+            }
+          ]
+        },
+        "monarques_oranges_13_60": {
+          "name": "Justin D",
+          "num": "60",
+          "team": "Monarques Oranges 13UAA 2026",
+          "AB": 1,
+          "H": 1,
+          "BB": 1,
+          "SO": 0,
+          "HBP": 1,
+          "battedBalls": [
+            {
+              "type": "Single",
+              "position": 5,
+              "inning": 4
+            }
+          ]
+        },
+        "monarques_oranges_13_9": {
+          "name": "Émile B",
+          "num": "9",
+          "team": "Monarques Oranges 13UAA 2026",
+          "AB": 2,
+          "H": 0,
+          "BB": 1,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Ground Out",
+              "position": 1,
+              "inning": 5
+            },
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 3
+            }
+          ]
+        },
+        "aigles_noirs_44": {
+          "name": "Antoine G",
+          "num": "44",
+          "team": "Aigles noirs",
+          "AB": 1,
+          "H": 0,
+          "BB": 2,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": []
+        },
+        "aigles_noirs_17": {
+          "name": "Mathis R",
+          "num": "17",
+          "team": "Aigles noirs",
+          "AB": 2,
+          "H": 0,
+          "BB": 0,
+          "SO": 2,
+          "HBP": 0,
+          "battedBalls": []
+        },
+        "aigles_noirs_16": {
+          "name": "Zack L",
+          "num": "16",
+          "team": "Aigles noirs",
+          "AB": 0,
+          "H": 0,
+          "BB": 3,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": []
+        },
+        "aigles_noirs_20": {
+          "name": "Olivier M",
+          "num": "20",
+          "team": "Aigles noirs",
+          "AB": 3,
+          "H": 1,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Single",
+              "position": 9,
+              "inning": 5
+            },
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 3
+            }
+          ]
+        },
+        "monarques_oranges_13_21": {
+          "name": "Samuel L",
+          "num": "21",
+          "team": "Monarques Oranges 13UAA 2026",
+          "AB": 3,
+          "H": 1,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Single",
+              "position": 3,
+              "inning": 2
+            }
+          ]
+        },
+        "monarques_oranges_13_44": {
+          "name": "Antoine G",
+          "num": "44",
+          "team": "Monarques Oranges 13UAA 2026",
+          "AB": 2,
+          "H": 0,
+          "BB": 1,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": []
+        },
+        "monarques_oranges_13_23": {
+          "name": "Antoine R",
+          "num": "23",
+          "team": "Monarques Oranges 13UAA 2026",
+          "AB": 3,
+          "H": 1,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Line Out",
+              "position": 7,
+              "inning": 4
+            },
+            {
+              "type": "Single",
+              "position": 8,
+              "inning": 3
+            },
+            {
+              "type": "Pop Out",
+              "position": 6,
+              "inning": 1
+            }
+          ]
+        },
+        "monarques_oranges_13_11": {
+          "name": "Émile D",
+          "num": "11",
+          "team": "Monarques Oranges 13UAA 2026",
+          "AB": 2,
+          "H": 2,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 1,
+          "battedBalls": [
+            {
+              "type": "Single",
+              "position": 8,
+              "inning": 3
+            },
+            {
+              "type": "Single",
+              "position": 8,
+              "inning": 1
+            }
+          ]
+        },
+        "monarques_oranges_13_75": {
+          "name": "Félix R",
+          "num": "75",
+          "team": "Monarques Oranges 13UAA 2026",
+          "AB": 1,
+          "H": 0,
+          "BB": 2,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Pop Out",
+              "position": 4,
+              "inning": 3
+            }
+          ]
+        },
+        "aigles_noirs_maddox_m_out_at": {
+          "name": "Maddox M out at",
+          "num": null,
+          "team": "Aigles noirs",
+          "AB": 1,
+          "H": 0,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": []
+        }
+      },
+      "pitchers": {
+        "monarques_oranges_13_21": {
+          "name": "Samuel L",
+          "num": "21",
+          "team": "Monarques Oranges 13UAA 2026",
+          "balls": 10,
+          "strikes": 5,
+          "fouls": 4,
+          "outs": 3,
+          "R": 1,
+          "H": 2,
+          "BB": 1,
+          "SO": 1,
+          "HBP": 0
+        },
+        "aigles_noirs_44": {
+          "name": "Antoine G",
+          "num": "44",
+          "team": "Aigles noirs",
+          "balls": 10,
+          "strikes": 2,
+          "fouls": 2,
+          "outs": 2,
+          "R": 0,
+          "H": 0,
+          "BB": 1,
+          "SO": 0,
+          "HBP": 1
+        },
+        "monarques_oranges_13_67": {
+          "name": "Xavier R",
+          "num": "67",
+          "team": "Monarques Oranges 13UAA 2026",
+          "balls": 11,
+          "strikes": 12,
+          "fouls": 3,
+          "outs": 5,
+          "R": 1,
+          "H": 3,
+          "BB": 1,
+          "SO": 3,
+          "HBP": 0
+        },
+        "aigles_noirs_16": {
+          "name": "Zack L",
+          "num": "16",
+          "team": "Aigles noirs",
+          "balls": 16,
+          "strikes": 12,
+          "fouls": 5,
+          "outs": 3,
+          "R": 3,
+          "H": 2,
+          "BB": 2,
+          "SO": 1,
+          "HBP": 1
+        },
+        "monarques_oranges_13_11": {
+          "name": "Émile D",
+          "num": "11",
+          "team": "Monarques Oranges 13UAA 2026",
+          "balls": 20,
+          "strikes": 9,
+          "fouls": 8,
+          "outs": 4,
+          "R": 0,
+          "H": 0,
+          "BB": 3,
+          "SO": 2,
+          "HBP": 0
+        },
+        "aigles_noirs_12": {
+          "name": "Nolan P",
+          "num": "12",
+          "team": "Aigles noirs",
+          "balls": 6,
+          "strikes": 7,
+          "fouls": 0,
+          "outs": 3,
+          "R": 0,
+          "H": 2,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0
+        },
+        "aigles_noirs_34": {
+          "name": "Thomas F",
+          "num": "34",
+          "team": "Aigles noirs",
+          "balls": 25,
+          "strikes": 6,
+          "fouls": 3,
+          "outs": 2,
+          "R": 2,
+          "H": 2,
+          "BB": 4,
+          "SO": 1,
+          "HBP": 0
+        },
+        "monarques_oranges_13_27": {
+          "name": "Justin A",
+          "num": "27",
+          "team": "Monarques Oranges 13UAA 2026",
+          "balls": 16,
+          "strikes": 12,
+          "fouls": 9,
+          "outs": 4,
+          "R": 1,
+          "H": 1,
+          "BB": 2,
+          "SO": 4,
+          "HBP": 0
+        },
+        "aigles_noirs_24": {
+          "name": "Maddox M",
+          "num": "24",
+          "team": "Aigles noirs",
+          "balls": 10,
+          "strikes": 2,
+          "fouls": 2,
+          "outs": 2,
+          "R": 0,
+          "H": 0,
+          "BB": 2,
+          "SO": 0,
           "HBP": 0
         }
       },
