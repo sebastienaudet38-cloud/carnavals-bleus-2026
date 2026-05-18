@@ -237,6 +237,25 @@ function aggregatePlayers(teamName){
       players[pid].matches.push({date:matchDate,id:matchId,AB:p.AB||0,H:p.H||0,battedBalls:(p.battedBalls||[]).length});
     });
   });
+  // Fusionner les doublons ayant le même numéro de maillot (peut arriver si l'ID varie entre matchs)
+  var numIndex={};
+  Object.keys(players).forEach(function(pid){
+    var p=players[pid];
+    if(!p.num)return;
+    var key=p.num;
+    if(!numIndex[key]){numIndex[key]=pid;}
+    else{
+      var masterPid=numIndex[key];
+      var master=players[masterPid];
+      master.G+=p.G;master.AB+=p.AB;master.H+=p.H;
+      master.BB+=p.BB;master.SO+=p.SO;master.HBP+=p.HBP;
+      p.battedBalls.forEach(function(b){master.battedBalls.push(b);});
+      p.matches.forEach(function(m){master.matches.push(m);});
+      // Garder le nom le plus complet (sans "Joueur #X")
+      if(p.name&&!p.name.startsWith('Joueur #')&&master.name.startsWith('Joueur #'))master.name=p.name;
+      delete players[pid];
+    }
+  });
   // Calculer AVG
   Object.keys(players).forEach(function(k){
     var p=players[k];
@@ -265,10 +284,25 @@ function aggregatePitchers(teamName){
       pitchers[pid].fouls+=p.fouls||0;
     });
   });
+  // Fusionner les doublons lanceurs ayant le même numéro
+  var pitNumIndex={};
+  Object.keys(pitchers).forEach(function(pid){
+    var p=pitchers[pid];
+    if(!p.num)return;
+    var key=p.num;
+    if(!pitNumIndex[key]){pitNumIndex[key]=pid;}
+    else{
+      var masterPid=pitNumIndex[key];
+      var master=pitchers[masterPid];
+      master.G+=p.G;master.outs+=p.outs;master.R+=p.R;master.H+=p.H;
+      master.BB+=p.BB;master.SO+=p.SO;master.HBP+=p.HBP;
+      master.balls+=p.balls;master.strikes+=p.strikes;master.fouls+=p.fouls;
+      if(p.name&&!p.name.startsWith('Joueur #')&&master.name.startsWith('Joueur #'))master.name=p.name;
+      delete pitchers[pid];
+    }
+  });
   return pitchers;
 }
-
-// ── CONTENU DE L'ÉQUIPE ──
 function renderTeamContent(){
   if(!selectedTeam||!oppData)return;
   var teamName=oppData.teams[selectedTeam].name;
