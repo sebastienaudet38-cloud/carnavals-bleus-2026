@@ -78,6 +78,7 @@ td:nth-child(2){text-align:left;font-weight:600;color:var(--wh);}
 .mr{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;letter-spacing:2px;padding:3px 10px;border-radius:20px;text-transform:uppercase;white-space:nowrap;}
 .win{background:rgba(0,182,80,.15);color:#00B650;}
 .loss{background:rgba(204,34,0,.15);color:var(--rl);}
+.tie{background:rgba(255,183,0,.15);color:#ffb300;}
 .lnk{display:inline-flex;align-items:center;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gr);text-decoration:none;border:1px solid rgba(255,255,255,.15);background:transparent;padding:3px 9px;border-radius:5px;cursor:pointer;white-space:nowrap;transition:all .15s;}
 .lnk:hover{color:var(--wh);border-color:rgba(255,255,255,.4);}
 .empty{text-align:center;padding:3rem;color:var(--gr);}
@@ -124,12 +125,12 @@ thead th:hover .tt{visibility:visible;opacity:1;}
 <div id="stats" class="sec on">
 <div class="subtabs"><button class="stab on" data-sub="frappeurs">&#9918; Frappeurs</button><button class="stab" data-sub="lanceurs">&#9889; Lanceurs</button><button class="stab" data-sub="spraychart">&#127919; Spray Chart</button></div>
 <div id="frappeurs" class="sub on">
-<div class="hero"><div><div class="htitle">Frappeurs <em>2026</em></div><div class="hmeta">Saison &Eacute;t&eacute; &middot; 2 parties jou&eacute;es</div></div><div class="pills"><div class="pill"><span class="pv">10</span><span class="pl">Joueurs</span></div><div class="pill"><span class="pv r" id="p-avg">--</span><span class="pl">AVG</span></div><div class="pill"><span class="pv" id="p-hits">--</span><span class="pl">H</span></div><div class="pill"><span class="pv" id="p-rbi">--</span><span class="pl">RBI</span></div><div class="pill"><span class="pv" id="p-sb">--</span><span class="pl">SB</span></div></div></div>
+<div class="hero"><div><div class="htitle">Frappeurs <em>2026</em></div><div class="hmeta" id="bat-meta">Saison &Eacute;t&eacute; &middot; 2 parties jou&eacute;es</div></div><div class="pills"><div class="pill"><span class="pv">10</span><span class="pl">Joueurs</span></div><div class="pill"><span class="pv r" id="p-avg">--</span><span class="pl">AVG</span></div><div class="pill"><span class="pv" id="p-hits">--</span><span class="pl">H</span></div><div class="pill"><span class="pv" id="p-rbi">--</span><span class="pl">RBI</span></div><div class="pill"><span class="pv" id="p-sb">--</span><span class="pl">SB</span></div></div></div>
 <div class="tcard"><div class="tbar"><div class="ttl">Statistiques des frappeurs</div><div class="tsub">Cliquer sur un en-t&ecirc;te pour trier</div></div><div class="tw"><table id="bt"><thead><tr id="bh"></tr></thead><tbody id="bb"></tbody></table></div><div class="leg">AVG=Batting Average &middot; OBP=On-Base % &middot; OPS=OBP+SLG &middot; H=Hits &middot; RBI=Runs Batted In &middot; BB=Base on Balls &middot; SO=Strikeouts &middot; SB=Stolen Bases</div></div>
 <div class="cgrid"><div class="cc"><div class="ctl">Batting Average (AVG)</div><canvas id="ca"></canvas></div><div class="cc"><div class="ctl">On-Base Percentage (OBP)</div><canvas id="co"></canvas></div><div class="cc"><div class="ctl">Hits par type</div><canvas id="ch"></canvas></div><div class="cc"><div class="ctl">RBI &amp; Runs</div><canvas id="cr"></canvas></div></div>
 </div>
 <div id="lanceurs" class="sub">
-<div class="hero"><div><div class="htitle">Lanceurs <em>2026</em></div><div class="hmeta">Saison &Eacute;t&eacute; &middot; 2 parties jou&eacute;es</div></div><div class="pills"><div class="pill"><span class="pv" id="p-pit">--</span><span class="pl">Lanceurs</span></div><div class="pill"><span class="pv r" id="p-ip">--</span><span class="pl">IP</span></div><div class="pill"><span class="pv" id="p-np">--</span><span class="pl">#P</span></div><div class="pill"><span class="pv" id="p-so">--</span><span class="pl">SO</span></div></div></div>
+<div class="hero"><div><div class="htitle">Lanceurs <em>2026</em></div><div class="hmeta" id="pit-meta">Saison &Eacute;t&eacute; &middot; 2 parties jou&eacute;es</div></div><div class="pills"><div class="pill"><span class="pv" id="p-pit">--</span><span class="pl">Lanceurs</span></div><div class="pill"><span class="pv r" id="p-ip">--</span><span class="pl">IP</span></div><div class="pill"><span class="pv" id="p-np">--</span><span class="pl">#P</span></div><div class="pill"><span class="pv" id="p-so">--</span><span class="pl">SO</span></div></div></div>
 <div class="tcard"><div class="tbar"><div class="ttl">Statistiques des lanceurs</div><div class="tsub">Cliquer sur un en-t&ecirc;te pour trier</div></div><div class="tw"><table id="pt"><thead><tr id="ph"></tr></thead><tbody id="pb"></tbody></table></div><div class="leg">IP=Manches lancées · GS=Matchs partant · ER=Pts mérités · HBP=Frappeurs atteints · ERA=Moy. pts mérités (×7) · WHIP=BB+H/manche · S%=% prises · BAA=Moy. contre · SO=Retraits au bâton · BF=Frappeurs affronts</div></div>
 <div class="cgrid"><div class="cc"><div class="ctl">ERA par lanceur</div><canvas id="ce"></canvas></div><div class="cc"><div class="ctl">SO vs BB</div><canvas id="ck"></canvas></div><div class="cc"><div class="ctl">Nombre de lancers (#P)</div><canvas id="cn"></canvas></div><div class="cc"><div class="ctl">Strike % (S%)</div><canvas id="cs"></canvas></div></div>
 </div>
@@ -316,6 +317,7 @@ function renderBat() {
   document.getElementById('p-hits').textContent = TEAM.hits||'--';
   document.getElementById('p-rbi').textContent  = TEAM.rbi||'--';
   document.getElementById('p-sb').textContent   = TEAM.sb||'--';
+  var gp=parseInt(TEAM.gp)||0;var gps=gp+' partie'+(gp>1?'s':'')+' jouée'+(gp>1?'s':'');document.getElementById('bat-meta').textContent='Saison Été · '+gps;
 }
 
 document.getElementById('bh').addEventListener('click', function(e){
@@ -389,6 +391,7 @@ function renderPit(){
     t.classList.toggle('sorted',i===pSort); t.classList.toggle('asc',i===pSort&&pAsc);
   });
   document.getElementById('p-pit').textContent=pitchers.length;
+  document.getElementById('pit-meta').textContent='Saison Été · '+(parseInt(TEAM.gp)||0)+' partie'+((parseInt(TEAM.gp)||0)>1?'s':'')+' jouée'+((parseInt(TEAM.gp)||0)>1?'s':'');
   document.getElementById('p-ip').textContent=TEAM.ip||'--';
   document.getElementById('p-np').textContent=TEAM.np||'--';
   document.getElementById('p-so').textContent=TEAM.so_p||'--';
@@ -445,10 +448,11 @@ function renderMatches(){
   }
   var w=matchData.filter(function(m){return m.us>m.them;}).length;
   var l=matchData.filter(function(m){return m.us<m.them;}).length;
-  document.getElementById('match-meta').textContent=matchData.length+' match'+(matchData.length>1?'s':'')+' \u00b7 '+w+'V \u2013 '+l+'D';
+  var n=matchData.filter(function(m){return m.us===m.them;}).length;
+  document.getElementById('match-meta').textContent=matchData.length+' match'+(matchData.length>1?'s':'')+' \u00b7 '+w+'V \u2013 '+l+'D'+(n?' \u2013 '+n+'N':'');
   var sorted=matchData.slice().sort(function(a,b){return b.date.localeCompare(a.date);});
   el.innerHTML=sorted.map(function(m){
-    var win=m.us>m.them;
+    var tie=m.us===m.them;var win=m.us>m.them;
     var lbl=fmtDate(m.date,{weekday:'short',month:'short',day:'numeric'});
     var links='';
     if(m.link) links+='<a href="'+m.link+'" target="_blank" rel="noopener" class="lnk">Spordle &#8599;</a> ';
@@ -460,7 +464,7 @@ function renderMatches(){
       +'<div class="mscore"><span>'+m.us+'</span><span class="sp">\u2013</span><span>'+m.them+'</span></div>'
       +'<span class="mteam a">'+m.opp+'</span>'
       +'</div>'
-      +'<span class="mr '+(win?'win':'loss')+'">'+(win?'Victoire':'D\u00e9faite')+'</span>'
+      +'<span class="mr '+(tie?'tie':win?'win':'loss')+'">'+(tie?'Nulle':win?'Victoire':'D\u00e9faite')+'</span>'
       +'<div style="display:flex;gap:5px;align-items:center;">'+links+'</div>'
       +'</div>';
   }).join('');
@@ -492,7 +496,7 @@ function renderVideos(){
   }
   // Vid\u00e9os de matchs
   html+=matchVids.map(function(m){
-    var win=m.us>m.them;
+    var tie=m.us===m.them;var win=m.us>m.them;
     var lbl=fmtDate(m.date,{weekday:'long',year:'numeric',month:'long',day:'numeric'});
     var spl=m.link?'<a href="'+m.link+'" target="_blank" rel="noopener" class="lnk" style="font-size:10px;padding:2px 7px;">Spordle &#8599;</a>':'';
     return '<div class="vc">'
@@ -500,7 +504,7 @@ function renderVideos(){
       +'<div class="vi">'
       +'<div class="vt">Carnavals <span style="color:var(--gr)">vs</span> '+m.opp+'</div>'
       +'<div class="vm"><div class="vd">'+lbl+'</div>'
-      +'<span class="mr '+(win?'win':'loss')+'" style="font-size:11px;padding:2px 7px;">'+m.us+'\u2013'+m.them+'</span>'
+      +'<span class="mr '+(tie?'tie':win?'win':'loss')+'" style="font-size:11px;padding:2px 7px;">'+m.us+'\u2013'+m.them+'</span>'
       +spl+'</div></div></div>';
   }).join('');
   el.innerHTML=html;
