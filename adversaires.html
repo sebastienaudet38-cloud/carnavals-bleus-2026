@@ -624,6 +624,30 @@ function zoneColor(hits,total,maxTotal){
 }
 
 // ── IMPRESSION — FICHE DE DÉPISTAGE ──
+// Couleur de zone pour l'impression N&B :
+// - zones vides : gris très clair (fond blanc visible)
+// - fréquence élevée = plus foncé
+// - beaucoup de coups sûrs = gris foncé (casi noir)
+// - beaucoup de retraits  = gris moyen
+// - mixte              = gris intermédiaire
+function zoneColorPrint(hits,total,maxTotal){
+  if(total===0)return'#f0f0f0';
+  var hitPct=hits/total;
+  var freq=total/Math.max(maxTotal,1); // 0..1 selon fréquence relative
+  // Intensité de base selon fréquence : 0.15 (rare) → 0.85 (très fréquent)
+  var intensity=0.15+0.70*freq;
+  // Nuance selon résultat : coups sûrs = foncé, retraits = clair, mixte = entre les deux
+  // On mappe hitPct [0,1] sur une échelle de gris : 0 hits → gris clair, 1 hit → gris foncé
+  // Valeur de gris finale : plus foncé = plus de coups sûrs OU plus fréquent
+  var baseDarkness; // 0=blanc, 1=noir
+  if(hitPct>=0.7)       baseDarkness=0.85;  // majorité de coups sûrs → très foncé
+  else if(hitPct>=0.4)  baseDarkness=0.55;  // mixte → gris moyen
+  else                  baseDarkness=0.30;  // majorité de retraits → gris clair
+  var v=Math.round(255*(1-(baseDarkness*intensity)));
+  v=Math.max(30,Math.min(240,v));
+  return'rgb('+v+','+v+','+v+')';
+}
+
 function buildSprayChartPrint(battedBalls){
   var byPos={};
   battedBalls.forEach(function(b){
@@ -634,25 +658,34 @@ function buildSprayChartPrint(battedBalls){
   var maxTotal=0;
   ZONES.forEach(function(z){var d=byPos[z.pos]||{hits:0,outs:0};maxTotal=Math.max(maxTotal,d.hits+d.outs);});
   var svg='<svg viewBox="0 0 356 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:220px;display:block;margin:0 auto;">';
-  svg+='<rect width="356" height="280" fill="#0d1e35" rx="8"/>';
-  svg+='<line x1="178" y1="265" x2="'+fx(250,Math.cos(28*Math.PI/180))+'" y2="'+fy(250,Math.sin(28*Math.PI/180))+'" stroke="rgba(255,255,255,.08)" stroke-width="1"/>';
-  svg+='<line x1="178" y1="265" x2="'+fx(250,Math.cos(157*Math.PI/180))+'" y2="'+fy(250,Math.sin(157*Math.PI/180))+'" stroke="rgba(255,255,255,.08)" stroke-width="1"/>';
-  [62,132].forEach(function(r){svg+='<circle cx="178" cy="265" r="'+r+'" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="1"/>';});
+  svg+='<rect width="356" height="280" fill="#fff" rx="6" stroke="#ccc" stroke-width="1"/>';
+  // Lignes de foul
+  svg+='<line x1="178" y1="265" x2="'+fx(250,Math.cos(28*Math.PI/180))+'" y2="'+fy(250,Math.sin(28*Math.PI/180))+'" stroke="#bbb" stroke-width="1"/>';
+  svg+='<line x1="178" y1="265" x2="'+fx(250,Math.cos(157*Math.PI/180))+'" y2="'+fy(250,Math.sin(157*Math.PI/180))+'" stroke="#bbb" stroke-width="1"/>';
+  // Cercles de repère
+  [62,132].forEach(function(r){svg+='<circle cx="178" cy="265" r="'+r+'" fill="none" stroke="#ddd" stroke-width="1"/>';});
   ZONES.forEach(function(z){
     var d=byPos[z.pos]||{hits:0,outs:0};
     var total=d.hits+d.outs;
     var path=arcPath(z.r1,z.r2,z.a1,z.a2);
-    var fill=zoneColor(d.hits,total,maxTotal);
-    var stroke=total>0?'rgba(255,255,255,.2)':'rgba(255,255,255,.06)';
+    var fill=zoneColorPrint(d.hits,total,maxTotal);
+    var stroke=total>0?'#999':'#e0e0e0';
     svg+='<path d="'+path+'" fill="'+fill+'" stroke="'+stroke+'" stroke-width="0.75"/>';
     var c=zoneCenter(z);
-    svg+='<text font-size="9" fill="rgba(255,255,255,.55)" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI,sans-serif" x="'+c.x+'" y="'+(c.y-5)+'">'+z.label+'</text>';
+    // Couleur du texte : blanc si zone très foncée, sinon noir
+    var d2=byPos[z.pos]||{hits:0,outs:0};
+    var bg=zoneColorPrint(d2.hits,total,maxTotal);
+    var vv=parseInt(bg.replace('rgb(','').split(',')[0]);
+    var txtColor=vv<130?'#fff':'#333';
+    var lblColor=vv<130?'rgba(255,255,255,.7)':'#888';
+    svg+='<text font-size="9" fill="'+lblColor+'" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI,sans-serif" x="'+c.x+'" y="'+(c.y-5)+'">'+z.label+'</text>';
     if(total>0){
       var pct=Math.round(total/Math.max(battedBalls.length,1)*100);
-      svg+='<text font-size="8.5" fill="rgba(255,255,255,.85)" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI,sans-serif" font-weight="700" x="'+c.x+'" y="'+(c.y+6)+'">'+total+' ('+pct+'%)</text>';
+      svg+='<text font-size="8.5" fill="'+txtColor+'" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI,sans-serif" font-weight="700" x="'+c.x+'" y="'+(c.y+6)+'">'+total+' ('+pct+'%)</text>';
     }
   });
-  svg+='<polygon points="178,273 172,268 172,265 184,265 184,268" fill="rgba(255,255,255,.3)"/>';
+  // Home plate
+  svg+='<polygon points="178,273 172,268 172,265 184,265 184,268" fill="#555"/>';
   svg+='</svg>';
   return svg;
 }
@@ -731,7 +764,7 @@ function printTeamReport(){
       +'<div class="chart-header">'
       +'<span class="chart-num">'+(p.num?'#'+p.num:'')+'</span>'
       +'<span class="chart-name">'+p.name+'</span>'
-      +'<span class="chart-avg" style="color:'+color+'">'+avg+'</span>'
+      +'<span class="chart-avg">'+avg+'</span>'
       +'</div>'
       +buildSprayChartPrint(p.battedBalls)
       +'<div class="chart-footer">'+p.H+'H · '+p.AB+'AB · '+p.SO+'K · '+p.BB+'BB</div>'
@@ -767,12 +800,12 @@ function printTeamReport(){
     +'.pbadge{display:inline-block;background:#1a3a6e;color:#F5A623;font-size:7px;font-weight:700;padding:1px 4px;border-radius:2px;margin-left:4px;vertical-align:middle;}'
     // Grille spray charts
     +'.chart-grid{display:grid;grid-template-columns:repeat('+cols+',1fr);gap:8px;margin-top:6px;}'
-    +'.chart-cell{background:#0d1e35;border-radius:7px;padding:7px 6px 5px;}'
+    +'.chart-cell{background:#fff;border:1px solid #ccc;border-radius:7px;padding:7px 6px 5px;}'
     +'.chart-header{display:flex;align-items:baseline;gap:5px;margin-bottom:4px;}'
-    +'.chart-num{font-size:9px;color:rgba(255,255,255,.4);}'
-    +'.chart-name{font-size:10px;font-weight:700;color:#fff;flex:1;}'
-    +'.chart-avg{font-size:13px;font-weight:900;line-height:1;}'
-    +'.chart-footer{text-align:center;font-size:8px;color:rgba(255,255,255,.45);margin-top:3px;}'
+    +'.chart-num{font-size:9px;color:#aaa;}'
+    +'.chart-name{font-size:10px;font-weight:700;color:#111;flex:1;}'
+    +'.chart-avg{font-size:13px;font-weight:900;line-height:1;color:#111;}'
+    +'.chart-footer{text-align:center;font-size:8px;color:#888;margin-top:3px;}'
     // Légende spray
     +'.legend{display:flex;gap:12px;justify-content:center;margin-top:8px;font-size:8px;color:#666;}'
     +'.legend span{display:flex;align-items:center;gap:3px;}'
@@ -817,10 +850,10 @@ function printTeamReport(){
     +'</div>'
     +'<div class="chart-grid">'+charts+'</div>'
     +'<div class="legend">'
-    +'<span><span class="dot" style="background:#00B650;"></span>Coup s\u00fbr</span>'
-    +'<span><span class="dot" style="background:#CC2200;"></span>Retrait</span>'
-    +'<span><span class="dot" style="background:#F5A623;"></span>Mixte (40\u201370%)</span>'
-    +'<span style="margin-left:8px;color:#999;">La teinte = fr\u00e9quence relative &nbsp;|&nbsp; La couleur = taux de coups s\u00fbrs</span>'
+    +'<span><span class="dot" style="background:#333;"></span>Majorit\u00e9 de coups s\u00fbrs</span>'
+    +'<span><span class="dot" style="background:#888;"></span>Mixte</span>'
+    +'<span><span class="dot" style="background:#ccc;"></span>Majorit\u00e9 de retraits</span>'
+    +'<span style="margin-left:8px;color:#999;">Intensit\u00e9 = fr\u00e9quence relative &nbsp;|&nbsp; Teinte = taux de coups s\u00fbrs</span>'
     +'</div>'
     +'</div>'
 
