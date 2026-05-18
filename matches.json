@@ -595,5 +595,9 @@
         "type": "hit"
       }
     ]
+  },
+  "passwords": {
+    "23": "b00287c2c2e0bc70ecc43ff4dc8552da590ecbbbd04f8007e35f6df2e7ac16f3",
+    "admin": "143e94ada4141bbdea227252f5804115ac9f9cdd1c4f66736fa767ace992d6bb"
   }
 }
