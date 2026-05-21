@@ -3112,6 +3112,308 @@
         }
       },
       "unknownEvents": []
+    },
+    {
+      "id": "2026-05-10_monarques_gris_uaa_vs_carnavals_blancs",
+      "date": "2026-05-10",
+      "gameNum": 1,
+      "team1": "Monarques Gris 13UAA",
+      "team2": "Carnavals Blancs",
+      "parserVersion": "1.1",
+      "score": {
+        "top": 0,
+        "bottom": 0,
+        "lastLine": "MNRQ 1 - CRNV 0"
+      },
+      "players": {
+        "monarques_gris_13uaa_5": {
+          "name": "Liam R",
+          "num": "5",
+          "team": "Monarques Gris 13UAA",
+          "AB": 4,
+          "H": 1,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Fly Out",
+              "position": 4,
+              "inning": 5
+            },
+            {
+              "type": "Ground Out",
+              "position": 5,
+              "inning": 4
+            },
+            {
+              "type": "Double",
+              "position": 8,
+              "inning": 2
+            }
+          ]
+        },
+        "monarques_gris_13uaa_43": {
+          "name": "Alexis C",
+          "num": "43",
+          "team": "Monarques Gris 13UAA",
+          "AB": 4,
+          "H": 2,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Single",
+              "position": 7,
+              "inning": 5
+            },
+            {
+              "type": "Double",
+              "position": 8,
+              "inning": 2
+            },
+            {
+              "type": "Line Out",
+              "position": 6,
+              "inning": 1
+            }
+          ]
+        },
+        "monarques_gris_13uaa_11": {
+          "name": "Derek T",
+          "num": "11",
+          "team": "Monarques Gris 13UAA",
+          "AB": 3,
+          "H": 1,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Single",
+              "position": 9,
+              "inning": 3
+            },
+            {
+              "type": "Pop Out",
+              "position": 7,
+              "inning": 2
+            }
+          ]
+        },
+        "monarques_gris_13uaa_50": {
+          "name": "Hubert M",
+          "num": "50",
+          "team": "Monarques Gris 13UAA",
+          "AB": 2,
+          "H": 1,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 1,
+          "battedBalls": [
+            {
+              "type": "Pop Out",
+              "position": 5,
+              "inning": 5
+            },
+            {
+              "type": "Single",
+              "position": 9,
+              "inning": 2
+            }
+          ]
+        },
+        "monarques_gris_13uaa_99": {
+          "name": "Léon G",
+          "num": "99",
+          "team": "Monarques Gris 13UAA",
+          "AB": 1,
+          "H": 0,
+          "BB": 2,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": []
+        },
+        "monarques_gris_13uaa_41": {
+          "name": "Lucas E",
+          "num": "41",
+          "team": "Monarques Gris 13UAA",
+          "AB": 3,
+          "H": 0,
+          "BB": 0,
+          "SO": 3,
+          "HBP": 0,
+          "battedBalls": []
+        },
+        "monarques_gris_13uaa_9": {
+          "name": "Antoine R",
+          "num": "9",
+          "team": "Monarques Gris 13UAA",
+          "AB": 3,
+          "H": 1,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Single",
+              "position": 7,
+              "inning": 4
+            },
+            {
+              "type": "Ground Out",
+              "position": 6,
+              "inning": 2
+            },
+            {
+              "type": "Ground Out",
+              "position": 4,
+              "inning": 1
+            }
+          ]
+        },
+        "monarques_gris_13uaa_34": {
+          "name": "Vincent G",
+          "num": "34",
+          "team": "Monarques Gris 13UAA",
+          "AB": 3,
+          "H": 3,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Single",
+              "position": 4,
+              "inning": 4
+            },
+            {
+              "type": "Single",
+              "position": 8,
+              "inning": 2
+            },
+            {
+              "type": "Double",
+              "position": 8,
+              "inning": 1
+            }
+          ]
+        },
+        "monarques_gris_13uaa_66": {
+          "name": "Alexandre D",
+          "num": "66",
+          "team": "Monarques Gris 13UAA",
+          "AB": 3,
+          "H": 3,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Double",
+              "position": 8,
+              "inning": 4
+            },
+            {
+              "type": "Single",
+              "position": 4,
+              "inning": 2
+            },
+            {
+              "type": "Single",
+              "position": 9,
+              "inning": 1
+            }
+          ]
+        },
+        "monarques_gris_13uaa_23": {
+          "name": "Charles S",
+          "num": "23",
+          "team": "Monarques Gris 13UAA",
+          "AB": 3,
+          "H": 3,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Single",
+              "position": 1,
+              "inning": 4
+            },
+            {
+              "type": "Single",
+              "position": 7,
+              "inning": 2
+            },
+            {
+              "type": "Double",
+              "position": 8,
+              "inning": 1
+            }
+          ]
+        }
+      },
+      "pitchers": {
+        "monarques_gris_13uaa_66": {
+          "name": "Alexandre D",
+          "num": "66",
+          "team": "Monarques Gris 13UAA",
+          "balls": 18,
+          "strikes": 11,
+          "fouls": 3,
+          "outs": 4,
+          "R": 1,
+          "H": 2,
+          "BB": 3,
+          "SO": 2,
+          "HBP": 0
+        },
+        "monarques_gris_13uaa_5": {
+          "name": "Liam R",
+          "num": "5",
+          "team": "Monarques Gris 13UAA",
+          "balls": 18,
+          "strikes": 3,
+          "fouls": 2,
+          "outs": 2,
+          "R": 1,
+          "H": 0,
+          "BB": 4,
+          "SO": 0,
+          "HBP": 0
+        },
+        "monarques_gris_13uaa_9": {
+          "name": "Antoine R",
+          "num": "9",
+          "team": "Monarques Gris 13UAA",
+          "balls": 13,
+          "strikes": 6,
+          "fouls": 6,
+          "outs": 3,
+          "R": 1,
+          "H": 1,
+          "BB": 1,
+          "SO": 2,
+          "HBP": 0
+        },
+        "monarques_gris_13uaa_11": {
+          "name": "Derek T",
+          "num": "11",
+          "team": "Monarques Gris 13UAA",
+          "balls": 10,
+          "strikes": 12,
+          "fouls": 7,
+          "outs": 6,
+          "R": 0,
+          "H": 1,
+          "BB": 1,
+          "SO": 4,
+          "HBP": 0
+        }
+      },
+      "unknownEvents": []
     }
   ]
 }
