@@ -114,6 +114,20 @@
         "34": "Thomas F",
         "44": "Antoine G"
       }
+    },
+    "carnavals_bleus_u": {
+      "name": "Carnavals Bleus 13U",
+      "players": {
+        "7": "Nicolas D",
+        "10": "Zackary A",
+        "13": "Rafaël G",
+        "14": "Léonard G",
+        "15": "Edward S",
+        "23": "Louis M",
+        "24": "Léo L",
+        "27": "James F",
+        "33": "Guillaume B"
+      }
     }
   },
   "matches": [
@@ -3399,6 +3413,509 @@
           "H": 0,
           "BB": 0,
           "SO": 4,
+          "HBP": 0
+        }
+      },
+      "unknownEvents": []
+    },
+    {
+      "id": "2026-05-22_monarques_oranges_uaa_vs_carnavals_bleus_u",
+      "date": "2026-05-22",
+      "gameNum": 1,
+      "team1": "Monarques Oranges 13UAA 2026",
+      "team2": "Carnavals Bleus 13U",
+      "parserVersion": "1.1",
+      "score": {
+        "top": 0,
+        "bottom": 0,
+        "lastLine": "MNRQ 1 - CRNV 0"
+      },
+      "players": {
+        "carnavals_bleus_13u_15": {
+          "name": "Edward S",
+          "num": "15",
+          "team": "Carnavals Bleus 13U",
+          "AB": 3,
+          "H": 1,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Line Out",
+              "position": 8,
+              "inning": 6
+            },
+            {
+              "type": "Double",
+              "position": 9,
+              "inning": 5
+            },
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 2
+            }
+          ]
+        },
+        "carnavals_bleus_13u_27": {
+          "name": "James F",
+          "num": "27",
+          "team": "Carnavals Bleus 13U",
+          "AB": 2,
+          "H": 1,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Home Run",
+              "position": 4,
+              "inning": 6
+            },
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 4
+            }
+          ]
+        },
+        "carnavals_bleus_13u_14": {
+          "name": "Léonard G",
+          "num": "14",
+          "team": "Carnavals Bleus 13U",
+          "AB": 3,
+          "H": 1,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Double",
+              "position": 9,
+              "inning": 6
+            },
+            {
+              "type": "Ground Out",
+              "position": 1,
+              "inning": 4
+            }
+          ]
+        },
+        "monarques_oranges_13_12": {
+          "name": "Ludovic G",
+          "num": "12",
+          "team": "Monarques Oranges 13UAA 2026",
+          "AB": 2,
+          "H": 0,
+          "BB": 2,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 6
+            }
+          ]
+        },
+        "monarques_oranges_13_21": {
+          "name": "Samuel L",
+          "num": "21",
+          "team": "Monarques Oranges 13UAA 2026",
+          "AB": 3,
+          "H": 0,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 3
+            },
+            {
+              "type": "Ground Out",
+              "position": 1,
+              "inning": 2
+            }
+          ]
+        },
+        "monarques_oranges_13_44": {
+          "name": "Antoine G",
+          "num": "44",
+          "team": "Monarques Oranges 13UAA 2026",
+          "AB": 3,
+          "H": 0,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 3
+            },
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 1
+            }
+          ]
+        },
+        "monarques_oranges_13_60": {
+          "name": "Justin D",
+          "num": "60",
+          "team": "Monarques Oranges 13UAA 2026",
+          "AB": 1,
+          "H": 1,
+          "BB": 2,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Triple",
+              "position": 8,
+              "inning": 6
+            }
+          ]
+        },
+        "carnavals_bleus_13u_13": {
+          "name": "Rafaël G",
+          "num": "13",
+          "team": "Carnavals Bleus 13U",
+          "AB": 3,
+          "H": 0,
+          "BB": 0,
+          "SO": 2,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 5
+            }
+          ]
+        },
+        "carnavals_bleus_13u_10": {
+          "name": "Zackary A",
+          "num": "10",
+          "team": "Carnavals Bleus 13U",
+          "AB": 3,
+          "H": 1,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Pop Out",
+              "position": 6,
+              "inning": 5
+            },
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 3
+            },
+            {
+              "type": "Single",
+              "position": 8,
+              "inning": 1
+            }
+          ]
+        },
+        "carnavals_bleus_13u_7": {
+          "name": "Nicolas D",
+          "num": "7",
+          "team": "Carnavals Bleus 13U",
+          "AB": 3,
+          "H": 1,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Single",
+              "position": 8,
+              "inning": 1
+            }
+          ]
+        },
+        "carnavals_bleus_13u_24": {
+          "name": "Léo L",
+          "num": "24",
+          "team": "Carnavals Bleus 13U",
+          "AB": 1,
+          "H": 0,
+          "BB": 1,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Pop Out",
+              "position": 4,
+              "inning": 5
+            }
+          ]
+        },
+        "carnavals_bleus_13u_33": {
+          "name": "Guillaume B",
+          "num": "33",
+          "team": "Carnavals Bleus 13U",
+          "AB": 1,
+          "H": 0,
+          "BB": 1,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": []
+        },
+        "monarques_oranges_13_9": {
+          "name": "Émile B",
+          "num": "9",
+          "team": "Monarques Oranges 13UAA 2026",
+          "AB": 3,
+          "H": 1,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Fly Out",
+              "position": 8,
+              "inning": 5
+            },
+            {
+              "type": "Single",
+              "position": 8,
+              "inning": 3
+            },
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 1
+            }
+          ]
+        },
+        "monarques_oranges_13_11": {
+          "name": "Émile D",
+          "num": "11",
+          "team": "Monarques Oranges 13UAA 2026",
+          "AB": 2,
+          "H": 0,
+          "BB": 1,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Pop Out",
+              "position": 1,
+              "inning": 5
+            },
+            {
+              "type": "Ground Out",
+              "position": 1,
+              "inning": 3
+            }
+          ]
+        },
+        "monarques_oranges_13_75": {
+          "name": "Félix R",
+          "num": "75",
+          "team": "Monarques Oranges 13UAA 2026",
+          "AB": 3,
+          "H": 0,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Fly Out",
+              "position": 4,
+              "inning": 2
+            }
+          ]
+        },
+        "carnavals_bleus_13u_23": {
+          "name": "Louis M",
+          "num": "23",
+          "team": "Carnavals Bleus 13U",
+          "AB": 2,
+          "H": 1,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Double",
+              "position": 8,
+              "inning": 2
+            }
+          ]
+        },
+        "monarques_oranges_13_23": {
+          "name": "Antoine R",
+          "num": "23",
+          "team": "Monarques Oranges 13UAA 2026",
+          "AB": 3,
+          "H": 1,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Pop Out",
+              "position": 2,
+              "inning": 4
+            },
+            {
+              "type": "Single",
+              "position": 6,
+              "inning": 2
+            },
+            {
+              "type": "Pop Out",
+              "position": 6,
+              "inning": 1
+            }
+          ]
+        },
+        "monarques_oranges_13_27": {
+          "name": "Justin A",
+          "num": "27",
+          "team": "Monarques Oranges 13UAA 2026",
+          "AB": 2,
+          "H": 1,
+          "BB": 1,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Pop Out",
+              "position": 4,
+              "inning": 4
+            },
+            {
+              "type": "Single",
+              "position": 8,
+              "inning": 2
+            }
+          ]
+        },
+        "monarques_oranges_13_67": {
+          "name": "Xavier R",
+          "num": "67",
+          "team": "Monarques Oranges 13UAA 2026",
+          "AB": 2,
+          "H": 0,
+          "BB": 1,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Ground Out",
+              "position": 1,
+              "inning": 2
+            }
+          ]
+        }
+      },
+      "pitchers": {
+        "carnavals_bleus_13u_7": {
+          "name": "Nicolas D",
+          "num": "7",
+          "team": "Carnavals Bleus 13U",
+          "balls": 10,
+          "strikes": 12,
+          "fouls": 5,
+          "outs": 7,
+          "R": 0,
+          "H": 1,
+          "BB": 0,
+          "SO": 3,
+          "HBP": 0
+        },
+        "monarques_oranges_13_11": {
+          "name": "Émile D",
+          "num": "11",
+          "team": "Monarques Oranges 13UAA 2026",
+          "balls": 6,
+          "strikes": 2,
+          "fouls": 2,
+          "outs": 0,
+          "R": 0,
+          "H": 1,
+          "BB": 1,
+          "SO": 0,
+          "HBP": 0
+        },
+        "monarques_oranges_13_27": {
+          "name": "Justin A",
+          "num": "27",
+          "team": "Monarques Oranges 13UAA 2026",
+          "balls": 13,
+          "strikes": 6,
+          "fouls": 8,
+          "outs": 6,
+          "R": 1,
+          "H": 0,
+          "BB": 1,
+          "SO": 3,
+          "HBP": 0
+        },
+        "carnavals_bleus_13u_24": {
+          "name": "Léo L",
+          "num": "24",
+          "team": "Carnavals Bleus 13U",
+          "balls": 13,
+          "strikes": 4,
+          "fouls": 2,
+          "outs": 5,
+          "R": 2,
+          "H": 3,
+          "BB": 1,
+          "SO": 1,
+          "HBP": 0
+        },
+        "monarques_oranges_13_67": {
+          "name": "Xavier R",
+          "num": "67",
+          "team": "Monarques Oranges 13UAA 2026",
+          "balls": 7,
+          "strikes": 11,
+          "fouls": 2,
+          "outs": 5,
+          "R": 1,
+          "H": 3,
+          "BB": 0,
+          "SO": 3,
+          "HBP": 0
+        },
+        "carnavals_bleus_13u_33": {
+          "name": "Guillaume B",
+          "num": "33",
+          "team": "Carnavals Bleus 13U",
+          "balls": 9,
+          "strikes": 4,
+          "fouls": 1,
+          "outs": 3,
+          "R": 0,
+          "H": 0,
+          "BB": 1,
+          "SO": 0,
+          "HBP": 0
+        },
+        "carnavals_bleus_13u_15": {
+          "name": "Edward S",
+          "num": "15",
+          "team": "Carnavals Bleus 13U",
+          "balls": 21,
+          "strikes": 7,
+          "fouls": 2,
+          "outs": 2,
+          "R": 3,
+          "H": 0,
+          "BB": 5,
+          "SO": 0,
           "HBP": 0
         }
       },
