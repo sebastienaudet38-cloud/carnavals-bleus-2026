@@ -134,13 +134,15 @@
       "players": {
         "8": "Samael Turcotte",
         "10": "Romain Frigon",
+        "13": "Jerome Fleury",
         "14": "Nolan Provencher",
         "16": "Mike Lavallière",
         "18": "Alexander Chacon",
         "19": "Ricardo Reyes Pita",
         "27": "Justin Frigon",
         "30": "Liam Provencher",
-        "33": "Charles Perreault"
+        "33": "Charles Perreault",
+        "to_first": "to first"
       }
     }
   },
@@ -4437,6 +4439,465 @@
           "H": 4,
           "BB": 4,
           "SO": 3,
+          "HBP": 0
+        }
+      },
+      "unknownEvents": []
+    },
+    {
+      "id": "2026-05-17_monarques_bleus_uaa_vs_aigles_rouge",
+      "date": "2026-05-17",
+      "gameNum": 1,
+      "team1": "Monarques Bleus 13UAA 2026",
+      "team2": "aigles rouge",
+      "parserVersion": "1.1",
+      "score": {
+        "top": 0,
+        "bottom": 0,
+        "lastLine": "MNRQ 2 - AGLS 3"
+      },
+      "players": {
+        "monarques_bleus_13ua_19": {
+          "name": "Adam Matthews",
+          "num": "19",
+          "team": "Monarques Bleus 13UAA 2026",
+          "AB": 2,
+          "H": 0,
+          "BB": 1,
+          "SO": 2,
+          "HBP": 0,
+          "battedBalls": []
+        },
+        "monarques_bleus_13ua_13": {
+          "name": "Elliot Laberge",
+          "num": "13",
+          "team": "Monarques Bleus 13UAA 2026",
+          "AB": 3,
+          "H": 0,
+          "BB": 0,
+          "SO": 2,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Pop Out",
+              "position": 1,
+              "inning": 4
+            }
+          ]
+        },
+        "monarques_bleus_13ua_14": {
+          "name": "Émile Lehoux",
+          "num": "14",
+          "team": "Monarques Bleus 13UAA 2026",
+          "AB": 2,
+          "H": 0,
+          "BB": 1,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Ground Out",
+              "position": 1,
+              "inning": 3
+            },
+            {
+              "type": "Ground Out",
+              "position": 1,
+              "inning": 1
+            }
+          ]
+        },
+        "monarques_bleus_13ua_47": {
+          "name": "Elliot Nadeau-Bouffard",
+          "num": "47",
+          "team": "Monarques Bleus 13UAA 2026",
+          "AB": 2,
+          "H": 0,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Fly Out",
+              "position": 8,
+              "inning": 6
+            },
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 3
+            }
+          ]
+        },
+        "aigles_rouge_10": {
+          "name": "Romain Frigon",
+          "num": "10",
+          "team": "aigles rouge",
+          "AB": 3,
+          "H": 2,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Single",
+              "position": 9,
+              "inning": 5
+            },
+            {
+              "type": "Single",
+              "position": 6,
+              "inning": 3
+            }
+          ]
+        },
+        "aigles_rouge_18": {
+          "name": "Alexander Chacon",
+          "num": "18",
+          "team": "aigles rouge",
+          "AB": 2,
+          "H": 2,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 1,
+          "battedBalls": [
+            {
+              "type": "Single",
+              "position": 9,
+              "inning": 5
+            },
+            {
+              "type": "Single",
+              "position": 8,
+              "inning": 4
+            }
+          ]
+        },
+        "aigles_rouge_27": {
+          "name": "Justin Frigon",
+          "num": "27",
+          "team": "aigles rouge",
+          "AB": 2,
+          "H": 0,
+          "BB": 1,
+          "SO": 2,
+          "HBP": 0,
+          "battedBalls": []
+        },
+        "aigles_rouge_8": {
+          "name": "Samael Turcotte",
+          "num": "8",
+          "team": "aigles rouge",
+          "AB": 3,
+          "H": 1,
+          "BB": 0,
+          "SO": 2,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Single",
+              "position": 6,
+              "inning": 4
+            }
+          ]
+        },
+        "monarques_bleus_13ua_22": {
+          "name": "Daniel Cloutier",
+          "num": "22",
+          "team": "Monarques Bleus 13UAA 2026",
+          "AB": 2,
+          "H": 0,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Fly Out",
+              "position": 1,
+              "inning": 3
+            }
+          ]
+        },
+        "monarques_bleus_13ua_99": {
+          "name": "Edouard Luneau",
+          "num": "99",
+          "team": "Monarques Bleus 13UAA 2026",
+          "AB": 1,
+          "H": 0,
+          "BB": 1,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": []
+        },
+        "monarques_bleus_13ua_28": {
+          "name": "Frédérick Hudon",
+          "num": "28",
+          "team": "Monarques Bleus 13UAA 2026",
+          "AB": 2,
+          "H": 0,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 5
+            },
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 2
+            }
+          ]
+        },
+        "aigles_rouge_13": {
+          "name": "Jerome Fleury",
+          "num": "13",
+          "team": "aigles rouge",
+          "AB": 3,
+          "H": 0,
+          "BB": 0,
+          "SO": 2,
+          "HBP": 0,
+          "battedBalls": []
+        },
+        "aigles_rouge_33": {
+          "name": "Charles Perreault",
+          "num": "33",
+          "team": "aigles rouge",
+          "AB": 2,
+          "H": 2,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Single",
+              "position": 8,
+              "inning": 4
+            },
+            {
+              "type": "Single",
+              "position": 4,
+              "inning": 2
+            }
+          ]
+        },
+        "aigles_rouge_30": {
+          "name": "Liam Provencher",
+          "num": "30",
+          "team": "aigles rouge",
+          "AB": 3,
+          "H": 0,
+          "BB": 0,
+          "SO": 2,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 3
+            }
+          ]
+        },
+        "aigles_rouge_14": {
+          "name": "Nolan Provencher",
+          "num": "14",
+          "team": "aigles rouge",
+          "AB": 3,
+          "H": 2,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Single",
+              "position": 7,
+              "inning": 4
+            },
+            {
+              "type": "Double",
+              "position": 9,
+              "inning": 3
+            },
+            {
+              "type": "Ground Out",
+              "position": 5,
+              "inning": 1
+            }
+          ]
+        },
+        "aigles_rouge_19": {
+          "name": "Ricardo Reyes Pita",
+          "num": "19",
+          "team": "aigles rouge",
+          "AB": 3,
+          "H": 2,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Double",
+              "position": 9,
+              "inning": 4
+            },
+            {
+              "type": "Triple",
+              "position": 7,
+              "inning": 1
+            }
+          ]
+        },
+        "aigles_rouge_16": {
+          "name": "Mike Lavallière",
+          "num": "16",
+          "team": "aigles rouge",
+          "AB": 3,
+          "H": 2,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Double",
+              "position": 9,
+              "inning": 4
+            },
+            {
+              "type": "Single",
+              "position": 8,
+              "inning": 3
+            }
+          ]
+        },
+        "monarques_bleus_13ua_32": {
+          "name": "Nicolas Lessard",
+          "num": "32",
+          "team": "Monarques Bleus 13UAA 2026",
+          "AB": 2,
+          "H": 0,
+          "BB": 0,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Fly Out",
+              "position": 4,
+              "inning": 4
+            },
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 2
+            }
+          ]
+        },
+        "monarques_bleus_13ua_16": {
+          "name": "James Audy",
+          "num": "16",
+          "team": "Monarques Bleus 13UAA 2026",
+          "AB": 2,
+          "H": 0,
+          "BB": 0,
+          "SO": 1,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Ground Out",
+              "position": 3,
+              "inning": 4
+            }
+          ]
+        },
+        "monarques_bleus_13ua_4": {
+          "name": "Milan Bouzaza",
+          "num": "4",
+          "team": "Monarques Bleus 13UAA 2026",
+          "AB": 1,
+          "H": 1,
+          "BB": 1,
+          "SO": 0,
+          "HBP": 0,
+          "battedBalls": [
+            {
+              "type": "Double",
+              "position": 8,
+              "inning": 4
+            }
+          ]
+        }
+      },
+      "pitchers": {
+        "monarques_bleus_13ua_99": {
+          "name": "Edouard Luneau",
+          "num": "99",
+          "team": "Monarques Bleus 13UAA 2026",
+          "balls": 2,
+          "strikes": 5,
+          "fouls": 2,
+          "outs": 2,
+          "R": 0,
+          "H": 0,
+          "BB": 0,
+          "SO": 2,
+          "HBP": 0
+        },
+        "monarques_bleus_13ua_16": {
+          "name": "James Audy",
+          "num": "16",
+          "team": "Monarques Bleus 13UAA 2026",
+          "balls": 7,
+          "strikes": 6,
+          "fouls": 4,
+          "outs": 2,
+          "R": 3,
+          "H": 4,
+          "BB": 0,
+          "SO": 2,
+          "HBP": 0
+        },
+        "monarques_bleus_13ua_19": {
+          "name": "Adam Matthews",
+          "num": "19",
+          "team": "Monarques Bleus 13UAA 2026",
+          "balls": 16,
+          "strikes": 15,
+          "fouls": 10,
+          "outs": 4,
+          "R": 2,
+          "H": 5,
+          "BB": 1,
+          "SO": 3,
+          "HBP": 1
+        },
+        "monarques_bleus_13ua_22": {
+          "name": "Daniel Cloutier",
+          "num": "22",
+          "team": "Monarques Bleus 13UAA 2026",
+          "balls": 11,
+          "strikes": 17,
+          "fouls": 4,
+          "outs": 6,
+          "R": 1,
+          "H": 2,
+          "BB": 0,
+          "SO": 5,
+          "HBP": 0
+        },
+        "aigles_rouge_to_first": {
+          "name": "to first",
+          "num": null,
+          "team": "aigles rouge",
+          "balls": 0,
+          "strikes": 2,
+          "fouls": 0,
+          "outs": 1,
+          "R": 0,
+          "H": 0,
+          "BB": 0,
+          "SO": 0,
           "HBP": 0
         }
       },
