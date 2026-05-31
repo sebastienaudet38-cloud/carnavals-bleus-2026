@@ -611,10 +611,10 @@ table.stats tfoot td.mono{font-family:var(--mono);}
   <div id="adversaires-content" style="display:none">
     <div style="display:flex;gap:10px;padding:14px 20px;background:var(--bg);border-bottom:1px solid var(--border);flex-wrap:wrap;">
       <span style="font-size:13px;font-weight:600;color:var(--text2);align-self:center;">Outils :</span>
-      <button class="report-btn" onclick="showTab('stats')">
+      <button class="report-btn" onclick="window.open('adversaires.html','_blank')">
         <span class="btn-icon">📋</span> Rapport avant match
       </button>
-      <button class="report-btn" onclick="openPocketCards()">
+      <button class="report-btn" onclick="document.getElementById('adv-iframe').contentWindow.openOpponentPocketCards()">
         <span class="btn-icon">🃏</span> Pocket Cards
       </button>
     </div>
