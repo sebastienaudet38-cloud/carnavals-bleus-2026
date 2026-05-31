@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publication GitHub — Carnavals Bleus</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@0,400;0,600;0,700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1a1a; --g2:#555; --g3:#888; --g4:#bbb; --g5:#e8e8e8; --g6:#f4f4f4;
+  --white:#fff; --blue:#1a4a8a; --green:#1a7a3f; --red:#c0392b; --gold:#b8860b;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Source Sans 3',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--sans);background:#f8f8f8;color:var(--ink);font-size:14px;line-height:1.5;}
+
+.masthead{background:linear-gradient(160deg,#060d18 0%,#0d1b2a 50%,#1c3d8e 100%);color:#fff;padding:22px 40px 18px;display:flex;align-items:center;gap:20px;}
+.masthead-icon{font-size:32px;flex-shrink:0;}
+.masthead-title{font-family:var(--serif);font-size:24px;font-weight:900;line-height:1.1;}
+.masthead-sub{font-size:12px;color:rgba(255,255,255,.45);margin-top:3px;font-style:italic;}
+
+.container{max-width:860px;margin:36px auto;padding:0 24px 60px;}
+
+.toolbar{display:flex;align-items:center;gap:10px;margin-bottom:24px;flex-wrap:wrap;}
+.toolbar-title{font-family:var(--serif);font-size:20px;font-weight:700;flex:1;}
+.btn{padding:7px 16px;border:none;border-radius:4px;font-family:var(--sans);font-size:12px;font-weight:700;cursor:pointer;letter-spacing:.4px;transition:background .15s;}
+.btn-primary{background:var(--ink);color:#fff;}
+.btn-primary:hover{background:#333;}
+.btn-outline{background:#fff;color:var(--ink);border:1px solid var(--g4);}
+.btn-outline:hover{border-color:var(--g2);}
+.btn-green{background:var(--green);color:#fff;}
+.btn-green:hover{background:#15602f;}
+.btn-copy{background:var(--blue);color:#fff;}
+.btn-copy:hover{background:#123a70;}
+
+.file-group{background:#fff;border:1px solid var(--g5);border-radius:6px;margin-bottom:14px;overflow:hidden;}
+.fg-header{background:var(--g6);border-bottom:1px solid var(--g5);padding:8px 16px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--g3);}
+.file-row{display:flex;align-items:center;gap:12px;padding:9px 16px;cursor:pointer;border-bottom:1px solid var(--g6);transition:background .1s;}
+.file-row:last-child{border-bottom:none;}
+.file-row:hover{background:var(--g6);}
+.file-row.missing{opacity:.5;cursor:default;}
+.file-row input[type=checkbox]{width:15px;height:15px;flex-shrink:0;cursor:pointer;accent-color:var(--ink);}
+.file-row input[type=checkbox]:disabled{cursor:default;}
+.fpath{font-family:var(--mono);font-size:11px;color:var(--ink);flex:1;word-break:break-all;}
+.flabel{font-size:11px;color:var(--g3);white-space:nowrap;margin-left:auto;padding-left:10px;}
+.missing-badge{font-size:10px;background:#fee;color:var(--red);border:1px solid #fcc;border-radius:3px;padding:1px 6px;margin-left:6px;white-space:nowrap;}
+
+.commit-block{margin-top:24px;background:#fff;border:1px solid var(--g5);border-radius:6px;padding:18px 20px;}
+.commit-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--g3);margin-bottom:8px;}
+.commit-row{display:flex;gap:10px;align-items:center;}
+.commit-input{flex:1;padding:8px 12px;border:1px solid var(--g4);border-radius:4px;font-family:var(--mono);font-size:12px;color:var(--ink);}
+.commit-input:focus{outline:none;border-color:var(--ink);}
+
+.cmd-block{margin-top:16px;background:#fff;border:1px solid var(--g5);border-radius:6px;padding:18px 20px;display:none;}
+.cmd-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.cmd-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--g3);}
+.cmd-textarea{width:100%;background:var(--g6);border:1px solid var(--g5);border-radius:4px;font-family:var(--mono);font-size:12px;color:var(--ink);padding:12px;resize:vertical;min-height:160px;}
+.copy-confirm{font-size:11px;color:var(--green);margin-left:10px;display:none;}
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="masthead-icon">🐙</div>
+  <div>
+    <div class="masthead-title">Publication GitHub</div>
+    <div class="masthead-sub">Carnavals Bleus 13UAA — Généré le 31 May 2026 à 18:28</div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="toolbar">
+    <div class="toolbar-title">Fichiers à publier</div>
+    <button class="btn btn-outline" onclick="selectAll(true)">Tout cocher</button>
+    <button class="btn btn-outline" onclick="selectAll(false)">Tout décocher</button>
+    <button class="btn btn-primary" onclick="generateCmds()">⚡ Générer les commandes Git</button>
+  </div>
+
+<div class="file-group"><div class="fg-header">Pages web</div>
+<label class="file-row"><input type="checkbox" class="fcheck" value="adversaires.html" checked><span class="fpath">adversaires.html</span><span class="flabel">adversaires.html</span></label>
+</div>
+<div class="file-group"><div class="fg-header">14U AA</div>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/ec160cd3-3498-47eb-a904-f0c680d26776/stats/rapport.pdf" checked><span class="fpath">gc_data/ec160cd3-3498-47eb-a904-f0c680d26776/stats/rapport.pdf</span><span class="flabel">Rapport avant-match</span></label>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/ec160cd3-3498-47eb-a904-f0c680d26776/stats/pocket_cards.pdf" checked><span class="fpath">gc_data/ec160cd3-3498-47eb-a904-f0c680d26776/stats/pocket_cards.pdf</span><span class="flabel">Pocket Cards</span></label>
+</div>
+<div class="file-group"><div class="fg-header">Aigles Noirs</div>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/c961d5f6-308b-4d3d-8c71-08682c59f4a8/stats/rapport.pdf" checked><span class="fpath">gc_data/c961d5f6-308b-4d3d-8c71-08682c59f4a8/stats/rapport.pdf</span><span class="flabel">Rapport avant-match</span></label>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/c961d5f6-308b-4d3d-8c71-08682c59f4a8/stats/pocket_cards.pdf" checked><span class="fpath">gc_data/c961d5f6-308b-4d3d-8c71-08682c59f4a8/stats/pocket_cards.pdf</span><span class="flabel">Pocket Cards</span></label>
+</div>
+<div class="file-group"><div class="fg-header">Aigles Noirs U13</div>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/32efb512-039c-488b-9538-159281fd69fc/stats/rapport.pdf" checked><span class="fpath">gc_data/32efb512-039c-488b-9538-159281fd69fc/stats/rapport.pdf</span><span class="flabel">Rapport avant-match</span></label>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/32efb512-039c-488b-9538-159281fd69fc/stats/pocket_cards.pdf" checked><span class="fpath">gc_data/32efb512-039c-488b-9538-159281fd69fc/stats/pocket_cards.pdf</span><span class="flabel">Pocket Cards</span></label>
+</div>
+<div class="file-group"><div class="fg-header">Aigles Rouges 13U-AA 2026</div>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/f51060ec-cc61-4b9e-ad7c-95273a9267e2/stats/rapport.pdf" checked><span class="fpath">gc_data/f51060ec-cc61-4b9e-ad7c-95273a9267e2/stats/rapport.pdf</span><span class="flabel">Rapport avant-match</span></label>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/f51060ec-cc61-4b9e-ad7c-95273a9267e2/stats/pocket_cards.pdf" checked><span class="fpath">gc_data/f51060ec-cc61-4b9e-ad7c-95273a9267e2/stats/pocket_cards.pdf</span><span class="flabel">Pocket Cards</span></label>
+</div>
+<div class="file-group"><div class="fg-header">Associés Bleus Laval 13U AA</div>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/f6c0663d-ad61-42d9-8b4c-66a1932d2ee0/stats/rapport.pdf" checked><span class="fpath">gc_data/f6c0663d-ad61-42d9-8b4c-66a1932d2ee0/stats/rapport.pdf</span><span class="flabel">Rapport avant-match</span></label>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/f6c0663d-ad61-42d9-8b4c-66a1932d2ee0/stats/pocket_cards.pdf" checked><span class="fpath">gc_data/f6c0663d-ad61-42d9-8b4c-66a1932d2ee0/stats/pocket_cards.pdf</span><span class="flabel">Pocket Cards</span></label>
+</div>
+<div class="file-group"><div class="fg-header">Associés Navy Laval 13U AA</div>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/49eee552-14ea-4472-ab82-f678ead24d2e/stats/rapport.pdf" checked><span class="fpath">gc_data/49eee552-14ea-4472-ab82-f678ead24d2e/stats/rapport.pdf</span><span class="flabel">Rapport avant-match</span></label>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/49eee552-14ea-4472-ab82-f678ead24d2e/stats/pocket_cards.pdf" checked><span class="fpath">gc_data/49eee552-14ea-4472-ab82-f678ead24d2e/stats/pocket_cards.pdf</span><span class="flabel">Pocket Cards</span></label>
+</div>
+<div class="file-group"><div class="fg-header">Carnavals Blancs 13UAA</div>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/carnavals_blancs/stats/rapport.pdf" checked><span class="fpath">gc_data/carnavals_blancs/stats/rapport.pdf</span><span class="flabel">Rapport avant-match</span></label>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/carnavals_blancs/stats/pocket_cards.pdf" checked><span class="fpath">gc_data/carnavals_blancs/stats/pocket_cards.pdf</span><span class="flabel">Pocket Cards</span></label>
+</div>
+<div class="file-group"><div class="fg-header">Carnavals Bleus 13U</div>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/9a8fcbed-ae97-431c-9ccd-618f696e26e5/stats/rapport.pdf" checked><span class="fpath">gc_data/9a8fcbed-ae97-431c-9ccd-618f696e26e5/stats/rapport.pdf</span><span class="flabel">Rapport avant-match</span></label>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/9a8fcbed-ae97-431c-9ccd-618f696e26e5/stats/pocket_cards.pdf" checked><span class="fpath">gc_data/9a8fcbed-ae97-431c-9ccd-618f696e26e5/stats/pocket_cards.pdf</span><span class="flabel">Pocket Cards</span></label>
+</div>
+<div class="file-group"><div class="fg-header">Carnavals Bleus 18U</div>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/9f1037cf-8d07-494f-9184-ecae9b06d3b9/stats/rapport.pdf" checked><span class="fpath">gc_data/9f1037cf-8d07-494f-9184-ecae9b06d3b9/stats/rapport.pdf</span><span class="flabel">Rapport avant-match</span></label>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/9f1037cf-8d07-494f-9184-ecae9b06d3b9/stats/pocket_cards.pdf" checked><span class="fpath">gc_data/9f1037cf-8d07-494f-9184-ecae9b06d3b9/stats/pocket_cards.pdf</span><span class="flabel">Pocket Cards</span></label>
+</div>
+<div class="file-group"><div class="fg-header">Carnavals Rouges 13U AA 2026</div>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/f4e6a525-eb79-489b-8cc7-71841f3498ea/stats/rapport.pdf" checked><span class="fpath">gc_data/f4e6a525-eb79-489b-8cc7-71841f3498ea/stats/rapport.pdf</span><span class="flabel">Rapport avant-match</span></label>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/f4e6a525-eb79-489b-8cc7-71841f3498ea/stats/pocket_cards.pdf" checked><span class="fpath">gc_data/f4e6a525-eb79-489b-8cc7-71841f3498ea/stats/pocket_cards.pdf</span><span class="flabel">Pocket Cards</span></label>
+</div>
+<div class="file-group"><div class="fg-header">Combattants</div>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/combattants/stats/rapport.pdf" checked><span class="fpath">gc_data/combattants/stats/rapport.pdf</span><span class="flabel">Rapport avant-match</span></label>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/combattants/stats/pocket_cards.pdf" checked><span class="fpath">gc_data/combattants/stats/pocket_cards.pdf</span><span class="flabel">Pocket Cards</span></label>
+</div>
+<div class="file-group"><div class="fg-header">Guerriers Rouges 13uAA</div>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/890cb99c-2950-40bc-a8a0-8caff6e8a7a2/stats/rapport.pdf" checked><span class="fpath">gc_data/890cb99c-2950-40bc-a8a0-8caff6e8a7a2/stats/rapport.pdf</span><span class="flabel">Rapport avant-match</span></label>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/890cb99c-2950-40bc-a8a0-8caff6e8a7a2/stats/pocket_cards.pdf" checked><span class="fpath">gc_data/890cb99c-2950-40bc-a8a0-8caff6e8a7a2/stats/pocket_cards.pdf</span><span class="flabel">Pocket Cards</span></label>
+</div>
+<div class="file-group"><div class="fg-header">Laurentides Red Sox Bleus 13UAA</div>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/81950dc2-a4af-433f-8edd-7fa484ab4f20/stats/rapport.pdf" checked><span class="fpath">gc_data/81950dc2-a4af-433f-8edd-7fa484ab4f20/stats/rapport.pdf</span><span class="flabel">Rapport avant-match</span></label>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/81950dc2-a4af-433f-8edd-7fa484ab4f20/stats/pocket_cards.pdf" checked><span class="fpath">gc_data/81950dc2-a4af-433f-8edd-7fa484ab4f20/stats/pocket_cards.pdf</span><span class="flabel">Pocket Cards</span></label>
+</div>
+<div class="file-group"><div class="fg-header">Monarques Bleus 13UAA 2026</div>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/680a2894-6892-4b1a-8950-edefb2f85192/stats/rapport.pdf" checked><span class="fpath">gc_data/680a2894-6892-4b1a-8950-edefb2f85192/stats/rapport.pdf</span><span class="flabel">Rapport avant-match</span></label>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/680a2894-6892-4b1a-8950-edefb2f85192/stats/pocket_cards.pdf" checked><span class="fpath">gc_data/680a2894-6892-4b1a-8950-edefb2f85192/stats/pocket_cards.pdf</span><span class="flabel">Pocket Cards</span></label>
+</div>
+<div class="file-group"><div class="fg-header">Monarques Gris 13UAA</div>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/33e4139e-e613-4fc5-b9de-d8cf8702f812/stats/rapport.pdf" checked><span class="fpath">gc_data/33e4139e-e613-4fc5-b9de-d8cf8702f812/stats/rapport.pdf</span><span class="flabel">Rapport avant-match</span></label>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/33e4139e-e613-4fc5-b9de-d8cf8702f812/stats/pocket_cards.pdf" checked><span class="fpath">gc_data/33e4139e-e613-4fc5-b9de-d8cf8702f812/stats/pocket_cards.pdf</span><span class="flabel">Pocket Cards</span></label>
+</div>
+<div class="file-group"><div class="fg-header">Monarques Oranges 13UAA 2026</div>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/a9dffce2-3a09-4760-b597-a2f39d63901d/stats/rapport.pdf" checked><span class="fpath">gc_data/a9dffce2-3a09-4760-b597-a2f39d63901d/stats/rapport.pdf</span><span class="flabel">Rapport avant-match</span></label>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/a9dffce2-3a09-4760-b597-a2f39d63901d/stats/pocket_cards.pdf" checked><span class="fpath">gc_data/a9dffce2-3a09-4760-b597-a2f39d63901d/stats/pocket_cards.pdf</span><span class="flabel">Pocket Cards</span></label>
+</div>
+<div class="file-group"><div class="fg-header">Red Sox Laurentides 13UAA Rouge 2026</div>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/378c91e0-acba-433b-b095-270cd7f9e564/stats/rapport.pdf" checked><span class="fpath">gc_data/378c91e0-acba-433b-b095-270cd7f9e564/stats/rapport.pdf</span><span class="flabel">Rapport avant-match</span></label>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/378c91e0-acba-433b-b095-270cd7f9e564/stats/pocket_cards.pdf" checked><span class="fpath">gc_data/378c91e0-acba-433b-b095-270cd7f9e564/stats/pocket_cards.pdf</span><span class="flabel">Pocket Cards</span></label>
+</div>
+<div class="file-group"><div class="fg-header">Royaux 13UAA</div>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/royaux_13uaa/stats/rapport.pdf" checked><span class="fpath">gc_data/royaux_13uaa/stats/rapport.pdf</span><span class="flabel">Rapport avant-match</span></label>
+<label class="file-row"><input type="checkbox" class="fcheck" value="gc_data/royaux_13uaa/stats/pocket_cards.pdf" checked><span class="fpath">gc_data/royaux_13uaa/stats/pocket_cards.pdf</span><span class="flabel">Pocket Cards</span></label>
+</div>
+
+  <div class="commit-block">
+    <div class="commit-label">Message de commit</div>
+    <div class="commit-row">
+      <input class="commit-input" id="commit-msg" type="text" value="Mise à jour rapports — 31 May 2026 à 18:28">
+    </div>
+  </div>
+
+  <div class="cmd-block" id="cmd-block">
+    <div class="cmd-header">
+      <div class="cmd-label">Commandes Git (copier-coller dans le terminal)</div>
+      <div style="display:flex;align-items:center;">
+        <button class="btn btn-copy" onclick="copyCmd()">📋 Copier</button>
+        <span class="copy-confirm" id="copy-confirm">✓ Copié !</span>
+      </div>
+    </div>
+    <textarea class="cmd-textarea" id="cmd-textarea" readonly></textarea>
+  </div>
+</div>
+
+<script>
+function selectAll(state) {
+  document.querySelectorAll('.fcheck:not(:disabled)').forEach(cb => cb.checked = state);
+}
+
+function generateCmds() {
+  const checked = [...document.querySelectorAll('.fcheck:checked')].map(cb => cb.value);
+  if (!checked.length) { alert('Cochez au moins un fichier.'); return; }
+  const msg = document.getElementById('commit-msg').value.trim() || 'Mise à jour';
+  const lines = checked.map(p => `git add "${p}"`);
+  lines.push(`git commit -m "${msg}"`);
+  lines.push('git push');
+  document.getElementById('cmd-textarea').value = lines.join('\n');
+  const block = document.getElementById('cmd-block');
+  block.style.display = 'block';
+  block.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function copyCmd() {
+  const ta = document.getElementById('cmd-textarea');
+  ta.select();
+  document.execCommand('copy');
+  const c = document.getElementById('copy-confirm');
+  c.style.display = 'inline';
+  setTimeout(() => c.style.display = 'none', 2000);
+}
+</script>
+</body>
+</html>
