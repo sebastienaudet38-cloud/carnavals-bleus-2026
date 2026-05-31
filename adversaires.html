@@ -30933,11 +30933,103 @@ function openCards(){
   window.open('gc_data/'+currentTeam+'/stats/pocket_cards.pdf','_blank');
 }
 
+function openOpponentPocketCards(){
+  if(!currentTeam) return;
+  const t=DATA.teams[currentTeam];
+  const batting=[...(t.batting||[])].sort((a,b)=>b.AVG-a.AVG);
+  const oppName=t.team_name;
+
+  function noHR(hc){return(hc||[]).filter(e=>e.result!=='Home Run'&&e.type!=='home_run');}
+
+  function dirLabel(p){
+    const hc=noHR(p.hit_chart),c={};
+    hc.forEach(e=>{c[e.position||'']=(c[e.position||'']||0)+1;});
+    const pD=(c['first baseman']||0)+(c['second baseman']||0)+(c['right fielder']||0);
+    const pC=(c['pitcher']||0)+(c['catcher']||0)+(c['shortstop']||0)+(c['second baseman']||0)+(c['center fielder']||0);
+    const pG=(c['third baseman']||0)+(c['shortstop']||0)+(c['left fielder']||0);
+    const mx=Math.max(pD,pC,pG);
+    if(!mx)return'?';
+    const parts=[];
+    if(pD===mx)parts.push('DROITE');
+    if(pC===mx)parts.push('CENTRE');
+    if(pG===mx)parts.push('GAUCHE');
+    return parts.length===3?'PARTOUT':parts.join(' / ');
+  }
+
+  function pwrScore(p){
+    const ab=p.AB||0,h=p.H||0,d=p['2B']||0,tr=p['3B']||0,hr=p.HR||0;
+    const hc=noHR(p.hit_chart),avg=ab?h/ab:0;
+    const pH=ab>=5?(tr*2+hr*3)/ab:0,pL=ab>=8?d/ab:0;
+    const ofN=hc.filter(e=>['left fielder','center fielder','right fielder'].includes(e.position||'')).length;
+    const ofR=hc.length>=4?ofN/hc.length:0;
+    if(pH>=.40||avg>=.750&&pH>=.10||avg>=.500&&pL>=.15&&ofR>=.40||avg>=.480&&pL>=.14)return 3;
+    if(pH>=.10||avg>=.400&&ofR>=.50||avg>=.380&&pL>=.10||avg>=.430&&(d+tr+hr)>=1&&ab>=8)return 2;
+    return 1;
+  }
+
+  function posPcts(p){
+    const MAP={'first baseman':'1B','second baseman':'2B','shortstop':'SS','third baseman':'3B','left fielder':'LF','center fielder':'CF','right fielder':'RF'};
+    const hc=noHR(p.hit_chart);if(!hc.length)return{};
+    const c={};hc.forEach(e=>{const k=MAP[e.position||''];if(k)c[k]=(c[k]||0)+1;});
+    const tot=hc.length,r={};Object.keys(c).forEach(k=>r[k]=Math.round(c[k]/tot*100));return r;
+  }
+
+  function batsLbl(p){return{R:'Droitier',L:'Gaucher',S:'Switch'}[p.bats||'']||'';}
+  function bars(n){return[1,2,3].map(i=>`<span class="bar${i<=n?' on':''}"></span>`).join('');}
+
+  function pRow(p){
+    const num=p.number||'?';
+    const name=(p.last_name||p.first_name||'#'+num).substring(0,14);
+    const sub=batsLbl(p)?`<span class="sub">${batsLbl(p)}</span>`:'';
+    return`<div class="pr"><span class="pnum">${num}</span><span class="pname">${name}${sub}</span><span class="pdir">${dirLabel(p)}<span class="pbars">${bars(pwrScore(p))}</span></span></div>`;
+  }
+
+  const FIELDS=['1B','2B','SS','3B','LF','CF','RF'];
+  function coachCard(){
+    const hdr=`<div class="pr hdr"><span class="pnum">#</span><span class="pname">Nom</span>${FIELDS.map(f=>`<span class="pf">${f}</span>`).join('')}</div>`;
+    const rows=batting.map(p=>{const pp=posPcts(p);return`<div class="pr"><span class="pnum">${p.number||'?'}</span><span class="pname">${(p.last_name||'?').substring(0,10)}</span>${FIELDS.map(f=>`<span class="pf">${pp[f]?pp[f]+'%':''}</span>`).join('')}</div>`;}).join('');
+    return`<div class="card"><div class="ch">${oppName}</div><div class="cb coach">${hdr}${rows}</div></div>`;
+  }
+
+  const CHUNK=9;let cards='';
+  for(let i=0;i<batting.length;i+=CHUNK){
+    const g=batting.slice(i,i+CHUNK);
+    cards+=`<div class="card"><div class="ch">${oppName}</div><div class="cb">${g.map(pRow).join('')}</div></div>`;
+  }
+  cards+=coachCard();
+
+  const css=`*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif;background:#f5f5f5;padding:12px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:920px;margin:0 auto}
+.card{border:1.5px solid #000;border-radius:4px;overflow:hidden;background:#fff;break-inside:avoid}
+.ch{background:#111;color:#fff;font-size:9px;font-weight:700;text-align:center;padding:5px 4px;letter-spacing:1px;text-transform:uppercase}
+.cb{padding:2px 4px}.pr{display:flex;align-items:center;padding:4px 2px;border-bottom:1px solid #eee;gap:4px}
+.pr:last-child{border-bottom:none}.pr:nth-child(even){background:#f8f8f8}
+.hdr{font-size:8px;font-weight:700;color:#555}
+.pnum{font-weight:700;font-size:11px;min-width:22px}
+.pname{flex:1;font-size:10px;display:flex;flex-direction:column}
+.sub{font-size:7px;color:#666;margin-top:1px}
+.pdir{font-size:7.5px;font-weight:700;text-align:right;min-width:56px;display:flex;flex-direction:column;align-items:flex-end}
+.pbars{display:flex;gap:2px;margin-top:2px}
+.bar{width:8px;height:4px;background:#ddd;border-radius:1px}.bar.on{background:#111}
+.pf{font-size:8px;text-align:center;min-width:22px;font-family:monospace}
+.coach .pr{padding:2px 2px}
+.no-print{text-align:center;margin-bottom:10px}
+@media print{body{background:#fff;padding:0}.no-print{display:none}.grid{gap:4px}@page{size:letter;margin:10mm}}`;
+
+  const w=window.open('','_blank','width=1000,height=760');
+  w.document.write(`<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><title>Pocket Cards — ${oppName}</title><style>${css}</style></head><body>
+<div class="no-print"><button onclick="window.print()" style="background:#111;color:#fff;border:none;padding:8px 20px;border-radius:4px;cursor:pointer;font-size:13px;margin-right:8px">🖸 Imprimer</button><span style="font-size:12px;color:#666">${oppName}</span></div>
+<div class="grid">${cards}</div></body></html>`);
+  w.document.close();
+}
+
 function selectTeam(id){
   if(!id) return;
   currentTeam=id; currentPlayer=null; currentPitcher=null;
   const btn=document.getElementById('pdf-btn');
   if(btn) btn.style.display='block';
+  const cbtn=document.getElementById('card-btn');
+  if(cbtn) cbtn.style.display='block';
   const t=DATA.teams[id];
   document.getElementById('team-headline').textContent=t.team_name;
   document.getElementById('team-deck').textContent=
