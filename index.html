@@ -609,15 +609,6 @@ table.stats tfoot td.mono{font-family:var(--mono);}
     </div>
   </div>
   <div id="adversaires-content" style="display:none">
-    <div style="display:flex;gap:10px;padding:14px 20px;background:var(--bg);border-bottom:1px solid var(--border);flex-wrap:wrap;">
-      <span style="font-size:13px;font-weight:600;color:var(--text2);align-self:center;">Outils :</span>
-      <button class="report-btn" onclick="window.open('adversaires.html','_blank')">
-        <span class="btn-icon">📋</span> Rapport avant match
-      </button>
-      <button class="report-btn" onclick="document.getElementById('adv-iframe').contentWindow.openOpponentPocketCards()">
-        <span class="btn-icon">🃏</span> Pocket Cards
-      </button>
-    </div>
     <iframe id="adv-iframe" src="" title="Statistiques adversaires"></iframe>
   </div>
 </div>
@@ -750,7 +741,7 @@ function renderFeaturedMatch(matches) {
   const mainLinkLbl = m.link ? 'Spordle →' : '▶ Vidéo';
   const linkHtml = mainLink ? `<a href="${esc(mainLink)}" target="_blank" class="hero-cta">${mainLinkLbl}</a>` : '';
   el.innerHTML = `
-    <p class="hero-eyebrow">Résultat de la Partie</p>
+    <p class="hero-eyebrow">Résultat de la dernière partie</p>
     <div class="hero-score-line ${resClass}">
       Carnavals: <strong>${m.us}</strong>&nbsp;&nbsp;|&nbsp;&nbsp;${esc(m.opp)}: <strong>${m.them}</strong>
     </div>
