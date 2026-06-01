@@ -771,6 +771,7 @@ function renderStat(t, matches) {
   const L = (matches||[]).filter(m => m.us < m.them).length;
   const T = (matches||[]).filter(m => m.us === m.them).length;
   const rec = T ? `${W}–${L}–${T}` : `${W}–${L}`;
+  const gp = W + L + T;
   // Home stats pills
   const hsEl = document.getElementById('home-stats-bar');
   if (hsEl) hsEl.innerHTML = `
@@ -779,7 +780,7 @@ function renderStat(t, matches) {
     <div class="stat-pill"><span class="sp-val era">${t.era||'—'}</span><span class="sp-lbl">MPM équipe</span></div>
     <div class="stat-pill"><span class="sp-val">${t.sb||'—'}</span><span class="sp-lbl">Buts volés</span></div>
     <div class="stat-pill"><span class="sp-val">${t.hits||'—'}</span><span class="sp-lbl">Coups sûrs</span></div>
-    <div class="stat-pill"><span class="sp-val">${t.gp||'—'}</span><span class="sp-lbl">PJ</span></div>`;
+    <div class="stat-pill"><span class="sp-val">${gp||'—'}</span><span class="sp-lbl">PJ</span></div>`;
 }
 
 // ── MATCHES ───────────────────────────────────────────────────────────
