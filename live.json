@@ -14,7 +14,7 @@
     "balls": 0,
     "strikes": 1,
     "outs": 0,
-    "batter_name": "Z Z",
+    "batter_name": "Guillaume Nadeau",
     "batter_num": "88",
     "pitcher_name": "Maxime Elmaleh",
     "pitch_count": 16,
@@ -23,6 +23,6 @@
       true,
       false
     ],
-    "last_play": "N n walks, maxime elmaleh pitching. s s remains at 2nd. Maxime Elmaleh — 1re prise (man.)"
+    "last_play": "N n walks, maxime elmaleh pitching. s s remains at 2nd. Maxime Elmaleh — Strike 1 swinging"
   }
 }
