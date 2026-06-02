@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Carnavals Bleus — Saison 2026</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#071018">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Carnavals">
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -222,7 +228,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .sb-o-dot.on{background:#c0392b;border-color:#c0392b;
   box-shadow:0 0 5px rgba(192,57,43,.6);}
 /* Colonne droite : compte + lancers */
-.sb-right{display:flex;flex-direction:column;align-items:center;justify-content:center;
+.sb-right{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;
   padding:10px 16px;gap:6px;min-width:72px;}
 .sb-count-big{font-family:var(--mono);font-size:28px;font-weight:900;
   color:#fff;line-height:1;}
@@ -242,7 +248,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .sb-pval{font-size:12px;font-weight:700;color:rgba(255,255,255,.9);}
 .sb-pval .num,.sb-pval .pitches{color:rgba(255,255,255,.35);font-weight:400;}
 /* Dots B/S jaunes (même style que bases) */
-.sb-bso-dots{display:flex;flex-direction:column;gap:7px;align-items:center;}
+.sb-bso-dots{display:flex;flex-direction:column;gap:7px;align-items:flex-start;}
 .sb-bso-line{display:flex;align-items:center;gap:6px;}
 .sb-bso-label{font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;
   color:rgba(255,255,255,.3);min-width:10px;}
@@ -531,6 +537,75 @@ table.stats tfoot td.mono{font-family:var(--mono);}
   .stats-wrap{box-shadow:none;border:1px solid #ccc;}
   table.stats thead th{background:#0d1b2a;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
 }
+
+/* ── PWA INSTALL BUTTON ── */
+#pwa-install-btn{
+  display:none;align-items:center;gap:7px;
+  margin-left:14px;flex-shrink:0;
+  background:rgba(255,255,255,.13);border:1.5px solid rgba(255,255,255,.28);
+  color:#fff;padding:8px 15px;border-radius:8px;
+  font-size:12px;font-weight:700;letter-spacing:.4px;cursor:pointer;
+  font-family:var(--sans);transition:all .2s;white-space:nowrap;
+}
+#pwa-install-btn:hover{background:rgba(255,255,255,.24);border-color:rgba(255,255,255,.55);}
+#pwa-install-btn .pwa-icon{font-size:15px;line-height:1;}
+@media(max-width:720px){
+  #pwa-install-btn .pwa-label{display:none;}
+  #pwa-install-btn{padding:8px 11px;}
+}
+
+/* ── iOS INSTALL POPUP ── */
+.ios-popup-bg{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.55);z-index:2000;
+  align-items:flex-end;justify-content:center;
+}
+.ios-popup-bg.open{display:flex;}
+.ios-popup{
+  background:#1c1c1e;border-radius:20px 20px 0 0;
+  padding:28px 24px 44px;width:100%;max-width:480px;
+  color:#fff;animation:slideUp .28s ease;
+}
+@keyframes slideUp{from{transform:translateY(100%);}to{transform:translateY(0);}}
+.ios-popup-header{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:26px;
+}
+.ios-popup-title{font-size:17px;font-weight:700;letter-spacing:.2px;}
+.ios-popup-close{
+  background:rgba(255,255,255,.14);border:none;color:#fff;
+  width:30px;height:30px;border-radius:50%;font-size:16px;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  font-family:var(--sans);
+}
+.ios-popup-close:hover{background:rgba(255,255,255,.25);}
+.ios-steps{display:flex;flex-direction:column;gap:20px;}
+.ios-step{display:flex;align-items:flex-start;gap:14px;}
+.ios-step-num{
+  background:#1e6fd9;color:#fff;border-radius:50%;
+  width:26px;height:26px;display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:800;flex-shrink:0;margin-top:2px;
+}
+.ios-step-body{font-size:15px;line-height:1.55;color:rgba(255,255,255,.88);}
+.ios-step-body strong{color:#fff;}
+.ios-step-body .step-icon{
+  display:inline-flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.12);border-radius:6px;
+  padding:2px 7px;margin:0 3px;font-size:16px;vertical-align:middle;
+}
+.ios-popup-note{
+  margin-top:22px;padding:12px 14px;
+  background:rgba(255,255,255,.07);border-radius:10px;
+  font-size:12px;color:rgba(255,255,255,.5);line-height:1.5;
+}
+.ios-popup-ok{
+  display:block;width:100%;margin-top:24px;
+  background:#1e6fd9;color:#fff;border:none;
+  padding:15px;border-radius:12px;
+  font-size:16px;font-weight:700;cursor:pointer;font-family:var(--sans);
+  transition:background .15s;
+}
+.ios-popup-ok:hover{background:#1a5fc4;}
 </style>
 </head>
 <body>
@@ -591,6 +666,10 @@ table.stats tfoot td.mono{font-family:var(--mono);}
     <button class="tab-btn" data-tab="adversaires" onclick="showTab('adversaires')">Adversaires</button>
     <button class="tab-btn" data-tab="matchs"      onclick="showTab('matchs')">Parties</button>
   </nav>
+  <button id="pwa-install-btn" onclick="handleInstall()" title="Installer l'application sur votre téléphone">
+    <span class="pwa-icon">📲</span>
+    <span class="pwa-label">Installer l'app</span>
+  </button>
 </header>
 
 <!-- TAB: HOME / ACCUEIL -->
@@ -783,12 +862,12 @@ table.stats tfoot td.mono{font-family:var(--mono);}
 'use strict';
 const TEAM_LOGO_B64 = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMjAgMjIwIiB3aWR0aD0iMjIwIiBoZWlnaHQ9IjIyMCI+CjxkZWZzPgogIDxyYWRpYWxHcmFkaWVudCBpZD0iYmciIGN4PSI0MiUiIGN5PSIzOCUiIHI9IjYyJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMWUzYzcyIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwNjEwMTYiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxmaWx0ZXIgaWQ9InR4dC1zaGFkb3ciIHg9Ii01JSIgeT0iLTUlIiB3aWR0aD0iMTEwJSIgaGVpZ2h0PSIxMzAlIj4KICAgIDxmZURyb3BTaGFkb3cgZHg9IjEuNSIgZHk9IjEuNSIgc3RkRGV2aWF0aW9uPSIyIiBmbG9vZC1jb2xvcj0iIzAwMCIgZmxvb2Qtb3BhY2l0eT0iMC42Ii8+CiAgPC9maWx0ZXI+CjwvZGVmcz4KCjwhLS0gT3V0ZXIgcmluZyAtLT4KPGNpcmNsZSBjeD0iMTEwIiBjeT0iMTEwIiByPSIxMDciIGZpbGw9InVybCgjYmcpIi8+CjxjaXJjbGUgY3g9IjExMCIgY3k9IjExMCIgcj0iMTA3IiBmaWxsPSJub25lIiBzdHJva2U9IiNjMDM5MmIiIHN0cm9rZS13aWR0aD0iNiIvPgo8Y2lyY2xlIGN4PSIxMTAiIGN5PSIxMTAiIHI9Ijk5IiAgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzAzOTJiIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWRhc2hhcnJheT0iNCA2Ii8+CjxjaXJjbGUgY3g9IjExMCIgY3k9IjExMCIgcj0iOTUiICBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiIHN0cm9rZS13aWR0aD0iMSIvPgoKPCEtLSBBcmMgcGF0aCBmb3IgIkNhcm5hdmFscyIgdGV4dCAtLT4KPHBhdGggaWQ9ImFyYyIgZD0iTSAxOCAxMDUgQSA5MiA5MiAwIDAgMSAyMDIgMTA1IiBmaWxsPSJub25lIi8+Cgo8IS0tICJDYXJuYXZhbHMiIHdoaXRlIHNoYWRvdyB0ZXh0IChvZmZzZXQpIC0tPgo8dGV4dCBmb250LXNpemU9IjM2IiBmb250LWZhbWlseT0iR2VvcmdpYSwnVGltZXMgTmV3IFJvbWFuJyxzZXJpZiIgZm9udC1zdHlsZT0iaXRhbGljIgogICAgICBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0icmdiYSgwLDAsMCwwLjQpIj4KICA8dGV4dFBhdGggaHJlZj0iI2FyYyIgc3RhcnRPZmZzZXQ9IjUwJSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9IjIiPkNhcm5hdmFsczwvdGV4dFBhdGg+CjwvdGV4dD4KPCEtLSAiQ2FybmF2YWxzIiBtYWluIHJlZCB0ZXh0IC0tPgo8dGV4dCBmb250LXNpemU9IjM2IiBmb250LWZhbWlseT0iR2VvcmdpYSwnVGltZXMgTmV3IFJvbWFuJyxzZXJpZiIgZm9udC1zdHlsZT0iaXRhbGljIgogICAgICBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI2U4MjgxYSIgZmlsdGVyPSJ1cmwoI3R4dC1zaGFkb3cpIj4KICA8dGV4dFBhdGggaHJlZj0iI2FyYyIgc3RhcnRPZmZzZXQ9IjUwJSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Q2FybmF2YWxzPC90ZXh0UGF0aD4KPC90ZXh0PgoKPCEtLSBTd29vc2ggdW5kZXJsaW5lIC0tPgo8cGF0aCBkPSJNIDM4IDEyMCBRIDExMCAxNDAgMTgyIDEyMCIKICAgICAgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzAzOTJiIiBzdHJva2Utd2lkdGg9IjMuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxjaXJjbGUgY3g9IjM4IiAgY3k9IjEyMCIgcj0iMy41IiBmaWxsPSIjYzAzOTJiIi8+CjxjaXJjbGUgY3g9IjE4MiIgY3k9IjEyMCIgcj0iMy41IiBmaWxsPSIjYzAzOTJiIi8+Cgo8IS0tIEJhc2ViYWxsIGljb24gY2VudHJlIC0tPgo8Y2lyY2xlIGN4PSIxMTAiIGN5PSIxNjIiIHI9IjI2IiBmaWxsPSIjZjVmMGVhIi8+CjxjaXJjbGUgY3g9IjExMCIgY3k9IjE2MiIgcj0iMjYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3Ryb2tlLXdpZHRoPSIxIi8+CjwhLS0gQmFzZWJhbGwgc2VhbSBsZWZ0IC0tPgo8cGF0aCBkPSJNIDk4IDE1MiBDIDk1IDE1NyA5NSAxNjcgOTggMTcyIiBmaWxsPSJub25lIiBzdHJva2U9IiNjMDM5MmIiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjwhLS0gQmFzZWJhbGwgc2VhbSByaWdodCAtLT4KPHBhdGggZD0iTSAxMjIgMTUyIEMgMTI1IDE1NyAxMjUgMTY3IDEyMiAxNzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2MwMzkyYiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPCEtLSBTZWFtIHN0aXRjaGVzIGxlZnQgdG9wIC0tPgo8cGF0aCBkPSJNIDk4IDE1MiBDIDEwMCAxNTAgMTAzIDE1MCAxMDUgMTUxIiBmaWxsPSJub25lIiBzdHJva2U9IiNjMDM5MmIiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPCEtLSBTZWFtIHN0aXRjaGVzIHJpZ2h0IHRvcCAtLT4KPHBhdGggZD0iTSAxMjIgMTUyIEMgMTIwIDE1MCAxMTcgMTUwIDExNSAxNTEiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2MwMzkyYiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8IS0tIFNlYW0gc3RpdGNoZXMgbGVmdCBib3R0b20gLS0+CjxwYXRoIGQ9Ik0gOTggMTcyIEMgMTAwIDE3NCAxMDMgMTc0IDEwNSAxNzMiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2MwMzkyYiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8IS0tIFNlYW0gc3RpdGNoZXMgcmlnaHQgYm90dG9tIC0tPgo8cGF0aCBkPSJNIDEyMiAxNzIgQyAxMjAgMTc0IDExNyAxNzQgMTE1IDE3MyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzAzOTJiIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cgo8IS0tICJCTEVVUyAxM1VBQSIgYm90dG9tIHRleHQgLS0+Cjx0ZXh0IHg9IjExMCIgeT0iMjA4IiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNykiIGZvbnQtc2l6ZT0iMTIuNSIKICAgICAgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGxldHRlci1zcGFjaW5nPSIzIiBmb250LXdlaWdodD0iNzAwIj4KICBCTEVVUyDCtyAxM1VBQQo8L3RleHQ+Cgo8IS0tIERlY29yYXRpdmUgc3RhcnMgLS0+Cjx0ZXh0IHg9IjQ0IiAgeT0iMjA2IiBmaWxsPSIjYzAzOTJiIiBmb250LXNpemU9IjkiIHRleHQtYW5jaG9yPSJtaWRkbGUiPuKYhTwvdGV4dD4KPHRleHQgeD0iMTc2IiB5PSIyMDYiIGZpbGw9IiNjMDM5MmIiIGZvbnQtc2l6ZT0iOSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+4piFPC90ZXh0Pgo8L3N2Zz4=';
 const RAW_URL  = 'https://raw.githubusercontent.com/sebastienaudet38-cloud/carnavals-bleus-2026/main/matches.json';
-// raw.githubusercontent.com + ?t=Date.now() → Fastly utilise le query string comme clé de cache
-// → URL unique à chaque appel → toujours frais, pas de rate limit
-const LIVE_URL = 'https://raw.githubusercontent.com/sebastienaudet38-cloud/carnavals-bleus-2026/main/live.json';
+// GitHub Contents API — pas de cache CDN, 60 req/h par IP (sans token)
+// ETag : les 304 "rien changé" ne consomment pas le quota → intervalle 60s viable
+const LIVE_API  = 'https://api.github.com/repos/sebastienaudet38-cloud/carnavals-bleus-2026/contents/live.json';
 let _data = null, _passwords = {}, _sortKey = 'avg', _selRow = null;
-let _liveActive = false, _liveTimer = null;
-const _failedLogos = new Set(); // logos 404 déjà testés → pas de retry
+let _liveActive = false, _liveTimer = null, _liveEtag = null;
+const _failedLogos = new Set();
 
 // ── TABS ─────────────────────────────────────────────────────────────
 function showTab(name) {
@@ -1062,9 +1141,15 @@ function renderLiveGame(live) {
 
 async function checkLive() {
   try {
-    const r = await fetch(LIVE_URL + '?t=' + Date.now(), { cache: 'no-store' });
+    // ETag : si live.json n'a pas changé → 304 gratuit (ne consomme pas le quota 60/h)
+    const hdrs = { 'Accept': 'application/vnd.github.v3+json' };
+    if (_liveEtag) hdrs['If-None-Match'] = _liveEtag;
+    const r = await fetch(LIVE_API, { headers: hdrs, cache: 'no-store' });
+    if (r.status === 304) return _liveActive;   // rien changé — gratuit
     if (!r.ok) return false;
-    const live = await r.json();
+    _liveEtag = r.headers.get('ETag') || _liveEtag;
+    const j    = await r.json();
+    const live = JSON.parse(atob(j.content.replace(/\s/g, '')));
     if (live.active) {
       _liveActive = true;
       renderLiveGame(live);
@@ -1077,8 +1162,8 @@ async function checkLive() {
 
 function restartLiveTimer() {
   clearInterval(_liveTimer);
-  // 15s si partie en cours, 60s sinon (réduit les requêtes inutiles entre les matchs)
-  const interval = _liveActive ? 15000 : 60000;
+  // 60s — GitHub API sans token : 60 req/h par IP ; ETag = 304 gratuits quand rien ne change
+  const interval = 60000;
   _liveTimer = setInterval(async () => {
     const wasActive = _liveActive;
     const isLive = await checkLive();
@@ -1434,6 +1519,93 @@ async function init() {
   }
 }
 init();
+
+// ── PWA INSTALL ──────────────────────────────────────────────────────
+(function(){
+  const _standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+  if (_standalone) return; // déjà installé, rien à faire
+
+  const _isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  const btn = document.getElementById('pwa-install-btn');
+  let _prompt = null;
+
+  // Android / Chrome : capture le prompt natif
+  window.addEventListener('beforeinstallprompt', e => {
+    e.preventDefault();
+    _prompt = e;
+    btn.dataset.platform = 'android';
+    btn.style.display = 'flex';
+  });
+
+  // iOS Safari : pas de prompt natif, on montre quand même le bouton
+  if (_isIOS) {
+    btn.dataset.platform = 'ios';
+    btn.style.display = 'flex';
+  }
+
+  // Cache le bouton après installation Android
+  window.addEventListener('appinstalled', () => { btn.style.display = 'none'; });
+
+  window.handleInstall = function() {
+    if (btn.dataset.platform === 'android' && _prompt) {
+      _prompt.prompt();
+      _prompt.userChoice.then(c => {
+        if (c.outcome === 'accepted') btn.style.display = 'none';
+        _prompt = null;
+      });
+    } else if (btn.dataset.platform === 'ios') {
+      document.getElementById('ios-install-popup').classList.add('open');
+    }
+  };
+
+  window.closeIOSPopup = function() {
+    document.getElementById('ios-install-popup').classList.remove('open');
+  };
+
+  // Enregistrement du service worker
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  }
+})();
 </script>
+
+<!-- ── iOS INSTALL POPUP ── -->
+<div id="ios-install-popup" class="ios-popup-bg" onclick="if(event.target===this)closeIOSPopup()">
+  <div class="ios-popup">
+    <div class="ios-popup-header">
+      <div class="ios-popup-title">Ajouter sur l'écran d'accueil</div>
+      <button class="ios-popup-close" onclick="closeIOSPopup()">✕</button>
+    </div>
+    <div class="ios-steps">
+      <div class="ios-step">
+        <div class="ios-step-num">1</div>
+        <div class="ios-step-body">
+          Appuyez sur le bouton <strong>Partager</strong>
+          <span class="step-icon">⬆️</span>
+          en bas de <strong>Safari</strong>
+        </div>
+      </div>
+      <div class="ios-step">
+        <div class="ios-step-num">2</div>
+        <div class="ios-step-body">
+          Faites défiler et choisissez<br>
+          <strong>« Sur l'écran d'accueil »</strong>
+          <span class="step-icon">＋</span>
+        </div>
+      </div>
+      <div class="ios-step">
+        <div class="ios-step-num">3</div>
+        <div class="ios-step-body">
+          Appuyez sur <strong>« Ajouter »</strong> en haut à droite
+        </div>
+      </div>
+    </div>
+    <div class="ios-popup-note">
+      ⚠️ Fonctionne uniquement dans <strong>Safari</strong>. Si vous êtes dans Chrome ou Firefox, ouvrez cette page dans Safari d'abord.
+    </div>
+    <button class="ios-popup-ok" onclick="closeIOSPopup()">J'ai compris</button>
+  </div>
+</div>
+
 </body>
 </html>
