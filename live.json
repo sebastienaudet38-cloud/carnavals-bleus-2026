@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "opponent": "Adversaire",
   "carnavals_score": 0,
   "opponent_score": 5,
@@ -9,20 +9,20 @@
   "video_url": "https://web.gc.com/teams/PfAvhfA9sqgL/live?liveStreamEventId=8aa577c4-c1cf-4f01-b12d-9dcaa9317a3b&pid=share_livestream_link&c=share_livestream_consumer",
   "spordle_url": "",
   "opponent_id": "d6e3300d-d98f-497c-bbb2-ab263eda8099",
-  "updated_at": "2026-06-02T04:51:40.743Z",
+  "updated_at": "2026-06-02T04:59:31.677Z",
   "scoreboard": {
-    "balls": 2,
-    "strikes": 2,
-    "outs": 1,
-    "batter_name": "A A",
-    "batter_num": "1",
+    "balls": 0,
+    "strikes": 1,
+    "outs": 0,
+    "batter_name": "B B",
+    "batter_num": "6",
     "pitcher_name": "Sébastien Audet",
-    "pitch_count": 8,
+    "pitch_count": 11,
     "bases": [
       false,
       false,
       false
     ],
-    "last_play": "Bob gratton strikes out swinging, sébastien audet pitching. Sébastien Audet - Ball 2"
+    "last_play": "A a strikes out looking, sébastien audet pitching. Sébastien Audet - Foul"
   }
 }
