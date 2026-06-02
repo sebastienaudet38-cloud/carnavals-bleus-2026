@@ -1,0 +1,312 @@
+{
+  "PfAvhfA9sqgL": {
+    "players": [
+      {
+        "id": "cb7b0341-d9c7-4c78-88a3-9920e1864c70",
+        "first_name": "Maxime",
+        "last_name": "Elmaleh",
+        "number": ""
+      },
+      {
+        "id": "1bd5b608-5389-48d5-a287-1bc7d9b457fc",
+        "first_name": "Sébastien",
+        "last_name": "Audet",
+        "number": ""
+      },
+      {
+        "id": "c18b1eb2-9bdf-4afd-977e-c32eb4ae205b",
+        "first_name": "David",
+        "last_name": "Boivin",
+        "number": ""
+      },
+      {
+        "id": "f0a373ce-568f-4c8f-8954-aa6b487eaf03",
+        "first_name": "Steven",
+        "last_name": "Munroe",
+        "number": ""
+      },
+      {
+        "id": "61b8b584-816a-4bdc-9fda-a91ee727b14a",
+        "first_name": "Antoine",
+        "last_name": "Provancher",
+        "number": ""
+      }
+    ],
+    "groups": [
+      {
+        "category": "lineup",
+        "team_stats": {
+          "AB": 0,
+          "R": 0,
+          "H": 0,
+          "RBI": 0,
+          "BB": 0,
+          "SO": 0
+        },
+        "extra": [],
+        "stats": []
+      },
+      {
+        "category": "pitching",
+        "team_stats": {
+          "IP": 0,
+          "H": 3,
+          "R": 5,
+          "ER": 5,
+          "BB": 2,
+          "SO": 0
+        },
+        "extra": [
+          {
+            "stat_name": "#P",
+            "stats": [
+              {
+                "player_id": "cb7b0341-d9c7-4c78-88a3-9920e1864c70",
+                "value": 28
+              },
+              {
+                "player_id": "1bd5b608-5389-48d5-a287-1bc7d9b457fc",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "stat_name": "TS",
+            "stats": [
+              {
+                "player_id": "cb7b0341-d9c7-4c78-88a3-9920e1864c70",
+                "value": 18
+              },
+              {
+                "player_id": "1bd5b608-5389-48d5-a287-1bc7d9b457fc",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "stat_name": "BF",
+            "stats": [
+              {
+                "player_id": "cb7b0341-d9c7-4c78-88a3-9920e1864c70",
+                "value": 5
+              }
+            ]
+          }
+        ],
+        "stats": [
+          {
+            "player_id": "cb7b0341-d9c7-4c78-88a3-9920e1864c70",
+            "player_text": "",
+            "stats": {
+              "IP": 0,
+              "H": 3,
+              "R": 5,
+              "ER": 5,
+              "BB": 2,
+              "SO": 0
+            }
+          },
+          {
+            "player_id": "1bd5b608-5389-48d5-a287-1bc7d9b457fc",
+            "player_text": "",
+            "stats": {
+              "IP": 0,
+              "H": 0,
+              "R": 0,
+              "ER": 0,
+              "BB": 0,
+              "SO": 0
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "d6e3300d-d98f-497c-bbb2-ab263eda8099": {
+    "players": [
+      {
+        "id": "0d86e842-3d5c-45a6-b25e-b7059c942eaf",
+        "first_name": "B",
+        "last_name": "B",
+        "number": "6"
+      },
+      {
+        "id": "ecb56c9a-cdfe-4be9-be51-0a5ff3bd7faa",
+        "first_name": "S",
+        "last_name": "S",
+        "number": "18"
+      },
+      {
+        "id": "7ea154f3-f132-430e-9605-ac2d60fc599b",
+        "first_name": "N",
+        "last_name": "N",
+        "number": "9"
+      },
+      {
+        "id": "1ce51001-57fa-4174-8002-3653caadb89c",
+        "first_name": "A",
+        "last_name": "A",
+        "number": "1"
+      },
+      {
+        "id": "cf77dfe4-8944-4732-881d-2bf0904b193a",
+        "first_name": "Guillaume",
+        "last_name": "Nadeau",
+        "number": "88"
+      },
+      {
+        "id": "b7329184-9d37-4a86-ad81-7a6202d4f4d6",
+        "first_name": "Bob",
+        "last_name": "Gratton",
+        "number": "99"
+      }
+    ],
+    "groups": [
+      {
+        "category": "lineup",
+        "team_stats": {
+          "AB": 3,
+          "R": 5,
+          "H": 3,
+          "RBI": 5,
+          "BB": 2,
+          "SO": 0
+        },
+        "extra": [
+          {
+            "stat_name": "2B",
+            "stats": [
+              {
+                "player_id": "0d86e842-3d5c-45a6-b25e-b7059c942eaf",
+                "value": 1
+              },
+              {
+                "player_id": "ecb56c9a-cdfe-4be9-be51-0a5ff3bd7faa",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "stat_name": "HR",
+            "stats": [
+              {
+                "player_id": "cf77dfe4-8944-4732-881d-2bf0904b193a",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "stat_name": "TB",
+            "stats": [
+              {
+                "player_id": "cf77dfe4-8944-4732-881d-2bf0904b193a",
+                "value": 4
+              },
+              {
+                "player_id": "0d86e842-3d5c-45a6-b25e-b7059c942eaf",
+                "value": 2
+              },
+              {
+                "player_id": "ecb56c9a-cdfe-4be9-be51-0a5ff3bd7faa",
+                "value": 2
+              }
+            ]
+          }
+        ],
+        "stats": [
+          {
+            "player_id": "1ce51001-57fa-4174-8002-3653caadb89c",
+            "player_text": "",
+            "is_primary": true,
+            "stats": {
+              "AB": 0,
+              "R": 1,
+              "H": 0,
+              "RBI": 0,
+              "BB": 1,
+              "SO": 0
+            }
+          },
+          {
+            "player_id": "0d86e842-3d5c-45a6-b25e-b7059c942eaf",
+            "player_text": "",
+            "is_primary": true,
+            "stats": {
+              "AB": 1,
+              "R": 1,
+              "H": 1,
+              "RBI": 0,
+              "BB": 0,
+              "SO": 0
+            }
+          },
+          {
+            "player_id": "ecb56c9a-cdfe-4be9-be51-0a5ff3bd7faa",
+            "player_text": "",
+            "is_primary": true,
+            "stats": {
+              "AB": 1,
+              "R": 1,
+              "H": 1,
+              "RBI": 2,
+              "BB": 0,
+              "SO": 0
+            }
+          },
+          {
+            "player_id": "7ea154f3-f132-430e-9605-ac2d60fc599b",
+            "player_text": "",
+            "is_primary": true,
+            "stats": {
+              "AB": 0,
+              "R": 1,
+              "H": 0,
+              "RBI": 0,
+              "BB": 1,
+              "SO": 0
+            }
+          },
+          {
+            "player_id": "cf77dfe4-8944-4732-881d-2bf0904b193a",
+            "player_text": "",
+            "is_primary": true,
+            "stats": {
+              "AB": 1,
+              "R": 1,
+              "H": 1,
+              "RBI": 3,
+              "BB": 0,
+              "SO": 0
+            }
+          },
+          {
+            "player_id": "b7329184-9d37-4a86-ad81-7a6202d4f4d6",
+            "player_text": "",
+            "is_primary": true,
+            "stats": {
+              "AB": 0,
+              "R": 0,
+              "H": 0,
+              "RBI": 0,
+              "BB": 0,
+              "SO": 0
+            }
+          }
+        ]
+      },
+      {
+        "category": "pitching",
+        "team_stats": {
+          "IP": 0,
+          "H": 0,
+          "R": 0,
+          "ER": 0,
+          "BB": 0,
+          "SO": 0
+        },
+        "extra": [],
+        "stats": []
+      }
+    ]
+  }
+}
