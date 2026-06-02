@@ -167,6 +167,34 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
   padding:5px 16px;font-size:12px;color:rgba(255,255,255,.8);font-family:var(--mono);
 }
 
+/* ── SCOREBOARD LIVE ── */
+.live-scoreboard{
+  margin-top:20px;background:var(--bg);border:1px solid var(--border);
+  border-radius:10px;overflow:hidden;font-family:var(--mono);
+}
+.lsb-teams{display:grid;grid-template-columns:1fr auto auto;border-bottom:1px solid var(--border);}
+.lsb-row{display:contents;}
+.lsb-team{padding:10px 14px;font-size:13px;font-weight:700;color:var(--text);
+  display:flex;align-items:center;gap:8px;}
+.lsb-team.us{color:#1c3d8e;}
+.lsb-score{padding:10px 18px;font-size:22px;font-weight:900;text-align:center;
+  border-left:1px solid var(--border);}
+.lsb-score.us{color:#1c3d8e;}
+.lsb-count-cell{padding:10px 14px;border-left:1px solid var(--border);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;}
+.lsb-count{font-size:12px;font-weight:700;display:flex;gap:6px;}
+.lsb-count span{padding:2px 7px;border-radius:4px;font-size:11px;}
+.lsb-b{background:#dbeafe;color:#1d4ed8;}
+.lsb-s{background:#fef3c7;color:#92400e;}
+.lsb-o{background:#fee2e2;color:#991b1b;}
+.lsb-outs{font-size:10px;color:var(--gray-l);letter-spacing:.5px;text-transform:uppercase;}
+.lsb-bottom{padding:10px 14px;display:flex;gap:24px;font-size:12px;flex-wrap:wrap;}
+.lsb-player{display:flex;flex-direction:column;gap:2px;}
+.lsb-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray-l);}
+.lsb-pname{font-weight:700;color:var(--text);}
+.lsb-pnum{color:var(--gray-l);}
+.lsb-pitches{color:var(--gray-l);}
+
 /* ── HOME SECTIONS ── */
 .home-section{background:#fff;padding:52px 0;}
 .home-section-alt{background:var(--bg);padding:52px 0;}
@@ -833,13 +861,56 @@ function fmtInning(inning, half) {
   return `${halfLbl} la ${n}${sfx} manche`;
 }
 
+function renderScoreboard(live) {
+  const sb = live.scoreboard;
+  if (!sb) return '';
+  const batter  = sb.batter_name  ? `${esc(sb.batter_name)}${sb.batter_num ? ' <span class="lsb-pnum">#'+esc(sb.batter_num)+'</span>' : ''}` : '—';
+  const pitcher = sb.pitcher_name ? esc(sb.pitcher_name) : '—';
+  const outs    = sb.outs ?? 0;
+  const balls   = sb.balls ?? 0;
+  const strikes = sb.strikes ?? 0;
+  const outsIcons = '●'.repeat(outs) + '○'.repeat(Math.max(0, 3 - outs));
+  return `
+    <div class="live-scoreboard">
+      <div class="lsb-teams">
+        <div class="lsb-team us">⚾ Carnavals Bleus</div>
+        <div class="lsb-score us">${live.carnavals_score ?? 0}</div>
+        <div class="lsb-count-cell" rowspan="2">
+          <div class="lsb-count">
+            <span class="lsb-b">B ${balls}</span>
+            <span class="lsb-s">P ${strikes}</span>
+            <span class="lsb-o">R ${outs}</span>
+          </div>
+          <div class="lsb-outs">${outsIcons}</div>
+        </div>
+      </div>
+      <div class="lsb-teams" style="border-bottom:none">
+        <div class="lsb-team">${esc(live.opponent)}</div>
+        <div class="lsb-score">${live.opponent_score ?? 0}</div>
+      </div>
+      <div class="lsb-bottom">
+        <div class="lsb-player">
+          <span class="lsb-label">Au bâton</span>
+          <span class="lsb-pname">${batter}</span>
+        </div>
+        <div class="lsb-player">
+          <span class="lsb-label">Lanceur</span>
+          <span class="lsb-pname">${pitcher} <span class="lsb-pitches">P:${sb.pitch_count ?? 0}</span></span>
+        </div>
+      </div>
+    </div>`;
+}
+
 function renderLiveGame(live) {
   const el  = document.getElementById('featured-match');
   const vis = document.getElementById('hero-visual');
   if (!el) return;
 
+  const gameBtn    = live.game_url
+    ? `<a href="${esc(live.game_url)}"    target="_blank" class="hero-live-btn spordle">⚾ Partie en direct</a>`
+    : '';
   const videoBtn   = live.video_url
-    ? `<a href="${esc(live.video_url)}"   target="_blank" class="hero-live-btn video">📺 Regarder en direct</a>`
+    ? `<a href="${esc(live.video_url)}"   target="_blank" class="hero-live-btn video">📺 Vidéo en direct</a>`
     : '';
   const spordleBtn = live.spordle_url
     ? `<a href="${esc(live.spordle_url)}" target="_blank" class="hero-live-btn spordle">📊 Feuille de match</a>`
@@ -865,7 +936,8 @@ function renderLiveGame(live) {
     <p class="hero-live-teams"><span style="font-weight:800;color:#1c3d8e;font-size:15px">Carnavals Bleus</span> <span style="font-size:11px;color:var(--gray-l);font-weight:400">vs</span> ${esc(live.opponent)}</p>
     ${scoreHtml}
     ${inningHtml}
-    <div class="hero-live-btns" style="margin-top:${(hasScore||inning)?'8px':'24px'}">${videoBtn}${spordleBtn}</div>`;
+    <div class="hero-live-btns" style="margin-top:${(hasScore||inning)?'8px':'24px'}">${gameBtn}${videoBtn}${spordleBtn}</div>
+    ${renderScoreboard(live)}`;
 
   if (vis) {
     vis.onclick = live.video_url ? () => window.open(live.video_url, '_blank') : null;
