@@ -11,18 +11,18 @@
   "opponent_id": "d6e3300d-d98f-497c-bbb2-ab263eda8099",
   "updated_at": "2026-06-02T03:12:37.315Z",
   "scoreboard": {
-    "balls": 0,
-    "strikes": 1,
+    "balls": 1,
+    "strikes": 2,
     "outs": 0,
     "batter_name": "Guillaume Nadeau",
     "batter_num": "88",
     "pitcher_name": "Maxime Elmaleh",
-    "pitch_count": 16,
+    "pitch_count": 18,
     "bases": [
       true,
       true,
       false
     ],
-    "last_play": "N n walks, maxime elmaleh pitching. s s remains at 2nd. Maxime Elmaleh — Strike 1 swinging"
+    "last_play": "N n walks, maxime elmaleh pitching. s s remains at 2nd. Maxime Elmaleh — Foul"
   }
 }
