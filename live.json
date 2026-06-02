@@ -1,11 +1,11 @@
 {
-  "active": false,
-  "opponent": "Carnavals Rouge",
-  "carnavals_score": 11,
-  "opponent_score": 2,
-  "inning": "5",
-  "half": "bas",
-  "video_url": "https://web.gc.com/teams/g6rw3BRN9Tmr/live?liveStreamEventId=4e72a620-981f-40d8-bc69-ae9c49ca6e82&pid=share_livestream_link&c=share_livestream_consumer",
+  "active": true,
+  "opponent": "Test",
+  "carnavals_score": 0,
+  "opponent_score": 0,
+  "inning": "1",
+  "half": "haut",
+  "video_url": "https://web.gc.com/teams/deEAXdjPof3G/live?liveStreamEventId=64396b3e-0c04-46e6-b2d7-8d091da8a7c2&pid=share_livestream_link&c=share_livestream_consumer",
   "spordle_url": "",
-  "updated_at": "2026-06-02T02:41:54.719Z"
+  "updated_at": "2026-06-02T02:50:15.008Z"
 }
