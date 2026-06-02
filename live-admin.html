@@ -203,7 +203,6 @@ const REPO        = 'carnavals-bleus-2026';
 const FILE        = 'live.json';
 const API_URL     = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${FILE}`;
 const MATCHES_URL = `https://api.github.com/repos/${OWNER}/${REPO}/contents/matches.json`;
-const JSDELIVR_PURGE = `https://purge.jsdelivr.net/gh/${OWNER}/${REPO}@main/${FILE}`;
 const TOKEN_KEY   = 'cb_live_token';
 
 let _live = null;
@@ -283,8 +282,6 @@ async function ghPut(data, message) {
     }
     const result = await r.json();
     _sha = result.content.sha;
-    // Purge jsDelivr pour que index.html voit la mise à jour en quelques secondes
-    fetch(JSDELIVR_PURGE).catch(() => {});
     return true;
   } finally {
     _saving = false;
@@ -521,11 +518,13 @@ async function saveToMatches(ytLink, splLink) {
     const data = JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\s/g, '')))));
 
     const ytid = extractYtId(ytLink);
+    const now = new Date();
+    const localDate = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
     const newMatch = {
       opp:  _live.opponent || 'Adversaire',
       us:   _live.carnavals_score || 0,
       them: _live.opponent_score  || 0,
-      date: new Date().toISOString().split('T')[0],
+      date: localDate,
       ytid: ytid,
       link: splLink || ''
     };
