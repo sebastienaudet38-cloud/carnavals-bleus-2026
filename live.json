@@ -11,13 +11,13 @@
   "opponent_id": "d6e3300d-d98f-497c-bbb2-ab263eda8099",
   "updated_at": "2026-06-02T03:12:37.315Z",
   "scoreboard": {
-    "balls": 1,
+    "balls": 2,
     "strikes": 2,
     "outs": 0,
     "batter_name": "Guillaume Nadeau",
     "batter_num": "88",
     "pitcher_name": "Maxime Elmaleh",
-    "pitch_count": 23,
+    "pitch_count": 25,
     "bases": [
       true,
       true,
