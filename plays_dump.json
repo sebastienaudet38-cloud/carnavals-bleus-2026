@@ -117,6 +117,15 @@
       "at_plate_details": [
         {
           "template": "Ball 1"
+        },
+        {
+          "template": "Strike 1 looking"
+        },
+        {
+          "template": "Foul"
+        },
+        {
+          "template": "Ball 2"
         }
       ],
       "final_details": [],
