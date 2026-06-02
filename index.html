@@ -862,7 +862,7 @@ function renderLiveGame(live) {
   el.innerHTML = `
     <div class="hero-live-badge"><span class="live-dot"></span>EN DIRECT</div>
     <p class="hero-live-eyebrow">Partie en cours</p>
-    <p class="hero-live-teams">Carnavals Bleus <strong>vs</strong> ${esc(live.opponent)}</p>
+    <p class="hero-live-teams"><span style="font-weight:800;color:#1c3d8e;font-size:15px">Carnavals Bleus</span> <span style="font-size:11px;color:var(--gray-l);font-weight:400">vs</span> ${esc(live.opponent)}</p>
     ${scoreHtml}
     ${inningHtml}
     <div class="hero-live-btns" style="margin-top:${(hasScore||inning)?'8px':'24px'}">${videoBtn}${spordleBtn}</div>`;
@@ -880,8 +880,8 @@ function renderLiveGame(live) {
              <div class="hlv-team-names"><span>Carnavals</span><span>${esc(live.opponent)}</span></div>`
           : `<div style="font-size:52px;margin-bottom:12px">⚾</div>
              <div style="font-size:15px;font-weight:700;color:#fff;text-align:center;line-height:1.5">
-               Carnavals Bleus<br>
-               <span style="color:rgba(255,255,255,.4);font-size:12px">vs</span><br>
+               <span style="color:#5baadc;font-weight:900">Carnavals Bleus</span><br>
+               <span style="color:rgba(255,255,255,.4);font-size:12px;font-weight:400">vs</span><br>
                ${esc(live.opponent)}
              </div>`
         }
