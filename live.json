@@ -11,18 +11,18 @@
   "opponent_id": "d6e3300d-d98f-497c-bbb2-ab263eda8099",
   "updated_at": "2026-06-02T03:12:37.315Z",
   "scoreboard": {
-    "balls": 2,
-    "strikes": 2,
+    "balls": 0,
+    "strikes": 1,
     "outs": 0,
-    "batter_name": "N N",
-    "batter_num": "9",
+    "batter_name": "Z Z",
+    "batter_num": "88",
     "pitcher_name": "Maxime Elmaleh",
-    "pitch_count": 12,
+    "pitch_count": 16,
     "bases": [
-      false,
+      true,
       true,
       false
     ],
-    "last_play": "S s doubles on a line drive to center fielder. a a scores. Maxime Elmaleh — 2e balle"
+    "last_play": "N n walks, maxime elmaleh pitching. s s remains at 2nd. Maxime Elmaleh — 1re prise (man.)"
   }
 }
