@@ -240,6 +240,11 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
   text-transform:uppercase;color:rgba(255,255,255,.3);}
 .sb-pval{font-size:12px;font-weight:700;color:rgba(255,255,255,.9);}
 .sb-pval .num,.sb-pval .pitches{color:rgba(255,255,255,.35);font-weight:400;}
+/* Dernier play */
+.sb-last-play{
+  padding:8px 16px;font-size:11px;color:rgba(255,255,255,.5);
+  border-top:1px solid rgba(255,255,255,.06);font-style:italic;line-height:1.4;
+}
 /* Boutons */
 .sb-btns{display:flex;gap:8px;padding:10px 16px;
   background:#040c14;flex-wrap:wrap;}
@@ -867,6 +872,8 @@ function renderFeaturedMatch(matches) {
   const el = document.getElementById('featured-match');
   const vis = document.getElementById('hero-visual');
   if (!el) return;
+  // Réaffiche le panneau droit (masqué pendant un match live)
+  if (vis) vis.style.display = '';
   if (!matches || !matches.length) { el.innerHTML = ''; return; }
   const played = matches.filter(m => m.us !== undefined && m.them !== undefined);
   if (!played.length) { el.innerHTML = '<p class="hero-loading">Aucun match joué.</p>'; return; }
@@ -930,11 +937,19 @@ function renderLiveGame(live) {
   const splBtn   = live.spordle_url
     ? `<a href="${esc(live.spordle_url)}" target="_blank" class="hero-live-btn spordle">📊 Feuille de match</a>` : '';
 
-  // ── Section milieu : manche + bases (toujours vides pour l'instant) ──
+  // ── Bases : [1re, 2e, 3e] depuis scoreboard
+  const bases = (sb && sb.bases) || [false, false, false];
+  // Layout diamant : grille 3×2, positions fixes
+  //   col:  1    2    3
+  // row 1:  .   2e    .
+  // row 2: 3e    .   1re
   const baseSlots = [
-    {r:0,c:1},{r:1,c:0},{r:1,c:2}   // 2e base, 3e base, 1re base
-  ].map(({r,c}) =>
-    `<span class="sb-base" style="grid-row:${r+1};grid-column:${c+1}"></span>`
+    {r:1,c:2,i:1},   // 2e base
+    {r:2,c:1,i:2},   // 3e base
+    {r:2,c:3,i:0},   // 1re base
+  ].map(({r,c,i}) =>
+    `<span class="sb-base${bases[i]?' on':''}"
+           style="grid-row:${r};grid-column:${c}"></span>`
   ).join('');
 
   const outDots = Array.from({length:3}, (_,i) =>
@@ -967,6 +982,18 @@ function renderLiveGame(live) {
       </div>`;
   }
 
+  // Logo adversaire : essaie logos/{opponent_id}.{ext}, sinon ⚾
+  const oppId   = live.opponent_id || '';
+  const oppLogo = oppId
+    ? `<img class="sb-tlogo" src="logos/${esc(oppId)}.png"
+            onerror="this.outerHTML='<span class=\\'sb-tlogo\\'style=\\'text-align:center;font-size:20px\\'>⚾</span>'"
+            alt="${esc(live.opponent)}">`
+    : `<span class="sb-tlogo" style="text-align:center;font-size:20px">⚾</span>`;
+
+  // Dernier play
+  const lastPlayHtml = (sb && sb.last_play)
+    ? `<div class="sb-last-play">${esc(sb.last_play)}</div>` : '';
+
   // ── Scoreboard complet ──
   el.innerHTML = `
     <div class="sb">
@@ -977,12 +1004,12 @@ function renderLiveGame(live) {
       <div class="sb-body">
         <div class="sb-teams">
           <div class="sb-trow us">
-            <img src="${TEAM_LOGO_B64}" class="sb-tlogo" alt="Carnavals">
+            <img src="logo.png" class="sb-tlogo" alt="Carnavals">
             <span class="sb-tname">Carnavals Bleus</span>
             <span class="sb-tscore">${live.carnavals_score ?? 0}</span>
           </div>
           <div class="sb-trow">
-            <span class="sb-tlogo" style="width:30px;text-align:center;font-size:20px">⚾</span>
+            ${oppLogo}
             <span class="sb-tname">${esc(live.opponent)}</span>
             <span class="sb-tscore">${live.opponent_score ?? 0}</span>
           </div>
@@ -990,7 +1017,7 @@ function renderLiveGame(live) {
         <div class="sb-mid">
           <div class="sb-inn-num">${inning > 0 ? inning : '—'}</div>
           <div class="sb-inn-arrow">${inning > 0 ? halfArr : ''}</div>
-          <div class="sb-bases" style="grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;width:42px;height:30px;gap:3px">
+          <div class="sb-bases" style="display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;width:42px;height:30px;gap:3px">
             ${baseSlots}
           </div>
           <div class="sb-outs-row">${outDots}</div>
@@ -998,22 +1025,12 @@ function renderLiveGame(live) {
         <div class="sb-right">${rightHtml}</div>
       </div>
       ${playersHtml}
+      ${lastPlayHtml}
       <div class="sb-btns">${gameBtn}${videoBtn}${splBtn}</div>
     </div>`;
 
-  // Panneau droit — sobre, pas de duplication
-  if (vis) {
-    vis.onclick = live.game_url ? () => window.open(live.game_url, '_blank') : null;
-    vis.style.cursor = live.game_url ? 'pointer' : 'default';
-    vis.innerHTML = `
-      <div class="hero-visual-live">
-        <div class="hlv-live-tag"><span class="hlv-dot"></span>EN DIRECT</div>
-        <div class="hlv-score-big" style="font-size:72px">${live.carnavals_score??0}&nbsp;–&nbsp;${live.opponent_score??0}</div>
-        <div class="hlv-team-names"><span style="color:#5baadc">Carnavals</span><span>${esc(live.opponent)}</span></div>
-        ${inning > 0 ? `<div class="hlv-inning-tag" style="margin-top:14px">${halfArr} ${halfLbl} ${inning}${inSfx} manche</div>` : ''}
-        ${live.game_url ? '<div class="hlv-inning-tag" style="margin-top:10px;opacity:.6">Cliquer pour la partie</div>' : ''}
-      </div>`;
-  }
+  // Panneau droit masqué pendant un match — le scoreboard contient toute l'info
+  if (vis) vis.style.display = 'none';
 }
 
 async function checkLive() {
