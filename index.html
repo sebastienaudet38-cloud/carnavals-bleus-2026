@@ -870,7 +870,9 @@ function renderLiveGame(live) {
   if (vis) {
     vis.onclick = live.video_url ? () => window.open(live.video_url, '_blank') : null;
     vis.style.cursor = live.video_url ? 'pointer' : 'default';
-    vis.innerHTML = `
+
+    // Contenu de base (affiché si pas de miniature GC)
+    const baseVisual = `
       <div class="hero-visual-live">
         <div class="hlv-live-tag"><span class="hlv-dot"></span>EN DIRECT</div>
         ${hasScore
@@ -886,6 +888,27 @@ function renderLiveGame(live) {
         ${inning > 0 ? `<div class="hlv-inning-tag" style="margin-top:14px">${halfLbl} ${inning}${inSfx} manche</div>` : ''}
         ${live.video_url && inning === 0 ? '<div class="hlv-inning-tag" style="margin-top:18px">Cliquer pour regarder</div>' : ''}
       </div>`;
+    vis.innerHTML = baseVisual;
+
+    // Tentative de miniature GC — fonctionne si l'utilisateur est connecté à GC
+    // (le navigateur envoie automatiquement les cookies CloudFront de media-service.gc.com)
+    const gcEventId = live.video_url
+      ? (live.video_url.match(/liveStreamEventId=([a-f0-9-]+)/) || [])[1]
+      : null;
+    if (gcEventId) {
+      const thumb = new Image();
+      thumb.onload = () => {
+        // Miniature chargée avec succès → remplace le visuel par défaut
+        vis.innerHTML = `
+          <img class="hero-yt-thumb" src="${thumb.src}" alt="Match en direct" loading="eager"
+               style="max-height:356px;object-fit:cover;">
+          <div class="hero-play-overlay">
+            <div class="hero-play-btn">▶</div>
+          </div>`;
+      };
+      // onerror → garde baseVisual tel quel (rien à faire)
+      thumb.src = `https://media-service.gc.com/events/${gcEventId}/thumbnail`;
+    }
   }
 }
 
