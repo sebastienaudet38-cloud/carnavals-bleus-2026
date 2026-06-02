@@ -11,18 +11,18 @@
   "opponent_id": "d6e3300d-d98f-497c-bbb2-ab263eda8099",
   "updated_at": "2026-06-02T04:40:38.574Z",
   "scoreboard": {
-    "balls": 2,
-    "strikes": 2,
+    "balls": 1,
+    "strikes": 1,
     "outs": 0,
-    "batter_name": "",
-    "batter_num": "",
+    "batter_name": "Bob Gratton",
+    "batter_num": "99",
     "pitcher_name": "Maxime Elmaleh",
-    "pitch_count": 25,
+    "pitch_count": 27,
     "bases": [
       false,
       false,
       false
     ],
-    "last_play": "Guillaume nadeau homers on a fly ball to center field. s s scores"
+    "last_play": "Guillaume nadeau homers on a fly ball to center field. s s scores. Maxime Elmaleh — Foul"
   }
 }
