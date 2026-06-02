@@ -19,7 +19,7 @@
   },
   {
     "method": "POST",
-    "url": "https://www.google.com/ccm/collect?rcb=5&frm=0&ae=g&auid=1814773843.1779649133&dt=GameChanger%20App%20%7C%20GameChanger&en=page_view&dl=https%3A%2F%2Fweb.gc.com%2Fhome&scrsrc=www.googletagmanager.com&rnd=1116956970.1780363067&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He65t1v9194580855za200zd9194580855xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938466~115938468&apve=1&apvf=f&apvc=1&tft=1780363067236&tfd=575",
+    "url": "https://www.google.com/ccm/collect?rcb=3&frm=0&ae=g&auid=1814773843.1779649133&dt=GameChanger%20App%20%7C%20GameChanger&en=page_view&dl=https%3A%2F%2Fweb.gc.com%2Fhome&scrsrc=www.googletagmanager.com&rnd=496012935.1780366130&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He65t1v9194580855za200zd9194580855xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938466~115938469~119027223~119064971~119312823&apve=1&apvf=f&apvc=1&tft=1780366129513&tfd=551",
     "domain": "www.google.com",
     "headers": {}
   },
@@ -31,7 +31,7 @@
   },
   {
     "method": "POST",
-    "url": "https://featureassets.org/v1/initialize?k=client-aRWJzFDDsPvPnPxFb0viYb2h8db2Wh8gitMmtuCuLfJ&st=javascript-client&sv=3.32.0&t=1780363067623&sid=3cbc9e65-9494-4fcd-90ba-550adaa47541&se=1",
+    "url": "https://featureassets.org/v1/initialize?k=client-aRWJzFDDsPvPnPxFb0viYb2h8db2Wh8gitMmtuCuLfJ&st=javascript-client&sv=3.32.0&t=1780366129960&sid=62039acd-0bf6-40a1-9e6d-5fb310a4c373&se=1",
     "domain": "featureassets.org",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
@@ -50,8 +50,14 @@
     "url": "https://3b0ccc4a715f.edge.sdk.awswaf.com/3b0ccc4a715f/10aeb549cf55/mp_verify",
     "domain": "3b0ccc4a715f.edge.sdk.awswaf.com",
     "headers": {
-      "content-type": "multipart/form-data; boundary=----WebKitFormBoundaryRhAQ2BmjNDiuMF3V"
+      "content-type": "multipart/form-data; boundary=----WebKitFormBoundaryzZm9SGPkTFV6p8cB"
     }
+  },
+  {
+    "method": "HEAD",
+    "url": "https://ingest.quantummetric.com/horizon/d",
+    "domain": "ingest.quantummetric.com",
+    "headers": {}
   },
   {
     "method": "GET",
@@ -93,56 +99,38 @@
   },
   {
     "method": "GET",
-    "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1032118239/?random=1780363067749&cv=11&fst=1780363067749&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938466~115938468~119064590&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fhome&rcb=18&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=SA&data=event%3Dgtag.config&rfmt=3&fmt=4",
+    "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1032118239/?random=1780366130091&cv=11&fst=1780366130091&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938466~115938469~119027223~119064590&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fhome&rcb=18&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=SA&data=event%3Dgtag.config&rfmt=3&fmt=4",
     "domain": "googleads.g.doubleclick.net",
     "headers": {}
   },
   {
     "method": "POST",
-    "url": "https://www.google.com/rmkt/collect/1032118239/?random=1780363067749&cv=11&fst=1780363067749&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938466~115938468~119064590&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fhome&rcb=18&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=SA&data=event%3Dgtag.config&gcp=5",
+    "url": "https://www.google.com/rmkt/collect/1032118239/?random=1780366130091&cv=11&fst=1780366130091&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938466~115938469~119027223~119064590&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fhome&rcb=18&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=SA&data=event%3Dgtag.config&gcp=5",
     "domain": "www.google.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/17007688848/?random=1780363067757&cv=11&fst=1780363067757&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938466~115938468~119064590&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fhome&rcb=18&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dgtag.config&rfmt=3&fmt=4",
+    "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/17007688848/?random=1780366130099&cv=11&fst=1780366130099&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938466~115938469~119027223~119064590&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fhome&rcb=18&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dgtag.config&rfmt=3&fmt=4",
     "domain": "googleads.g.doubleclick.net",
     "headers": {}
   },
   {
     "method": "POST",
-    "url": "https://www.google.com/rmkt/collect/17007688848/?random=1780363067757&cv=11&fst=1780363067757&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938466~115938468~119064590&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fhome&rcb=18&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dgtag.config&gcp=5",
+    "url": "https://www.google.com/rmkt/collect/17007688848/?random=1780366130099&cv=11&fst=1780366130099&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938466~115938469~119027223~119064590&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fhome&rcb=18&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dgtag.config&gcp=5",
     "domain": "www.google.com",
     "headers": {}
   },
   {
     "method": "POST",
-    "url": "https://www.google.com/ccm/collect?rcb=18&frm=0&auid=1814773843.1779649133&dt=GameChanger%20App%20%7C%20GameChanger&en=page_view&dl=https%3A%2F%2Fweb.gc.com%2Fhome&scrsrc=www.googletagmanager.com&rnd=1116956970.1780363067&navt=n&npa=0&_tu=SA&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938466~115938468~119064590&apve=1&apvf=f&apvc=0&tids=AW-1032118239&tid=AW-1032118239&tft=1780363067763&tfd=1102",
+    "url": "https://www.google.com/ccm/collect?rcb=18&frm=0&auid=1814773843.1779649133&dt=GameChanger%20App%20%7C%20GameChanger&en=page_view&dl=https%3A%2F%2Fweb.gc.com%2Fhome&scrsrc=www.googletagmanager.com&rnd=496012935.1780366130&navt=n&npa=0&_tu=SA&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938466~115938469~119027223~119064590&apve=1&apvf=f&apvc=0&tids=AW-1032118239&tid=AW-1032118239&tft=1780366130104&tfd=1142",
     "domain": "www.google.com",
     "headers": {}
   },
   {
     "method": "POST",
-    "url": "https://www.google.com/ccm/collect?rcb=18&frm=0&auid=1814773843.1779649133&dt=GameChanger%20App%20%7C%20GameChanger&en=page_view&dl=https%3A%2F%2Fweb.gc.com%2Fhome&scrsrc=www.googletagmanager.com&rnd=1116956970.1780363067&navt=n&npa=0&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938466~115938468~119064590&apve=1&apvf=f&apvc=0&tids=AW-17007688848&tid=AW-17007688848&tft=1780363067763&tfd=1102",
+    "url": "https://www.google.com/ccm/collect?rcb=18&frm=0&auid=1814773843.1779649133&dt=GameChanger%20App%20%7C%20GameChanger&en=page_view&dl=https%3A%2F%2Fweb.gc.com%2Fhome&scrsrc=www.googletagmanager.com&rnd=496012935.1780366130&navt=n&npa=0&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938466~115938469~119027223~119064590&apve=1&apvf=f&apvc=0&tids=AW-17007688848&tid=AW-17007688848&tft=1780366130104&tfd=1142",
     "domain": "www.google.com",
-    "headers": {}
-  },
-  {
-    "method": "GET",
-    "url": "https://pixel-config.reddit.com/pixels/a2_hiy9vrhsn4yv/config",
-    "domain": "pixel-config.reddit.com",
-    "headers": {}
-  },
-  {
-    "method": "GET",
-    "url": "https://alb.reddit.com/rp.gif?ts=1780363067775&id=a2_hiy9vrhsn4yv&event=PageVisit&m.itemCount=&m.value=&m.valueDecimal=&m.currency=&m.transactionId=&m.customEventName=&m.products=&m.conversionId=&uuid=9b20bda9-0c97-4020-a593-04ef2ec11abb&aaid=&external_id=eb045d78d273107348b0300c01d29b7552d622abbc6faf81b3ec55359aa9950c&idfa=&integration=reddit&partner=&partner_version=&opt_out=0&sh=1280&sw=720&v=rdt_47ad39b8&dpm=&dpcc=&dprc=&auto_em=09485fddd268356c4b43860e96cd5514a947cf09c8c616160e517fd14274e675%2C1426c19c37cd8178ff7b6cc901bbbcb4e32fe819e24b676f94b161f4765ddca6%2Cf43480bc4a0f5a8531466db10105919e86a6e272f3a76979bfe9fd354530e68b&auto_pn=125~ce3875d6d7cf9cd923d3d5ad11f6357fff37ce8d3df2e4ad9f4032ad5ebd67fd",
-    "domain": "alb.reddit.com",
-    "headers": {}
-  },
-  {
-    "method": "GET",
-    "url": "https://tr.snapchat.com/config/com/5de2d0d3-5235-4f19-9cda-e5f11971dffc.js?v=3.56.1-2604231811",
-    "domain": "tr.snapchat.com",
     "headers": {}
   },
   {
@@ -154,17 +142,29 @@
     }
   },
   {
+    "method": "GET",
+    "url": "https://pixel-config.reddit.com/pixels/a2_hiy9vrhsn4yv/config",
+    "domain": "pixel-config.reddit.com",
+    "headers": {}
+  },
+  {
+    "method": "GET",
+    "url": "https://alb.reddit.com/rp.gif?ts=1780366130114&id=a2_hiy9vrhsn4yv&event=PageVisit&m.itemCount=&m.value=&m.valueDecimal=&m.currency=&m.transactionId=&m.customEventName=&m.products=&m.conversionId=&uuid=9b20bda9-0c97-4020-a593-04ef2ec11abb&aaid=&external_id=eb045d78d273107348b0300c01d29b7552d622abbc6faf81b3ec55359aa9950c&idfa=&integration=reddit&partner=&partner_version=&opt_out=0&sh=1280&sw=720&v=rdt_47ad39b8&dpm=&dpcc=&dprc=&auto_em=09485fddd268356c4b43860e96cd5514a947cf09c8c616160e517fd14274e675%2C1426c19c37cd8178ff7b6cc901bbbcb4e32fe819e24b676f94b161f4765ddca6%2Cf43480bc4a0f5a8531466db10105919e86a6e272f3a76979bfe9fd354530e68b&auto_pn=125~ce3875d6d7cf9cd923d3d5ad11f6357fff37ce8d3df2e4ad9f4032ad5ebd67fd",
+    "domain": "alb.reddit.com",
+    "headers": {}
+  },
+  {
     "method": "POST",
-    "url": "https://3b0ccc4a715f.edge.sdk.awswaf.com/3b0ccc4a715f/10aeb549cf55/telemetry",
-    "domain": "3b0ccc4a715f.edge.sdk.awswaf.com",
+    "url": "https://www.mczbf.com/1079464109337/report",
+    "domain": "www.mczbf.com",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
     }
   },
   {
     "method": "POST",
-    "url": "https://www.mczbf.com/1079464109337/report",
-    "domain": "www.mczbf.com",
+    "url": "https://3b0ccc4a715f.edge.sdk.awswaf.com/3b0ccc4a715f/10aeb549cf55/telemetry",
+    "domain": "3b0ccc4a715f.edge.sdk.awswaf.com",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
     }
@@ -179,10 +179,48 @@
     }
   },
   {
-    "method": "HEAD",
-    "url": "https://ingest.quantummetric.com/horizon/d",
-    "domain": "ingest.quantummetric.com",
+    "method": "GET",
+    "url": "https://tr.snapchat.com/config/com/5de2d0d3-5235-4f19-9cda-e5f11971dffc.js?v=3.56.1-2604231811",
+    "domain": "tr.snapchat.com",
     "headers": {}
+  },
+  {
+    "method": "GET",
+    "url": "https://securepubads.g.doubleclick.net/pagead/managed/dict/m202605280101/gpt",
+    "domain": "securepubads.g.doubleclick.net",
+    "headers": {}
+  },
+  {
+    "method": "POST",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=f1797f51-e910-4942-8035-878ca8972822&batch_time=1780366130188&_dd.api=fetch",
+    "domain": "browser-intake-datadoghq.com",
+    "headers": {
+      "content-type": "text/plain;charset=UTF-8"
+    }
+  },
+  {
+    "method": "POST",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=373417be-384a-460f-8027-9269d31f5099&batch_time=1780366130189&_dd.api=fetch",
+    "domain": "browser-intake-datadoghq.com",
+    "headers": {
+      "content-type": "text/plain;charset=UTF-8"
+    }
+  },
+  {
+    "method": "POST",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=0c39df3e-8568-432c-8617-b2b6b04a3a18&batch_time=1780366130191&_dd.api=fetch",
+    "domain": "browser-intake-datadoghq.com",
+    "headers": {
+      "content-type": "text/plain;charset=UTF-8"
+    }
+  },
+  {
+    "method": "POST",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=b4405dc3-da67-4082-8446-9578c18dc5b9&batch_time=1780366130192&_dd.api=fetch",
+    "domain": "browser-intake-datadoghq.com",
+    "headers": {
+      "content-type": "text/plain;charset=UTF-8"
+    }
   },
   {
     "method": "POST",
@@ -202,43 +240,19 @@
   },
   {
     "method": "GET",
-    "url": "https://www.google.com/pagead/1p-user-list/1032118239/?random=1780363067749&cv=11&fst=1780362000000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938466~115938468~119064590&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fhome&rcb=18&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=SA&data=event%3Dgtag.config&rfmt=3&fmt=3&is_vtc=1&cid=CAQS4QEABaugfdhNqe0k5jN8pY-0-UEhiQkqh54aQnzpZTQCal3M5nk9_PvzqCBrv8MT8OJkTfk9_c9tmnCIxNs1aSTurq0okDOOhWJORTIcT8ODUsPhtW7G2U10u79_rdkNtaY0blaQPmipf8uxmkQkhxBb2afuneYy3hEpx4phdxT6HlEGB0alCvsmZgXCCaxHcyeoL1r1IFMRYNsutzLZ_RdFNax16AcF16sgatS5SHin9ZmuG0D4fZ3cVngQk9eHKC2W5FuvC8weYZ_X1_i-KQnRYlhVWJGcZ1-29C2cLvbFOnU&random=2807166446&rmt_tld=0&ipr=y",
+    "url": "https://www.google.com/pagead/1p-user-list/1032118239/?random=1780366130091&cv=11&fst=1780365600000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938466~115938469~119027223~119064590&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fhome&rcb=18&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=SA&data=event%3Dgtag.config&rfmt=3&fmt=3&is_vtc=1&cid=CAQS4QEABaugfWBYfaAER6wHGc1qAgPj11oMHcIhB4SKzclgtY8ZuZtnQAwu4QJ9SWbVN2SwbqLRddRejROLcRksy2faQAt78O9eaFLmcDaP_WIJ_1_kuSAw0kN2drGkWKatloOe1vedW3uFB9ksMWC-0xtqR_9XJPGCkR300Jwe7prpAqxZjd7qjccXpAy2QYWpORH0gWtteN5asmnFhvW7LiTTJ-c89Y5C7p7Zk1T-Sf3EXr4iKIyT6q5E8NSc4bjTVHIySHcFCe1i-mG0E06mL4Zp_rEwR20xBCgq4wWSjHRJJ7I&random=3565735080&rmt_tld=0&ipr=y",
     "domain": "www.google.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://www.google.ca/pagead/1p-user-list/1032118239/?random=1780363067749&cv=11&fst=1780362000000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938466~115938468~119064590&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fhome&rcb=18&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=SA&data=event%3Dgtag.config&rfmt=3&fmt=3&is_vtc=1&cid=CAQS4QEABaugfdhNqe0k5jN8pY-0-UEhiQkqh54aQnzpZTQCal3M5nk9_PvzqCBrv8MT8OJkTfk9_c9tmnCIxNs1aSTurq0okDOOhWJORTIcT8ODUsPhtW7G2U10u79_rdkNtaY0blaQPmipf8uxmkQkhxBb2afuneYy3hEpx4phdxT6HlEGB0alCvsmZgXCCaxHcyeoL1r1IFMRYNsutzLZ_RdFNax16AcF16sgatS5SHin9ZmuG0D4fZ3cVngQk9eHKC2W5FuvC8weYZ_X1_i-KQnRYlhVWJGcZ1-29C2cLvbFOnU&random=2807166446&rmt_tld=1&ipr=y",
+    "url": "https://www.google.ca/pagead/1p-user-list/1032118239/?random=1780366130091&cv=11&fst=1780365600000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938466~115938469~119027223~119064590&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fhome&rcb=18&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=SA&data=event%3Dgtag.config&rfmt=3&fmt=3&is_vtc=1&cid=CAQS4QEABaugfWBYfaAER6wHGc1qAgPj11oMHcIhB4SKzclgtY8ZuZtnQAwu4QJ9SWbVN2SwbqLRddRejROLcRksy2faQAt78O9eaFLmcDaP_WIJ_1_kuSAw0kN2drGkWKatloOe1vedW3uFB9ksMWC-0xtqR_9XJPGCkR300Jwe7prpAqxZjd7qjccXpAy2QYWpORH0gWtteN5asmnFhvW7LiTTJ-c89Y5C7p7Zk1T-Sf3EXr4iKIyT6q5E8NSc4bjTVHIySHcFCe1i-mG0E06mL4Zp_rEwR20xBCgq4wWSjHRJJ7I&random=3565735080&rmt_tld=1&ipr=y",
     "domain": "www.google.ca",
     "headers": {}
   },
   {
     "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=cc3414d5-9b46-43fc-8718-e383eb1775a3&batch_time=1780363067898&_dd.api=fetch",
-    "domain": "browser-intake-datadoghq.com",
-    "headers": {
-      "content-type": "text/plain;charset=UTF-8"
-    }
-  },
-  {
-    "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=8686ef5c-8ebb-4a23-802b-04cc4669c787&batch_time=1780363067900&_dd.api=fetch",
-    "domain": "browser-intake-datadoghq.com",
-    "headers": {
-      "content-type": "text/plain;charset=UTF-8"
-    }
-  },
-  {
-    "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=42f20e6d-6e8a-4cdf-b23e-7933ef556ae3&batch_time=1780363067901&_dd.api=fetch",
-    "domain": "browser-intake-datadoghq.com",
-    "headers": {
-      "content-type": "text/plain;charset=UTF-8"
-    }
-  },
-  {
-    "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=4b69b8ea-c4f5-4a22-a700-cd9abc284f5e&batch_time=1780363067902&_dd.api=fetch",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=d8f9dba6-2266-49e5-87b3-39952edba685&batch_time=1780366130234&_dd.api=fetch",
     "domain": "browser-intake-datadoghq.com",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
@@ -246,29 +260,15 @@
   },
   {
     "method": "GET",
-    "url": "https://www.google.com/pagead/1p-user-list/17007688848/?random=1780363067757&cv=11&fst=1780362000000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938466~115938468~119064590&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fhome&rcb=18&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dgtag.config&rfmt=3&fmt=3&is_vtc=1&cid=CAQS4QEABaugfWmSZdk_wlYvHNdVLfn5ILl-auoLpAfLHXAstCivCyECM82vCJoLyqiYVLnEEtZDhwcXl05v0HGTd_mzUQXxtiFnX2JQUUZ7WdrF_dgrGP3r6JJBDO4oqx-7JCKumzEQiINNqpvolL-TRQIf1xsku0mlPS8MLdaMi_sTkJOcu3rBjSgZBbBDVLPm7nv2CYlZCTswNsKPG2S1E0HQhZw8hu6gIwEMBXNl_GaYozeHjdnhLyOcXHPR9tFnhIEl9HEQjFM8BG23c6S1ANYphWLDtJ3ulzRPuBM9fNUNa6k&random=2847862196&rmt_tld=0&ipr=y",
+    "url": "https://www.google.com/pagead/1p-user-list/17007688848/?random=1780366130099&cv=11&fst=1780365600000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938466~115938469~119027223~119064590&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fhome&rcb=18&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dgtag.config&rfmt=3&fmt=3&is_vtc=1&cid=CAQS4QEABaugfbwvSo-B-nt-G5OgOcmKa6vaR4X4LAD12wF8QRE4gWddPF4cWxCkxSybP7chC_Tff6CYK381CV8nlb88_3znvNaqKbIJYR5Fuo4AzF0x66a57xtEl4ubxsK5p90oBq_jfogARs8-tGeEiLjUN8X-GQe9lrewdZ2bfxMdhlhdm2lLS36L_Z2603ChmdZUSFo1zdlaGi5Oiu9xXlpVa7N4K7TNLMep1SA2eSrWQZQ_w3cLQn9AjE9NjQ_DIJZNqQVkvavwZanD7f7XAEZK3EYW5Ar5bqwhIsF-Dh5fTDU&random=4014731336&rmt_tld=0&ipr=y",
     "domain": "www.google.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://www.google.ca/pagead/1p-user-list/17007688848/?random=1780363067757&cv=11&fst=1780362000000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938466~115938468~119064590&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fhome&rcb=18&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dgtag.config&rfmt=3&fmt=3&is_vtc=1&cid=CAQS4QEABaugfWmSZdk_wlYvHNdVLfn5ILl-auoLpAfLHXAstCivCyECM82vCJoLyqiYVLnEEtZDhwcXl05v0HGTd_mzUQXxtiFnX2JQUUZ7WdrF_dgrGP3r6JJBDO4oqx-7JCKumzEQiINNqpvolL-TRQIf1xsku0mlPS8MLdaMi_sTkJOcu3rBjSgZBbBDVLPm7nv2CYlZCTswNsKPG2S1E0HQhZw8hu6gIwEMBXNl_GaYozeHjdnhLyOcXHPR9tFnhIEl9HEQjFM8BG23c6S1ANYphWLDtJ3ulzRPuBM9fNUNa6k&random=2847862196&rmt_tld=1&ipr=y",
+    "url": "https://www.google.ca/pagead/1p-user-list/17007688848/?random=1780366130099&cv=11&fst=1780365600000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938466~115938469~119027223~119064590&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fhome&rcb=18&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dgtag.config&rfmt=3&fmt=3&is_vtc=1&cid=CAQS4QEABaugfbwvSo-B-nt-G5OgOcmKa6vaR4X4LAD12wF8QRE4gWddPF4cWxCkxSybP7chC_Tff6CYK381CV8nlb88_3znvNaqKbIJYR5Fuo4AzF0x66a57xtEl4ubxsK5p90oBq_jfogARs8-tGeEiLjUN8X-GQe9lrewdZ2bfxMdhlhdm2lLS36L_Z2603ChmdZUSFo1zdlaGi5Oiu9xXlpVa7N4K7TNLMep1SA2eSrWQZQ_w3cLQn9AjE9NjQ_DIJZNqQVkvavwZanD7f7XAEZK3EYW5Ar5bqwhIsF-Dh5fTDU&random=4014731336&rmt_tld=1&ipr=y",
     "domain": "www.google.ca",
     "headers": {}
-  },
-  {
-    "method": "GET",
-    "url": "https://securepubads.g.doubleclick.net/pagead/managed/dict/m202605280101/gpt",
-    "domain": "securepubads.g.doubleclick.net",
-    "headers": {}
-  },
-  {
-    "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=594cca54-40db-4fe6-80be-f9b5d36a2f73&batch_time=1780363067906&_dd.api=fetch",
-    "domain": "browser-intake-datadoghq.com",
-    "headers": {
-      "content-type": "text/plain;charset=UTF-8"
-    }
   },
   {
     "method": "POST",
@@ -280,14 +280,63 @@
   },
   {
     "method": "POST",
-    "url": "https://prodregistryv2.org/v1/rgstr?k=client-aRWJzFDDsPvPnPxFb0viYb2h8db2Wh8gitMmtuCuLfJ&st=javascript-client&sv=3.32.0&t=1780363067992&sid=3cbc9e65-9494-4fcd-90ba-550adaa47541&ec=1&gz=1",
+    "url": "https://prodregistryv2.org/v1/rgstr?k=client-aRWJzFDDsPvPnPxFb0viYb2h8db2Wh8gitMmtuCuLfJ&st=javascript-client&sv=3.32.0&t=1780366130324&sid=62039acd-0bf6-40a1-9e6d-5fb310a4c373&ec=1&gz=1",
     "domain": "prodregistryv2.org",
     "headers": {}
   },
   {
     "method": "POST",
+    "url": "https://api.team-manager.gc.com/auth",
+    "domain": "api.team-manager.gc.com",
+    "headers": {
+      "gc-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImIzNTAzYjQ1LWUyYWEtNGU4Ni05MThjLTU0YmY2ZGVhODdiOSJ9.eyJpZCI6ImM1OWQ2ZmU1LTc2ZDAtNDYwOS05NmU5LTRlN2IxZjkwMGI1YTphNGViODFlNi01MTVkLTQxYmItODQ5NS1jMTk1ODBlYmM4MzEiLCJjaWQiOiI0MzZiZGZlYi03Zjc0LTQ5YmEtYmFlZC01OTMwZjk0MzMxZjgiLCJ1aWQiOiJjMDc2M2QzZS1hODgzLTQ5NDYtODE5ZS05ZDVlMjcwYmJiZDAiLCJlbWFpbCI6InBvdXQ4N0Bob3RtYWlsLmNvbSIsImlhdCI6MTc4MDM2MDM0NSwiZXhwIjoxNzgxNTY5OTQ1fQ.0EbzshaQ_kpp80Ed1ZVRImVt4hrdfsNmWU-88rWshps",
+      "content-type": "application/json; charset=utf-8"
+    }
+  },
+  {
+    "method": "POST",
     "url": "https://tr.snapchat.com/p",
     "domain": "tr.snapchat.com",
+    "headers": {
+      "content-type": "text/plain;charset=UTF-8"
+    }
+  },
+  {
+    "method": "POST",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=c41ac627-74cf-4228-af5c-6c288adbc874&batch_time=1780366130400&_dd.api=fetch",
+    "domain": "browser-intake-datadoghq.com",
+    "headers": {
+      "content-type": "text/plain;charset=UTF-8"
+    }
+  },
+  {
+    "method": "POST",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=36b1b73e-8bc2-4830-baca-0d6970c44abd&batch_time=1780366130412&_dd.api=fetch",
+    "domain": "browser-intake-datadoghq.com",
+    "headers": {
+      "content-type": "text/plain;charset=UTF-8"
+    }
+  },
+  {
+    "method": "POST",
+    "url": "https://analytics.tiktok.com/api/v2/pixel/act",
+    "domain": "analytics.tiktok.com",
+    "headers": {
+      "content-type": "text/plain;charset=UTF-8"
+    }
+  },
+  {
+    "method": "POST",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=3bf4bbdb-73de-4df9-baeb-22679713eb62&batch_time=1780366130491&_dd.api=fetch",
+    "domain": "browser-intake-datadoghq.com",
+    "headers": {
+      "content-type": "text/plain;charset=UTF-8"
+    }
+  },
+  {
+    "method": "POST",
+    "url": "https://tr6.snapchat.com/p",
+    "domain": "tr6.snapchat.com",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
     }
@@ -302,37 +351,37 @@
   },
   {
     "method": "POST",
-    "url": "https://www.google.com/measurement/conversion?random=1780363068063&cv=11&tid=G-CF4K8J70MC&fst=1780363068063&fmt=8&en=session_start&gtm=45je65t1h1v9235188149za200zd9235188149xec&gcd=13l3l3l3l1l5&dma=0&tag_exp=0~115616986~115938466~115938468&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fteams&gacid=110180139.1779649141&userId=c0763d3e-a883-4946-819e-9d5e270bbbd0&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&gtm_ee=1&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=SA&rcb=11",
+    "url": "https://www.google.com/measurement/conversion?random=1780366131704&cv=11&tid=G-CF4K8J70MC&fst=1780366131704&fmt=8&en=session_start&gtm=45je65t1h1v9235188149za200zd9235188149xec&gcd=13l3l3l3l1l5&dma=0&tag_exp=0~115938466~115938468~119064591&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fteams&gacid=110180139.1779649141&userId=c0763d3e-a883-4946-819e-9d5e270bbbd0&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&gtm_ee=1&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=SA&rcb=14",
     "domain": "www.google.com",
     "headers": {}
   },
   {
     "method": "POST",
-    "url": "https://www.google.com/measurement/conversion?random=1780363068079&cv=11&tid=G-3WQ9XBZBYQ&fst=1780363068079&fmt=8&en=session_start&gtm=45je65t1h1v9235188149za200zd9235188149xec&gcd=13l3l3l3l1l5&dma=0&tag_exp=0~115616986~115938466~115938468&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fteams&gacid=110180139.1779649141&userId=c0763d3e-a883-4946-819e-9d5e270bbbd0&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&gtm_ee=1&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&rcb=11",
+    "url": "https://www.google.com/measurement/conversion?random=1780366131720&cv=11&tid=G-3WQ9XBZBYQ&fst=1780366131720&fmt=8&en=session_start&gtm=45je65t1h1v9235188149za200zd9235188149xec&gcd=13l3l3l3l1l5&dma=0&tag_exp=0~115938466~115938468~119064591&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fteams&gacid=110180139.1779649141&userId=c0763d3e-a883-4946-819e-9d5e270bbbd0&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&gtm_ee=1&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&rcb=14",
     "domain": "www.google.com",
     "headers": {}
   },
   {
     "method": "POST",
-    "url": "https://www.google.com/ccm/collect?rcb=5&frm=0&ae=g&auid=1814773843.1779649133&dt=GameChanger%20App%20%7C%20GameChanger&en=user_id_update&dl=https%3A%2F%2Fweb.gc.com%2Fhome&scrsrc=www.googletagmanager.com&rnd=1116956970.1780363067&navt=n&npa=0&ep.ads_data_redaction=0&ga_uid=G-CF4K8J70MC.c0763d3e-a883-4946-819e-9d5e270bbbd0&gtm=45He65t1v9194580855za200zd9194580855xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938466~115938468&apve=1&apvf=f&apvc=1&tft=1780363068087&tfd=1426",
+    "url": "https://www.google.com/ccm/collect?rcb=3&frm=0&ae=g&auid=1814773843.1779649133&dt=GameChanger%20App%20%7C%20GameChanger&en=user_id_update&dl=https%3A%2F%2Fweb.gc.com%2Fhome&scrsrc=www.googletagmanager.com&rnd=496012935.1780366130&navt=n&npa=0&ep.ads_data_redaction=0&ga_uid=G-CF4K8J70MC.c0763d3e-a883-4946-819e-9d5e270bbbd0&gtm=45He65t1v9194580855za200zd9194580855xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938466~115938469~119027223~119064971~119312823&apve=1&apvf=f&apvc=1&tft=1780366131728&tfd=2766",
     "domain": "www.google.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://www.google.ca/ads/ga-audiences?v=1&t=sr&slf_rd=1&_r=4&tid=G-CF4K8J70MC&cid=110180139.1779649141&gtm=45je65t1h1v9235188149za200zd9235188149&rcb=11&aip=1&uid=c0763d3e-a883-4946-819e-9d5e270bbbd0&dma=0&gcd=13l3l3l3l1l5&npa=0&frm=0&tag_exp=0~115616986~115938466~115938468&z=975033402",
+    "url": "https://www.google.ca/ads/ga-audiences?v=1&t=sr&slf_rd=1&_r=4&tid=G-CF4K8J70MC&cid=110180139.1779649141&gtm=45je65t1h1v9235188149za200zd9235188149&rcb=14&aip=1&uid=c0763d3e-a883-4946-819e-9d5e270bbbd0&dma=0&gcd=13l3l3l3l1l5&npa=0&frm=0&tag_exp=0~115938466~115938468~119064591&z=1704597874",
     "domain": "www.google.ca",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://www.google.ca/ads/ga-audiences?v=1&t=sr&slf_rd=1&_r=4&tid=G-3WQ9XBZBYQ&cid=110180139.1779649141&gtm=45je65t1h1v9235188149za200zd9235188149&rcb=11&aip=1&uid=c0763d3e-a883-4946-819e-9d5e270bbbd0&dma=0&gcd=13l3l3l3l1l5&npa=0&frm=0&tag_exp=0~115616986~115938466~115938468&z=415295099",
+    "url": "https://www.google.ca/ads/ga-audiences?v=1&t=sr&slf_rd=1&_r=4&tid=G-3WQ9XBZBYQ&cid=110180139.1779649141&gtm=45je65t1h1v9235188149za200zd9235188149&rcb=14&aip=1&uid=c0763d3e-a883-4946-819e-9d5e270bbbd0&dma=0&gcd=13l3l3l3l1l5&npa=0&frm=0&tag_exp=0~115938466~115938468~119064591&z=322385065",
     "domain": "www.google.ca",
     "headers": {}
   },
   {
     "method": "POST",
-    "url": "https://featureassets.org/v1/initialize?k=client-aRWJzFDDsPvPnPxFb0viYb2h8db2Wh8gitMmtuCuLfJ&st=javascript-client&sv=3.32.0&t=1780363068125&sid=3cbc9e65-9494-4fcd-90ba-550adaa47541&se=1",
+    "url": "https://featureassets.org/v1/initialize?k=client-aRWJzFDDsPvPnPxFb0viYb2h8db2Wh8gitMmtuCuLfJ&st=javascript-client&sv=3.32.0&t=1780366131766&sid=62039acd-0bf6-40a1-9e6d-5fb310a4c373&se=1",
     "domain": "featureassets.org",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
@@ -343,7 +392,7 @@
     "url": "https://api.team-manager.gc.com/me/teams?include=user_team_associations%2Cteam_avatar_image%2Cteam_player_count%2Cteam_public_profile_id",
     "domain": "api.team-manager.gc.com",
     "headers": {
-      "gc-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImZkNGI0OTA0LTM5ZTAtNDhjYS1hOTMyLTU5ZDFlNDVhY2EzMCJ9.eyJ0eXBlIjoidXNlciIsImNpZCI6IjQzNmJkZmViLTdmNzQtNDliYS1iYWVkLTU5MzBmOTQzMzFmOCIsImVtYWlsIjoicG91dDg3QGhvdG1haWwuY29tIiwidXNlcklkIjoiYzA3NjNkM2UtYTg4My00OTQ2LTgxOWUtOWQ1ZTI3MGJiYmQwIiwicnRrbiI6ImM1OWQ2ZmU1LTc2ZDAtNDYwOS05NmU5LTRlN2IxZjkwMGI1YTphNGViODFlNi01MTVkLTQxYmItODQ5NS1jMTk1ODBlYmM4MzEiLCJpYXQiOjE3ODAzNjAzNDUsImV4cCI6MTc4MDM2NDEzMX0.LnFgXsjUsJ-HO0Dxb3ahMd7TyTBjLa_xJTYHG_fkLKg",
+      "gc-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImZkNGI0OTA0LTM5ZTAtNDhjYS1hOTMyLTU5ZDFlNDVhY2EzMCJ9.eyJ0eXBlIjoidXNlciIsImNpZCI6IjQzNmJkZmViLTdmNzQtNDliYS1iYWVkLTU5MzBmOTQzMzFmOCIsImVtYWlsIjoicG91dDg3QGhvdG1haWwuY29tIiwidXNlcklkIjoiYzA3NjNkM2UtYTg4My00OTQ2LTgxOWUtOWQ1ZTI3MGJiYmQwIiwicnRrbiI6ImM1OWQ2ZmU1LTc2ZDAtNDYwOS05NmU5LTRlN2IxZjkwMGI1YTo1YzQzYWE4Yi04ZjZhLTRjNTgtOTM4Yi04NDM5MTU0MWRjMGQiLCJpYXQiOjE3ODAzNjYxMjksImV4cCI6MTc4MDM3MDAzMX0.ouaOqzAULaf2LL7tPyFRNsT3_TkgXkQ74DMAf1n9Tzg",
       "accept": "application/vnd.gc.com.team:list+json; version=0.10.0",
       "content-type": "application/vnd.gc.com.none+json; version=undefined"
     }
@@ -353,52 +402,20 @@
     "url": "https://api.team-manager.gc.com/me/organizations?include=avatar_images",
     "domain": "api.team-manager.gc.com",
     "headers": {
-      "gc-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImZkNGI0OTA0LTM5ZTAtNDhjYS1hOTMyLTU5ZDFlNDVhY2EzMCJ9.eyJ0eXBlIjoidXNlciIsImNpZCI6IjQzNmJkZmViLTdmNzQtNDliYS1iYWVkLTU5MzBmOTQzMzFmOCIsImVtYWlsIjoicG91dDg3QGhvdG1haWwuY29tIiwidXNlcklkIjoiYzA3NjNkM2UtYTg4My00OTQ2LTgxOWUtOWQ1ZTI3MGJiYmQwIiwicnRrbiI6ImM1OWQ2ZmU1LTc2ZDAtNDYwOS05NmU5LTRlN2IxZjkwMGI1YTphNGViODFlNi01MTVkLTQxYmItODQ5NS1jMTk1ODBlYmM4MzEiLCJpYXQiOjE3ODAzNjAzNDUsImV4cCI6MTc4MDM2NDEzMX0.LnFgXsjUsJ-HO0Dxb3ahMd7TyTBjLa_xJTYHG_fkLKg",
+      "gc-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImZkNGI0OTA0LTM5ZTAtNDhjYS1hOTMyLTU5ZDFlNDVhY2EzMCJ9.eyJ0eXBlIjoidXNlciIsImNpZCI6IjQzNmJkZmViLTdmNzQtNDliYS1iYWVkLTU5MzBmOTQzMzFmOCIsImVtYWlsIjoicG91dDg3QGhvdG1haWwuY29tIiwidXNlcklkIjoiYzA3NjNkM2UtYTg4My00OTQ2LTgxOWUtOWQ1ZTI3MGJiYmQwIiwicnRrbiI6ImM1OWQ2ZmU1LTc2ZDAtNDYwOS05NmU5LTRlN2IxZjkwMGI1YTo1YzQzYWE4Yi04ZjZhLTRjNTgtOTM4Yi04NDM5MTU0MWRjMGQiLCJpYXQiOjE3ODAzNjYxMjksImV4cCI6MTc4MDM3MDAzMX0.ouaOqzAULaf2LL7tPyFRNsT3_TkgXkQ74DMAf1n9Tzg",
       "accept": "application/vnd.gc.com.organization_with_role:list+json; version=0.3.2",
       "content-type": "application/vnd.gc.com.none+json; version=undefined"
     }
   },
   {
     "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=f9a8478c-9725-4add-bfe7-c614a768b64c&batch_time=1780363068135&_dd.api=fetch",
-    "domain": "browser-intake-datadoghq.com",
-    "headers": {
-      "content-type": "text/plain;charset=UTF-8"
-    }
-  },
-  {
-    "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=b6aae30d-46e6-4c8f-8871-820c2e944292&batch_time=1780363068136&_dd.api=fetch",
-    "domain": "browser-intake-datadoghq.com",
-    "headers": {
-      "content-type": "text/plain;charset=UTF-8"
-    }
-  },
-  {
-    "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=20c3f111-5504-45c7-aaa5-08255da363a1&batch_time=1780363068138&_dd.api=fetch",
-    "domain": "browser-intake-datadoghq.com",
-    "headers": {
-      "content-type": "text/plain;charset=UTF-8"
-    }
-  },
-  {
-    "method": "POST",
-    "url": "https://prodregistryv2.org/v1/rgstr?k=client-aRWJzFDDsPvPnPxFb0viYb2h8db2Wh8gitMmtuCuLfJ&st=javascript-client&sv=3.32.0&t=1780363068146&sid=3cbc9e65-9494-4fcd-90ba-550adaa47541&ec=38&gz=1",
+    "url": "https://prodregistryv2.org/v1/rgstr?k=client-aRWJzFDDsPvPnPxFb0viYb2h8db2Wh8gitMmtuCuLfJ&st=javascript-client&sv=3.32.0&t=1780366131767&sid=62039acd-0bf6-40a1-9e6d-5fb310a4c373&ec=37&gz=1",
     "domain": "prodregistryv2.org",
     "headers": {}
   },
   {
     "method": "POST",
-    "url": "https://tr6.snapchat.com/p",
-    "domain": "tr6.snapchat.com",
-    "headers": {
-      "content-type": "text/plain;charset=UTF-8"
-    }
-  },
-  {
-    "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=3c47348b-2c36-4611-831e-bee251460f04&batch_time=1780363068182&_dd.api=fetch",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=0e9e7892-5b4d-4205-bbd0-3fa7047f8f58&batch_time=1780366131772&_dd.api=fetch",
     "domain": "browser-intake-datadoghq.com",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
@@ -406,7 +423,7 @@
   },
   {
     "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=0a5e311b-d5de-4f15-b914-1008773897fc&batch_time=1780363068287&_dd.api=fetch",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=84a9e98f-1dc0-4eea-9b16-fc3f506d1f60&batch_time=1780366131798&_dd.api=fetch",
     "domain": "browser-intake-datadoghq.com",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
@@ -417,171 +434,171 @@
     "url": "https://api.team-manager.gc.com/subscription/details",
     "domain": "api.team-manager.gc.com",
     "headers": {
-      "gc-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImZkNGI0OTA0LTM5ZTAtNDhjYS1hOTMyLTU5ZDFlNDVhY2EzMCJ9.eyJ0eXBlIjoidXNlciIsImNpZCI6IjQzNmJkZmViLTdmNzQtNDliYS1iYWVkLTU5MzBmOTQzMzFmOCIsImVtYWlsIjoicG91dDg3QGhvdG1haWwuY29tIiwidXNlcklkIjoiYzA3NjNkM2UtYTg4My00OTQ2LTgxOWUtOWQ1ZTI3MGJiYmQwIiwicnRrbiI6ImM1OWQ2ZmU1LTc2ZDAtNDYwOS05NmU5LTRlN2IxZjkwMGI1YTphNGViODFlNi01MTVkLTQxYmItODQ5NS1jMTk1ODBlYmM4MzEiLCJpYXQiOjE3ODAzNjAzNDUsImV4cCI6MTc4MDM2NDEzMX0.LnFgXsjUsJ-HO0Dxb3ahMd7TyTBjLa_xJTYHG_fkLKg",
+      "gc-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImZkNGI0OTA0LTM5ZTAtNDhjYS1hOTMyLTU5ZDFlNDVhY2EzMCJ9.eyJ0eXBlIjoidXNlciIsImNpZCI6IjQzNmJkZmViLTdmNzQtNDliYS1iYWVkLTU5MzBmOTQzMzFmOCIsImVtYWlsIjoicG91dDg3QGhvdG1haWwuY29tIiwidXNlcklkIjoiYzA3NjNkM2UtYTg4My00OTQ2LTgxOWUtOWQ1ZTI3MGJiYmQwIiwicnRrbiI6ImM1OWQ2ZmU1LTc2ZDAtNDYwOS05NmU5LTRlN2IxZjkwMGI1YTo1YzQzYWE4Yi04ZjZhLTRjNTgtOTM4Yi04NDM5MTU0MWRjMGQiLCJpYXQiOjE3ODAzNjYxMjksImV4cCI6MTc4MDM3MDAzMX0.ouaOqzAULaf2LL7tPyFRNsT3_TkgXkQ74DMAf1n9Tzg",
       "accept": "application/vnd.gc.com.subscription_details+json; version=0.0.0"
     }
   },
   {
     "method": "POST",
-    "url": "https://analytics.tiktok.com/api/v2/pixel/act",
-    "domain": "analytics.tiktok.com",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=7678859f-bf8d-4bc0-a84f-acfed8140a4e&batch_time=1780366131896&_dd.api=fetch",
+    "domain": "browser-intake-datadoghq.com",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
     }
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/e2bcb2a5-4011-45e2-9630-8986fedc79d6?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS9lMmJjYjJhNS00MDExLTQ1ZTItOTYzMC04OTg2ZmVkYzc5ZDYiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=3FyfgEOQJzSb2Tr3aLaVt-Sc0hlaCskrApuHHf6DmJCod9s7wVBCEywRssTrOStUKXIB1-90tlzyKhqzSVQUWAHIhuOU-9HkdcEq6Y~mfLdV5MU6E~qMGqMAatvZtM6FfbwW6zwzlJJTur5OSWlw4VN~sihdCK1qVwHfJgh-Do20GD1cTHOm~~kvznhWzhBFKDQDeC~u0bpP-TpLSTCzVK~xN2CC~OiHiXeT-zk8nxcZtK2nQ2W95JjKJawX~ECkc4S5qF6V834dKaI-8ZOGHpjzUHo~nLyDMVYahsgX4XN30~Y-Fqzf~FqFNqbvjGlZA49D68wNCia2o2Wd1N~wcQ__",
+    "url": "https://media-service.gc.com/e2bcb2a5-4011-45e2-9630-8986fedc79d6?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS9lMmJjYjJhNS00MDExLTQ1ZTItOTYzMC04OTg2ZmVkYzc5ZDYiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=f5f~yux6QUOQd72151V-uGXbuzAq23k~wqCErciRTkEWvVXvPFzAG1tBJwnqsV-9p95ShOHyGsqudowoYp3287Oekslx1BakoKnHHhyclrxe8uC4ek7bguI7wNM8UnZAjGEvkTsNtNlqtz8VvEOZSIKXmsjmFrgeSagVwJ1l2A2knfygblKSP7nhDW8bct7bUG8AYLvlEae1zoSQIQffR9p1ddPxeGQ7LWs~u0UPnsh9ycZhgJyF8Su55DRIZlVNgHOXPfDARpoo5F42-jVUNza5R0F2TazVztEPHAPoj4tjRbj7xHgGUJc~3pn2EUdhojoCQTZsK7WqGszBYKJS0w__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/55819172-da51-42f8-a650-8ef645e84f7f?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS81NTgxOTE3Mi1kYTUxLTQyZjgtYTY1MC04ZWY2NDVlODRmN2YiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=IK72awrOcVLvS0PUTUBSwUULZRvtv-FCjnftvncERMKHeyDU9DK4fEfIH8oifp29esX0d2f7XP-wwcr9cL3zgjP43r9zcuog3wpSigY16t8X12LS1G7PFZcmSfW2~k~YqZSzdggom2pUKnaqeBnWE~2TAWt4hHzZ18kbdiq0jYUP7Ufs8N52LNyg4QUxXbsd8~Hovb7D2Oqx9sIKxJw~OM5hQaq5X3dovCeNcVNG-kPNTB-lJ~TGwX0eKCbcWw9xH3UkbV8oodeVYZod6DFeFUGRJv5CGsmBLSgFnLWXuYKqim0tq3Kc3YlluV3J3UR02fuDsJ3trWJ5hJW3rHgdTg__",
+    "url": "https://media-service.gc.com/55819172-da51-42f8-a650-8ef645e84f7f?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS81NTgxOTE3Mi1kYTUxLTQyZjgtYTY1MC04ZWY2NDVlODRmN2YiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=Q0RJ2F1Bo0jHwHoitOjezxMXGd5D6FQ6ty-M1wCY8wPrJcF9IWYYtHC8~1EEhR7Y8bcjoVf1~ruu~MbDK5aYjtNkK~2qOuSzskQ-eW4PREUKodolqAG1rm8Q5O3yhH-f7EJwRbs9rSzbQ0v-G5g71QYvmCeahTYPYIP6OQtmAfcZCO6ImvTAAjmM-h-GCUGq4MBJejBewjy8TzWm89jWF2c5SLhV8cxQljx804kINLLwQlEuEyEPDv1jEurRXktxlsPHr5SSbD8OBHt6H~BUPxCyTi2y6E5CKopjDLPkU~aPHVvrqNedcviZqnBAI48YXHDrGjqjzeGwSNI7cqwmRw__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/2e3c522b-4f88-4499-ba41-a068049ad8f3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS8yZTNjNTIyYi00Zjg4LTQ0OTktYmE0MS1hMDY4MDQ5YWQ4ZjMiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=YffOHZH42nzyI3hWCiAx8VFt9TyZ4a7QApcs0Ar7NeXZnrNBOsde17Ao9J-ifKwlEzbJ815DF1pMsfkwF3gGM8RRNwvMuKfN6MjXaeMKFX7BPnBp~OyYL34Tw6XSbe2f0wkSO36MCUp4UEFOkTXupmaREGJ-4GOwYcidUyPMJ9840PaVbf6cUA-LYK1~jmix2c7Zd191-Ae3StrcLfqwcMUGYTlM6k3OdM5B8TTmxQGiY0x8Kn5gDStCG7S0TlqYmkaPLDt-6lM2TqVjYo~rYbU~9aGfz7B~Gua6o350rehWLqwAXgFe-p5ECxbkppJFO3VCdYMGerSQ-v7IxdD-2Q__",
+    "url": "https://media-service.gc.com/2e3c522b-4f88-4499-ba41-a068049ad8f3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS8yZTNjNTIyYi00Zjg4LTQ0OTktYmE0MS1hMDY4MDQ5YWQ4ZjMiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=4cn0wKuyl9QHo6hs~~MYAzBQ9QlTVS~ixPLawO-CU72TMimhWPjNAyBv6R56ixL1iDYhCkZZbhUYxo3mpej6cuPxOdQGyzLF7bLLLgwKrBX14Bw99yZzcWc0su0szmchxijqszI2fTWdrpCFEX1vFWasIQsGe7iXi~4PjE3E-Id-uJHxdOWeufqELidnyDMeu3lHF6RPMZ-REVaCTJ0n450CnBtdadGtog80DzCSpkUtVrgTcvtvRoJP6KF20M08tlRNpg0dEhigjbjUE2Ei-Un0s6tB89koJmzk0KXgUub2jkhLIaliamTL~FsfPXvQ03U8Xz2GTsNvCbNWeNOnJw__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/69101e0b-2bc0-4082-bc8c-d70aa4c48420?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS82OTEwMWUwYi0yYmMwLTQwODItYmM4Yy1kNzBhYTRjNDg0MjAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=KCF8HRivtlgxVGsqIMnLEpv-X9qWr6A8Nk-eLr9ODIKHIB3O-xX3crOfhE3d2kix2fKetUaPHgzcd3RHTEyH3sTNWJv1u7VDn0xXxxRCTAUReD8TI7Ryt~Otdv9oB4-cLgLAHemqXOcULtZXwBf3BJOqKSl-hPKZtT94J2~dr0mOFP8ImGYEIzuI61SCBwP5grQhZImxJT39L0Gv4Im2U9eDPq7mMlGQAf004or4dpZ7hRdr9O6EOq9HbwXjFYQOhYS1xq4x22ZWL3yFzeLZgiEXJASpUsqMQzvmzudtfYI0kv96lvvtfesLriaWt-E3QRPhyFVu5Udgj25siu3ytg__",
+    "url": "https://media-service.gc.com/69101e0b-2bc0-4082-bc8c-d70aa4c48420?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS82OTEwMWUwYi0yYmMwLTQwODItYmM4Yy1kNzBhYTRjNDg0MjAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=PQ-w2V~IohwPXK9a9kTDpQOASbBP~nNcFhXSLnlOswu95rzXzBsESJUc8X7luULvEc-5mmbJlkqbjoZxmwU5l04jn2uT1xNaPhaIYr1wlE9EOEAOkw1Kf02atLdcsV5L1snSqHrBzNe47lQ~exPslCtDmYgnG-mQbn0K~GM1Yilp0nzZ24RRuKQ1vWq8VKwV43vhc4u~Im0Ax3Uxtb6r0vbIQwbohVf07hVZ5n1ACspOY2hP7Z1zwm8YzFSy-xNH8rpG8U2kFohiMYQ0VWGhO8DPyru9Q8P7cy0QsKo3VCDrIm9gbJvLbd3tyziIgJsmqq1adzIS8Iae5jefDKybEw__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/2c8910f6-1529-4f5f-9961-fc23a88e9178?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS8yYzg5MTBmNi0xNTI5LTRmNWYtOTk2MS1mYzIzYTg4ZTkxNzgiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=dFUrk3j4knX~x4qc2~oN8hqpHo0zd6qIjC-kOKXo3CXc00e4pBS-DAYyw62eExrCcjz8ydbsNx7W22XAByX2B7IVoBjmslAkT4flMrr5aYv-ghwrn~jh687rEkPxYlsk0ELTBrRqZupHnnBuy2-adCzCNFVo3Yd6COgqD0yLbJsM-KVQFuD-EoS2hh1ebyt~QD5xhEvjHvsKu5aUHAws5Tam49ExRFqa9g7PlH-weisBRDlTwyQlZmVOzeoHVSH0RP3GktlarQwh-cPcMgt6Adu1tij6EN118VVxaFNm-P5-Qa7pczDWfV02a0GCQVSaja6qPvEvgbERPV3Te8yRUQ__",
+    "url": "https://media-service.gc.com/2c8910f6-1529-4f5f-9961-fc23a88e9178?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS8yYzg5MTBmNi0xNTI5LTRmNWYtOTk2MS1mYzIzYTg4ZTkxNzgiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=BcdggM2KSJjASdzPhZUrIVPtR05kEkyYRwResLdu5IOZvztQrmhM4vJPytrclhpB5xP3~YTVwLaMi63UPYFJtVC5Xms7jM2gePnl~la0bQNKs-4Gi4F5-WPQlKLMTrgoW0S0pyVKODOtqY9ekQHGX9ddTV3gd82enyosSl6aqPyOm-iS9yA2ouSHarqCenE~okm~lOgrjgjTaphuIaM3lTjg7YxOrtZKQ6XNmX73m1CpyA74JtdIupHqG8hEi25W8tYf7B9ec7V~~5SgdAFPBbvNgYsmCMk1DG0Uz61IeBvsynCveQ88o8MWgVKClGhAHrC9uQCfd~0~gnyjNdEY1g__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/e66c2599-f70b-4c28-91e7-83fac0ae6779?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS9lNjZjMjU5OS1mNzBiLTRjMjgtOTFlNy04M2ZhYzBhZTY3NzkiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=hOYzlSF~H5BfhKcBgDeGPuCxfdiy9BI5tf1vZRFBnszk~ntbar1JoGC91y7BnJyvxAEudsG9vT6pYdHGxv2YBJdvVb-TcWzhwkPpatX4P913exldyjXaKif9HoJaD8dn2VWPr7Bsxk1hsSQzFRtgocTJrxYPHQJxJqRDRM0gTQ52URmDe4qHJ8OqPCE9XpoFoOI0OtX3~STsa0Pu6k0K2YEvMh4ZZtzMr~cut5wv6a98ILfd81vbEiSGp1BMHcu5UtcJbPvJ~JBqXMYKGslPt-p8hbnTgGiQgGrQudfeTEw7V9JB2FUogqbdmkhXJkCYrkioeqm9R0xxOzGHlHXOwQ__",
+    "url": "https://media-service.gc.com/e66c2599-f70b-4c28-91e7-83fac0ae6779?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS9lNjZjMjU5OS1mNzBiLTRjMjgtOTFlNy04M2ZhYzBhZTY3NzkiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=ZuEcDtAHo49EmklMZG~iqNeY~gl492PQH~w-Tz9e6XQjxp86Z61K2eO3NNh7FfGEgjNqGVE5fC7pTvVMbeWoWakDo-VvSTHl0Nyuzang5NFiZdmFsduL8DrejN5fHo71Di4OMK7IFhTfU86Kutmeo95K4~Pm-qNYDKAQZRDBvWdDmieTjBLgOr~ckdIwsknDScP7agq3xS7dj~aCVISrSPaBptclcQeOhQXo43DRPS7VZCEMG4VLrOZfDVFIPaZ6ipVbRVEULCc5oGiTpTh7lMSHo0JiHC7yz1R29G9g6aNILElSK176H8lY3P4KPaa1KaoF3AuKnauoqrCrU7OwjA__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/6aa5e28f-f068-424c-9df3-e8b47915cab3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS82YWE1ZTI4Zi1mMDY4LTQyNGMtOWRmMy1lOGI0NzkxNWNhYjMiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=s8TS0RGmorSc8waIwT-QFfvh7UW-~joyWRBayLy-xlnyHMkMsKAE1BwUw~SZgThsuSRrKRqrjrFdYtAHNNGPwBms7luoraKsUclCrxlg0a8eqCuETveyQ~xzRCOFcjq2ZwDj5EovN8a6ZG99F1izA7LwEgdKVEksA8OWvoxhLn9FchjrVeisqnNqRzjIQz8fnw42GpPk5MaOFv2mkliXAhsXYDf6f42GfI-nBKKryQ6PispNDUrwFGCthGxBKMUodmctGoygo9JmspHqa6ZNOo4mZj~deFoT5mwdNciEpqzRu2dO24JSAcakn3XRWC4Suxjak1NasSEmJuJWqJPLyA__",
+    "url": "https://media-service.gc.com/6aa5e28f-f068-424c-9df3-e8b47915cab3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS82YWE1ZTI4Zi1mMDY4LTQyNGMtOWRmMy1lOGI0NzkxNWNhYjMiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=AW34GsoFkO3QZLMK4kuguF2LosK93KuHve3NnDqWjg-EnHK-1g-3Pde7lCx-XlnallmhAKfnc-hdvuot6P6vMEe8kvYUxTWkmS8w0Oz3AQ85ndAST34g7EMo9hQO6ZHRmaWQEbp4oj7Fu6TVhmW0VFd8bTuRao8H-yFXtywxLToGo--Vs28Wv8ejCQnSvosNTPdLFTCpdzWd3QyrELVnoyz2oA365noj1dX6JPCON2oSf6DzbAWlxctSDU17naVbPQ7ZwZ3YqR5VeQmyvo-Aqvy9gURYiLHAZ6Y8235XdUogaAaB3H8CZhFeJBpDqusuQm9iDJlowgf~1xShkZoF8A__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/c70b1675-c0c1-467b-a3f1-594c22879d70?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS9jNzBiMTY3NS1jMGMxLTQ2N2ItYTNmMS01OTRjMjI4NzlkNzAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=QffTgf1ge4Z3BixwNzxfhXrAehYap145KILW6zdm8aTANlkWgotMhtmueSprxlxPrGgyyvWQJlOFhsNtw0g-BpEOeNFY-6Lv03YveUGiu073xa2agRkHxFHYYZvxmC5dxLYE9vV3YVom2eBvZzCVZHYkCEekw00zRjYWIwP4A780ECAORSEEiAKNOr1q5lFbGCv7MwlSofcE0WIB2gg-Z~~4DdhcUOYgYPEGOOCJtbL3-bECBDEV15dQfvCBTEEvcV-PRaYVAAheC3olKUGaqjA227ZBCFgzslVi8xv6G1MMf7y5UN-wlUCqt-MFgTtdqCcfbZ9u3AmjiKQVGRy38Q__",
+    "url": "https://media-service.gc.com/c70b1675-c0c1-467b-a3f1-594c22879d70?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS9jNzBiMTY3NS1jMGMxLTQ2N2ItYTNmMS01OTRjMjI4NzlkNzAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=zE7Ws9YTplL~HQtkxdrMY099HO81ew7DDLib69ogmojJXfS5FqFbcnywGWWbjsB2ZIGPuJqZ6Q3lIMqC6NHY6zlGpTZ92BZeEYAYLE0hOgoEVJ9UBstWh-4WAeveCXCAz3Z6Uas1z0V2p0fecpXnAW7m-MK6eavXaM3RcHbzQ2MKiPztnV4Gh5kP~KOeMVE8x2y8oXgUQETiXCYZrXNKGSjKgTFCnTXwpehKxiemj97WMUPdymj-wIFpoVRBZ2ifdEjZGACMR3x~PHTO9IsSdF-idoSCeWjGlDBIr4PZuOcmLdJNBRr69PyaRFzoW6gLTuwzP8jqj7n9fLeAZqmY4g__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/f42c9be4-dcd6-497d-b44a-c4a70efb6aeb?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS9mNDJjOWJlNC1kY2Q2LTQ5N2QtYjQ0YS1jNGE3MGVmYjZhZWIiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=HM~g20M~QLvxR41gfQY74UYmckKQVcrPXEJW-xFZZGe8gmgag632jE5BSdRvX74Z34NnjKnuNqDljl2~tbnMliKxOJWsB1Ytj9-3cLs5JjCtMOHQXDGQf6sOnTQ9T-ITrzMb8QuiwIYvUn0g-1odFzqrfpley8V2Ce1Fa-2--PDaW9l~xWpwbD8a8cWreE4PEGNLMfnCUdVT~rbGM0~Xs58xHHbsj2s9ez658py8yp03xvhod82jTwE7Z7Is0ywdZ9lvE212hX0kPBcF67UvzJlWhqNaeeQvV6yFlGx4gYuekxn0tbEskk6DYhl6QS4BufwutwTo6bokvbKh7TOzfg__",
+    "url": "https://media-service.gc.com/f42c9be4-dcd6-497d-b44a-c4a70efb6aeb?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS9mNDJjOWJlNC1kY2Q2LTQ5N2QtYjQ0YS1jNGE3MGVmYjZhZWIiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=S75wvzJ~a1g9M7e4pBDUa5rrJm1~2IRBT9aHwR8Uy2UEXWQ3kX8odJKk6x1AT6P9In460yOM7bWy89zPttDRigD57goxz7Ngyzaqt50WjN4S8WU3laUHEKNInJHiX1dZbzJEHWrtvcPkfGGTOMLymQSy1r82p3D3-X96OCoC3FBl-hcqmsLcbp-pUlN7BI2cGh5g8A7NNIT7ezVCoWODqP1E~uvoqF5n7L1ObqDqXlf0V~bUbgfgo7aJq8tPhzXVJ7OLU5DZEewA6zp3gqRJgO6NI6XS5U7-RptEa~rbrTwSJk6s7l-fri79HlwnYjzWuPxz22uGpAslGb3Fia8hUA__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/61ff4044-61cb-4515-a81d-4e3add6e36d4?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS82MWZmNDA0NC02MWNiLTQ1MTUtYTgxZC00ZTNhZGQ2ZTM2ZDQiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=a8FzreI3jSrPN1UShiRPEx8J9JLPVKGl5zW613tRtmUgkfOYuP53ICOVs3rFHN9rCFWHvrRN-qn0~p-zeoLaMr5hcdLFqTBmTLsJS75S76cSiQsg2DZOhoohv9Haxiqr7-22fSloTt-FDWMo8g0X~s~72woWrXJ3oh1kJXQMX~zdH3yT7WjI3QN~Nd7aH1bqoMNinXtDKoDrAh0HFT7ns-faRg85NVSUqGA07ZWYZ1Pl4FGhzvlMHw05PmNfr94789hRlhTehKK05sFET01ByzHzr5VqASC2y2pOPakXMZZukSfj5qoBzZFwodpC4Jej-D5TPH2iuy6UFOeO30Ma7w__",
+    "url": "https://media-service.gc.com/61ff4044-61cb-4515-a81d-4e3add6e36d4?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS82MWZmNDA0NC02MWNiLTQ1MTUtYTgxZC00ZTNhZGQ2ZTM2ZDQiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=u89tSDhXfTnWHzNrh2jpKHWe~W5HN7JZVhjzyMZJTdUqbcgdCcT6kPHZMFt3yByrkzklNJ~JxoLCapDNo2vqQFXQcPM57Hvy~jjGv1-hPSJyCQd56I6VcKnyRq2Gmb6ppJ6lvuXLpQ85fQB94OYnQ9VPY6VCGVU80GVKUZDGY3F2I2a0UcKCPCoFB9jvlYWDgDlE1lnOlvIgykTgEU9nlIpQqslq2taoORpSrK9YBMPnMbuNEAbFBNfqAUctshHpymNUmOgFopMCikZ4TgK8YNQZOvzufs~vU4jzgkTpB3lkoO6-izXly2sOLnLZ1rqgfS1JtDPyZp1AOA11iGSHuA__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/ad9e34c6-fb95-4f8d-b1d5-42756e794664?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS9hZDllMzRjNi1mYjk1LTRmOGQtYjFkNS00Mjc1NmU3OTQ2NjQiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=HsnZr2TWIswAfJS-RR5~BJGOYvaifpy9UU~OCUjeeqS61UJ96068EJGYjkjOs1ToAS4EXemwPnI4~5P8AMfLSwmZCeCO6CAXtdMH1EP-PgnQoBb0ujnwrcdBLxsu89QlTUGXUJnrYzUEZY-5Wu3ZHaevMYOB6HeCIKoRpvgNR-sdyXXUX7qKXWYa9bPmzYqjHjdrwNwj7Gx75tTT18~wzDiNc598jMkVmSlXinsFPbNQT71a4vWy4ruvbb66nORsdJffeGj5FIcpOboByFumAAqcuoRdhxjdSgCKjw7nOlXXHGfDCZ3Nt9sNsbXn5lmROBoKJjgUGxqjb5Fj6059jg__",
+    "url": "https://media-service.gc.com/ad9e34c6-fb95-4f8d-b1d5-42756e794664?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS9hZDllMzRjNi1mYjk1LTRmOGQtYjFkNS00Mjc1NmU3OTQ2NjQiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=484i~cMZJIuovR54EWby9CKg3m~NmgKeG02QOp-WAWScjn1xbpl5ZmmHgN3cxOcJxVWWFWF~go6S5dvJLUDHdFyDZRDaLbidzyiYf9VrTyb9U7OAYWDYOEH0uDvBKz-1aHC3GwwFDkOkJlg2q~oSPUu17iSvwl5hC2tpJuk6NYfQ0Y~zks6zIV3Cv6hoTZq8al3h5WzOBhUICAVhQYz60o2sa0~wK7fN7l24oIExMAhn6Q6j-RvSljqoadoGW00ckDjQpfb9Ovkud2g3OVgJ7PRMNyuoHM39wFUH~kaLdZW1bTXkQE17u4plbjOwnQIkQye1D4yFEJSrTUmOUvu2uw__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/bf96a7d2-e54d-4acf-ae7f-6b4360ec4cf9?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS9iZjk2YTdkMi1lNTRkLTRhY2YtYWU3Zi02YjQzNjBlYzRjZjkiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=B4Q3xRPBwldVRohGKsT7vaMsN68R6kXhdueucDdbcnxCflTo3PTKQNt3df9nqvfdLoVTetzKg5dpqELaq9J7ptWmp7OhyfL36Sfejwx3TJ07~N-TB8skO3X6AZV8MgStp9yJ-cXYvbzPyWbb3eLQAXMGM68HjV-eQLZiEFPeuSDIm0M8jzUd-U1NdJHZtro1H9B35HvMQO4COKQeBsDKLWrWCd36lVBbo-SQbGJyRCea~WkPvlSSNM7cvf4SduFA39QVJakxWx-yGTsZZTjZq-bEaZf-lBhmzCjpsY8B6q1qOl8MNGWOg1mkY5lUOEeXappzYC168K5uOOsXH18PBA__",
+    "url": "https://media-service.gc.com/bf96a7d2-e54d-4acf-ae7f-6b4360ec4cf9?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS9iZjk2YTdkMi1lNTRkLTRhY2YtYWU3Zi02YjQzNjBlYzRjZjkiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=Sw8ohQdMT5O592FSjUxmBHqh1GbSbzrB6gBz9Tg-InDeRRPxUyhvE5zz1s19ffCRhGhFYXkaye82X8Lmeh5vWDR7udD1atnCer1gPT4O9VlnkOgi~fciLwOmXEof2YSPSTsUQWIBO2Ew7dqVBM7zM24xbh2msEAn2SpCd7eQbmd14V3jBhlBKKurXffK3vdKChjrpvECtnl7YHITDXQvgF5xEhP-uJjz7~xWoNba~jZ6lVe4aV3XQOWWH28lE6L8xzJyLc6KrPHD6Zt~C5qhDzQcAgmcEm0p72HC37YiJCpH5i8GnDeVbmJUAASCXpZxBWdI0nuMF3rvJbf8Vj00DA__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/1aa17835-47e4-44ad-9d84-76febdd1459f?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS8xYWExNzgzNS00N2U0LTQ0YWQtOWQ4NC03NmZlYmRkMTQ1OWYiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=ZoUBXSH6GmmDTV0ESO2q58o6fX~OHDKbUBEcJHlK5vSAsZe1KGr8lo~v7k8cEpDQkvLb9rNDrpEt2p0gh0wJzwzyGVRbxedMoxtm609183Eu6fdNxov0VpGOeP4LJCKix5NWMjtPm0U-eo1HpAwAxMktBTdX8eQ45AzFa1fhHqbTBrmup96ofPDD5asPJ4n1wgiNyILQJjUkfjNQI~PrHNYszgBRQabGK8XAuVKBNYhcp~6riQf7wT8N8zq4Gh0mfoqPfg5KuJw~Kro-oAdzjkN-ELxlEqUmPP7RFooQWSriYcJYZPz4mUu6MREc8fxneyrDkQq8xlZe~ju-CP~bzg__",
+    "url": "https://media-service.gc.com/1aa17835-47e4-44ad-9d84-76febdd1459f?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS8xYWExNzgzNS00N2U0LTQ0YWQtOWQ4NC03NmZlYmRkMTQ1OWYiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=NoR2fQ0XzyZa0IBseWEEc-cjlhujvJRIMp-pcUEUEU39LJIXtHLZM7MtVNZ1J-he8etc5-EIuAm4DxHOlljlNASy30VdA3JsB-1G5PmNjdwanvfYo6-K9I8cgmESyUcF4sJ2OGKMoTxTm~r3uGEIp53KR5iNhrrVzwUt1pbM~5ckJrFlrBsuxIw1O1UWv~MHKHXE~-812B~bJPkNIOoP-r4slzZsMrw5cXFK9vaQpHVBEOtc4O9y2IyNthktor8Z97zzEOyxA3btBwsgYEke5-hmcjBzT0FpbeQJuDuIi7fDpT1eXgmYzj70JfXPpB7ybf6bXhs9mGYY0UZWefz~Hg__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/6c7d7171-a578-47fc-80b8-d05364878fae?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS82YzdkNzE3MS1hNTc4LTQ3ZmMtODBiOC1kMDUzNjQ4NzhmYWUiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=zaZ~ztPQsdR6rwMisYuZ5do~EjbuntgsT0dsHJFcVU9y~7GsqvcOOJxIX7SyGbeBpvhlwCT4lsp7ZXUzNpUIAowdVQwDa4lui~SAw9Iz3gNlErP0Ylf0hL3j-3vBZooSevk3nm~aZl0F~aNSLMRBRgz1umWtdhWtwGtqdnpaWD1sJIHEyvroQVIERwHFgNRrznymMYXV-4H-1HcvwI1UtsAC1pGWS5kqShSnCTB8111YCZuxv693yLS2VT2~EAYfNhAtuakPYzG9bnPmo3pqulcNFnO7n3mmDZfMZcQ1ZFBlH7Oyyk2DqdTP8GWOCSUq5D6hGxhlXdh3XEztu8Vo6A__",
+    "url": "https://media-service.gc.com/6c7d7171-a578-47fc-80b8-d05364878fae?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS82YzdkNzE3MS1hNTc4LTQ3ZmMtODBiOC1kMDUzNjQ4NzhmYWUiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=wfbxbQGrfz6cw5rWJ03o0v3AV6ZeCXlObhxObAmcSTifcKTh-2z1tCa1yQzYYKvFtOOht1ZgjF1-dslTBTwkqyR7Axwi3bIgejUOq6bhn4p1AFGS4SvsQwkCeKhiqE3St6-eyBJwcxoVcNGSJAZkyBDqKAWJfqkOU-PzzvDNM~J1CJAJWUNgipNTPSzrSbkPrQhAzDSg4CCPn3Os9p0KrVKBwBd-vJcRX7yDWfW2taLWmP03UuIN75mzOHnJpRf-SGFF3HzUKEj~XZL63nIFiofMSMZotEkDYqxBoWkaLqt2YNT7EI6CF90D9R9Y98PKbN~CAKrPRQbfn8zBiCMd-w__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/c15ae151-764e-4c22-86ac-be7e475a6548?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS9jMTVhZTE1MS03NjRlLTRjMjItODZhYy1iZTdlNDc1YTY1NDgiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=EmniJ5H-NgeejWS9PqMi5n37g3222dxcXbRhhBecVoZ6S-GFN2xX1dafElAOwZYCmf-Gx-DlA60whvck9L~wUrVLDJluK4m6NUuPgqbwXywqqIlXGdr7Ek3DWnShbXfeiTIckt2WLCeO~6O7-ckPon~LsRiMZplaDz7jPojajeoMMCk20U-w2DYjDe8Rz9HVZd8t0imA4yBlZS12nOFiL71i23-7u36uF3FSuUPMSWoiRZqcX6UiuyNhYxCJE5UOZaIorSycMdGpizxpawTCtu51YGjWT94BFuoWzKnbu8Xl7WOaK4UmeVC3sAU~CxiSRyAGCHWEBN4jUhIsQHWoVA__",
+    "url": "https://media-service.gc.com/c15ae151-764e-4c22-86ac-be7e475a6548?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS9jMTVhZTE1MS03NjRlLTRjMjItODZhYy1iZTdlNDc1YTY1NDgiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=GnELUE4TIUFCoAwgbJ1six~zSuwmsDseYgu42CX31p2K~Go9ktu2J-LzUcJRGe1b9IdM2WuIe8Ku6atKxeLPES9rfF5mIHji7WLom3nJOrQQXcLjuhvIr-KpMTBnqg-~Xe6CiMdjtSpAThFneK5qWubmAO0BLL2m0BUGvpQPEU6k8y6rrQLZaAQRrPxxW~sJbo~mDDEwOTP5D4ppJlUyR47o9oxaZaMPeRXgG~PR5nhlmOeL7mB6V47KE5M8~ciWthU12rV-o1q7h9srvTEMRBwNpGooNZhcFIJsu~pu-a-DKL7wSO6VO9mnmWt~XfIHZEFAOgmGF-nALUAgFxHXHg__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/b247beba-7077-4a45-991b-3abf56b2dd30?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS9iMjQ3YmViYS03MDc3LTRhNDUtOTkxYi0zYWJmNTZiMmRkMzAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=l5BNGfAVfR~BP3-3A-1BLb1xgdO60gM6cVQaacoaSRew~whyKZb12QrnXuPp62VW2R~42PfnI2YKQqsi~Xq6AotsyHV4-2VUNQPJXkJnHEYVsoaAhElxb-PCBgCI~f~Zp4uEA9fp2Xb~7IGNQAbAFvQiDNufflHo7cuq~1dOpos8yvxpmUqY9u4LMlLVmtPf0kegA4ujhrLIM-vr2JC7WXPgjkO07~jGIW9WCT-Nb3yOm5Y82u5aI7mZEieJMZFMB6ImeQNd8mFUnCodNH6iPVZ9ZcMKIYW4P8~eUoICSxsnKGG2dz00IjMtkkb7y6syXxou1FecLPQYFV--N2Zcqw__",
+    "url": "https://media-service.gc.com/b247beba-7077-4a45-991b-3abf56b2dd30?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS9iMjQ3YmViYS03MDc3LTRhNDUtOTkxYi0zYWJmNTZiMmRkMzAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=bBGpwMCwhAt~g5AthgmwUo7Usc2l6kpb4v~zLUOHaBnAfy0zn3y~oTXhHDq6~czQiBHi8EUIxi9Vio3e~Igr22vV176WB0fK7ywiFFwbljpAamV3qS3mFMcVYS8qNHQCytFqUQ8VXylLFOtOKrizb4~kMa0ZtL3ttKoEYn7DyxWXL2WBV3O8nu9JGfXd6O6eGyXOEMDYoYW-Po4~eiHgPu55o72fRbK1uz1tT~BF~wezAqB~dJVQSUImUGvrfmAK43TzlZj5ILIAnmjoQb-CRBSwwVammHA5A2QChQ9Dh67y0mUfeAMPXHqIyNgtUGW3c4vVT08IbdQ1R2v94h3GCA__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/0616d65a-0d78-48d6-9f44-31b5b6edca99?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS8wNjE2ZDY1YS0wZDc4LTQ4ZDYtOWY0NC0zMWI1YjZlZGNhOTkiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=p9sTaip7OlAW2OZUYv2KE9CF3UdxXN0ldNUacYK1o4vRU3~AuWSiua~ytsG08TiVTUGTSsQ5UN5e4YgCkPyxKeMqsXgQcNsgRchVg99Sc1RvLVjRsDyBM5YXpQNBU1IEqQSz5C3DPHTBflcJbUrjzwQhXLwXxZ3q3DJ0v2~xZFyJ2UrirSVglvJYNbsBYTNc7gJKFQLj~DLBj5uxQxMIioEQP7mejpHsfLNELp15qIbNlnudmDNU1J~sV3PLi0APPb9tVry3Yq5FIpK~PwBXcXd-QiMjEck~NwqM3OvUXGOdDtIDXYe2Y70wmUEJZNtYGOxN~V4l7HNEFeHK326~cw__",
+    "url": "https://media-service.gc.com/0616d65a-0d78-48d6-9f44-31b5b6edca99?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS8wNjE2ZDY1YS0wZDc4LTQ4ZDYtOWY0NC0zMWI1YjZlZGNhOTkiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=XbLYTTLEZFgA8l-h5jMKPydJcbvTb~sSC8NGBqxgDZbrYSbn7rJCNRkjGqsKh1ek2Akl3dYxhQFa8Bai2EL5I1-XjLQ69nrgiOyhjYdyMl-VDGkMM2lqDqmWD8qNV8f~qc9rmCn1EB1rTFU9fK4rArdl99OuunDE4NZnw~cxZo4~svJJmG5IlIB0cORrPr6c82wXsREKi7VrtSzdjeJV--UK6o-QY9XU9F5JfsAhpu9eVER70zhPU-L0M4kKzHc43SnO3eW8cQ2i2Wk5pC9uCvjCLA2mxR0mDQWcQDRwhB52gVTz-RuWe~-DtSgK7OkyyABkQe~KTGFF7Pff2PmRsA__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/59de20cc-1537-4ae5-85a1-3dbb63113b75?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS81OWRlMjBjYy0xNTM3LTRhZTUtODVhMS0zZGJiNjMxMTNiNzUiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=F~KJR-pDLeuV1pl-SvD6aWPl0c6KZ8n7b6WEMQ6NN-EnpttZOKNtLjc3TbT-Mk4Brn4KaKuz5nkJx2r781l5akoqoSrSzjryX931Jfk16Jo1bvXBezU~d5fSewMnjkiVtxzemEohSA9zga5zy1PD3zgfX-YYCw-fySuxVZNKkF0ZuAYFD-46rlzoe~yWxelvv5z4BFC8-FQvDeX1hlgF08o5kFm-EaGlbIDTyEfkXXdkLk2u9Bq0E240H7pseezgNrEqpbSDnKir89kiKbL8vCYeNu-cUcrTi-Vr7XFbyuwTM1fotttTfSo7BAMs1PL39Lw87RMFeUXOnd6su7S8NA__",
+    "url": "https://media-service.gc.com/59de20cc-1537-4ae5-85a1-3dbb63113b75?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS81OWRlMjBjYy0xNTM3LTRhZTUtODVhMS0zZGJiNjMxMTNiNzUiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=w-kS5fY0reo8GjHFqLUuhCQTo93VwD35oDoL2pkr66uASXGlCOySZG4xOyWX0TCK0C1n7kv4zCGwjV6OO6NWc06rGuhYRJ1TR~mrFrTpj3IVcTVZSJQgxnlib7V8vzKt5lb~~ukmFVokEB5S7UomeswJYxSE6GIHSI5MkA5bDi7jun50cIzfw9bLJOrT2Qyh2YMY2c9VILEYSjkheGO2LeDUbjNHa1JfalLX2uRDV2yEQkha-mIxIKAChV9bF5JWElOOq~P1Td4NP93mvfx0isdKG-n0S5TwbVrqVETFaPovr6vVh8WztiVSQqEoa19hWmoDXinLkClvoQBe8JriPg__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/509e1b08-293e-4b3c-b2be-be435927c072?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS81MDllMWIwOC0yOTNlLTRiM2MtYjJiZS1iZTQzNTkyN2MwNzIiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=ws~fY6nYlhbxb0xiesX~6MYa2nDXPWhJsAJtfzHoCS3ews5jVs1J2eZlUrh5Hl4R562SldYDdRmBZzUczXMU2peZmeuIxHBjr9Pr0Af08PRXMenf4PVZ5lo3NHsPa5urM-4oF2pFJs7~uyYRsKMEXB9oVolgY7lLZPi9Td9hFsFzsgqkE0COyJOrkPCweRTFuU4xRBUGuySIPsD99D8TARoBcsGOXsrQzEt2TDwTNZB0ERHedw-oxXT0s7kjv1hT-QoLOVEl0iYhq~EF4p66QINzKkv4Wn3XF~cNjYUNEENK03EQdmjs6A4v3K1IZaqPCJb651-X-7M77Jo3Z9gyhA__",
+    "url": "https://media-service.gc.com/509e1b08-293e-4b3c-b2be-be435927c072?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS81MDllMWIwOC0yOTNlLTRiM2MtYjJiZS1iZTQzNTkyN2MwNzIiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=pf6W-VTMN-LWl1HJe~cfINsePV3mz2oPT2Gk56XPxvYULV8eR83LZ~VACHW~TBp8BV9uNyZMGrcFjRj1nARovgYdvprQTr302bI8eEeAlhMyuZd0h0BVrvwiLnDTo48lLV349vtM9KbRICyx1-SrfkDtutOVtFQCp0TniqHD~EYtkdLv6-rsUh-SFtpkY28LTgwwXMMbs-Ma5x2LrF096ELsiQG4Ck7GjKxLDUHH4jogibq~3W1NhCVW6~bsEcZsfYMw94SqqLzw1ai~k3pYvpuF5nGAPsexsmQyPzLwFWUvNY4Qa5FQWMqQOVcro6T~VZVNMRyM99D4~09am9Z1dQ__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/062ad894-453a-4638-a37c-7657921be014?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS8wNjJhZDg5NC00NTNhLTQ2MzgtYTM3Yy03NjU3OTIxYmUwMTQiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=ojoF7VrUHcK-jHaJwiJRfBrwoz74jhZJCghFLocd225l7iN7fU7WaAmEFGxoj49q5LO6QUi7Xb77eErI2BstSjkp2za8MFdlCG3-aWslwUnkN6oxMd7qKDFdwKEICFbZKCw-zg3WOD0vTPSKr2gVIWXDuiYP3vBXqcQCHhFXdVJcbkqN4Y78IyjDv2YBNarIt2EiF7WVu1V3OFgzY-~UNwpuXpBwzonqXA706vzy8u1Z~A4kbyIcp0aHuKlbqN~rDas0z6HaxYywenRg~bN~DV~dwmD9oIxMX1tHho3JecMWkx27lLFvj2yansXHCcE7ds6lIN46GqyO5OdKqQR60A__",
+    "url": "https://media-service.gc.com/062ad894-453a-4638-a37c-7657921be014?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS8wNjJhZDg5NC00NTNhLTQ2MzgtYTM3Yy03NjU3OTIxYmUwMTQiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=17zrPA-yPHzQeesiOPGO5DAPyQoSSUMZIGtRlK4XJRnYBG39HuqJy-hsAQRXLnKqvLqkJnQ8kPQbshzeEemDZdKLeddUM3rhm~Mzwptw652DZ~EiYGHGo74nuVecykXglnoFzp5~AAuqIm4Pj-b21OqddbEJfUuY5tcY8wb-YuIq7vL0yyS~-Udoe2H7ewMBPyhb-zBDWBRhcqpBxc8ZbThM5NLxNkc1QOhvaUykVGsG9DlYvEnBHH~jXaXfEz0RFav9NtNj3CDk~wBKhw43vnsd7ce80myCzghk75jaATvl2CBRTsQIm056TEq1Yp9Bi4Ak2IpJiaQnkmF0M6GxaQ__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/3662c6fe-8317-4113-b518-9c1f37382d3a?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS8zNjYyYzZmZS04MzE3LTQxMTMtYjUxOC05YzFmMzczODJkM2EiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=Pjv8mpq7J6SsPWoY--UuAFN48-zD1VA24-Hd~lL9DQrZYJXwn-Bu~bLEzuhX5WTbiHOD6WD02hkdDYVk215-dIGCqTfPNB2sWGFk3rCW-mycDlD1ycBxStVUIQWbfkyrf~dvl1-Dhv~YvT12sixRz~5Mmfll8SJuChNEvYGKNf60~I7bSsWlI8UC4OsRAIzRgUgktCqqgN~ULdrwytASTU7ztr5gD9gsyu6nRxFhksitbyGg5AdUl7aRuho8NpEmvob8ALk3huQGZQX-8g7EdxzsFtEyNggDQfJOaa65UrBLO7E-TX9LbVQ6EjZUNXW0Ttv4rN5fzlmcodbdNAI53w__",
+    "url": "https://media-service.gc.com/3662c6fe-8317-4113-b518-9c1f37382d3a?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS8zNjYyYzZmZS04MzE3LTQxMTMtYjUxOC05YzFmMzczODJkM2EiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=ehon39haEuVyYqqktnMAi773sc4OV2t5TO7gSRw71T86iSr~JRfJfslB3NLwaXuLLeelawJcLdnSe1ovuUHCoMgqbQkkQC9wHUMkX0378sSQBTQgZFu32P2t9Ak4Gff9LGU66TgVcJGIXVftfYqer43OnNF97GHNe8~zvG6Ebw5j3xcz3KzlvkvUGsLWcNp422oWjeDFVY88jPnf7jfslnejWnQRpW0SKB6Yk~dQWb6MyiIt~~hSy3RytQNqFj0mZA-OaUgjDYu06V1uCr0ZEnlMbzF4cksUUdw6KDv06tX~WybvIXkEiSiRaICyZYnBGMvEKPZ54Z5JYXYtmhQ7NA__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/0a41c159-9b99-4ae0-8b18-034bee11e346?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS8wYTQxYzE1OS05Yjk5LTRhZTAtOGIxOC0wMzRiZWUxMWUzNDYiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=WZa5SHLCSxjxCj6klYh60G5iIn7W9iFjdx1fRDsI4LKm80O9A7Ebiz4R-F5kc9jnVwS80D42scRWtFKL33cJRXWfDEXNTSJ3nJHZwH0Anks~NT4Pq4qZxDPqcw9iJGG11cZU1tS90ayQXcwfE4lDZ5CQW1aibDUIOsRC8S6VPOIrtxk60j5vAr3lFlTD8-qVXOk~0uYp6flJpltcmCqw8QOwG7veJOBo4tYN~dZ3qvqCIxPvlToDRz5b7YW3Z5oDagYW8fxX-1h5sGLnWf3LIEUO~ZQJPI15Kgw46nJkrpN~O~3~1ii4FwMDldQNHANVx4pjOWWWwccXO78A19KL~Q__",
+    "url": "https://media-service.gc.com/0a41c159-9b99-4ae0-8b18-034bee11e346?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS8wYTQxYzE1OS05Yjk5LTRhZTAtOGIxOC0wMzRiZWUxMWUzNDYiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=uy5Kn2NUylJUdOnGi6PbHEQduzp4SpMpzpalj0gB8cnAosjjeTL9tvsbeb8KozjUSiC3ldtKliPEBay2MdlC06U8UjY1rhWfXAF6Z50ZygEHuuK5PxzfhJURULyuvmc2N2x7wrg8LLkvD0eBxGMAe21bKgsJyp84fbWx9~G9oEEnwmNIQHi~orh3DP0ZtVVNgV4yv80kqpGunUmS7mA5-NDw5~8gYGeh--GJXh~C~ofrkIh3~7eLXJTTEdHE00hgAukc58fLX1MNAjgiRtDQd4KFiWC6fn63cqNuEixw39sXBEN6xbcya5XDxH1AT1slKDv4mTg5wMpvEf8Ah2Jxeg__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/2f1cecdf-6ae4-404f-a5d4-da3e0a03d00a?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS8yZjFjZWNkZi02YWU0LTQwNGYtYTVkNC1kYTNlMGEwM2QwMGEiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=EKpdq-FAC9xq3c4At-sZ-~rxZl5D1xYEYzrJhcPOUJxYP03WnNayWtnhO5GQbHz7LNNNBWFbsBLUUxME-J~RY5APCmebVPecjiBt0VsmLDekFODCyN46ODRDtf7hVzJAmeZGxKk2Bn9XXQj9ygiTsltzOqAen1muKUK05xcsLr9CO6e2RpkwiZHAjr~0BLexhRfufaYjHYuAFBVMLaksa-3vh7QlmbvdaJicdwV43IR~kB3EpFz~At2SS~ErVvkPNwIdDjvuFzzzs9SZUqE4WcqLxv8~7eNubcM7BHajcWuQBveMqZrtYH6lPAxvVcbYo0XZevesFkJwcobPpuRbgw__",
+    "url": "https://media-service.gc.com/2f1cecdf-6ae4-404f-a5d4-da3e0a03d00a?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS8yZjFjZWNkZi02YWU0LTQwNGYtYTVkNC1kYTNlMGEwM2QwMGEiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=kfaF2TgxpzDMDwvAv-hJfLQOQ2fzVaaZDgd89dkSlXfXOjlurb-esZxNlAzPM410Kmd0cj9iP8EnSgjd9JBHjUwKtYfUqwq4yXy6QqXugZYkGDQ~u3K9gxyDStWlIIjBVAPI-W~3zKEdTY2SJB8cuF6lflp-xREwMJmSKdWmvqJg8eNLKgtdKzHHbMkRDtLd5IF5uKgcR3tMSqqjSnUns8uGb25~5DAi-zigSJUzYSnqBukZ~6L25MAM1RzvOxoYRO5VQlhm-wYpFmKMvl30YiEB~-eg1zFrQTWSA4WbxrhVPYCzEHHE5RPX-U6Doq~vrq-Sz0KgYj-AS5VCMnRczA__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/7ec93112-c774-4b76-85c9-4ad10f67a2c2?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS83ZWM5MzExMi1jNzc0LTRiNzYtODVjOS00YWQxMGY2N2EyYzIiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=NZk2teOBJtaK~ThzO9zbH8HuIjxvJMVINvTbwEA9jawsx9rJpARiJeABL8QiArySOMcdzdyxSfmcUYXXb7O1iHY82EYqtywcajT5~asiV6VoKyMUjxgjw4HkqcMgVtO8hi3rkjKRMX7AoswJ3oKRR8CLwKRixU~GkJTXp1bf9rTFJkXFlDKALXzLDAvz39-4VQkbm-DWlajUD4rmOQcOSFotLYyFE40FAmpHRetbxWDtErNC10yNJJLh1hcitIhqfAVqoOLFdtF25IjYMa6H6IgNbDpWKXiJ2FiY1~E~Cn~4p2cX6nRxsxTCZo5DRd5RW5yk7nBuohXSC6oFp-PKpg__",
+    "url": "https://media-service.gc.com/7ec93112-c774-4b76-85c9-4ad10f67a2c2?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS83ZWM5MzExMi1jNzc0LTRiNzYtODVjOS00YWQxMGY2N2EyYzIiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=Q3dGaqJE3e67akSq49x5mD9ep1YmD5QsjmVp5nVa4RkAnyvryCnN3zFhhUIDX1cCOPZj7P0wRUK7bLwjyNpJb-hp9T4uP4C0vstG~JStqranjcXdtgRxJ7tIjwV4Ns2Bn3kRdzN5BAJfZTs8~eQaGu--bvqyQPvFX01xzRTkurWPMZdXSVCisnq71bMUP9Je1hTdpao0UshdAYcPl~f2zvWMJtRkPdHDuaOzQW-sth5nUTOrCCnqCNCIwzAD1cI4OX4glcR572DJ7HJ6kc3wataBau1vkkpxNK3jIC64OyIcPlhpysob4BVTS-J~3PzH2gAA-FUx3x5t-3kxJ6-kdw__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/385cdb28-499e-4ec9-9b47-34993a0af176?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS8zODVjZGIyOC00OTllLTRlYzktOWI0Ny0zNDk5M2EwYWYxNzYiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=A4BXcVIE7dWzBgj7etvGb-iLKiarTK1ll~GkFqflnFC0ac~bY0BNe2FF5jC4447iQAE0NbUTzIPnB3hNTedp3arPXDi3-knTiK4Vbu1VS2NhfDbJGv00SGdrOtVsEhctaQvm5CjW9x2gQXGfWfjjVq8FmEXiMHzaJLCU5Tvd1vUTyWDnZompBNXRtwj3bs2U5VCeVOYh5qtWzi9mZB3azOR5j8Nr52YMf1Spa-dCP41mxno8-mXz3D4vhKAZe72AgyoLacsosKNMxB1nHftGgJGVNokSqYDrbbGnnGI7Z-c~UZNLPcee-nrWvtef7vKanWNp57bNj8uFYg8POOC9iw__",
+    "url": "https://media-service.gc.com/385cdb28-499e-4ec9-9b47-34993a0af176?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS8zODVjZGIyOC00OTllLTRlYzktOWI0Ny0zNDk5M2EwYWYxNzYiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=fXQVsJ6lDH~QKEE8BCVnLX~GOujBc6~5oXq23YrMoeHvJi3GGf76aIJZ9c8pbjGcnbHHjivgxfVDx3HHz4mACN4vW68SynOCnzsA3GKdn1jPO-8F~5nYtyMserxtEmkFCO3gbWUTuAAVFxfVGmcC1ghctapFPD2BvRfc3bGx7Fqe9dr6QDmqNfk6qEGa40Ubooldu5jM~bLp7tcFt9xwEz6941ZmeeG4UnhvDhvKSjiL1SOpqDhDkBCZv3T2OTjuBkU8EpdAja-5j9UOHqCKw9ev5MfAcvvEEn793dd6XKKdy1c1O3LeGdRMfb1hJPl9FUZ-SZ-GTz6U4YXvosRHpg__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://media-service.gc.com/f33d75ad-af45-4819-855f-5a8a06bf74f9?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS9mMzNkNzVhZC1hZjQ1LTQ4MTktODU1Zi01YThhMDZiZjc0ZjkiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjMzNjd9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=OlruEAdYBbdFZ9OoIKpnQ9xWRt8flScuMZvcD6Se-X9xMSyKYwUW0gZ2jW1Apfo1wzgkdHM7tL9XEyC8YseixP205LBjfDmUOAFV7HDXNABIKMbSIOHzb5-klxgCrz~sgqs~fwfTSMf-OxeCJzwA0JFrJzib5OHtgEko~bYGqqRKcCfgtkV0X7r6tXMTHULDEDgilipce~QaaACdivOdaI5MALV~CXiu-RSicWhpiTWh~4cY-MQ7QkhL3WOa1KFI2MnfQtkUKp3woBeTx0DFOeiS7qmYoH92jZzozgTl-sgrh9BivXnBwq4eYOiwX~Tf8Pi-bOE8c14q-IIfkN0zVQ__",
+    "url": "https://media-service.gc.com/f33d75ad-af45-4819-855f-5a8a06bf74f9?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYS1zZXJ2aWNlLmdjLmNvbS9mMzNkNzVhZC1hZjQ1LTQ4MTktODU1Zi01YThhMDZiZjc0ZjkiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODAzNjY0MzF9fX1dfQ__&Key-Pair-Id=K9VSFJEM9PTHU&Signature=gJUx1YmL9JDixeC-sCN8VzUrUfSOtC8hKAKRwdYysy5RpJJwt-FpNiPdurwqfSVFWD-7fdqIMVHJCR0-x~0peXFrFKI6D80XTE6GSS2knrkZqhas0yC1sCdHOZxW1atPEJRcE7sbaa~JcsbZo1ndbDZ148IZiVKtsWjKeMpSY5RYoMo35N3qKwCAFGgR-WESQSILHqN-zBaSWiPKE855VeScvsly9C1uK4CH3qCm0u80zwnoeIdl8BJf7vN0z1-48y4bWcyaCX3YvAaxQ--XoMefwbFLeXupYV-0qIkjdneQPH9xjcQk~HanokucZlxd5FUdGO4Lq4h-iVztUSsu6w__",
     "domain": "media-service.gc.com",
     "headers": {}
   },
@@ -590,13 +607,13 @@
     "url": "https://api.team-manager.gc.com/me/advertising/metadata",
     "domain": "api.team-manager.gc.com",
     "headers": {
-      "gc-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImZkNGI0OTA0LTM5ZTAtNDhjYS1hOTMyLTU5ZDFlNDVhY2EzMCJ9.eyJ0eXBlIjoidXNlciIsImNpZCI6IjQzNmJkZmViLTdmNzQtNDliYS1iYWVkLTU5MzBmOTQzMzFmOCIsImVtYWlsIjoicG91dDg3QGhvdG1haWwuY29tIiwidXNlcklkIjoiYzA3NjNkM2UtYTg4My00OTQ2LTgxOWUtOWQ1ZTI3MGJiYmQwIiwicnRrbiI6ImM1OWQ2ZmU1LTc2ZDAtNDYwOS05NmU5LTRlN2IxZjkwMGI1YTphNGViODFlNi01MTVkLTQxYmItODQ5NS1jMTk1ODBlYmM4MzEiLCJpYXQiOjE3ODAzNjAzNDUsImV4cCI6MTc4MDM2NDEzMX0.LnFgXsjUsJ-HO0Dxb3ahMd7TyTBjLa_xJTYHG_fkLKg",
+      "gc-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImZkNGI0OTA0LTM5ZTAtNDhjYS1hOTMyLTU5ZDFlNDVhY2EzMCJ9.eyJ0eXBlIjoidXNlciIsImNpZCI6IjQzNmJkZmViLTdmNzQtNDliYS1iYWVkLTU5MzBmOTQzMzFmOCIsImVtYWlsIjoicG91dDg3QGhvdG1haWwuY29tIiwidXNlcklkIjoiYzA3NjNkM2UtYTg4My00OTQ2LTgxOWUtOWQ1ZTI3MGJiYmQwIiwicnRrbiI6ImM1OWQ2ZmU1LTc2ZDAtNDYwOS05NmU5LTRlN2IxZjkwMGI1YTo1YzQzYWE4Yi04ZjZhLTRjNTgtOTM4Yi04NDM5MTU0MWRjMGQiLCJpYXQiOjE3ODAzNjYxMjksImV4cCI6MTc4MDM3MDAzMX0.ouaOqzAULaf2LL7tPyFRNsT3_TkgXkQ74DMAf1n9Tzg",
       "accept": "application/vnd.gc.com.advertising_user_metadata+json; version=0.3.0"
     }
   },
   {
     "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=2f8ef8a4-9658-4820-9a15-6270cfae7e8a&batch_time=1780363068688&_dd.api=fetch",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=f49465bf-3f93-4059-a1e3-feec8b84a141&batch_time=1780366132297&_dd.api=fetch",
     "domain": "browser-intake-datadoghq.com",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
@@ -604,7 +621,7 @@
   },
   {
     "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=66267221-03e5-4cd3-bbd8-fc20877c088d&batch_time=1780363068756&_dd.api=fetch",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=f6144d40-4903-4131-8d44-13fc5422ff5c&batch_time=1780366132365&_dd.api=fetch",
     "domain": "browser-intake-datadoghq.com",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
@@ -612,7 +629,7 @@
   },
   {
     "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=37ef10a2-4cd6-47eb-a837-acc836210ad2&batch_time=1780363068758&_dd.api=fetch",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=6ac85843-28b0-4ae0-ba21-0d940311d7ef&batch_time=1780366132380&_dd.api=fetch",
     "domain": "browser-intake-datadoghq.com",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
@@ -620,57 +637,49 @@
   },
   {
     "method": "POST",
-    "url": "https://www.google.com/pagead/form-data/1032118239?gtm=45be65t1v885948220za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938466~115938468~119064590&rcb=18&userId=c0763d3e-a883-4946-819e-9d5e270bbbd0&ga_uid=G-CF4K8J70MC.c0763d3e-a883-4946-819e-9d5e270bbbd0&npa=0&frm=0&pscdl=noapi&ae=a&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=SA",
+    "url": "https://www.google.com/pagead/form-data/1032118239?gtm=45be65t1v885948220za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938466~115938469~119027223~119064590&rcb=18&userId=c0763d3e-a883-4946-819e-9d5e270bbbd0&ga_uid=G-CF4K8J70MC.c0763d3e-a883-4946-819e-9d5e270bbbd0&npa=0&frm=0&pscdl=noapi&ae=a&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=SA",
     "domain": "www.google.com",
     "headers": {}
   },
   {
     "method": "POST",
-    "url": "https://www.google.com/ccm/form-data/1032118239?gtm=45be65t1v885948220za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938466~115938468~119064590&rcb=18&userId=c0763d3e-a883-4946-819e-9d5e270bbbd0&ga_uid=G-CF4K8J70MC.c0763d3e-a883-4946-819e-9d5e270bbbd0&npa=0&frm=0&ae=a&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&ec_mode=a&em=tv.1~em.CUhf3dJoNWxLQ4YOls1VFKlHzwnIxhYWDlF_0UJ05nU&ecsid=2134769213.1780363069",
+    "url": "https://www.google.com/ccm/form-data/1032118239?gtm=45be65t1v885948220za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938466~115938469~119027223~119064590&rcb=18&userId=c0763d3e-a883-4946-819e-9d5e270bbbd0&ga_uid=G-CF4K8J70MC.c0763d3e-a883-4946-819e-9d5e270bbbd0&npa=0&frm=0&ae=a&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&ec_mode=a&em=tv.1~em.CUhf3dJoNWxLQ4YOls1VFKlHzwnIxhYWDlF_0UJ05nU&ecsid=1686400934.1780366133",
     "domain": "www.google.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1032118239/?random=1780363069123&cv=11&fst=1780363069123&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be65t1v885948220za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938466~115938468~119064590&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fteams&ref=https%3A%2F%2Fweb.gc.com%2Fhome&rcb=18&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&userId=c0763d3e-a883-4946-819e-9d5e270bbbd0&ga_uid=G-CF4K8J70MC.c0763d3e-a883-4946-819e-9d5e270bbbd0&ae=a&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dpage_view&rfmt=3&fmt=4",
+    "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1032118239/?random=1780366132764&cv=11&fst=1780366132764&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be65t1v885948220za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938466~115938469~119027223~119064590&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fteams&ref=https%3A%2F%2Fweb.gc.com%2Fhome&rcb=18&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&userId=c0763d3e-a883-4946-819e-9d5e270bbbd0&ga_uid=G-CF4K8J70MC.c0763d3e-a883-4946-819e-9d5e270bbbd0&ae=a&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dpage_view&rfmt=3&fmt=4",
     "domain": "googleads.g.doubleclick.net",
     "headers": {}
   },
   {
     "method": "POST",
-    "url": "https://www.google.com/rmkt/collect/1032118239/?random=1780363069123&cv=11&fst=1780363069123&fmt=8&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be65t1v885948220za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938466~115938468~119064590&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fteams&ref=https%3A%2F%2Fweb.gc.com%2Fhome&rcb=18&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&userId=c0763d3e-a883-4946-819e-9d5e270bbbd0&ga_uid=G-CF4K8J70MC.c0763d3e-a883-4946-819e-9d5e270bbbd0&ae=a&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dpage_view&gcp=5",
+    "url": "https://www.google.com/rmkt/collect/1032118239/?random=1780366132764&cv=11&fst=1780366132764&fmt=8&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be65t1v885948220za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938466~115938469~119027223~119064590&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fteams&ref=https%3A%2F%2Fweb.gc.com%2Fhome&rcb=18&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&userId=c0763d3e-a883-4946-819e-9d5e270bbbd0&ga_uid=G-CF4K8J70MC.c0763d3e-a883-4946-819e-9d5e270bbbd0&ae=a&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dpage_view&gcp=5",
     "domain": "www.google.com",
     "headers": {}
   },
   {
     "method": "POST",
-    "url": "https://www.google.com/ccm/collect?rcb=18&frm=0&auid=1814773843.1779649133&dt=GameChanger%20App%20%7C%20GameChanger&en=page_view&dl=https%3A%2F%2Fweb.gc.com%2Fteams&scrsrc=www.googletagmanager.com&rnd=1116956970.1780363067&navt=n&npa=0&uid=c0763d3e-a883-4946-819e-9d5e270bbbd0&ga_uid=G-CF4K8J70MC.c0763d3e-a883-4946-819e-9d5e270bbbd0&ae=a&_tu=SA&gtm=45be65t1v885948220za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938466~115938468~119064590&apve=1&apvf=f&apvc=0&tids=AW-1032118239&tid=AW-1032118239&tft=1780363069137&tfd=2477",
-    "domain": "www.google.com",
-    "headers": {}
-  },
-  {
-    "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=5f83720a-0c8e-41d0-80ca-8d0ab2d67b63&batch_time=1780363069177&_dd.api=fetch",
-    "domain": "browser-intake-datadoghq.com",
-    "headers": {
-      "content-type": "text/plain;charset=UTF-8"
-    }
-  },
-  {
-    "method": "GET",
-    "url": "https://www.google.com/pagead/1p-user-list/1032118239/?random=1780363069123&cv=11&fst=1780362000000&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be65t1v885948220za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938466~115938468~119064590&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fteams&ref=https%3A%2F%2Fweb.gc.com%2Fhome&rcb=18&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&userId=c0763d3e-a883-4946-819e-9d5e270bbbd0&ga_uid=G-CF4K8J70MC.c0763d3e-a883-4946-819e-9d5e270bbbd0&ae=a&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dpage_view&rfmt=3&fmt=3&is_vtc=1&cid=CAQS4QEAEQoqgTt7rh6O8KTu9et_aq01_cjGvcdrmS31cer0Kx0YDR02s1eCKhCh1L1EPbM7hxe3i3hV88M_UoEJRsjBosrDMJGuJ8RBk43yg-iGFXxZekOYwVeSNAu1yKU-8KeODZACoFiFbLxMQHcyjtCJN3yFaJHjsuirgkjWIULM5fohzAFIwh9RxYc72Xv5pGnv0QA4tqY5CIuRyuzTm0_krDGbcWJJWq4dFtPMXi07J9xrqMs81Mj_VXmsVRvXukhmmhyU_IkBkeKBx8lmL2TM01Qk4sPx8lgpfvNL7MpXY-E&random=1780718480&rmt_tld=0&ipr=y",
+    "url": "https://www.google.com/ccm/collect?rcb=18&frm=0&auid=1814773843.1779649133&dt=GameChanger%20App%20%7C%20GameChanger&en=page_view&dl=https%3A%2F%2Fweb.gc.com%2Fteams&scrsrc=www.googletagmanager.com&rnd=496012935.1780366130&navt=n&npa=0&uid=c0763d3e-a883-4946-819e-9d5e270bbbd0&ga_uid=G-CF4K8J70MC.c0763d3e-a883-4946-819e-9d5e270bbbd0&ae=a&_tu=SA&gtm=45be65t1v885948220za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938466~115938469~119027223~119064590&apve=1&apvf=f&apvc=0&tids=AW-1032118239&tid=AW-1032118239&tft=1780366132779&tfd=3817",
     "domain": "www.google.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://www.google.ca/pagead/1p-user-list/1032118239/?random=1780363069123&cv=11&fst=1780362000000&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be65t1v885948220za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938466~115938468~119064590&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fteams&ref=https%3A%2F%2Fweb.gc.com%2Fhome&rcb=18&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&userId=c0763d3e-a883-4946-819e-9d5e270bbbd0&ga_uid=G-CF4K8J70MC.c0763d3e-a883-4946-819e-9d5e270bbbd0&ae=a&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dpage_view&rfmt=3&fmt=3&is_vtc=1&cid=CAQS4QEAEQoqgTt7rh6O8KTu9et_aq01_cjGvcdrmS31cer0Kx0YDR02s1eCKhCh1L1EPbM7hxe3i3hV88M_UoEJRsjBosrDMJGuJ8RBk43yg-iGFXxZekOYwVeSNAu1yKU-8KeODZACoFiFbLxMQHcyjtCJN3yFaJHjsuirgkjWIULM5fohzAFIwh9RxYc72Xv5pGnv0QA4tqY5CIuRyuzTm0_krDGbcWJJWq4dFtPMXi07J9xrqMs81Mj_VXmsVRvXukhmmhyU_IkBkeKBx8lmL2TM01Qk4sPx8lgpfvNL7MpXY-E&random=1780718480&rmt_tld=1&ipr=y",
+    "url": "https://www.google.com/pagead/1p-user-list/1032118239/?random=1780366132764&cv=11&fst=1780365600000&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be65t1v885948220za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938466~115938469~119027223~119064590&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fteams&ref=https%3A%2F%2Fweb.gc.com%2Fhome&rcb=18&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&userId=c0763d3e-a883-4946-819e-9d5e270bbbd0&ga_uid=G-CF4K8J70MC.c0763d3e-a883-4946-819e-9d5e270bbbd0&ae=a&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dpage_view&rfmt=3&fmt=3&is_vtc=1&cid=CAQS4QEABaugfXqIPisfVyVFZu7NrwlWQjb2PYjM5CsveVqh-UFXVIfrmKe7EExZCm1TryUvxzOR9ods8EDhgLJ2qHcY0UGfwYD8m0dvSgAtPlzDsZcLJCzF5hofzIi4tJdavS8Ath_VlY9vrOts7pq612BTG9b05yc0eh2PkKfvVI9nfhgMau_ofPfBs5QfcrQcGZ2_7vG1Hei9waKxp-Wi8bNVL_o8bXEMyKYu5IQBjC0Ctf5J6z9px7f9wXNumEDNjEHKyOD_DQmS34wYGc3V5zjIuBFkA_5pos7l9mmioB6BgBE&random=2494905954&rmt_tld=0&ipr=y",
+    "domain": "www.google.com",
+    "headers": {}
+  },
+  {
+    "method": "GET",
+    "url": "https://www.google.ca/pagead/1p-user-list/1032118239/?random=1780366132764&cv=11&fst=1780365600000&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be65t1v885948220za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938466~115938469~119027223~119064590&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fteams&ref=https%3A%2F%2Fweb.gc.com%2Fhome&rcb=18&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&userId=c0763d3e-a883-4946-819e-9d5e270bbbd0&ga_uid=G-CF4K8J70MC.c0763d3e-a883-4946-819e-9d5e270bbbd0&ae=a&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dpage_view&rfmt=3&fmt=3&is_vtc=1&cid=CAQS4QEABaugfXqIPisfVyVFZu7NrwlWQjb2PYjM5CsveVqh-UFXVIfrmKe7EExZCm1TryUvxzOR9ods8EDhgLJ2qHcY0UGfwYD8m0dvSgAtPlzDsZcLJCzF5hofzIi4tJdavS8Ath_VlY9vrOts7pq612BTG9b05yc0eh2PkKfvVI9nfhgMau_ofPfBs5QfcrQcGZ2_7vG1Hei9waKxp-Wi8bNVL_o8bXEMyKYu5IQBjC0Ctf5J6z9px7f9wXNumEDNjEHKyOD_DQmS34wYGc3V5zjIuBFkA_5pos7l9mmioB6BgBE&random=2494905954&rmt_tld=1&ipr=y",
     "domain": "www.google.ca",
     "headers": {}
   },
   {
     "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=0100ec2a-aac2-4065-921e-6d4fff5c60ae&batch_time=1780363073165&_dd.api=fetch",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=7caff5c4-06c3-42cd-b878-b21d7422b57b&batch_time=1780366132834&_dd.api=fetch",
     "domain": "browser-intake-datadoghq.com",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
@@ -678,10 +687,10 @@
   },
   {
     "method": "POST",
-    "url": "https://sdk.iad-06.braze.com/api/v3/data/",
-    "domain": "sdk.iad-06.braze.com",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=f4dfdcc6-b284-41b3-b2d9-cda680a5948d&batch_time=1780366140163&_dd.api=fetch",
+    "domain": "browser-intake-datadoghq.com",
     "headers": {
-      "content-type": "application/json"
+      "content-type": "text/plain;charset=UTF-8"
     }
   },
   {
@@ -692,7 +701,7 @@
   },
   {
     "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=05e28b99-1bcd-440d-94f6-11274af26503&batch_time=1780363079794&_dd.api=beacon",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=6a4305b4-488f-491a-853d-8b5887b802ef&batch_time=1780366143442&_dd.api=beacon",
     "domain": "browser-intake-datadoghq.com",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
@@ -700,7 +709,7 @@
   },
   {
     "method": "POST",
-    "url": "https://prodregistryv2.org/v1/rgstr?k=client-aRWJzFDDsPvPnPxFb0viYb2h8db2Wh8gitMmtuCuLfJ&st=javascript-client&sv=3.32.0&t=1780363079996&sid=3cbc9e65-9494-4fcd-90ba-550adaa47541&ec=39",
+    "url": "https://prodregistryv2.org/v1/rgstr?k=client-aRWJzFDDsPvPnPxFb0viYb2h8db2Wh8gitMmtuCuLfJ&st=javascript-client&sv=3.32.0&t=1780366143610&sid=62039acd-0bf6-40a1-9e6d-5fb310a4c373&ec=40",
     "domain": "prodregistryv2.org",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
@@ -708,7 +717,7 @@
   },
   {
     "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=b828cd6c-afb1-4159-ac9a-0b8b7eda0bbf&batch_time=1780363080003&_dd.api=beacon",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=df5994cc-32d2-4025-8d7a-010878f431ca&batch_time=1780366143617&_dd.api=beacon",
     "domain": "browser-intake-datadoghq.com",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
@@ -716,25 +725,25 @@
   },
   {
     "method": "POST",
-    "url": "https://www.google.com/g/collect?v=2&tid=G-3WQ9XBZBYQ&gtm=45je65t1h1v9235188149za200zd9235188149&_p=1780363067020&gcd=13l3l3l3l1l5&npa=0&dma=0&_eu=AAAAAGQC&_fid=ctND0HLH27z5xVd0PPOhEu&are=1&cid=110180139.1779649141&frm=0&pscdl=noapi&rcb=11&sr=1280x720&uaa=x86&uab=64&uafvl=Not%252FA%29Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=fr-fr&gaf=3&_s=4&tag_exp=0%7E115616986%7E115938466%7E115938468&sid=1780363068&sct=19&seg=1&dl=https%3A%2F%2Fweb.gc.com%2Fteams&dr=https%3A%2F%2Fweb.gc.com%2Fhome&dt=GameChanger+App+%7C+GameChanger&uid=c0763d3e-a883-4946-819e-9d5e270bbbd0&en=user_engagement&ep.origin=firebase&_et=10880&tfd=13342",
+    "url": "https://www.google.com/g/collect?v=2&tid=G-3WQ9XBZBYQ&gtm=45je65t1h1v9235188149za200zd9235188149&_p=1780366129304&gcd=13l3l3l3l1l5&npa=0&dma=0&_eu=AAAAAGQC&_fid=ctND0HLH27z5xVd0PPOhEu&are=1&cid=110180139.1779649141&frm=0&pscdl=noapi&rcb=14&sr=1280x720&uaa=x86&uab=64&uafvl=Not%252FA%29Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=fr-fr&gaf=3&_s=4&tag_exp=0%7E115938466%7E115938468%7E119064591&sid=1780366131&sct=20&seg=1&dl=https%3A%2F%2Fweb.gc.com%2Fteams&dr=https%3A%2F%2Fweb.gc.com%2Fhome&dt=GameChanger+App+%7C+GameChanger&uid=c0763d3e-a883-4946-819e-9d5e270bbbd0&en=user_engagement&ep.origin=firebase&_et=10854&tfd=14655",
     "domain": "www.google.com",
     "headers": {}
   },
   {
     "method": "POST",
-    "url": "https://www.google.com/g/collect?v=2&tid=G-CF4K8J70MC&gtm=45je65t1h1v9235188149za200zd9235188149&_p=1780363067020&gcd=13l3l3l3l1l5&npa=0&dma=0&_eu=AAAAAGQC&_fid=ctND0HLH27z5xVd0PPOhEu&are=1&cid=110180139.1779649141&frm=0&pscdl=noapi&rcb=11&sr=1280x720&uaa=x86&uab=64&uafvl=Not%252FA%29Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=fr-fr&gaf=3&_s=3&tag_exp=0%7E115616986%7E115938466%7E115938468&sid=1780363068&sct=19&seg=1&dl=https%3A%2F%2Fweb.gc.com%2Fteams&dt=GameChanger+App+%7C+GameChanger&uid=c0763d3e-a883-4946-819e-9d5e270bbbd0&en=user_engagement&ep.origin=firebase&_et=11877&tfd=13339",
+    "url": "https://www.google.com/g/collect?v=2&tid=G-CF4K8J70MC&gtm=45je65t1h1v9235188149za200zd9235188149&_p=1780366129304&gcd=13l3l3l3l1l5&npa=0&dma=0&_eu=AAAAAGQC&_fid=ctND0HLH27z5xVd0PPOhEu&are=1&cid=110180139.1779649141&frm=0&pscdl=noapi&rcb=14&sr=1280x720&uaa=x86&uab=64&uafvl=Not%252FA%29Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=fr-fr&gaf=3&_s=3&tag_exp=0%7E115938466%7E115938468%7E119064591&sid=1780366131&sct=20&seg=1&dl=https%3A%2F%2Fweb.gc.com%2Fteams&dt=GameChanger+App+%7C+GameChanger&uid=c0763d3e-a883-4946-819e-9d5e270bbbd0&en=user_engagement&ep.origin=firebase&_et=11852&tfd=14652",
     "domain": "www.google.com",
     "headers": {}
   },
   {
     "method": "POST",
-    "url": "https://www.google.com/ccm/collect?rcb=19&frm=0&ae=g&auid=1814773843.1779649133&dt=GameChanger%20App%20%7C%20GameChanger&en=page_view&dl=https%3A%2F%2Fweb.gc.com%2Fprofile&scrsrc=www.googletagmanager.com&rnd=132750236.1780363080&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He65t1v9194580855za200zd9194580855xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938465~115938468&apve=1&apvf=f&apvc=1&tft=1780363080037&tfd=242",
+    "url": "https://www.google.com/ccm/collect?rcb=4&frm=0&ae=g&auid=1814773843.1779649133&dt=GameChanger%20App%20%7C%20GameChanger&en=page_view&dl=https%3A%2F%2Fweb.gc.com%2Fprofile&scrsrc=www.googletagmanager.com&rnd=451056717.1780366144&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He65t1v9194580855za200zd9194580855xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938465~115938468~119064591&apve=1&apvf=f&apvc=1&tft=1780366143649&tfd=207",
     "domain": "www.google.com",
     "headers": {}
   },
   {
     "method": "POST",
-    "url": "https://featureassets.org/v1/initialize?k=client-aRWJzFDDsPvPnPxFb0viYb2h8db2Wh8gitMmtuCuLfJ&st=javascript-client&sv=3.32.0&t=1780363080168&sid=3cbc9e65-9494-4fcd-90ba-550adaa47541&se=1",
+    "url": "https://featureassets.org/v1/initialize?k=client-aRWJzFDDsPvPnPxFb0viYb2h8db2Wh8gitMmtuCuLfJ&st=javascript-client&sv=3.32.0&t=1780366143801&sid=62039acd-0bf6-40a1-9e6d-5fb310a4c373&se=1",
     "domain": "featureassets.org",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
@@ -742,73 +751,73 @@
   },
   {
     "method": "GET",
-    "url": "https://alb.reddit.com/rp.gif?ts=1780363080191&id=a2_hiy9vrhsn4yv&event=PageVisit&m.itemCount=&m.value=&m.valueDecimal=&m.currency=&m.transactionId=&m.customEventName=&m.products=&m.conversionId=&uuid=9b20bda9-0c97-4020-a593-04ef2ec11abb&aaid=&external_id=eb045d78d273107348b0300c01d29b7552d622abbc6faf81b3ec55359aa9950c&idfa=&integration=reddit&partner=&partner_version=&opt_out=0&sh=1280&sw=720&v=rdt_47ad39b8&dpm=&dpcc=&dprc=&auto_em=09485fddd268356c4b43860e96cd5514a947cf09c8c616160e517fd14274e675%2C1426c19c37cd8178ff7b6cc901bbbcb4e32fe819e24b676f94b161f4765ddca6%2Cf43480bc4a0f5a8531466db10105919e86a6e272f3a76979bfe9fd354530e68b&auto_pn=125~ce3875d6d7cf9cd923d3d5ad11f6357fff37ce8d3df2e4ad9f4032ad5ebd67fd",
+    "url": "https://alb.reddit.com/rp.gif?ts=1780366143825&id=a2_hiy9vrhsn4yv&event=PageVisit&m.itemCount=&m.value=&m.valueDecimal=&m.currency=&m.transactionId=&m.customEventName=&m.products=&m.conversionId=&uuid=9b20bda9-0c97-4020-a593-04ef2ec11abb&aaid=&external_id=eb045d78d273107348b0300c01d29b7552d622abbc6faf81b3ec55359aa9950c&idfa=&integration=reddit&partner=&partner_version=&opt_out=0&sh=1280&sw=720&v=rdt_47ad39b8&dpm=&dpcc=&dprc=&auto_em=09485fddd268356c4b43860e96cd5514a947cf09c8c616160e517fd14274e675%2C1426c19c37cd8178ff7b6cc901bbbcb4e32fe819e24b676f94b161f4765ddca6%2Cf43480bc4a0f5a8531466db10105919e86a6e272f3a76979bfe9fd354530e68b&auto_pn=125~ce3875d6d7cf9cd923d3d5ad11f6357fff37ce8d3df2e4ad9f4032ad5ebd67fd",
     "domain": "alb.reddit.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1032118239/?random=1780363080197&cv=11&fst=1780363080197&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938465~115938468~118128923~118228214~119027224&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fprofile&rcb=4&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=SA&data=event%3Dgtag.config&rfmt=3&fmt=4",
+    "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1032118239/?random=1780366143831&cv=11&fst=1780366143831&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938465~115938468~118012009~119064591&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fprofile&rcb=10&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=SA&data=event%3Dgtag.config&rfmt=3&fmt=4",
     "domain": "googleads.g.doubleclick.net",
     "headers": {}
   },
   {
     "method": "POST",
-    "url": "https://www.google.com/rmkt/collect/1032118239/?random=1780363080197&cv=11&fst=1780363080197&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938465~115938468~118128923~118228214~119027224&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fprofile&rcb=4&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=SA&data=event%3Dgtag.config&gcp=5",
+    "url": "https://www.google.com/rmkt/collect/1032118239/?random=1780366143831&cv=11&fst=1780366143831&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938465~115938468~118012009~119064591&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fprofile&rcb=10&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=SA&data=event%3Dgtag.config&gcp=5",
     "domain": "www.google.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/17007688848/?random=1780363080205&cv=11&fst=1780363080205&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938465~115938468~118128923~118228214~119027224&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fprofile&rcb=4&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dgtag.config&rfmt=3&fmt=4",
+    "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/17007688848/?random=1780366143841&cv=11&fst=1780366143841&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938465~115938468~118012009~119064591&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fprofile&rcb=10&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dgtag.config&rfmt=3&fmt=4",
     "domain": "googleads.g.doubleclick.net",
     "headers": {}
   },
   {
     "method": "POST",
-    "url": "https://www.google.com/rmkt/collect/17007688848/?random=1780363080205&cv=11&fst=1780363080205&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938465~115938468~118128923~118228214~119027224&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fprofile&rcb=4&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dgtag.config&gcp=5",
+    "url": "https://www.google.com/rmkt/collect/17007688848/?random=1780366143841&cv=11&fst=1780366143841&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938465~115938468~118012009~119064591&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fprofile&rcb=10&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dgtag.config&gcp=5",
     "domain": "www.google.com",
     "headers": {}
   },
   {
     "method": "POST",
-    "url": "https://www.google.com/ccm/collect?rcb=4&frm=0&auid=1814773843.1779649133&dt=GameChanger%20App%20%7C%20GameChanger&en=page_view&dl=https%3A%2F%2Fweb.gc.com%2Fprofile&scrsrc=www.googletagmanager.com&rnd=132750236.1780363080&navt=n&npa=0&_tu=SA&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938465~115938468~118128923~118228214~119027224&apve=1&apvf=f&apvc=0&tids=AW-1032118239&tid=AW-1032118239&tft=1780363080210&tfd=415",
+    "url": "https://www.google.com/ccm/collect?rcb=10&frm=0&auid=1814773843.1779649133&dt=GameChanger%20App%20%7C%20GameChanger&en=page_view&dl=https%3A%2F%2Fweb.gc.com%2Fprofile&scrsrc=www.googletagmanager.com&rnd=451056717.1780366144&navt=n&npa=0&_tu=SA&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938465~115938468~118012009~119064591&apve=1&apvf=f&apvc=0&tids=AW-1032118239&tid=AW-1032118239&tft=1780366143846&tfd=404",
     "domain": "www.google.com",
     "headers": {}
   },
   {
     "method": "POST",
-    "url": "https://www.google.com/ccm/collect?rcb=4&frm=0&auid=1814773843.1779649133&dt=GameChanger%20App%20%7C%20GameChanger&en=page_view&dl=https%3A%2F%2Fweb.gc.com%2Fprofile&scrsrc=www.googletagmanager.com&rnd=132750236.1780363080&navt=n&npa=0&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938465~115938468~118128923~118228214~119027224&apve=1&apvf=f&apvc=0&tids=AW-17007688848&tid=AW-17007688848&tft=1780363080211&tfd=416",
+    "url": "https://www.google.com/ccm/collect?rcb=10&frm=0&auid=1814773843.1779649133&dt=GameChanger%20App%20%7C%20GameChanger&en=page_view&dl=https%3A%2F%2Fweb.gc.com%2Fprofile&scrsrc=www.googletagmanager.com&rnd=451056717.1780366144&navt=n&npa=0&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938465~115938468~118012009~119064591&apve=1&apvf=f&apvc=0&tids=AW-17007688848&tid=AW-17007688848&tft=1780366143847&tfd=404",
     "domain": "www.google.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://www.google.com/pagead/1p-user-list/1032118239/?random=1780363080197&cv=11&fst=1780362000000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938465~115938468~118128923~118228214~119027224&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fprofile&rcb=4&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=SA&data=event%3Dgtag.config&rfmt=3&fmt=3&is_vtc=1&cid=CAQS4QEAEQoqgWQv5FwpDMyXAFfkHz326aClayhELJIWc7J_PvKa8LCP3NZqiE4PsZK1XTm-Vw03WjWj-udxa783ODK_-JQIdTaavb60dkq8jP-X-q6kTg7tCFBKeKAVYB4Qsryhhdix4BPMdheJrorPiJd6cpJFQUKS1dtbVdcy6AaOqIGLr20GY-JuVo1Dy3XQAgip6_WHY-aHyKWIRE_IkC93ci5aqbpMpsKmoTel7i3zcjAzpaWm2eKFmAKBTme2da9wbjdqqsgHNSDpQ_IiSFrhrmMoBvLY5RVQd_r_Et1sRVM&random=4276562172&rmt_tld=0&ipr=y",
+    "url": "https://www.google.com/pagead/1p-user-list/1032118239/?random=1780366143831&cv=11&fst=1780365600000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938465~115938468~118012009~119064591&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fprofile&rcb=10&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=SA&data=event%3Dgtag.config&rfmt=3&fmt=3&is_vtc=1&cid=CAQS4QEAEQoqgW1_nxpnRQiNO2wFDzRMM7JYfpPnyZnnNLfjV8Pax6fF70zxLLe6igXCrXslKPifgjPIx4DSk-aMngM3ktQdK5qiWt_6HNLQx6-QD8uTUToBDnY3YD2ihYvYu7AqJfg-0M6PPRjcm6tw7jpYG05d7zO13BMZlws-WNqXjUs2xnCx_N5AGs_jm9vTQWTo8XKPHzBkCIWkOLM_si0RhAubl8HSmTXLLVr_z6zuj994FnmrFcfbV3p6oNaHFrHexWRKTpP7Ka93sTWxJvk_tPwFWPOr0tL-DJpCfQVH3mc&random=1822729340&rmt_tld=0&ipr=y",
     "domain": "www.google.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://www.google.ca/pagead/1p-user-list/1032118239/?random=1780363080197&cv=11&fst=1780362000000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938465~115938468~118128923~118228214~119027224&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fprofile&rcb=4&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=SA&data=event%3Dgtag.config&rfmt=3&fmt=3&is_vtc=1&cid=CAQS4QEAEQoqgWQv5FwpDMyXAFfkHz326aClayhELJIWc7J_PvKa8LCP3NZqiE4PsZK1XTm-Vw03WjWj-udxa783ODK_-JQIdTaavb60dkq8jP-X-q6kTg7tCFBKeKAVYB4Qsryhhdix4BPMdheJrorPiJd6cpJFQUKS1dtbVdcy6AaOqIGLr20GY-JuVo1Dy3XQAgip6_WHY-aHyKWIRE_IkC93ci5aqbpMpsKmoTel7i3zcjAzpaWm2eKFmAKBTme2da9wbjdqqsgHNSDpQ_IiSFrhrmMoBvLY5RVQd_r_Et1sRVM&random=4276562172&rmt_tld=1&ipr=y",
+    "url": "https://www.google.ca/pagead/1p-user-list/1032118239/?random=1780366143831&cv=11&fst=1780365600000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938465~115938468~118012009~119064591&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fprofile&rcb=10&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=SA&data=event%3Dgtag.config&rfmt=3&fmt=3&is_vtc=1&cid=CAQS4QEAEQoqgW1_nxpnRQiNO2wFDzRMM7JYfpPnyZnnNLfjV8Pax6fF70zxLLe6igXCrXslKPifgjPIx4DSk-aMngM3ktQdK5qiWt_6HNLQx6-QD8uTUToBDnY3YD2ihYvYu7AqJfg-0M6PPRjcm6tw7jpYG05d7zO13BMZlws-WNqXjUs2xnCx_N5AGs_jm9vTQWTo8XKPHzBkCIWkOLM_si0RhAubl8HSmTXLLVr_z6zuj994FnmrFcfbV3p6oNaHFrHexWRKTpP7Ka93sTWxJvk_tPwFWPOr0tL-DJpCfQVH3mc&random=1822729340&rmt_tld=1&ipr=y",
     "domain": "www.google.ca",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://www.google.com/pagead/1p-user-list/17007688848/?random=1780363080205&cv=11&fst=1780362000000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938465~115938468~118128923~118228214~119027224&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fprofile&rcb=4&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dgtag.config&rfmt=3&fmt=3&is_vtc=1&cid=CAQS4QEAEQoqgb7khDT7eygnH3BdtuP7Obo82p9kunvoLnDHqnp_5dhjOyr16j0M3t7g0AFax0ngxfLF-YXmmJXhmgOkzO2-y3Kc6yOxBTcFw3YkiAAqLtkWiDTmRzQ_dF3xL-H3-L7ElfzEr1vLmUSOvhwrhGPVrKVdHfjoOJmAmrlx8u5pteEgmhLYDVh_AtQf_SYvkChp52FtiQ1LN7vdnWIHvbpVTOcqDx8o5YZFN4DIpbAEbf3KCykshtwtQ95kdXpMGEVfAQeHkD3rWyQ9QQDcXFEnivaGnXHo0gbrp61ExJc&random=1495067366&rmt_tld=0&ipr=y",
+    "url": "https://www.google.com/pagead/1p-user-list/17007688848/?random=1780366143841&cv=11&fst=1780365600000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938465~115938468~118012009~119064591&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fprofile&rcb=10&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dgtag.config&rfmt=3&fmt=3&is_vtc=1&cid=CAQS4QEABaugfVbBdYcbX7GqjFkw79TUD8bW-nRfVFXNQlMAJyFkEfdSO3Fp68uITV5FvRTsYFEgfJlkyDq5vXdfBm_nPyIE8ICLPYBmNCJtFbAAxYFc_Nj7cpBvz_XOL0A6DJU5CeiyDhIWoNBFPMQ9n63B5E2t4Lu60XLFHKLuZmw2V04y1jOw78jtMPNeLDoW_qh6OyhVtlAZ7LJVQ82mYiEcruA371-jr447E0wqT85YdEtCwhNhzKhOi9Id1RwYI-DbGDpkIqiHdbREfv48NAeQRE6OVzF-FD7IGgtc5GMWjF8&random=32718746&rmt_tld=0&ipr=y",
     "domain": "www.google.com",
     "headers": {}
   },
   {
     "method": "GET",
-    "url": "https://www.google.ca/pagead/1p-user-list/17007688848/?random=1780363080205&cv=11&fst=1780362000000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938465~115938468~118128923~118228214~119027224&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fprofile&rcb=4&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dgtag.config&rfmt=3&fmt=3&is_vtc=1&cid=CAQS4QEAEQoqgb7khDT7eygnH3BdtuP7Obo82p9kunvoLnDHqnp_5dhjOyr16j0M3t7g0AFax0ngxfLF-YXmmJXhmgOkzO2-y3Kc6yOxBTcFw3YkiAAqLtkWiDTmRzQ_dF3xL-H3-L7ElfzEr1vLmUSOvhwrhGPVrKVdHfjoOJmAmrlx8u5pteEgmhLYDVh_AtQf_SYvkChp52FtiQ1LN7vdnWIHvbpVTOcqDx8o5YZFN4DIpbAEbf3KCykshtwtQ95kdXpMGEVfAQeHkD3rWyQ9QQDcXFEnivaGnXHo0gbrp61ExJc&random=1495067366&rmt_tld=1&ipr=y",
+    "url": "https://www.google.ca/pagead/1p-user-list/17007688848/?random=1780366143841&cv=11&fst=1780365600000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be65t1v885948220z89194580855za20gzb9194580855zd9194580855xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938465~115938468~118012009~119064591&u_w=1280&u_h=720&url=https%3A%2F%2Fweb.gc.com%2Fprofile&rcb=10&frm=0&tiba=GameChanger%20App%20%7C%20GameChanger&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1814773843.1779649133&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.96&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dgtag.config&rfmt=3&fmt=3&is_vtc=1&cid=CAQS4QEABaugfVbBdYcbX7GqjFkw79TUD8bW-nRfVFXNQlMAJyFkEfdSO3Fp68uITV5FvRTsYFEgfJlkyDq5vXdfBm_nPyIE8ICLPYBmNCJtFbAAxYFc_Nj7cpBvz_XOL0A6DJU5CeiyDhIWoNBFPMQ9n63B5E2t4Lu60XLFHKLuZmw2V04y1jOw78jtMPNeLDoW_qh6OyhVtlAZ7LJVQ82mYiEcruA371-jr447E0wqT85YdEtCwhNhzKhOi9Id1RwYI-DbGDpkIqiHdbREfv48NAeQRE6OVzF-FD7IGgtc5GMWjF8&random=32718746&rmt_tld=1&ipr=y",
     "domain": "www.google.ca",
     "headers": {}
   },
   {
     "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=9cf70d24-d1f5-47ae-961a-83916d2c60f6&batch_time=1780363080312&_dd.api=fetch",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=bff050f0-bd27-4d79-bd73-ba1a1d708f4e&batch_time=1780366143945&_dd.api=fetch",
     "domain": "browser-intake-datadoghq.com",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
@@ -816,7 +825,7 @@
   },
   {
     "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=cd243c82-6c51-4f95-b34a-c6f87104180e&batch_time=1780363080314&_dd.api=fetch",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=28182c4e-6f23-4e72-9455-f15e6b8da990&batch_time=1780366143946&_dd.api=fetch",
     "domain": "browser-intake-datadoghq.com",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
@@ -824,7 +833,7 @@
   },
   {
     "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=73484b82-f3df-4267-9a90-6e6af49428f1&batch_time=1780363080315&_dd.api=fetch",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=1fe256a0-449f-4a0b-ab4e-6d8cc1a9baaf&batch_time=1780366143948&_dd.api=fetch",
     "domain": "browser-intake-datadoghq.com",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
@@ -832,7 +841,7 @@
   },
   {
     "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=290914a0-6e8c-4188-80de-d20ac28128c3&batch_time=1780363080316&_dd.api=fetch",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=0ea80be9-1d97-4564-8302-aad62fde1c9b&batch_time=1780366143949&_dd.api=fetch",
     "domain": "browser-intake-datadoghq.com",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
@@ -840,7 +849,7 @@
   },
   {
     "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=eb9c2fc8-37ce-4414-9be7-8b2708150085&batch_time=1780363080317&_dd.api=fetch",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=b83b64be-77f7-4309-9b54-3c6cd4220ecd&batch_time=1780366143949&_dd.api=fetch",
     "domain": "browser-intake-datadoghq.com",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
@@ -848,13 +857,13 @@
   },
   {
     "method": "POST",
-    "url": "https://www.google.com/ccm/collect?rcb=19&frm=0&ae=g&auid=1814773843.1779649133&dt=GameChanger%20App%20%7C%20GameChanger&en=user_id_update&dl=https%3A%2F%2Fweb.gc.com%2Fprofile&scrsrc=www.googletagmanager.com&rnd=132750236.1780363080&navt=n&npa=0&ep.ads_data_redaction=0&ga_uid=G-CF4K8J70MC.c0763d3e-a883-4946-819e-9d5e270bbbd0&gtm=45He65t1v9194580855za200zd9194580855xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938465~115938468&apve=1&apvf=f&apvc=1&tft=1780363080386&tfd=591",
+    "url": "https://www.google.com/ccm/collect?rcb=4&frm=0&ae=g&auid=1814773843.1779649133&dt=GameChanger%20App%20%7C%20GameChanger&en=user_id_update&dl=https%3A%2F%2Fweb.gc.com%2Fprofile&scrsrc=www.googletagmanager.com&rnd=451056717.1780366144&navt=n&npa=0&ep.ads_data_redaction=0&ga_uid=G-CF4K8J70MC.c0763d3e-a883-4946-819e-9d5e270bbbd0&gtm=45He65t1v9194580855za200zd9194580855xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938465~115938468~119064591&apve=1&apvf=f&apvc=1&tft=1780366144015&tfd=572",
     "domain": "www.google.com",
     "headers": {}
   },
   {
     "method": "POST",
-    "url": "https://featureassets.org/v1/initialize?k=client-aRWJzFDDsPvPnPxFb0viYb2h8db2Wh8gitMmtuCuLfJ&st=javascript-client&sv=3.32.0&t=1780363080398&sid=3cbc9e65-9494-4fcd-90ba-550adaa47541&se=1",
+    "url": "https://featureassets.org/v1/initialize?k=client-aRWJzFDDsPvPnPxFb0viYb2h8db2Wh8gitMmtuCuLfJ&st=javascript-client&sv=3.32.0&t=1780366144032&sid=62039acd-0bf6-40a1-9e6d-5fb310a4c373&se=1",
     "domain": "featureassets.org",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
@@ -862,13 +871,13 @@
   },
   {
     "method": "POST",
-    "url": "https://prodregistryv2.org/v1/rgstr?k=client-aRWJzFDDsPvPnPxFb0viYb2h8db2Wh8gitMmtuCuLfJ&st=javascript-client&sv=3.32.0&t=1780363080399&sid=3cbc9e65-9494-4fcd-90ba-550adaa47541&ec=38&gz=1",
+    "url": "https://prodregistryv2.org/v1/rgstr?k=client-aRWJzFDDsPvPnPxFb0viYb2h8db2Wh8gitMmtuCuLfJ&st=javascript-client&sv=3.32.0&t=1780366144032&sid=62039acd-0bf6-40a1-9e6d-5fb310a4c373&ec=38&gz=1",
     "domain": "prodregistryv2.org",
     "headers": {}
   },
   {
     "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=4cf8395b-9e75-4342-b93a-c4dc5fcf93fe&batch_time=1780363080419&_dd.api=fetch",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=255a9864-d12f-4610-b656-1b2856fab3bb&batch_time=1780366144051&_dd.api=fetch",
     "domain": "browser-intake-datadoghq.com",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
@@ -876,7 +885,7 @@
   },
   {
     "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=4f3065d6-4491-4b90-a25b-776ee4f2730d&batch_time=1780363080465&_dd.api=fetch",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=9aeae15a-67ff-4d18-962a-74f77e54e3d2&batch_time=1780366144092&_dd.api=fetch",
     "domain": "browser-intake-datadoghq.com",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
@@ -884,13 +893,13 @@
   },
   {
     "method": "POST",
-    "url": "https://prodregistryv2.org/v1/rgstr?k=client-aRWJzFDDsPvPnPxFb0viYb2h8db2Wh8gitMmtuCuLfJ&st=javascript-client&sv=3.32.0&t=1780363080488&sid=3cbc9e65-9494-4fcd-90ba-550adaa47541&ec=39&gz=1",
+    "url": "https://prodregistryv2.org/v1/rgstr?k=client-aRWJzFDDsPvPnPxFb0viYb2h8db2Wh8gitMmtuCuLfJ&st=javascript-client&sv=3.32.0&t=1780366144126&sid=62039acd-0bf6-40a1-9e6d-5fb310a4c373&ec=39&gz=1",
     "domain": "prodregistryv2.org",
     "headers": {}
   },
   {
     "method": "POST",
-    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=b269ddbd-cd2e-4753-be72-de0e8113e430&batch_time=1780363083174&_dd.api=fetch",
+    "url": "https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pub2ea6ce2bccd177d1e296988a68facf2d&dd-evp-origin-version=6.28.1&dd-evp-origin=browser&dd-request-id=5bf933c4-d402-4943-b992-486f189c2573&batch_time=1780366146812&_dd.api=fetch",
     "domain": "browser-intake-datadoghq.com",
     "headers": {
       "content-type": "text/plain;charset=UTF-8"
