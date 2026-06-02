@@ -198,11 +198,13 @@ details>.card{border-radius:0 0 10px 10px;margin-bottom:0;border-top:none;}
 <script>
 'use strict';
 
-const OWNER   = 'sebastienaudet38-cloud';
-const REPO    = 'carnavals-bleus-2026';
-const FILE    = 'live.json';
-const API_URL = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${FILE}`;
-const TOKEN_KEY = 'cb_live_token';
+const OWNER       = 'sebastienaudet38-cloud';
+const REPO        = 'carnavals-bleus-2026';
+const FILE        = 'live.json';
+const API_URL     = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${FILE}`;
+const MATCHES_URL = `https://api.github.com/repos/${OWNER}/${REPO}/contents/matches.json`;
+const JSDELIVR_PURGE = `https://purge.jsdelivr.net/gh/${OWNER}/${REPO}@main/${FILE}`;
+const TOKEN_KEY   = 'cb_live_token';
 
 let _live = null;
 let _sha  = null;
@@ -281,6 +283,8 @@ async function ghPut(data, message) {
     }
     const result = await r.json();
     _sha = result.content.sha;
+    // Purge jsDelivr pour que index.html voit la mise à jour en quelques secondes
+    fetch(JSDELIVR_PURGE).catch(() => {});
     return true;
   } finally {
     _saving = false;
@@ -351,7 +355,7 @@ function renderLiveUI(ui) {
       <div class="status-dot live"></div>
       <div>
         <div class="status-text">PARTIE EN COURS</div>
-        <div class="status-sub">${esc(_live.opponent)} — màj: ${updTime}</div>
+        <div class="status-sub">${esc(_live.opponent)}${curNum > 0 ? ` — ${curHalf==='bas'?'Fin':'Début'} ${curNum}${curNum===1?'re':'e'}` : ''} — màj: ${updTime}</div>
       </div>
     </div>
 
@@ -476,17 +480,100 @@ async function updateLinks() {
 }
 
 function confirmEnd() {
-  if (!confirm('Terminer la partie en cours ?')) return;
-  endGame();
+  // Affiche un formulaire de fin de partie au lieu d'un confirm() basique
+  const ui = document.getElementById('main-ui');
+  const ytVal  = _live.video_url   || '';
+  const splVal = _live.spordle_url || '';
+  ui.insertAdjacentHTML('beforeend', `
+    <div class="card" id="end-form" style="border-color:rgba(248,113,113,.35)">
+      <p class="card-title" style="color:#f87171">Terminer la partie</p>
+      <p style="font-size:13px;color:var(--text2);margin-bottom:16px">
+        ${esc(_live.opponent)} &nbsp;|&nbsp;
+        ${_live.carnavals_score} – ${_live.opponent_score}
+      </p>
+      <label>Lien YouTube (pour la vidéo du match)</label>
+      <input type="url" id="end-yt" value="${esc(ytVal)}" placeholder="https://www.youtube.com/watch?v=…">
+      <label>Lien Spordle</label>
+      <input type="url" id="end-spl" value="${esc(splVal)}" placeholder="https://spordle.com/…">
+      <button class="btn btn-end" onclick="endGame()" style="margin-top:4px">⏹ Confirmer — Terminer la partie</button>
+      <button class="btn btn-ghost" onclick="document.getElementById('end-form').remove()" style="margin-top:8px;font-size:13px;padding:10px">Annuler</button>
+    </div>`);
+  document.getElementById('end-form').scrollIntoView({ behavior: 'smooth' });
+}
+
+// ── HELPERS MATCHES ───────────────────────────────────
+function extractYtId(url) {
+  if (!url) return '';
+  const m = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+  return m ? m[1] : '';
+}
+
+async function saveToMatches(ytLink, splLink) {
+  const token = getToken();
+  if (!token) return;
+  try {
+    const r = await fetch(MATCHES_URL, {
+      headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+    });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const j    = await r.json();
+    const sha  = j.sha;
+    const data = JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\s/g, '')))));
+
+    const ytid = extractYtId(ytLink);
+    const newMatch = {
+      opp:  _live.opponent || 'Adversaire',
+      us:   _live.carnavals_score || 0,
+      them: _live.opponent_score  || 0,
+      date: new Date().toISOString().split('T')[0],
+      ytid: ytid,
+      link: splLink || ''
+    };
+    data.matches = [...(data.matches || []), newMatch];
+
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
+    const res = await fetch(MATCHES_URL, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+        'Accept': 'application/vnd.github.v3+json'
+      },
+      body: JSON.stringify({
+        message: `Résultat: ${newMatch.us}–${newMatch.them} vs ${newMatch.opp}`,
+        content, sha
+      })
+    });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    showToast('✓ Ajouté à la liste des parties');
+  } catch (e) {
+    showToast('Erreur matches.json: ' + e.message, true);
+  }
 }
 
 async function endGame() {
-  const data = { ..._live, active: false, updated_at: new Date().toISOString() };
+  const ef = document.getElementById('end-form');
+  const ytLink  = ef ? (document.getElementById('end-yt').value  || '').trim() : (_live.video_url   || '');
+  const splLink = ef ? (document.getElementById('end-spl').value || '').trim() : (_live.spordle_url || '');
+
+  // Mettre à jour les liens dans live avant de fermer
+  const data = {
+    ..._live,
+    active:       false,
+    video_url:    ytLink,
+    spordle_url:  splLink,
+    updated_at:   new Date().toISOString()
+  };
   try {
     const ok = await ghPut(data, `Live: fin de partie vs ${_live.opponent}`);
     if (!ok) return;
     _live = data;
-    showToast('Partie terminée.');
+
+    // Sauvegarder dans matches.json
+    await saveToMatches(ytLink, splLink);
+
+    if (ef) ef.remove();
+    showToast('Partie terminée et sauvegardée ✓');
     renderUI();
   } catch (e) { showToast('Erreur: ' + e.message, true); }
 }
