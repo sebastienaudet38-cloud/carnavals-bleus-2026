@@ -11,18 +11,18 @@
   "opponent_id": "d6e3300d-d98f-497c-bbb2-ab263eda8099",
   "updated_at": "2026-06-02T04:59:31.677Z",
   "scoreboard": {
-    "balls": 0,
-    "strikes": 1,
+    "balls": 2,
+    "strikes": 2,
     "outs": 0,
     "batter_name": "B B",
     "batter_num": "6",
     "pitcher_name": "Sébastien Audet",
-    "pitch_count": 11,
+    "pitch_count": 15,
     "bases": [
       false,
       false,
       false
     ],
-    "last_play": "A a strikes out looking, sébastien audet pitching. Sébastien Audet - Foul"
+    "last_play": "A a strikes out looking, sébastien audet pitching. Sébastien Audet - Ball 2"
   }
 }
