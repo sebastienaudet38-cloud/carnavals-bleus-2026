@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Admin EN DIRECT — Carnavals Bleus</title>
+<style>
+:root{
+  --navy:#071018; --carnaval:#1c3d8e; --sky:#5baadc;
+  --red:#c0392b; --live:#ff3b30;
+  --bg:#0d1b2a; --surface:#162032; --surface2:#1e2d42;
+  --border:rgba(255,255,255,.12); --border2:rgba(255,255,255,.07);
+  --text:#f1f5f9; --text2:rgba(255,255,255,.5);
+  --green:#22c55e; --green-bg:rgba(34,197,94,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:48px;}
+
+/* ── HEADER ── */
+header{
+  background:var(--navy);padding:14px 20px;
+  display:flex;align-items:center;gap:12px;
+  border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:20;
+}
+.h-icon{font-size:22px;}
+.h-title{font-size:15px;font-weight:700;}
+.h-sub{font-size:11px;color:var(--text2);}
+.h-reload{margin-left:auto;background:none;border:1px solid var(--border);
+  border-radius:8px;color:var(--text2);padding:6px 12px;cursor:pointer;
+  font-size:12px;font-family:inherit;transition:all .2s;}
+.h-reload:hover{color:var(--text);border-color:rgba(255,255,255,.3);}
+
+/* ── CONTAINER ── */
+.container{max-width:480px;margin:0 auto;padding:20px 16px;}
+
+/* ── STATUS BAR ── */
+.status-bar{
+  display:flex;align-items:center;gap:12px;
+  background:var(--surface);border-radius:14px;
+  padding:14px 18px;margin-bottom:18px;
+  border:1px solid var(--border);
+}
+.status-dot{width:11px;height:11px;border-radius:50%;flex-shrink:0;}
+.status-dot.live{background:var(--live);animation:pulse 1.2s ease-in-out infinite;}
+.status-dot.off{background:rgba(255,255,255,.2);}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.3;transform:scale(.65);}}
+.status-text{font-size:14px;font-weight:700;}
+.status-sub{font-size:11px;color:var(--text2);margin-top:2px;}
+
+/* ── CARD ── */
+.card{background:var(--surface);border-radius:14px;padding:20px;margin-bottom:14px;border:1px solid var(--border);}
+.card-title{font-size:11px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--text2);margin-bottom:16px;}
+
+/* ── FORM ── */
+label{font-size:12px;color:var(--text2);display:block;margin-bottom:6px;font-weight:500;}
+input[type=text],input[type=url],input[type=password]{
+  width:100%;background:var(--surface2);
+  border:1.5px solid var(--border);border-radius:10px;
+  color:var(--text);font-size:15px;padding:13px 14px;
+  font-family:inherit;margin-bottom:14px;
+  outline:none;transition:border-color .2s;
+}
+input:focus{border-color:var(--sky);}
+input::placeholder{color:rgba(255,255,255,.2);}
+input:last-child{margin-bottom:0;}
+
+/* ── BUTTONS ── */
+.btn{
+  width:100%;padding:15px;border-radius:11px;
+  font-size:15px;font-weight:700;cursor:pointer;
+  border:none;font-family:inherit;transition:all .2s;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.btn+.btn,.btn+.btn-row{margin-top:10px;}
+.btn-primary{background:var(--carnaval);color:#fff;}
+.btn-primary:active{background:#2451b3;}
+.btn-live{background:var(--live);color:#fff;}
+.btn-live:active{filter:brightness(.85);}
+.btn-end{background:rgba(192,57,43,.18);color:#f87171;border:1.5px solid rgba(192,57,43,.3);}
+.btn-end:active{background:rgba(192,57,43,.35);}
+.btn-ghost{background:transparent;color:var(--text2);border:1.5px solid var(--border);}
+.btn-ghost:active{background:rgba(255,255,255,.07);}
+.btn-save{background:rgba(91,170,220,.15);color:var(--sky);border:1.5px solid rgba(91,170,220,.25);}
+.btn-save:active{background:rgba(91,170,220,.3);}
+
+/* ── SCORE DISPLAY ── */
+.score-board{
+  display:grid;grid-template-columns:1fr 32px 1fr;
+  align-items:center;gap:8px;margin-bottom:20px;
+  background:var(--surface2);border-radius:12px;padding:18px 12px;
+}
+.score-col{text-align:center;}
+.score-name{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text2);margin-bottom:6px;}
+.score-val{font-size:56px;font-weight:900;font-family:monospace;line-height:1;}
+.score-val.us{color:var(--sky);}
+.score-val.them{color:var(--text);}
+.score-sep{font-size:28px;color:rgba(255,255,255,.2);text-align:center;font-weight:300;}
+.score-ctls{display:flex;justify-content:center;gap:8px;margin-top:12px;}
+.sc-btn{
+  width:54px;height:54px;border-radius:12px;font-size:26px;font-weight:700;
+  cursor:pointer;border:none;font-family:inherit;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .15s;color:var(--text);user-select:none;
+}
+.sc-btn.plus{background:rgba(91,170,220,.2);}
+.sc-btn.plus:active{background:rgba(91,170,220,.45);}
+.sc-btn.minus{background:rgba(255,255,255,.07);}
+.sc-btn.minus:active{background:rgba(255,255,255,.18);}
+
+/* ── INNING PICKER ── */
+.inning-row{display:flex;gap:7px;flex-wrap:wrap;}
+.inn-btn{
+  flex:1;min-width:52px;padding:11px 4px;border-radius:9px;
+  font-size:13px;font-weight:600;cursor:pointer;
+  border:1.5px solid var(--border);background:transparent;
+  color:var(--text2);font-family:inherit;text-align:center;transition:all .15s;
+}
+.inn-btn.active{background:var(--carnaval);border-color:var(--carnaval);color:#fff;}
+.half-row{display:flex;gap:8px;margin-top:10px;}
+.half-btn{
+  flex:1;padding:12px;border-radius:9px;font-size:14px;font-weight:600;
+  cursor:pointer;border:1.5px solid var(--border);
+  background:transparent;color:var(--text2);font-family:inherit;
+  text-align:center;transition:all .15s;
+}
+.half-btn.active{background:var(--carnaval);border-color:var(--carnaval);color:#fff;}
+
+/* ── TOAST ── */
+.toast{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);
+  background:#162032;color:var(--green);border:1px solid rgba(34,197,94,.25);
+  border-radius:12px;padding:12px 24px;font-size:14px;font-weight:600;
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1);z-index:100;
+  white-space:nowrap;pointer-events:none;
+}
+.toast.error{background:#1f1015;color:#f87171;border-color:rgba(248,113,113,.25);}
+.toast.show{transform:translateX(-50%) translateY(0);}
+
+/* ── TOKEN SECTION ── */
+.token-section{margin-top:6px;}
+details>summary{
+  font-size:12px;color:var(--text2);cursor:pointer;
+  padding:10px 14px;list-style:none;
+  background:var(--surface2);border-radius:10px;
+  border:1px solid var(--border);display:flex;align-items:center;gap:8px;
+  transition:all .2s;
+}
+details>summary:hover{color:var(--text);}
+details>summary::marker,details>summary::-webkit-details-marker{display:none;}
+details>summary::before{content:'⚙';font-size:14px;}
+details[open]>summary{border-radius:10px 10px 0 0;background:var(--surface);}
+details>.card{border-radius:0 0 10px 10px;margin-bottom:0;border-top:none;}
+
+/* ── LOADING / EMPTY ── */
+.loading{text-align:center;padding:48px 24px;color:var(--text2);font-size:14px;}
+.divider{border:none;border-top:1px solid var(--border);margin:16px 0;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="h-icon">⚾</div>
+  <div>
+    <div class="h-title">Carnavals Bleus — EN DIRECT</div>
+    <div class="h-sub">Interface administrateur</div>
+  </div>
+  <button class="h-reload" onclick="loadLive()">↻ Actualiser</button>
+</header>
+
+<div class="container">
+  <div id="main-ui"><div class="loading">Chargement…</div></div>
+
+  <div class="token-section">
+    <details id="token-details">
+      <summary>Paramètres GitHub (token d'accès)</summary>
+      <div class="card">
+        <p class="card-title">Token GitHub Personal Access Token</p>
+        <p style="font-size:12px;color:var(--text2);margin-bottom:14px;line-height:1.6;">
+          Créez un token <strong style="color:var(--text)">Fine-grained PAT</strong> sur GitHub avec
+          permission <code style="color:var(--sky)">Contents: Write</code> sur le repo
+          <code style="color:var(--sky)">carnavals-bleus-2026</code>.<br>
+          Le token est sauvegardé uniquement sur cet appareil (localStorage).
+        </p>
+        <label>GitHub PAT</label>
+        <input type="password" id="token-input" placeholder="github_pat_…" autocomplete="off">
+        <button class="btn btn-save" onclick="saveToken()">💾 Sauvegarder le token</button>
+        <div style="margin-top:12px;">
+          <button class="btn btn-ghost" onclick="clearToken()" style="font-size:13px;padding:10px;">🗑 Supprimer le token</button>
+        </div>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+const OWNER   = 'sebastienaudet38-cloud';
+const REPO    = 'carnavals-bleus-2026';
+const FILE    = 'live.json';
+const API_URL = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${FILE}`;
+const TOKEN_KEY = 'cb_live_token';
+
+let _live = null;
+let _sha  = null;
+let _saving = false;
+
+// ── TOKEN ───────────────────────────────────────────
+function getToken() { return localStorage.getItem(TOKEN_KEY) || ''; }
+
+function saveToken() {
+  const val = document.getElementById('token-input').value.trim();
+  if (!val) { showToast('Token vide.', true); return; }
+  localStorage.setItem(TOKEN_KEY, val);
+  document.getElementById('token-input').value = '';
+  document.getElementById('token-details').removeAttribute('open');
+  showToast('Token sauvegardé sur cet appareil ✓');
+  loadLive();
+}
+
+function clearToken() {
+  if (!confirm('Supprimer le token sauvegardé ?')) return;
+  localStorage.removeItem(TOKEN_KEY);
+  showToast('Token supprimé.');
+}
+
+// ── TOAST ────────────────────────────────────────────
+let _toastTimer = null;
+function showToast(msg, err = false) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className   = 'toast' + (err ? ' error' : '');
+  void t.offsetWidth;
+  t.classList.add('show');
+  clearTimeout(_toastTimer);
+  _toastTimer = setTimeout(() => t.classList.remove('show'), 3200);
+}
+
+// ── ESCAPE ──────────────────────────────────────────
+function esc(s) {
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── GITHUB API ───────────────────────────────────────
+async function ghGet() {
+  const h = { Accept: 'application/vnd.github.v3+json' };
+  const token = getToken();
+  if (token) h.Authorization = 'Bearer ' + token;
+  const r = await fetch(API_URL + '?t=' + Date.now(), { headers: h });
+  if (!r.ok) throw new Error('GitHub ' + r.status + (r.status === 401 ? ' — token invalide' : r.status === 404 ? ' — fichier introuvable' : ''));
+  return r.json();
+}
+
+async function ghPut(data, message) {
+  const token = getToken();
+  if (!token) {
+    showToast('Token manquant — configurez le token ci-dessous.', true);
+    document.getElementById('token-details').setAttribute('open', '');
+    return false;
+  }
+  if (_saving) return false;
+  _saving = true;
+  try {
+    const json    = JSON.stringify(data, null, 2);
+    const content = btoa(unescape(encodeURIComponent(json)));
+    const r = await fetch(API_URL, {
+      method: 'PUT',
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'Content-Type': 'application/json',
+        'Accept': 'application/vnd.github.v3+json'
+      },
+      body: JSON.stringify({ message, content, sha: _sha })
+    });
+    if (!r.ok) {
+      const e = await r.json().catch(() => ({}));
+      throw new Error(e.message || 'HTTP ' + r.status);
+    }
+    const result = await r.json();
+    _sha = result.content.sha;
+    return true;
+  } finally {
+    _saving = false;
+  }
+}
+
+// ── LOAD ─────────────────────────────────────────────
+async function loadLive() {
+  try {
+    const data = await ghGet();
+    _sha  = data.sha;
+    const raw = decodeURIComponent(escape(atob(data.content.replace(/\s/g, ''))));
+    _live = JSON.parse(raw);
+    renderUI();
+  } catch (e) {
+    document.getElementById('main-ui').innerHTML = `
+      <div class="card">
+        <p style="color:#f87171;font-weight:700;margin-bottom:10px">⚠ Impossible de charger live.json</p>
+        <p style="font-size:13px;color:var(--text2);line-height:1.6">${esc(e.message)}</p>
+        ${!getToken() ? '<p style="font-size:12px;color:var(--text2);margin-top:10px">👇 Configurez votre token GitHub ci-dessous.</p>' : ''}
+      </div>`;
+    if (!getToken()) document.getElementById('token-details').setAttribute('open', '');
+  }
+}
+
+// ── RENDER ───────────────────────────────────────────
+function renderUI() {
+  const ui = document.getElementById('main-ui');
+  _live.active ? renderLiveUI(ui) : renderStartUI(ui);
+}
+
+function renderStartUI(ui) {
+  ui.innerHTML = `
+    <div class="status-bar">
+      <div class="status-dot off"></div>
+      <div>
+        <div class="status-text">Aucune partie en cours</div>
+        <div class="status-sub">Remplissez le formulaire pour démarrer</div>
+      </div>
+    </div>
+    <div class="card">
+      <p class="card-title">Démarrer une partie</p>
+      <label>Adversaire</label>
+      <input type="text" id="f-opp" placeholder="Ex: Royaux 13UAA" autocomplete="off">
+      <label>URL Vidéo GameChanger (optionnel)</label>
+      <input type="url" id="f-video" placeholder="https://gc.com/…">
+      <label>URL Match Spordle (optionnel)</label>
+      <input type="url" id="f-spordle" placeholder="https://spordle.com/…">
+      <button class="btn btn-live" onclick="startGame()">🔴 DÉMARRER LA PARTIE</button>
+    </div>`;
+}
+
+function renderLiveUI(ui) {
+  const innings  = ['1re','2e','3e','4e','5e','6e','7e'];
+  const curNum   = parseInt(_live.inning) || 1;
+  const curHalf  = _live.half || 'haut';
+  const updTime  = _live.updated_at
+    ? new Date(_live.updated_at).toLocaleTimeString('fr-CA', { hour:'2-digit', minute:'2-digit' })
+    : '—';
+
+  const innBtns = innings.map((lbl, i) => {
+    const n = i + 1;
+    return `<button class="inn-btn${n === curNum ? ' active' : ''}" onclick="setInning(${n})">${lbl}</button>`;
+  }).join('');
+
+  ui.innerHTML = `
+    <div class="status-bar">
+      <div class="status-dot live"></div>
+      <div>
+        <div class="status-text">PARTIE EN COURS</div>
+        <div class="status-sub">${esc(_live.opponent)} — màj: ${updTime}</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <p class="card-title">Score</p>
+      <div class="score-board">
+        <div class="score-col">
+          <div class="score-name">Carnavals</div>
+          <div class="score-val us" id="val-us">${_live.carnavals_score}</div>
+          <div class="score-ctls">
+            <button class="sc-btn minus" onclick="adjustScore('us',-1)">−</button>
+            <button class="sc-btn plus"  onclick="adjustScore('us', 1)">+</button>
+          </div>
+        </div>
+        <div class="score-sep">–</div>
+        <div class="score-col">
+          <div class="score-name">${esc(_live.opponent)}</div>
+          <div class="score-val them" id="val-them">${_live.opponent_score}</div>
+          <div class="score-ctls">
+            <button class="sc-btn minus" onclick="adjustScore('them',-1)">−</button>
+            <button class="sc-btn plus"  onclick="adjustScore('them', 1)">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <p class="card-title">Manche</p>
+      <div class="inning-row">${innBtns}</div>
+      <div class="half-row">
+        <button class="half-btn${curHalf === 'haut' ? ' active' : ''}" onclick="setHalf('haut')">↑ Haut</button>
+        <button class="half-btn${curHalf === 'bas'  ? ' active' : ''}" onclick="setHalf('bas')">↓ Bas</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <p class="card-title">Liens de diffusion</p>
+      <label>URL Vidéo GameChanger</label>
+      <input type="url" id="f-video" value="${esc(_live.video_url || '')}" placeholder="https://gc.com/…">
+      <label>URL Match Spordle</label>
+      <input type="url" id="f-spordle" value="${esc(_live.spordle_url || '')}" placeholder="https://spordle.com/…">
+      <button class="btn btn-save" onclick="updateLinks()">💾 Mettre à jour les liens</button>
+    </div>
+
+    <button class="btn btn-end" onclick="confirmEnd()">⏹ Terminer la partie</button>`;
+}
+
+// ── ACTIONS ──────────────────────────────────────────
+async function startGame() {
+  const opp     = document.getElementById('f-opp').value.trim();
+  const video   = document.getElementById('f-video').value.trim();
+  const spordle = document.getElementById('f-spordle').value.trim();
+  if (!opp) { showToast('Entrez le nom de l\'adversaire.', true); return; }
+
+  const data = {
+    active: true,
+    opponent: opp,
+    carnavals_score: 0,
+    opponent_score: 0,
+    inning: '1',
+    half: 'haut',
+    video_url: video,
+    spordle_url: spordle,
+    updated_at: new Date().toISOString()
+  };
+  try {
+    const ok = await ghPut(data, `Live: partie vs ${opp}`);
+    if (!ok) return;
+    _live = data;
+    showToast('Partie démarrée ! ⚾');
+    renderUI();
+  } catch (e) { showToast('Erreur: ' + e.message, true); }
+}
+
+async function adjustScore(team, delta) {
+  if (_saving) return;
+  const key = team === 'us' ? 'carnavals_score' : 'opponent_score';
+  _live[key] = Math.max(0, (_live[key] || 0) + delta);
+  _live.updated_at = new Date().toISOString();
+  // Optimistic UI update
+  const elId = team === 'us' ? 'val-us' : 'val-them';
+  const el = document.getElementById(elId);
+  if (el) el.textContent = _live[key];
+  try {
+    const ok = await ghPut(_live, `Live: score ${_live.carnavals_score}–${_live.opponent_score}`);
+    if (ok) showToast(`${_live.carnavals_score} – ${_live.opponent_score}`);
+  } catch (e) {
+    _live[key] -= delta; // rollback
+    if (el) el.textContent = _live[key];
+    showToast('Erreur: ' + e.message, true);
+  }
+}
+
+async function setInning(n) {
+  if (_saving) return;
+  _live.inning = String(n);
+  _live.updated_at = new Date().toISOString();
+  try {
+    const ok = await ghPut(_live, `Live: manche ${n}`);
+    if (ok) { renderUI(); showToast(`${n}${n === 1 ? 're' : 'e'} manche`); }
+  } catch (e) { showToast('Erreur: ' + e.message, true); }
+}
+
+async function setHalf(half) {
+  if (_saving) return;
+  _live.half = half;
+  _live.updated_at = new Date().toISOString();
+  try {
+    const ok = await ghPut(_live, `Live: ${half} de manche`);
+    if (ok) { renderUI(); }
+  } catch (e) { showToast('Erreur: ' + e.message, true); }
+}
+
+async function updateLinks() {
+  _live.video_url   = (document.getElementById('f-video').value   || '').trim();
+  _live.spordle_url = (document.getElementById('f-spordle').value || '').trim();
+  _live.updated_at  = new Date().toISOString();
+  try {
+    const ok = await ghPut(_live, 'Live: mise à jour des liens');
+    if (ok) showToast('Liens mis à jour ✓');
+  } catch (e) { showToast('Erreur: ' + e.message, true); }
+}
+
+function confirmEnd() {
+  if (!confirm('Terminer la partie en cours ?')) return;
+  endGame();
+}
+
+async function endGame() {
+  const data = { ..._live, active: false, updated_at: new Date().toISOString() };
+  try {
+    const ok = await ghPut(data, `Live: fin de partie vs ${_live.opponent}`);
+    if (!ok) return;
+    _live = data;
+    showToast('Partie terminée.');
+    renderUI();
+  } catch (e) { showToast('Erreur: ' + e.message, true); }
+}
+
+// ── INIT ─────────────────────────────────────────────
+loadLive();
+</script>
+</body>
+</html>
