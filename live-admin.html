@@ -326,9 +326,9 @@ function renderStartUI(ui) {
       <p class="card-title">Démarrer une partie</p>
       <label>Adversaire</label>
       <input type="text" id="f-opp" placeholder="Ex: Royaux 13UAA" autocomplete="off">
-      <label>URL Vidéo GameChanger (optionnel)</label>
-      <input type="url" id="f-video" placeholder="https://gc.com/…">
-      <label>URL Match Spordle (optionnel)</label>
+      <label>URL Vidéo en direct (optionnel — seulement si vous filmez)</label>
+      <input type="url" id="f-video" placeholder="https://youtube.com/… ou lien stream">
+      <label>URL Feuille de match Spordle (optionnel)</label>
       <input type="url" id="f-spordle" placeholder="https://spordle.com/…">
       <button class="btn btn-live" onclick="startGame()">🔴 DÉMARRER LA PARTIE</button>
     </div>`;
@@ -390,9 +390,12 @@ function renderLiveUI(ui) {
 
     <div class="card">
       <p class="card-title">Liens de diffusion</p>
-      <label>URL Vidéo GameChanger</label>
-      <input type="url" id="f-video" value="${esc(_live.video_url || '')}" placeholder="https://gc.com/…">
-      <label>URL Match Spordle</label>
+      <label style="color:var(--sky)">⚾ Lien partie GC (auto-généré)</label>
+      <input type="url" value="${esc(_live.game_url || '')}" readonly
+             style="opacity:.6;cursor:default" placeholder="Généré automatiquement par le poller">
+      <label>📺 Vidéo en direct (seulement si vous filmez)</label>
+      <input type="url" id="f-video" value="${esc(_live.video_url || '')}" placeholder="https://youtube.com/… ou lien stream">
+      <label>📊 Feuille de match Spordle</label>
       <input type="url" id="f-spordle" value="${esc(_live.spordle_url || '')}" placeholder="https://spordle.com/…">
       <button class="btn btn-save" onclick="updateLinks()">💾 Mettre à jour les liens</button>
     </div>
