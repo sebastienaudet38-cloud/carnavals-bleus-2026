@@ -14,15 +14,15 @@
     "balls": 2,
     "strikes": 2,
     "outs": 0,
-    "batter_name": "Guillaume Nadeau",
-    "batter_num": "88",
+    "batter_name": "",
+    "batter_num": "",
     "pitcher_name": "Maxime Elmaleh",
     "pitch_count": 25,
     "bases": [
-      true,
-      true,
+      false,
+      false,
       false
     ],
-    "last_play": "N n walks, maxime elmaleh pitching. s s remains at 2nd. Maxime Elmaleh — Foul"
+    "last_play": "Guillaume nadeau homers on a fly ball to center field. s s scores"
   }
 }
