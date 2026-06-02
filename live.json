@@ -1,12 +1,21 @@
 {
-  "active": false,
-  "opponent": "",
+  "active": true,
+  "opponent": "Adversaire",
   "carnavals_score": 0,
-  "opponent_score": 0,
+  "opponent_score": 2,
   "inning": "1",
   "half": "haut",
-  "game_url": "",
-  "video_url": "",
+  "game_url": "https://web.gc.com/teams/PfAvhfA9sqgL/2026-summer-test-bleus/schedule/8aa577c4-c1cf-4f01-b12d-9dcaa9317a3b/plays",
+  "video_url": "https://web.gc.com/teams/PfAvhfA9sqgL/live?liveStreamEventId=8aa577c4-c1cf-4f01-b12d-9dcaa9317a3b&pid=share_livestream_link&c=share_livestream_consumer",
   "spordle_url": "",
-  "updated_at": ""
+  "updated_at": "2026-06-02T03:12:37.315Z",
+  "scoreboard": {
+    "balls": 2,
+    "strikes": 2,
+    "outs": 0,
+    "batter_name": "N N",
+    "batter_num": "9",
+    "pitcher_name": "Maxime Elmaleh",
+    "pitch_count": 12
+  }
 }
