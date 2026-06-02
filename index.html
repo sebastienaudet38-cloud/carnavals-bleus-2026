@@ -167,33 +167,82 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
   padding:5px 16px;font-size:12px;color:rgba(255,255,255,.8);font-family:var(--mono);
 }
 
-/* ── SCOREBOARD LIVE ── */
-.live-scoreboard{
-  margin-top:20px;background:var(--bg);border:1px solid var(--border);
-  border-radius:10px;overflow:hidden;font-family:var(--mono);
+/* ── SCOREBOARD TV STYLE (MLB broadcast) ── */
+.sb{
+  background:#071018;border-radius:10px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.1);
+  box-shadow:0 4px 24px rgba(0,0,0,.4);
+  font-family:var(--sans);
 }
-.lsb-teams{display:grid;grid-template-columns:1fr auto auto;border-bottom:1px solid var(--border);}
-.lsb-row{display:contents;}
-.lsb-team{padding:10px 14px;font-size:13px;font-weight:700;color:var(--text);
-  display:flex;align-items:center;gap:8px;}
-.lsb-team.us{color:#1c3d8e;}
-.lsb-score{padding:10px 18px;font-size:22px;font-weight:900;text-align:center;
-  border-left:1px solid var(--border);}
-.lsb-score.us{color:#1c3d8e;}
-.lsb-count-cell{padding:10px 14px;border-left:1px solid var(--border);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;}
-.lsb-count{font-size:12px;font-weight:700;display:flex;gap:6px;}
-.lsb-count span{padding:2px 7px;border-radius:4px;font-size:11px;}
-.lsb-b{background:#dbeafe;color:#1d4ed8;}
-.lsb-s{background:#fef3c7;color:#92400e;}
-.lsb-o{background:#fee2e2;color:#991b1b;}
-.lsb-outs{font-size:10px;color:var(--gray-l);letter-spacing:.5px;text-transform:uppercase;}
-.lsb-bottom{padding:10px 14px;display:flex;gap:24px;font-size:12px;flex-wrap:wrap;}
-.lsb-player{display:flex;flex-direction:column;gap:2px;}
-.lsb-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray-l);}
-.lsb-pname{font-weight:700;color:var(--text);}
-.lsb-pnum{color:var(--gray-l);}
-.lsb-pitches{color:var(--gray-l);}
+/* Header bande live */
+.sb-hdr{
+  background:linear-gradient(90deg,#1c3d8e,#071018);
+  padding:8px 16px;display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.sb-live-pill{display:flex;align-items:center;gap:6px;
+  font-size:10px;font-weight:800;letter-spacing:2px;color:#ff5f57;text-transform:uppercase;}
+.sb-inn-badge{font-size:11px;font-weight:700;color:rgba(255,255,255,.7);
+  font-family:var(--mono);letter-spacing:1px;}
+/* Corps principal : 3 colonnes */
+.sb-body{display:grid;grid-template-columns:1fr auto auto;
+  border-bottom:1px solid rgba(255,255,255,.08);}
+/* Colonne gauche : équipes */
+.sb-teams{display:flex;flex-direction:column;border-right:1px solid rgba(255,255,255,.08);}
+.sb-trow{display:flex;align-items:center;gap:10px;padding:12px 16px;
+  border-bottom:1px solid rgba(255,255,255,.06);}
+.sb-trow:last-child{border-bottom:none;}
+.sb-trow.us{background:rgba(28,61,142,.3);border-left:3px solid #c0392b;}
+.sb-trow:not(.us){border-left:3px solid transparent;padding-left:13px;}
+.sb-tlogo{height:30px;width:30px;object-fit:contain;flex-shrink:0;}
+.sb-tname{flex:1;font-size:12px;font-weight:800;letter-spacing:1.5px;
+  text-transform:uppercase;color:rgba(255,255,255,.9);}
+.sb-trow.us .sb-tname{color:#5baadc;}
+.sb-tscore{font-family:var(--mono);font-size:32px;font-weight:900;
+  min-width:50px;text-align:center;
+  color:#f0a500;text-shadow:0 0 14px rgba(240,165,0,.5);}
+.sb-trow.us .sb-tscore{color:#f0a500;}
+/* Colonne milieu : manche + bases + retraits */
+.sb-mid{display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:10px 14px;gap:8px;border-right:1px solid rgba(255,255,255,.08);min-width:80px;}
+.sb-inn-num{font-family:var(--mono);font-size:28px;font-weight:900;
+  color:#fff;line-height:1;text-align:center;}
+.sb-inn-arrow{font-size:9px;color:rgba(255,255,255,.5);text-align:center;letter-spacing:1px;}
+.sb-bases{display:grid;grid-template-columns:1fr 1fr 1fr;
+  grid-template-rows:1fr 1fr;gap:3px;width:36px;}
+.sb-base{width:11px;height:11px;transform:rotate(45deg);border-radius:1px;
+  background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.2);
+  justify-self:center;align-self:center;}
+.sb-base.on{background:#f0a500;border-color:#f0a500;
+  box-shadow:0 0 6px rgba(240,165,0,.7);}
+.sb-outs-row{display:flex;gap:5px;}
+.sb-o-dot{width:9px;height:9px;border-radius:50%;
+  background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.2);}
+.sb-o-dot.on{background:#c0392b;border-color:#c0392b;
+  box-shadow:0 0 5px rgba(192,57,43,.6);}
+/* Colonne droite : compte + lancers */
+.sb-right{display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:10px 16px;gap:6px;min-width:72px;}
+.sb-count-big{font-family:var(--mono);font-size:28px;font-weight:900;
+  color:#fff;line-height:1;}
+.sb-count-lbl{font-size:8px;font-weight:800;letter-spacing:1.5px;
+  text-transform:uppercase;color:rgba(255,255,255,.3);}
+.sb-pitch-block{text-align:center;}
+.sb-pitch-num{font-family:var(--mono);font-size:20px;font-weight:900;
+  color:rgba(255,255,255,.8);line-height:1;}
+.sb-pitch-lbl{font-size:8px;letter-spacing:1px;text-transform:uppercase;
+  color:rgba(255,255,255,.3);}
+/* Barre joueurs */
+.sb-players{display:flex;border-bottom:1px solid rgba(255,255,255,.06);}
+.sb-player{flex:1;padding:9px 16px;display:flex;flex-direction:column;gap:2px;}
+.sb-player+.sb-player{border-left:1px solid rgba(255,255,255,.06);}
+.sb-plbl{font-size:8px;font-weight:800;letter-spacing:1.5px;
+  text-transform:uppercase;color:rgba(255,255,255,.3);}
+.sb-pval{font-size:12px;font-weight:700;color:rgba(255,255,255,.9);}
+.sb-pval .num,.sb-pval .pitches{color:rgba(255,255,255,.35);font-weight:400;}
+/* Boutons */
+.sb-btns{display:flex;gap:8px;padding:10px 16px;
+  background:#040c14;flex-wrap:wrap;}
 
 /* ── HOME SECTIONS ── */
 .home-section{background:#fff;padding:52px 0;}
@@ -861,126 +910,109 @@ function fmtInning(inning, half) {
   return `${halfLbl} la ${n}${sfx} manche`;
 }
 
-function renderScoreboard(live) {
-  const sb = live.scoreboard;
-  if (!sb) return '';
-  const batter  = sb.batter_name  ? `${esc(sb.batter_name)}${sb.batter_num ? ' <span class="lsb-pnum">#'+esc(sb.batter_num)+'</span>' : ''}` : '—';
-  const pitcher = sb.pitcher_name ? esc(sb.pitcher_name) : '—';
-  const outs    = sb.outs ?? 0;
-  const balls   = sb.balls ?? 0;
-  const strikes = sb.strikes ?? 0;
-  const outsIcons = '●'.repeat(outs) + '○'.repeat(Math.max(0, 3 - outs));
-  return `
-    <div class="live-scoreboard">
-      <div class="lsb-teams">
-        <div class="lsb-team us">⚾ Carnavals Bleus</div>
-        <div class="lsb-score us">${live.carnavals_score ?? 0}</div>
-        <div class="lsb-count-cell" rowspan="2">
-          <div class="lsb-count">
-            <span class="lsb-b">B ${balls}</span>
-            <span class="lsb-s">P ${strikes}</span>
-            <span class="lsb-o">R ${outs}</span>
-          </div>
-          <div class="lsb-outs">${outsIcons}</div>
-        </div>
-      </div>
-      <div class="lsb-teams" style="border-bottom:none">
-        <div class="lsb-team">${esc(live.opponent)}</div>
-        <div class="lsb-score">${live.opponent_score ?? 0}</div>
-      </div>
-      <div class="lsb-bottom">
-        <div class="lsb-player">
-          <span class="lsb-label">Au bâton</span>
-          <span class="lsb-pname">${batter}</span>
-        </div>
-        <div class="lsb-player">
-          <span class="lsb-label">Lanceur</span>
-          <span class="lsb-pname">${pitcher} <span class="lsb-pitches">P:${sb.pitch_count ?? 0}</span></span>
-        </div>
-      </div>
-    </div>`;
-}
+// renderScoreboard supprimé — intégré directement dans renderLiveGame
 
 function renderLiveGame(live) {
   const el  = document.getElementById('featured-match');
   const vis = document.getElementById('hero-visual');
   if (!el) return;
 
-  const gameBtn    = live.game_url
-    ? `<a href="${esc(live.game_url)}"    target="_blank" class="hero-live-btn spordle">⚾ Partie en direct</a>`
-    : '';
-  const videoBtn   = live.video_url
-    ? `<a href="${esc(live.video_url)}"   target="_blank" class="hero-live-btn video">📺 Vidéo en direct</a>`
-    : '';
-  const spordleBtn = live.spordle_url
-    ? `<a href="${esc(live.spordle_url)}" target="_blank" class="hero-live-btn spordle">📊 Feuille de match</a>`
-    : '';
-
-  // Score affiché seulement si au moins un des deux est non-zéro
-  const hasScore = (live.carnavals_score || 0) > 0 || (live.opponent_score || 0) > 0;
-  const scoreHtml = hasScore
-    ? `<div class="hero-live-score">${live.carnavals_score} – ${live.opponent_score}</div>`
-    : '';
-
-  // Manche affiché seulement si défini
+  const sb      = live.scoreboard;
   const inning  = parseInt(live.inning) || 0;
   const inSfx   = inning === 1 ? 're' : 'e';
+  const halfArr = live.half === 'bas' ? '▼' : '▲';
   const halfLbl = live.half === 'bas' ? 'Fin de la' : 'Début de la';
-  const inningHtml = inning > 0
-    ? `<p class="hero-live-inning">${halfLbl} ${inning}${inSfx} manche</p>`
-    : '';
 
+  const gameBtn  = live.game_url
+    ? `<a href="${esc(live.game_url)}"   target="_blank" class="hero-live-btn spordle">⚾ Partie en direct</a>` : '';
+  const videoBtn = live.video_url
+    ? `<a href="${esc(live.video_url)}"  target="_blank" class="hero-live-btn video">📺 Vidéo en direct</a>` : '';
+  const splBtn   = live.spordle_url
+    ? `<a href="${esc(live.spordle_url)}" target="_blank" class="hero-live-btn spordle">📊 Feuille de match</a>` : '';
+
+  // ── Section milieu : manche + bases (toujours vides pour l'instant) ──
+  const baseSlots = [
+    {r:0,c:1},{r:1,c:0},{r:1,c:2}   // 2e base, 3e base, 1re base
+  ].map(({r,c}) =>
+    `<span class="sb-base" style="grid-row:${r+1};grid-column:${c+1}"></span>`
+  ).join('');
+
+  const outDots = Array.from({length:3}, (_,i) =>
+    `<span class="sb-o-dot${sb && i < (sb.outs??0) ? ' on' : ''}"></span>`
+  ).join('');
+
+  // ── Section droite : compte + lancers ──
+  let rightHtml = '';
+  if (sb) {
+    rightHtml = `
+      <div class="sb-count-big">${sb.balls??0}-${sb.strikes??0}</div>
+      <div class="sb-count-lbl">BALLES–PRISES</div>
+      <div class="sb-pitch-block" style="margin-top:8px">
+        <div class="sb-pitch-num">${sb.pitch_count??0}</div>
+        <div class="sb-pitch-lbl">LANCERS</div>
+      </div>`;
+  }
+
+  // ── Section joueurs ──
+  let playersHtml = '';
+  if (sb && (sb.batter_name || sb.pitcher_name)) {
+    const batter  = sb.batter_name
+      ? `${esc(sb.batter_name)}${sb.batter_num ? ' <span class="num">#'+esc(sb.batter_num)+'</span>' : ''}` : '—';
+    const pitcher = sb.pitcher_name
+      ? `${esc(sb.pitcher_name)} <span class="pitches">· P:${sb.pitch_count??0}</span>` : '—';
+    playersHtml = `
+      <div class="sb-players">
+        <div class="sb-player"><span class="sb-plbl">Au bâton</span><span class="sb-pval">${batter}</span></div>
+        <div class="sb-player"><span class="sb-plbl">Lanceur</span><span class="sb-pval">${pitcher}</span></div>
+      </div>`;
+  }
+
+  // ── Scoreboard complet ──
   el.innerHTML = `
-    <div class="hero-live-badge"><span class="live-dot"></span>EN DIRECT</div>
-    <p class="hero-live-eyebrow">Partie en cours</p>
-    <p class="hero-live-teams"><span style="font-weight:800;color:#1c3d8e;font-size:15px">Carnavals Bleus</span> <span style="font-size:11px;color:var(--gray-l);font-weight:400">vs</span> ${esc(live.opponent)}</p>
-    ${scoreHtml}
-    ${inningHtml}
-    <div class="hero-live-btns" style="margin-top:${(hasScore||inning)?'8px':'24px'}">${gameBtn}${videoBtn}${spordleBtn}</div>
-    ${renderScoreboard(live)}`;
+    <div class="sb">
+      <div class="sb-hdr">
+        <div class="sb-live-pill"><span class="live-dot"></span>EN DIRECT</div>
+        ${inning > 0 ? `<span class="sb-inn-badge">${halfArr} ${inning}${inSfx} MANCHE</span>` : ''}
+      </div>
+      <div class="sb-body">
+        <div class="sb-teams">
+          <div class="sb-trow us">
+            <img src="${TEAM_LOGO_B64}" class="sb-tlogo" alt="Carnavals">
+            <span class="sb-tname">Carnavals Bleus</span>
+            <span class="sb-tscore">${live.carnavals_score ?? 0}</span>
+          </div>
+          <div class="sb-trow">
+            <span class="sb-tlogo" style="width:30px;text-align:center;font-size:20px">⚾</span>
+            <span class="sb-tname">${esc(live.opponent)}</span>
+            <span class="sb-tscore">${live.opponent_score ?? 0}</span>
+          </div>
+        </div>
+        <div class="sb-mid">
+          <div class="sb-inn-num">${inning > 0 ? inning : '—'}</div>
+          <div class="sb-inn-arrow">${inning > 0 ? halfArr : ''}</div>
+          <div class="sb-bases" style="grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;width:42px;height:30px;gap:3px">
+            ${baseSlots}
+          </div>
+          <div class="sb-outs-row">${outDots}</div>
+        </div>
+        <div class="sb-right">${rightHtml}</div>
+      </div>
+      ${playersHtml}
+      <div class="sb-btns">${gameBtn}${videoBtn}${splBtn}</div>
+    </div>`;
 
+  // Panneau droit — sobre, pas de duplication
   if (vis) {
-    vis.onclick = live.video_url ? () => window.open(live.video_url, '_blank') : null;
-    vis.style.cursor = live.video_url ? 'pointer' : 'default';
-
-    // Contenu de base (affiché si pas de miniature GC)
-    const baseVisual = `
+    vis.onclick = live.game_url ? () => window.open(live.game_url, '_blank') : null;
+    vis.style.cursor = live.game_url ? 'pointer' : 'default';
+    vis.innerHTML = `
       <div class="hero-visual-live">
         <div class="hlv-live-tag"><span class="hlv-dot"></span>EN DIRECT</div>
-        ${hasScore
-          ? `<div class="hlv-score-big">${live.carnavals_score}&nbsp;–&nbsp;${live.opponent_score}</div>
-             <div class="hlv-team-names"><span>Carnavals</span><span>${esc(live.opponent)}</span></div>`
-          : `<div style="font-size:52px;margin-bottom:12px">⚾</div>
-             <div style="font-size:15px;font-weight:700;color:#fff;text-align:center;line-height:1.5">
-               <span style="color:#5baadc;font-weight:900">Carnavals Bleus</span><br>
-               <span style="color:rgba(255,255,255,.4);font-size:12px;font-weight:400">vs</span><br>
-               ${esc(live.opponent)}
-             </div>`
-        }
-        ${inning > 0 ? `<div class="hlv-inning-tag" style="margin-top:14px">${halfLbl} ${inning}${inSfx} manche</div>` : ''}
-        ${live.video_url && inning === 0 ? '<div class="hlv-inning-tag" style="margin-top:18px">Cliquer pour regarder</div>' : ''}
+        <div class="hlv-score-big" style="font-size:72px">${live.carnavals_score??0}&nbsp;–&nbsp;${live.opponent_score??0}</div>
+        <div class="hlv-team-names"><span style="color:#5baadc">Carnavals</span><span>${esc(live.opponent)}</span></div>
+        ${inning > 0 ? `<div class="hlv-inning-tag" style="margin-top:14px">${halfArr} ${halfLbl} ${inning}${inSfx} manche</div>` : ''}
+        ${live.game_url ? '<div class="hlv-inning-tag" style="margin-top:10px;opacity:.6">Cliquer pour la partie</div>' : ''}
       </div>`;
-    vis.innerHTML = baseVisual;
-
-    // Tentative de miniature GC — fonctionne si l'utilisateur est connecté à GC
-    // (le navigateur envoie automatiquement les cookies CloudFront de media-service.gc.com)
-    const gcEventId = live.video_url
-      ? (live.video_url.match(/liveStreamEventId=([a-f0-9-]+)/) || [])[1]
-      : null;
-    if (gcEventId) {
-      const thumb = new Image();
-      thumb.onload = () => {
-        // Miniature chargée avec succès → remplace le visuel par défaut
-        vis.innerHTML = `
-          <img class="hero-yt-thumb" src="${thumb.src}" alt="Match en direct" loading="eager"
-               style="max-height:356px;object-fit:cover;">
-          <div class="hero-play-overlay">
-            <div class="hero-play-btn">▶</div>
-          </div>`;
-      };
-      // onerror → garde baseVisual tel quel (rien à faire)
-      thumb.src = `https://media-service.gc.com/events/${gcEventId}/thumbnail`;
-    }
   }
 }
 
