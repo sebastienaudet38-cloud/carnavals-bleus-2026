@@ -1,0 +1,127 @@
+{
+  "plays": [
+    {
+      "order": 0,
+      "inning": 1,
+      "half": "top",
+      "name_template": {
+        "template": "Walk"
+      },
+      "home_score": 0,
+      "away_score": 0,
+      "did_score_change": false,
+      "outs": 0,
+      "did_outs_change": false,
+      "at_plate_details": [
+        {
+          "template": "Ball 1"
+        },
+        {
+          "template": "Strike 1 looking"
+        },
+        {
+          "template": "Strike 2 looking"
+        },
+        {
+          "template": "Foul"
+        },
+        {
+          "template": "Ball 2"
+        },
+        {
+          "template": "Ball 3"
+        },
+        {
+          "template": "Ball 4"
+        }
+      ],
+      "final_details": [
+        {
+          "template": "${1ce51001-57fa-4174-8002-3653caadb89c} walks, ${cb7b0341-d9c7-4c78-88a3-9920e1864c70} pitching"
+        }
+      ],
+      "messages": []
+    },
+    {
+      "order": 1,
+      "inning": 1,
+      "half": "top",
+      "name_template": {
+        "template": "Double"
+      },
+      "home_score": 0,
+      "away_score": 0,
+      "did_score_change": false,
+      "outs": 0,
+      "did_outs_change": false,
+      "at_plate_details": [
+        {
+          "template": "Strike 1 looking"
+        },
+        {
+          "template": "In play"
+        }
+      ],
+      "final_details": [
+        {
+          "template": "${0d86e842-3d5c-45a6-b25e-b7059c942eaf} doubles on a hard ground ball to right fielder"
+        },
+        {
+          "template": "${1ce51001-57fa-4174-8002-3653caadb89c} advances to 3rd"
+        }
+      ],
+      "messages": []
+    },
+    {
+      "order": 2,
+      "inning": 1,
+      "half": "top",
+      "name_template": {
+        "template": "Double"
+      },
+      "home_score": 0,
+      "away_score": 2,
+      "did_score_change": true,
+      "outs": 0,
+      "did_outs_change": false,
+      "at_plate_details": [
+        {
+          "template": "In play"
+        }
+      ],
+      "final_details": [
+        {
+          "template": "${ecb56c9a-cdfe-4be9-be51-0a5ff3bd7faa} doubles on a line drive to center fielder"
+        },
+        {
+          "template": "${1ce51001-57fa-4174-8002-3653caadb89c} scores"
+        },
+        {
+          "template": "${0d86e842-3d5c-45a6-b25e-b7059c942eaf} scores"
+        }
+      ],
+      "messages": []
+    },
+    {
+      "order": 3,
+      "inning": 1,
+      "half": "top",
+      "name_template": {
+        "template": "${7ea154f3-f132-430e-9605-ac2d60fc599b} at bat"
+      },
+      "home_score": 0,
+      "away_score": 0,
+      "did_score_change": false,
+      "outs": 0,
+      "did_outs_change": false,
+      "at_plate_details": [
+        {
+          "template": "Ball 1"
+        }
+      ],
+      "final_details": [],
+      "messages": []
+    }
+  ],
+  "total": 4
+}
