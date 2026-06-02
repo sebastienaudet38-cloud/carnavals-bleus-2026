@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "opponent": "Carnavals Rouge",
   "carnavals_score": 11,
   "opponent_score": 2,
@@ -7,5 +7,5 @@
   "half": "bas",
   "video_url": "https://web.gc.com/teams/g6rw3BRN9Tmr/live?liveStreamEventId=4e72a620-981f-40d8-bc69-ae9c49ca6e82&pid=share_livestream_link&c=share_livestream_consumer",
   "spordle_url": "",
-  "updated_at": "2026-06-02T02:38:19.071Z"
+  "updated_at": "2026-06-02T02:41:54.719Z"
 }
