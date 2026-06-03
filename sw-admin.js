@@ -2,7 +2,7 @@
    Cache uniquement le shell (HTML/manifest/icônes).
    Tout appel vers api.github.com va toujours au réseau (données temps réel).
 */
-const CACHE   = 'cb-admin-v1';
+const CACHE   = 'cb-admin-v2';
 const SHELL   = [
   './live-admin.html',
   './manifest-admin.json',
