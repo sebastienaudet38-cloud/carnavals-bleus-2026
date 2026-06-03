@@ -9,20 +9,20 @@
   "video_url": "",
   "spordle_url": "",
   "opponent_id": "d6e3300d-d98f-497c-bbb2-ab263eda8099",
-  "updated_at": "2026-06-03T02:08:52Z",
+  "updated_at": "2026-06-03T02:12:23Z",
   "scoreboard": {
-    "balls": 3,
-    "strikes": 2,
+    "balls": 0,
+    "strikes": 0,
     "outs": 0,
-    "batter_name": "B B",
-    "batter_num": "6",
+    "batter_name": "S S",
+    "batter_num": "18",
     "pitcher_name": "Sébastien Audet",
-    "pitch_count": 16,
+    "pitch_count": 18,
     "bases": [
-      false,
+      true,
       false,
       false
     ],
-    "last_play": "A a strikes out looking, sébastien audet pitching. Sébastien Audet - Ball 3"
+    "last_play": "B b singles on a line drive to right fielder"
   }
 }
