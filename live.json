@@ -4,25 +4,25 @@
   "carnavals_score": 0,
   "opponent_score": 5,
   "inning": "1",
-  "half": "haut",
+  "half": "bas",
   "game_url": "https://web.gc.com/teams/PfAvhfA9sqgL/2026-summer-test-bleus/schedule/8aa577c4-c1cf-4f01-b12d-9dcaa9317a3b/plays",
   "video_url": "",
   "spordle_url": "",
   "opponent_id": "d6e3300d-d98f-497c-bbb2-ab263eda8099",
-  "updated_at": "2026-06-03T02:13:34Z",
+  "updated_at": "2026-06-03T02:14:41Z",
   "scoreboard": {
-    "balls": 1,
-    "strikes": 1,
+    "balls": 0,
+    "strikes": 2,
     "outs": 0,
-    "batter_name": "S S",
-    "batter_num": "18",
-    "pitcher_name": "Sébastien Audet",
-    "pitch_count": 20,
+    "batter_name": "Sébastien Audet",
+    "batter_num": "",
+    "pitcher_name": "A A",
+    "pitch_count": 2,
     "bases": [
       true,
       false,
       false
     ],
-    "last_play": "B b singles on a line drive to right fielder. Sébastien Audet - Strike 1 looking"
+    "last_play": "S s pops out to shortstop david boivin. Sébastien Audet - Strike 2 swinging"
   }
 }
