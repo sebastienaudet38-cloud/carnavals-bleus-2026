@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "opponent": "Test",
   "carnavals_score": 0,
   "opponent_score": 5,
@@ -9,7 +9,7 @@
   "video_url": "",
   "spordle_url": "",
   "opponent_id": "d6e3300d-d98f-497c-bbb2-ab263eda8099",
-  "updated_at": "2026-06-03T02:15:03Z",
+  "updated_at": "2026-06-03T02:18:24.215Z",
   "scoreboard": {
     "balls": 1,
     "strikes": 2,
