@@ -3,7 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Admin EN DIRECT — Carnavals Bleus</title>
+<title>Carnavals Admin</title>
+<link rel="manifest" href="manifest-admin.json">
+<meta name="theme-color" content="#071018">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Carnavals Admin">
+<link rel="apple-touch-icon" href="icons/icon-admin-192.png">
 <style>
 :root{
   --navy:#071018; --carnaval:#1c3d8e; --sky:#5baadc;
@@ -152,6 +159,15 @@ details>summary::before{content:'⚙';font-size:14px;}
 details[open]>summary{border-radius:10px 10px 0 0;background:var(--surface);}
 details>.card{border-radius:0 0 10px 10px;margin-bottom:0;border-top:none;}
 
+/* ── SYNC BADGE ── */
+.sync-badge{
+  margin-left:auto;font-size:11px;padding:4px 10px;border-radius:20px;
+  border:1px solid var(--border);color:var(--text2);white-space:nowrap;
+  display:flex;align-items:center;gap:5px;
+}
+.sync-badge.active{color:var(--green);border-color:rgba(34,197,94,.3);background:rgba(34,197,94,.08);}
+.sync-dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0;}
+
 /* ── LOADING / EMPTY ── */
 .loading{text-align:center;padding:48px 24px;color:var(--text2);font-size:14px;}
 .divider{border:none;border-top:1px solid var(--border);margin:16px 0;}
@@ -208,6 +224,8 @@ const TOKEN_KEY   = 'cb_live_token';
 let _live = null;
 let _sha  = null;
 let _saving = false;
+let _refreshTimer = null;
+let _syncTimer    = null;
 
 // ── TOKEN ───────────────────────────────────────────
 function getToken() { return localStorage.getItem(TOKEN_KEY) || ''; }
@@ -310,7 +328,13 @@ async function loadLive() {
 // ── RENDER ───────────────────────────────────────────
 function renderUI() {
   const ui = document.getElementById('main-ui');
-  _live.active ? renderLiveUI(ui) : renderStartUI(ui);
+  if (_live.active) {
+    renderLiveUI(ui);
+    startTimers();
+  } else {
+    stopTimers();
+    renderStartUI(ui);
+  }
 }
 
 function renderStartUI(ui) {
@@ -352,7 +376,11 @@ function renderLiveUI(ui) {
       <div class="status-dot live"></div>
       <div>
         <div class="status-text">PARTIE EN COURS</div>
-        <div class="status-sub">${esc(_live.opponent)}${curNum > 0 ? ` — ${curHalf==='bas'?'Fin':'Début'} ${curNum}${curNum===1?'re':'e'}` : ''} — màj: ${updTime}</div>
+        <div class="status-sub">${esc(_live.opponent)}${curNum > 0 ? ` — ${curHalf==='bas'?'↓':'↑'} ${curNum}${curNum===1?'re':'e'}` : ''}</div>
+      </div>
+      <div class="sync-badge" id="sync-badge">
+        <div class="sync-dot"></div>
+        <span id="sync-time">${timeAgo(_live.updated_at)}</span>
       </div>
     </div>
 
@@ -578,6 +606,72 @@ async function endGame() {
     showToast('Partie terminée et sauvegardée ✓');
     renderUI();
   } catch (e) { showToast('Erreur: ' + e.message, true); }
+}
+
+// ── SYNC GC ──────────────────────────────────────────
+function timeAgo(isoStr) {
+  if (!isoStr) return '—';
+  const sec = Math.round((Date.now() - new Date(isoStr).getTime()) / 1000);
+  if (sec < 5)  return 'à l\'instant';
+  if (sec < 60) return `il y a ${sec}s`;
+  if (sec < 3600) return `il y a ${Math.floor(sec / 60)} min`;
+  return `il y a ${Math.floor(sec / 3600)}h`;
+}
+
+function updateSyncBadge() {
+  if (!_live || !_live.active) return;
+  const badge = document.getElementById('sync-badge');
+  const label = document.getElementById('sync-time');
+  if (!badge || !label) return;
+  const sec = _live.updated_at
+    ? Math.round((Date.now() - new Date(_live.updated_at).getTime()) / 1000)
+    : 9999;
+  label.textContent = timeAgo(_live.updated_at);
+  if (sec < 30) {
+    badge.className = 'sync-badge active';
+    badge.querySelector('.sync-dot').style.animation = 'pulse 1.2s ease-in-out infinite';
+  } else {
+    badge.className = 'sync-badge';
+    badge.querySelector('.sync-dot').style.animation = 'none';
+  }
+}
+
+function startTimers() {
+  stopTimers();
+  // Met à jour l'affichage "il y a Xs" chaque seconde
+  _syncTimer = setInterval(updateSyncBadge, 1000);
+  // Recharge live.json toutes les 15s (seulement si pas de sauvegarde en cours et pas de champ actif)
+  _refreshTimer = setInterval(async () => {
+    if (_saving) return;
+    if (document.activeElement && document.activeElement.tagName === 'INPUT') return;
+    try {
+      const data = await ghGet();
+      const newSha  = data.sha;
+      const newLive = JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\s/g, '')))));
+      // Ne re-render que si les données ont changé
+      const changed =
+        newLive.carnavals_score !== _live.carnavals_score ||
+        newLive.opponent_score  !== _live.opponent_score  ||
+        newLive.inning          !== _live.inning          ||
+        newLive.half            !== _live.half            ||
+        newLive.active          !== _live.active          ||
+        newLive.updated_at      !== _live.updated_at;
+      _sha  = newSha;
+      _live = newLive;
+      if (changed) renderUI();
+      else updateSyncBadge();
+    } catch (_) { /* silencieux — on réessaiera dans 15s */ }
+  }, 15000);
+}
+
+function stopTimers() {
+  if (_refreshTimer) { clearInterval(_refreshTimer); _refreshTimer = null; }
+  if (_syncTimer)    { clearInterval(_syncTimer);    _syncTimer    = null; }
+}
+
+// ── SERVICE WORKER ───────────────────────────────────
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw-admin.js').catch(() => {});
 }
 
 // ── INIT ─────────────────────────────────────────────
