@@ -1,18 +1,17 @@
 /* Service Worker — Carnavals Admin PWA
-   Cache uniquement le shell (HTML/manifest/icônes).
-   Tout appel vers api.github.com va toujours au réseau (données temps réel).
+   Rôle minimal : permettre l'installation PWA.
+   live-admin.html = toujours réseau (jamais mis en cache).
+   Seules les icônes sont cachées.
 */
-const CACHE   = 'cb-admin-v2';
-const SHELL   = [
-  './live-admin.html',
-  './manifest-admin.json',
+const CACHE = 'cb-admin-v3';
+const ICONS = [
   './icons/icon-admin-192.png',
   './icons/icon-admin-512.png',
 ];
 
 self.addEventListener('install', e => {
   e.waitUntil(
-    caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())
+    caches.open(CACHE).then(c => c.addAll(ICONS)).then(() => self.skipWaiting())
   );
 });
 
@@ -27,14 +26,14 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
 
-  // Toujours réseau pour l'API GitHub (données live) et les CDN externes
-  if (url.hostname !== self.location.hostname) {
-    e.respondWith(fetch(e.request));
+  // Icônes : cache-first
+  if (url.pathname.includes('/icons/icon-admin-')) {
+    e.respondWith(
+      caches.match(e.request).then(cached => cached || fetch(e.request))
+    );
     return;
   }
 
-  // Shell : cache-first
-  e.respondWith(
-    caches.match(e.request).then(cached => cached || fetch(e.request))
-  );
+  // Tout le reste (HTML, API GitHub, etc.) : toujours réseau
+  e.respondWith(fetch(e.request));
 });
