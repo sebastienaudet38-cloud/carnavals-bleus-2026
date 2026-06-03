@@ -9,20 +9,20 @@
   "video_url": "",
   "spordle_url": "",
   "opponent_id": "d6e3300d-d98f-497c-bbb2-ab263eda8099",
-  "updated_at": "2026-06-03T02:14:41Z",
+  "updated_at": "2026-06-03T02:15:03Z",
   "scoreboard": {
-    "balls": 0,
+    "balls": 1,
     "strikes": 2,
     "outs": 0,
-    "batter_name": "Sébastien Audet",
+    "batter_name": "",
     "batter_num": "",
     "pitcher_name": "A A",
-    "pitch_count": 2,
+    "pitch_count": 3,
     "bases": [
       true,
       false,
       false
     ],
-    "last_play": "S s pops out to shortstop david boivin. Sébastien Audet - Strike 2 swinging"
+    "last_play": "Sébastien audet is hit by pitch, a a pitching. A A - Ball 1"
   }
 }
