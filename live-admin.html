@@ -719,52 +719,61 @@ function showInstallBanner() {
   const el = document.getElementById('install-banner');
   if (!el) return;
 
-  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  const isIOS        = /iphone|ipad|ipod/i.test(navigator.userAgent);
   const isStandalone = window.matchMedia('(display-mode: standalone)').matches
                     || window.navigator.standalone === true;
-  if (isStandalone) return; // déjà installé
+  if (isStandalone) return; // déjà installé en mode app
 
   if (isIOS) {
-    // iOS : pas d'API — instructions manuelles
     el.innerHTML = `
       <div class="install-banner">
         <div class="install-banner-icon">📲</div>
         <div class="install-banner-text">
           <strong>Installer Carnavals Admin</strong>
-          Appuyez sur <strong style="color:var(--sky)">Partager</strong> puis
+          Appuyez sur <strong style="color:var(--sky)">Partager ↑</strong> puis
           <strong style="color:var(--sky)">Sur l'écran d'accueil</strong>
         </div>
         <button class="btn-dismiss" onclick="dismissInstall()" title="Fermer">✕</button>
       </div>`;
-  } else if (_deferredInstall) {
-    // Android/Chrome : bouton d'installation directe
-    el.innerHTML = `
-      <div class="install-banner">
-        <div class="install-banner-icon">📲</div>
-        <div class="install-banner-text">
-          <strong>Installer Carnavals Admin</strong>
-          Ajouter à l'écran d'accueil
-        </div>
-        <button class="btn-install" onclick="triggerInstall()">Installer</button>
-        <button class="btn-dismiss" onclick="dismissInstall()" title="Fermer">✕</button>
-      </div>`;
+  } else {
+    // Android : instructions menu par défaut — remplacées par bouton si l'API est dispo
+    if (_deferredInstall) {
+      el.innerHTML = `
+        <div class="install-banner">
+          <div class="install-banner-icon">📲</div>
+          <div class="install-banner-text">
+            <strong>Installer Carnavals Admin</strong>
+            Ajouter à l'écran d'accueil
+          </div>
+          <button class="btn-install" onclick="triggerInstall()">Installer</button>
+          <button class="btn-dismiss" onclick="dismissInstall()" title="Fermer">✕</button>
+        </div>`;
+    } else {
+      el.innerHTML = `
+        <div class="install-banner">
+          <div class="install-banner-icon">📲</div>
+          <div class="install-banner-text">
+            <strong>Installer Carnavals Admin</strong>
+            Menu <strong style="color:var(--sky)">⋮</strong> →
+            <strong style="color:var(--sky)">Ajouter à l'écran d'accueil</strong>
+          </div>
+          <button class="btn-dismiss" onclick="dismissInstall()" title="Fermer">✕</button>
+        </div>`;
+    }
   }
 }
 
-// Capture le prompt natif Android avant qu'il ne s'affiche tout seul
+// Capture le prompt natif — upgrade la bannière vers le bouton direct
 window.addEventListener('beforeinstallprompt', e => {
   e.preventDefault();
   _deferredInstall = e;
-  showInstallBanner();
+  showInstallBanner(); // réaffiche avec le bouton Installer
 });
 
-// iOS : afficher les instructions au chargement
-window.addEventListener('load', () => {
-  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
-  if (isIOS) showInstallBanner();
-});
+// Affiche la bannière au chargement (Android et iOS)
+window.addEventListener('load', showInstallBanner);
 
-// Masquer la bannière si l'app est installée depuis Chrome
+// Masquer si déjà installé
 window.addEventListener('appinstalled', () => dismissInstall());
 
 // ── INIT ─────────────────────────────────────────────
