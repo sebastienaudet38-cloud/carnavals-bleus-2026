@@ -727,40 +727,38 @@ function stopTimers() {
   if (_standalone) return;
 
   const _isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-  const btn = document.getElementById('pwa-install-btn');
-  let _prompt = null;
+  const btn    = document.getElementById('pwa-install-btn');
+  let _prompt  = null;
 
-  // Android/Chrome : capture le prompt natif
+  // Toujours visible dès le chargement (sauf si déjà installé)
+  btn.style.display = 'flex';
+
+  // Capture le prompt natif Android si Chrome veut bien le fournir
   window.addEventListener('beforeinstallprompt', e => {
     e.preventDefault();
     _prompt = e;
-    btn.dataset.platform = 'android';
-    btn.style.display = 'flex';
   });
-
-  // iOS Safari : bouton visible immédiatement
-  if (_isIOS) {
-    btn.dataset.platform = 'ios';
-    btn.style.display = 'flex';
-  }
 
   window.addEventListener('appinstalled', () => { btn.style.display = 'none'; });
 
   window.handleInstall = function() {
-    if (btn.dataset.platform === 'android' && _prompt) {
+    if (_prompt) {
+      // Android — prompt natif disponible : installation directe
       _prompt.prompt();
       _prompt.userChoice.then(c => {
         if (c.outcome === 'accepted') btn.style.display = 'none';
         _prompt = null;
       });
-    } else if (btn.dataset.platform === 'ios') {
+    } else if (_isIOS) {
       document.getElementById('ios-install-popup').classList.add('open');
+    } else {
+      // Android sans prompt natif : instructions via menu Chrome
+      document.getElementById('android-install-popup').classList.add('open');
     }
   };
 
-  window.closeIOSPopup = function() {
-    document.getElementById('ios-install-popup').classList.remove('open');
-  };
+  window.closeIOSPopup     = () => document.getElementById('ios-install-popup').classList.remove('open');
+  window.closeAndroidPopup = () => document.getElementById('android-install-popup').classList.remove('open');
 })();
 
 // ── SERVICE WORKER ───────────────────────────────────
@@ -771,6 +769,31 @@ if ('serviceWorker' in navigator) {
 // ── INIT ─────────────────────────────────────────────
 loadLive();
 </script>
+
+<!-- ── ANDROID INSTALL POPUP ── -->
+<div id="android-install-popup" class="ios-popup-bg" onclick="if(event.target===this)closeAndroidPopup()">
+  <div class="ios-popup">
+    <div class="ios-popup-header">
+      <div class="ios-popup-title">Installer Carnavals Admin</div>
+      <button class="ios-popup-close" onclick="closeAndroidPopup()">✕</button>
+    </div>
+    <div class="ios-steps">
+      <div class="ios-step">
+        <div class="ios-step-num">1</div>
+        <div class="ios-step-body">Appuyez sur <strong>⋮</strong> en haut à droite de Chrome</div>
+      </div>
+      <div class="ios-step">
+        <div class="ios-step-num">2</div>
+        <div class="ios-step-body">Choisissez <strong>« Ajouter à l'écran d'accueil »</strong></div>
+      </div>
+      <div class="ios-step">
+        <div class="ios-step-num">3</div>
+        <div class="ios-step-body">Appuyez sur <strong>« Ajouter »</strong> pour confirmer</div>
+      </div>
+    </div>
+    <button class="ios-popup-ok" onclick="closeAndroidPopup()">J'ai compris</button>
+  </div>
+</div>
 
 <!-- ── iOS INSTALL POPUP ── -->
 <div id="ios-install-popup" class="ios-popup-bg" onclick="if(event.target===this)closeIOSPopup()">
