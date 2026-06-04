@@ -1162,8 +1162,8 @@ async function checkLive() {
 
 function restartLiveTimer() {
   clearInterval(_liveTimer);
-  // 60s — GitHub API sans token : 60 req/h par IP ; ETag = 304 gratuits quand rien ne change
-  const interval = 60000;
+  // 5s live / 30s standby — ETag : les 304 ne consomment pas le quota
+  const interval = _liveActive ? 5000 : 30000;
   _liveTimer = setInterval(async () => {
     const wasActive = _liveActive;
     const isLive = await checkLive();
