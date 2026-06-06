@@ -9,20 +9,20 @@
   "video_url": "https://web.gc.com/teams/g6rw3BRN9Tmr/live?liveStreamEventId=4e72a620-981f-40d8-bc69-ae9c49ca6e82&pid=share_livestream_link&c=share_livestream_consumer",
   "spordle_url": "",
   "opponent_id": "d3c63371-112f-42ab-a0a7-352a04043184",
-  "updated_at": "2026-06-06T00:30:39Z",
+  "updated_at": "2026-06-06T00:31:45Z",
   "scoreboard": {
-    "balls": 0,
+    "balls": 1,
     "strikes": 0,
     "outs": 1,
     "batter_name": "Charles B",
     "batter_num": "18",
     "pitcher_name": "Louis Marquis",
-    "pitch_count": 13,
+    "pitch_count": 14,
     "bases": [
       true,
       true,
       true
     ],
-    "last_play": "Simon-olivier c walks, louis marquis pitching"
+    "last_play": "Simon-olivier c walks, louis marquis pitching. Louis Marquis - ${b182fe79-74e9-4f49-b581-9fddd98d2fe3} advances to 3rd on error by center fielder"
   }
 }
