@@ -9,20 +9,20 @@
   "video_url": "https://web.gc.com/teams/g6rw3BRN9Tmr/live?liveStreamEventId=4e72a620-981f-40d8-bc69-ae9c49ca6e82&pid=share_livestream_link&c=share_livestream_consumer",
   "spordle_url": "",
   "opponent_id": "d3c63371-112f-42ab-a0a7-352a04043184",
-  "updated_at": "2026-06-06T01:11:18Z",
+  "updated_at": "2026-06-06T01:12:17Z",
   "scoreboard": {
-    "balls": 0,
+    "balls": 1,
     "strikes": 0,
-    "outs": 0,
-    "batter_name": "Maxime P",
-    "batter_num": "17",
+    "outs": 2,
+    "batter_name": "Nathan M",
+    "batter_num": "22",
     "pitcher_name": "Guillaume Bédard",
-    "pitch_count": 8,
+    "pitch_count": 10,
     "bases": [
       true,
-      true,
+      false,
       false
     ],
-    "last_play": "Charles b flies out to center fielder. alexis l remains at 3rd"
+    "last_play": "Maxime p singles on a ground ball to catcher. alexis l held up at 3rd. Alexis L - ${6e0f8a94-091c-47d1-9282-354aae1a2bfc} steals 2nd"
   }
 }
