@@ -9,20 +9,20 @@
   "video_url": "https://web.gc.com/teams/g6rw3BRN9Tmr/live?liveStreamEventId=4e72a620-981f-40d8-bc69-ae9c49ca6e82&pid=share_livestream_link&c=share_livestream_consumer",
   "spordle_url": "",
   "opponent_id": "d3c63371-112f-42ab-a0a7-352a04043184",
-  "updated_at": "2026-06-06T00:42:12Z",
+  "updated_at": "2026-06-06T00:42:39Z",
   "scoreboard": {
-    "balls": 0,
+    "balls": 1,
     "strikes": 0,
     "outs": 0,
     "batter_name": "James Fortier",
     "batter_num": "27",
     "pitcher_name": "Alexis Chamberland",
-    "pitch_count": 31,
+    "pitch_count": 32,
     "bases": [
       true,
       true,
       true
     ],
-    "last_play": "Léo turmel singles on a line drive to center fielder. zackary audet scores"
+    "last_play": "Léo turmel singles on a line drive to center fielder. zackary audet scores. Alexis Chamberland - Ball 1"
   }
 }
