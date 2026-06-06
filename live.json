@@ -9,20 +9,20 @@
   "video_url": "https://web.gc.com/teams/g6rw3BRN9Tmr/live?liveStreamEventId=4e72a620-981f-40d8-bc69-ae9c49ca6e82&pid=share_livestream_link&c=share_livestream_consumer",
   "spordle_url": "",
   "opponent_id": "d3c63371-112f-42ab-a0a7-352a04043184",
-  "updated_at": "2026-06-06T00:22:44Z",
+  "updated_at": "2026-06-06T00:23:10Z",
   "scoreboard": {
-    "balls": 2,
-    "strikes": 1,
-    "outs": 0,
+    "balls": 3,
+    "strikes": 2,
+    "outs": 2,
     "batter_name": "Louis Marquis",
     "batter_num": "23",
     "pitcher_name": "Alexis Chamberland",
-    "pitch_count": 13,
+    "pitch_count": 15,
     "bases": [
       true,
       true,
       true
     ],
-    "last_play": "Léonard germain grounds into a double play, shortstop to first baseman to shortstop. nicolas dubé out advancing to 2nd.  - Strike 1 swinging"
+    "last_play": "Léonard germain grounds into a double play, shortstop to first baseman to shortstop. nicolas dubé out advancing to 2nd.  - ${68b3ea71-51de-4dec-bd81-9ad42501bf65} scores on wild pitch"
   }
 }
