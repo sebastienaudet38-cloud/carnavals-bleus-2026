@@ -9,20 +9,20 @@
   "video_url": "https://web.gc.com/teams/g6rw3BRN9Tmr/live?liveStreamEventId=4e72a620-981f-40d8-bc69-ae9c49ca6e82&pid=share_livestream_link&c=share_livestream_consumer",
   "spordle_url": "",
   "opponent_id": "d3c63371-112f-42ab-a0a7-352a04043184",
-  "updated_at": "2026-06-06T00:33:44Z",
+  "updated_at": "2026-06-06T00:34:11Z",
   "scoreboard": {
-    "balls": 1,
-    "strikes": 1,
+    "balls": 2,
+    "strikes": 2,
     "outs": 2,
     "batter_name": "Nathan M",
     "batter_num": "22",
     "pitcher_name": "Louis Marquis",
-    "pitch_count": 18,
+    "pitch_count": 20,
     "bases": [
       true,
       true,
       true
     ],
-    "last_play": "Maxime p hits a ground ball and reaches on an error by third baseman. maxime p advances to 2nd on the same error. Louis Marquis - ${6e0f8a94-091c-47d1-9282-354aae1a2bfc} steals 3rd"
+    "last_play": "Maxime p hits a ground ball and reaches on an error by third baseman. maxime p advances to 2nd on the same error. Louis Marquis - Strike 2 swinging"
   }
 }
