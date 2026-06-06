@@ -9,20 +9,20 @@
   "video_url": "https://web.gc.com/teams/g6rw3BRN9Tmr/live?liveStreamEventId=4e72a620-981f-40d8-bc69-ae9c49ca6e82&pid=share_livestream_link&c=share_livestream_consumer",
   "spordle_url": "",
   "opponent_id": "d3c63371-112f-42ab-a0a7-352a04043184",
-  "updated_at": "2026-06-06T00:37:55Z",
+  "updated_at": "2026-06-06T00:39:01Z",
   "scoreboard": {
-    "balls": 1,
+    "balls": 0,
     "strikes": 0,
     "outs": 0,
-    "batter_name": "Léo Lavergne",
-    "batter_num": "24",
+    "batter_name": "Zackary Audet",
+    "batter_num": "10",
     "pitcher_name": "Alexis Chamberland",
-    "pitch_count": 23,
+    "pitch_count": 26,
     "bases": [
       true,
       true,
       true
     ],
-    "last_play": "Edward stone strikes out looking, alexis chamberland pitching. Alexis Chamberland - Ball 1"
+    "last_play": "Léo lavergne walks, alexis chamberland pitching"
   }
 }
