@@ -9,20 +9,20 @@
   "video_url": "https://web.gc.com/teams/g6rw3BRN9Tmr/live?liveStreamEventId=4e72a620-981f-40d8-bc69-ae9c49ca6e82&pid=share_livestream_link&c=share_livestream_consumer",
   "spordle_url": "",
   "opponent_id": "d3c63371-112f-42ab-a0a7-352a04043184",
-  "updated_at": "2026-06-06T01:41:22Z",
+  "updated_at": "2026-06-06T01:42:27Z",
   "scoreboard": {
     "balls": 0,
-    "strikes": 1,
+    "strikes": 0,
     "outs": 0,
-    "batter_name": "Alexis L",
-    "batter_num": "41",
+    "batter_name": "Simon-Olivier C",
+    "batter_num": "23",
     "pitcher_name": "Léo Turmel",
-    "pitch_count": 9,
+    "pitch_count": 11,
     "bases": [
       true,
       true,
       true
     ],
-    "last_play": "Gabriel b strikes out swinging, léo turmel pitching. Léo Turmel - Strike 1 swinging"
+    "last_play": "Alexis l hits a ground ball and reaches on an error by second baseman"
   }
 }
