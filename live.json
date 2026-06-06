@@ -9,20 +9,20 @@
   "video_url": "https://web.gc.com/teams/g6rw3BRN9Tmr/live?liveStreamEventId=4e72a620-981f-40d8-bc69-ae9c49ca6e82&pid=share_livestream_link&c=share_livestream_consumer",
   "spordle_url": "",
   "opponent_id": "d3c63371-112f-42ab-a0a7-352a04043184",
-  "updated_at": "2026-06-06T00:04:23Z",
+  "updated_at": "2026-06-06T00:04:49Z",
   "scoreboard": {
-    "balls": 3,
-    "strikes": 2,
+    "balls": 0,
+    "strikes": 0,
     "outs": 0,
-    "batter_name": "Nathan M",
-    "batter_num": "22",
+    "batter_name": "Samuel L",
+    "batter_num": "99",
     "pitcher_name": "Léo Lavergne",
-    "pitch_count": 8,
+    "pitch_count": 9,
     "bases": [
       false,
-      false,
-      true
+      true,
+      false
     ],
-    "last_play": "Maxime p singles on a ground ball to third baseman.  - ${6e0f8a94-091c-47d1-9282-354aae1a2bfc} advances to 3rd on wild pitch"
+    "last_play": "Nathan m doubles on a line drive to right fielder. maxime p scores"
   }
 }
