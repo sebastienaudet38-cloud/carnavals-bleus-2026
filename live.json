@@ -9,20 +9,20 @@
   "video_url": "https://web.gc.com/teams/g6rw3BRN9Tmr/live?liveStreamEventId=4e72a620-981f-40d8-bc69-ae9c49ca6e82&pid=share_livestream_link&c=share_livestream_consumer",
   "spordle_url": "",
   "opponent_id": "d3c63371-112f-42ab-a0a7-352a04043184",
-  "updated_at": "2026-06-06T01:23:32Z",
+  "updated_at": "2026-06-06T01:24:44Z",
   "scoreboard": {
-    "balls": 0,
+    "balls": 1,
     "strikes": 0,
     "outs": 0,
     "batter_name": "Zackary Audet",
     "batter_num": "10",
     "pitcher_name": "Alexis L",
-    "pitch_count": 23,
+    "pitch_count": 24,
     "bases": [
       true,
       true,
       true
     ],
-    "last_play": "Léo lavergne singles on a fly ball to first baseman"
+    "last_play": "Léo lavergne singles on a fly ball to first baseman. Guillaume Bédard - ${cbb3f325-d38b-4953-9f88-f3175d024b68} steals 2nd"
   }
 }
