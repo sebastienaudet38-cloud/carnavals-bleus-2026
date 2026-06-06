@@ -9,13 +9,13 @@
   "video_url": "https://web.gc.com/teams/g6rw3BRN9Tmr/live?liveStreamEventId=4e72a620-981f-40d8-bc69-ae9c49ca6e82&pid=share_livestream_link&c=share_livestream_consumer",
   "spordle_url": "",
   "opponent_id": "d3c63371-112f-42ab-a0a7-352a04043184",
-  "updated_at": "2026-06-06T00:34:44Z",
+  "updated_at": "2026-06-06T00:35:10Z",
   "scoreboard": {
-    "balls": 2,
-    "strikes": 2,
-    "outs": 2,
-    "batter_name": "Nathan M",
-    "batter_num": "22",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "batter_name": "Edward Stone",
+    "batter_num": "15",
     "pitcher_name": "Alexis Chamberland",
     "pitch_count": 17,
     "bases": [
@@ -23,6 +23,6 @@
       true,
       true
     ],
-    "last_play": "Maxime p hits a ground ball and reaches on an error by third baseman. maxime p advances to 2nd on the same error. Louis Marquis - Strike 2 swinging"
+    "last_play": "Nathan m grounds out to third baseman"
   }
 }
