@@ -9,20 +9,20 @@
   "video_url": "https://web.gc.com/teams/g6rw3BRN9Tmr/live?liveStreamEventId=4e72a620-981f-40d8-bc69-ae9c49ca6e82&pid=share_livestream_link&c=share_livestream_consumer",
   "spordle_url": "",
   "opponent_id": "d3c63371-112f-42ab-a0a7-352a04043184",
-  "updated_at": "2026-06-06T00:53:13Z",
+  "updated_at": "2026-06-06T00:54:19Z",
   "scoreboard": {
-    "balls": 1,
-    "strikes": 1,
-    "outs": 0,
+    "balls": 2,
+    "strikes": 2,
+    "outs": 2,
     "batter_name": "Gabriel B",
     "batter_num": "4",
     "pitcher_name": "Louis Marquis",
-    "pitch_count": 31,
+    "pitch_count": 33,
     "bases": [
       true,
       true,
       false
     ],
-    "last_play": "Alexis chamberland singles on a line drive to center fielder. Louis Marquis - Ball 1"
+    "last_play": "Alexis chamberland singles on a line drive to center fielder. Louis Marquis - Strike 2 swinging"
   }
 }
