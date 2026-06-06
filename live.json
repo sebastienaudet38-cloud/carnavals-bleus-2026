@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "opponent": "Carnavals Rouges 13U AA",
   "carnavals_score": 8,
   "opponent_score": 7,
@@ -9,7 +9,7 @@
   "video_url": "https://web.gc.com/teams/g6rw3BRN9Tmr/live?liveStreamEventId=4e72a620-981f-40d8-bc69-ae9c49ca6e82&pid=share_livestream_link&c=share_livestream_consumer",
   "spordle_url": "",
   "opponent_id": "d3c63371-112f-42ab-a0a7-352a04043184",
-  "updated_at": "2026-06-06T01:46:22Z",
+  "updated_at": "2026-06-06T01:46:51.209Z",
   "scoreboard": {
     "balls": 0,
     "strikes": 0,
