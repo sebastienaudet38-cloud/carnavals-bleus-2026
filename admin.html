@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+<!-- CB_VERSION:2026.1.0 BUILD:2026-05-18 -->
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin &mdash; Carnavals Bleus</title>
+<style>
+:root{--nv:#0F1E38;--nm:#1B2A4A;--rd:#CC2200;--wh:#fff;--gr:#8A95A3;--of:#F4F5F7;--gn:#00B650;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',sans-serif;background:var(--nv);color:var(--wh);min-height:100vh;padding:2rem;}
+.wrap{max-width:820px;margin:0 auto;}
+h1{font-size:22px;font-weight:700;margin-bottom:4px;}
+.sub{font-size:13px;color:var(--gr);margin-bottom:2rem;}
+.card{background:var(--nm);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;}
+.card h2{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gr);margin-bottom:1rem;}
+.row{display:flex;gap:.75rem;align-items:center;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+.g1{margin-bottom:1rem;}
+.lbl{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gr);display:block;margin-bottom:5px;}
+.inp{width:100%;background:var(--nv);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:8px 11px;color:var(--wh);font-size:13px;font-family:inherit;}
+.inp:focus{outline:none;border-color:rgba(255,255,255,.4);}
+select.inp{cursor:pointer;}
+textarea.inp{resize:vertical;min-height:100px;line-height:1.5;}
+.btn{background:var(--rd);color:var(--wh);border:none;padding:9px 18px;border-radius:8px;font-weight:700;font-size:13px;letter-spacing:1px;cursor:pointer;font-family:inherit;}
+.btn:hover{background:#e83000;}
+.btn:disabled{opacity:.5;cursor:not-allowed;}
+.btn-s{background:transparent;color:var(--gr);border:1px solid rgba(255,255,255,.2);padding:8px 15px;border-radius:8px;font-weight:600;font-size:13px;cursor:pointer;font-family:inherit;}
+.btn-s:hover{color:var(--wh);border-color:rgba(255,255,255,.4);}
+.btn-d{background:rgba(204,34,0,.15);color:#ff6b6b;border:1px solid rgba(204,34,0,.3);padding:6px 12px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;}
+.btn-d:hover{background:rgba(204,34,0,.3);}
+.btn-e{background:rgba(255,255,255,.08);color:var(--gr);border:1px solid rgba(255,255,255,.15);padding:6px 12px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;}
+.btn-e:hover{color:var(--wh);border-color:rgba(255,255,255,.35);}
+.msg{font-size:13px;padding:.6rem .9rem;border-radius:6px;margin-top:.75rem;}
+.ok{background:rgba(0,182,80,.15);color:var(--gn);}
+.er{background:rgba(204,34,0,.15);color:#ff6b6b;}
+.inf{background:rgba(255,255,255,.06);color:var(--gr);}
+.mi{background:var(--nv);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:.875rem 1.25rem;margin-bottom:.6rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;}
+.mi-d{font-size:12px;color:var(--gr);min-width:80px;}
+.mi-t{flex:1;font-weight:600;}
+.mi-s{font-size:17px;font-weight:700;}
+.win{color:var(--gn);}.loss{color:#ff6b6b;}
+.mi-a{display:flex;gap:.4rem;}
+.note{font-size:11px;color:var(--gr);line-height:1.6;margin-top:.75rem;padding:.75rem;background:rgba(255,255,255,.04);border-radius:6px;}
+.section-title{font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gr);padding:.5rem 0 1rem;border-top:1px solid rgba(255,255,255,.06);margin-top:.5rem;}
+
+.drop-zone{border:2px dashed rgba(255,255,255,.18);border-radius:8px;padding:1.5rem;text-align:center;font-size:12px;color:var(--gr);cursor:pointer;transition:all .2s;background:rgba(255,255,255,.02);position:relative;}
+.drop-zone:hover,.drop-zone.drag-over{border-color:var(--rd);color:var(--wh);background:rgba(204,34,0,.04);}
+.drop-zone.loaded{border-color:var(--gn);color:var(--gn);background:rgba(0,182,80,.04);}
+.drop-zone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
+.pw-row{display:flex;align-items:center;gap:.75rem;margin-bottom:.875rem;flex-wrap:wrap;}
+.pw-num{font-size:11px;color:var(--gr);font-family:'Segoe UI',sans-serif;letter-spacing:1px;min-width:24px;text-align:center;font-weight:700;}
+.pw-name{font-weight:600;flex:1;min-width:140px;}
+.pw-inp{background:var(--nv);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:7px 10px;color:var(--wh);font-size:12px;font-family:inherit;width:160px;}
+.pw-inp:focus{outline:none;border-color:rgba(255,255,255,.4);}
+.pw-status{font-size:11px;white-space:nowrap;min-width:80px;}
+.pw-active{color:var(--gn);}
+.pw-none{color:var(--gr);}
+.pw-del{background:none;border:none;color:rgba(255,100,100,.4);cursor:pointer;font-size:12px;padding:4px 8px;border-radius:4px;font-family:inherit;}
+.pw-del:hover{color:#ff6b6b;background:rgba(204,34,0,.12);}
+.stats-preview{font-size:12px;color:var(--gr);line-height:1.7;margin-top:.75rem;padding:.75rem;background:rgba(255,255,255,.04);border-radius:6px;}
+.stats-preview strong{color:var(--wh);}
+.preview{font-size:12px;color:var(--gr);line-height:1.6;margin-top:.5rem;padding:.6rem .9rem;background:rgba(255,255,255,.04);border-radius:6px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>&#9881; Administration &mdash; Carnavals Bleus</h1>
+  <p class="sub">Fichier local uniquement &mdash; ne pas mettre sur GitHub.</p>
+
+  <!-- TOKEN -->
+  <div class="card">
+    <h2>&#128273; Token GitHub</h2>
+    <div class="row">
+      <input type="password" id="tok" class="inp" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" style="flex:1">
+      <button class="btn-s" onclick="saveTok()">M&eacute;moriser</button>
+      <button class="btn-s" onclick="testTok()">Tester</button>
+    </div>
+    <div id="tok-msg" style="display:none" class="msg"></div>
+    <div class="note">
+      <strong>Cr&eacute;er un token :</strong> GitHub &rarr; Settings &rarr; Developer settings &rarr; Personal access tokens &rarr; Tokens (classic)<br>
+      Permission requise : <strong>repo</strong> (cocher toute la section)
+    </div>
+  </div>
+
+
+  <!-- ══════════ STATISTIQUES ══════════ -->
+  <div class="section-title">&#128202; Mise &agrave; jour des statistiques</div>
+
+  <div class="card">
+    <h2>Fichiers CSV GameChanger</h2>
+    <div>
+      <label class="lbl">Export CSV GameChanger (frappeurs + lanceurs dans le m&ecirc;me fichier)</label>
+      <div class="drop-zone" id="gc-drop" ondragover="dzOver(event,'gc-drop')" ondragleave="dzLeave('gc-drop')" ondrop="dzDrop(event,'gc')">
+        <input type="file" accept=".csv,.txt" onchange="readFile(this,'gc')">
+        &#128196; Glisser l&rsquo;export CSV GameChanger ici<br>ou cliquer pour choisir le fichier
+      </div>
+      <textarea id="gc-csv" class="inp" rows="5" placeholder="Ou coller directement le contenu du CSV ici…" style="margin-top:.75rem;font-size:11px;font-family:monospace;"></textarea>
+    </div>
+    <div class="row" style="margin-top:.75rem;">
+      <button class="btn-s" onclick="analyzeStats()">&#128269; Analyser les CSV</button>
+      <button class="btn" id="push-stats-btn" disabled onclick="pushStats()">&#128190; Pousser les stats vers GitHub</button>
+    </div>
+    <div id="stats-preview" style="display:none;" class="stats-preview"></div>
+    <div id="stats-msg" style="display:none" class="msg"></div>
+    <div class="note">
+      Utilisez l&rsquo;export <strong>CSV GameChanger</strong> (Stats de l&rsquo;&eacute;quipe &rsaquo; Exporter). Les colonnes frappeurs et lanceurs sont automatiquement d&eacute;tect&eacute;es dans le m&ecirc;me fichier.<br>
+      <strong>Important :</strong> le fichier <code>index.html</code> sur GitHub sera mis &agrave; jour directement.
+    </div>
+  </div>
+
+  <!-- ══════════ MATCHS ══════════ -->
+  <div class="section-title">⚾ Gestion des matchs</div>
+
+  <div class="card" id="form-card">
+    <h2 id="form-ttl">&#43; Nouveau match</h2>
+    <div class="grid2">
+      <div><label class="lbl">Date</label><input type="date" id="m-date" class="inp"></div>
+      <div><label class="lbl">Adversaire</label><input type="text" id="m-opp" class="inp" placeholder="Nom de l&apos;&eacute;quipe adverse"></div>
+      <div><label class="lbl">Nos points</label><input type="number" id="m-us" class="inp" min="0" value="0"></div>
+      <div><label class="lbl">Leurs points</label><input type="number" id="m-them" class="inp" min="0" value="0"></div>
+    </div>
+    <div class="g1"><label class="lbl">Lien Spordle (optionnel)</label><input type="url" id="m-link" class="inp" placeholder="https://page.spordle.com/..."></div>
+    <div class="g1"><label class="lbl">Lien YouTube du match (optionnel)</label><input type="text" id="m-yt" class="inp" placeholder="https://youtube.com/watch?v=... ou ID 11 caract&egrave;res"></div>
+    <div class="row" style="margin-top:.25rem">
+      <button class="btn" id="save-btn" onclick="saveMatch()">&#128190; Enregistrer</button>
+      <button class="btn-s" onclick="cancelEdit()">Annuler</button>
+    </div>
+    <div id="save-msg" style="display:none" class="msg"></div>
+  </div>
+
+  <div class="card">
+    <h2>&#128203; Matchs enregistr&eacute;s</h2>
+    <div id="list"><p style="color:var(--gr);font-size:13px;">Chargement&hellip;</p></div>
+    <div id="list-msg" style="display:none" class="msg"></div>
+  </div>
+
+  <!-- ══════════ VIDÉOS GÉNÉRALES ══════════ -->
+  <div class="section-title">&#9654; Vid&eacute;os g&eacute;n&eacute;rales</div>
+
+  <div class="card">
+    <h2 id="vid-form-ttl">&#43; Nouvelle vid&eacute;o (sans match associ&eacute;)</h2>
+    <div class="g1"><label class="lbl">Titre de la vid&eacute;o</label><input type="text" id="v-title" class="inp" placeholder="Ex&nbsp;: Entra&icirc;nement 3 mai, Tournoi printemps&hellip;"></div>
+    <div class="grid2">
+      <div><label class="lbl">Date (optionnel)</label><input type="date" id="v-date" class="inp"></div>
+      <div><label class="lbl">Lien YouTube</label><input type="text" id="v-yt" class="inp" placeholder="URL ou ID YouTube"></div>
+    </div>
+    <div class="row">
+      <button class="btn" onclick="saveVideo()">&#128190; Enregistrer</button>
+      <button class="btn-s" onclick="cancelEditVid()">Annuler</button>
+    </div>
+    <div id="vid-msg" style="display:none" class="msg"></div>
+    <div class="note">Ces vid&eacute;os apparaissent dans la section <strong>Vid&eacute;os</strong> du site, sans &ecirc;tre li&eacute;es &agrave; un match sp&eacute;cifique.</div>
+  </div>
+
+  <div class="card">
+    <h2>&#128247; Vid&eacute;os g&eacute;n&eacute;rales enregistr&eacute;es</h2>
+    <div id="vlist"><p style="color:var(--gr);font-size:13px;">Aucune vid&eacute;o g&eacute;n&eacute;rale pour l&rsquo;instant.</p></div>
+  </div>
+
+  <!-- ══════════ SPRAY CHARTS ══════════ -->
+  <div class="section-title">&#127919; Spray Charts</div>
+
+  <div class="card">
+    <h2>Importer un spray chart depuis GameChanger</h2>
+    <div class="g1">
+      <label class="lbl">Joueur</label>
+      <select id="sc-player" class="inp" style="max-width:320px;">
+        <option value="">-- S&eacute;lectionner un joueur --</option>
+        <option value="7">7 &ndash; Dub&eacute;, Nicolas</option>
+        <option value="10">10 &ndash; Audet, Zackary</option>
+        <option value="13">13 &ndash; Goulet, Rafa&euml;l</option>
+        <option value="14">14 &ndash; Germain, L&eacute;onard</option>
+        <option value="15">15 &ndash; Stone, Edward</option>
+        <option value="23">23 &ndash; Marquis, Louis</option>
+        <option value="24">24 &ndash; Lavergne, L&eacute;o</option>
+        <option value="27">27 &ndash; Fortier, James</option>
+        <option value="33">33 &ndash; B&eacute;dard, Guillaume</option>
+        <option value="39">39 &ndash; Turmel, L&eacute;o</option>
+      </select>
+    </div>
+    <div class="g1">
+      <label class="lbl">Code SVG GameChanger</label>
+      <textarea id="sc-svg" class="inp" rows="7" placeholder="Coller ici le code SVG complet du spray chart (clic droit &rsaquo; Inspecter sur le spray chart dans GameChanger, puis copier le bloc &lt;svg&gt;...&lt;/svg&gt;)&#10;&#10;Astuce : utilisez le bookmarklet pour extraire automatiquement le SVG."></textarea>
+    </div>
+    <div class="row">
+      <button class="btn-s" onclick="parseSVG()">&#128269; Analyser le SVG</button>
+      <button class="btn" id="sc-save-btn" onclick="saveSprayChart()" disabled>&#128190; Enregistrer</button>
+    </div>
+    <div id="sc-preview" style="display:none;" class="preview"></div>
+    <div id="sc-msg" style="display:none" class="msg"></div>
+    <div class="note">
+      <strong>Comment r&eacute;cup&eacute;rer le SVG dans GameChanger :</strong><br>
+      1. Allez sur la page du joueur dans GameChanger Web (app.gc.com)<br>
+      2. Cliquez sur le spray chart pour l&rsquo;afficher<br>
+      3. Clic droit &rsaquo; Inspecter &rsaquo; trouvez le bloc <code>&lt;svg&gt;</code> du spray chart<br>
+      4. Clic droit sur &lt;svg&gt; &rsaquo; Copy &rsaquo; Copy outerHTML<br>
+      5. Collez dans le champ ci-dessus
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>&#127919; Spray Charts enregistr&eacute;s</h2>
+    <div id="sc-list"><p style="color:var(--gr);font-size:13px;">Aucun spray chart pour l&rsquo;instant.</p></div>
+  </div>
+
+  <!-- ══════════ DONNÉES ADVERSAIRES ══════════ -->
+  <div class="section-title">&#127919; Donn&eacute;es adversaires</div>
+
+  <div class="card">
+    <h2>&#128203; Importer un r&eacute;sum&eacute; de match adversaire</h2>
+    <div class="grid2">
+      <div><label class="lbl">Date du match</label><input type="date" id="opp-date" class="inp"></div>
+      <div>
+        <label class="lbl">Partie # de la journ&eacute;e</label>
+        <div style="display:flex;align-items:center;gap:.5rem;">
+          <input type="number" id="opp-game-num" class="inp" min="1" max="9" value="1" style="width:70px;">
+          <span id="opp-game-num-hint" style="font-size:11px;color:var(--gr);display:none;">&#9888;&#65039; Doublon d&eacute;tect&eacute;</span>
+        </div>
+      </div>
+    </div>
+    <div class="g1">
+      <label class="lbl">R&eacute;sum&eacute; textuel du match</label>
+      <textarea id="opp-summary" class="inp" rows="12" placeholder="Coller ici le r&eacute;sum&eacute; complet du match...&#10;&#10;Les deux &eacute;quipes seront d&eacute;tect&eacute;es automatiquement depuis les ent&ecirc;tes de manches."></textarea>
+    </div>
+    <div class="g1">
+      <label class="lbl">Alignements des deux &eacute;quipes <span style="color:var(--yl);">&#9888; Requis pour le mapping des num&eacute;ros</span></label>
+      <textarea id="opp-lineup" class="inp" rows="8" placeholder="Coller les deux &eacute;quipes ensemble (peu importe l&rsquo;ordre) :&#10;&#10;Pr&eacute;nom Nom&#10;#Num&eacute;ro&#10;ABRHRBIBSO&#10;...&#10;&#10;OU&#10;&#10;Pr&eacute;nom Nom#Num&eacute;ro&#10;AB&#10;R&#10;H&#10;...&#10;&#10;Le num&eacute;ro de chandail est l&rsquo;identifiant unique du joueur."></textarea>
+    </div>
+
+    <!-- Mapping des équipes -->
+    <div id="opp-team-mapping" style="display:none;margin-bottom:.75rem;">
+      <div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gr);margin-bottom:.6rem;">&#128257; Correspondance des &eacute;quipes</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;">
+        <div>
+          <div style="font-size:11px;color:var(--gr);margin-bottom:4px;">&#9650; &Eacute;quipe d&eacute;tect&eacute;e (Top)</div>
+          <div id="opp-t1-detected" style="font-size:12px;font-weight:600;margin-bottom:5px;"></div>
+          <select id="opp-t1-map" class="inp" style="font-size:12px;" onchange="checkNewTeamName(1)"></select>
+          <input type="text" id="opp-t1-custom" class="inp" style="display:none;margin-top:5px;font-size:12px;" placeholder="Nom de la nouvelle &eacute;quipe">
+        </div>
+        <div>
+          <div style="font-size:11px;color:var(--gr);margin-bottom:4px;">&#9660; &Eacute;quipe d&eacute;tect&eacute;e (Bottom)</div>
+          <div id="opp-t2-detected" style="font-size:12px;font-weight:600;margin-bottom:5px;"></div>
+          <select id="opp-t2-map" class="inp" style="font-size:12px;" onchange="checkNewTeamName(2)"></select>
+          <input type="text" id="opp-t2-custom" class="inp" style="display:none;margin-top:5px;font-size:12px;" placeholder="Nom de la nouvelle &eacute;quipe">
+        </div>
+      </div>
+      <div style="font-size:11px;color:var(--gr);margin-top:.5rem;line-height:1.5;">
+        &#128161; S&eacute;lectionner une &eacute;quipe existante pour &eacute;viter les doublons. Choisir &laquo;&thinsp;Nouvelle &eacute;quipe&thinsp;&raquo; pour personnaliser le nom.
+      </div>
+    </div>
+
+    <div class="row" style="flex-wrap:wrap;gap:.5rem;margin-top:.5rem;">
+      <button class="btn-s" onclick="detectTeamMappings()">&#128270; D&eacute;tecter les &eacute;quipes</button>
+      <button class="btn-s" onclick="analyzeOpponentMatch()">&#128269; Analyser</button>
+      <button class="btn" id="opp-save-btn" disabled onclick="saveOpponentMatch()">&#128190; Publier</button>
+      <label style="display:flex;align-items:center;gap:.4rem;font-size:12px;color:var(--gr);cursor:pointer;">
+        <input type="checkbox" id="opp-overwrite" style="accent-color:var(--rd);">
+        &Eacute;craser si d&eacute;j&agrave; import&eacute;
+      </label>
+    </div>
+    <div id="opp-preview" style="display:none;" class="stats-preview"></div>
+    <div id="opp-msg" style="display:none" class="msg"></div>
+    <div class="note">
+      <strong>Flux recommand&eacute; :</strong> Coller le r&eacute;sum&eacute; + les deux alignements &rarr; D&eacute;tecter &rarr; v&eacute;rifier les &eacute;quipes &rarr; Analyser &rarr; Publier.<br>
+      L&rsquo;alignement est <strong>fortement recommand&eacute;</strong> : le num&eacute;ro de chandail est l&rsquo;identifiant unique stable d&rsquo;un joueur, peu importe comment son nom est &eacute;crit dans le r&eacute;sum&eacute;.<br>
+      Les joueurs sans num&eacute;ro r&eacute;solu apparaissent dans l&rsquo;aper&ccedil;u en <span style="color:var(--yl);">jaune</span> — v&eacute;rifiez avant de publier.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>&#127960;&#65039; &Eacute;quipes enregistr&eacute;es</h2>
+    <div id="opp-teams-list"><p style="color:var(--gr);font-size:13px;">Aucune &eacute;quipe enregistr&eacute;e.</p></div>
+    <div class="row" style="margin-top:.75rem;">
+      <button class="btn-s" onclick="runMergeDuplicates()">&#128257; Fusionner les doublons</button>
+    </div>
+    <div id="opp-teams-msg" style="display:none" class="msg"></div>
+  </div>
+
+  <div class="card">
+    <h2>&#127919; Matchs adversaires import&eacute;s</h2>
+    <div id="opp-list"><p style="color:var(--gr);font-size:13px;">Aucun match adversaire import&eacute;.</p></div>
+    <div id="opp-list-msg" style="display:none" class="msg"></div>
+  </div>
+
+  <!-- ══════════ MOTS DE PASSE ══════════ -->
+  <div class="section-title">&#128274; Mots de passe</div>
+
+  <div class="card">
+    <h2>Contr&ocirc;le d&rsquo;acc&egrave;s au site</h2>
+    <div class="note" style="margin-bottom:1rem;">
+      Les mots de passe sont stock&eacute;s de fa&ccedil;on hash&eacute;e (SHA-256) — jamais en clair sur GitHub.<br>
+      Laisser un champ vide pour conserver le mot de passe actuel. Un parent qui se connecte avec le mot de passe de son enfant verra <strong>uniquement</strong> les stats de cet enfant.
+    </div>
+
+    <!-- Admin -->
+    <div class="pw-row" style="border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:.875rem;margin-bottom:1rem;">
+      <div class="pw-num" style="color:var(--go);">&#9881;</div>
+      <div class="pw-name" style="color:var(--go);">Administrateur (acc&egrave;s complet)</div>
+      <input type="password" id="pw-admin" class="pw-inp" placeholder="Nouveau mot de passe admin">
+      <span class="pw-status pw-none" id="pw-admin-status">&#9711; Non d&eacute;fini</span>
+      <button class="pw-del" onclick="deletePassword('admin')" title="Supprimer">&#10006;</button>
+    </div>
+
+    <!-- Players -->
+    <div id="pw-players-list">
+      <div class="pw-row"><div class="pw-num">7</div><div class="pw-name">Dub&eacute;, Nicolas</div><input type="password" id="pw-7" class="pw-inp" placeholder="Mot de passe"><span class="pw-status pw-none" id="pw-7-status">&#9711; Non d&eacute;fini</span><button class="pw-del" onclick="deletePassword('7')" title="Supprimer">&#10006;</button></div>
+      <div class="pw-row"><div class="pw-num">10</div><div class="pw-name">Audet, Zackary</div><input type="password" id="pw-10" class="pw-inp" placeholder="Mot de passe"><span class="pw-status pw-none" id="pw-10-status">&#9711; Non d&eacute;fini</span><button class="pw-del" onclick="deletePassword('10')" title="Supprimer">&#10006;</button></div>
+      <div class="pw-row"><div class="pw-num">13</div><div class="pw-name">Goulet, Rafa&euml;l</div><input type="password" id="pw-13" class="pw-inp" placeholder="Mot de passe"><span class="pw-status pw-none" id="pw-13-status">&#9711; Non d&eacute;fini</span><button class="pw-del" onclick="deletePassword('13')" title="Supprimer">&#10006;</button></div>
+      <div class="pw-row"><div class="pw-num">14</div><div class="pw-name">Germain, L&eacute;onard</div><input type="password" id="pw-14" class="pw-inp" placeholder="Mot de passe"><span class="pw-status pw-none" id="pw-14-status">&#9711; Non d&eacute;fini</span><button class="pw-del" onclick="deletePassword('14')" title="Supprimer">&#10006;</button></div>
+      <div class="pw-row"><div class="pw-num">15</div><div class="pw-name">Stone, Edward</div><input type="password" id="pw-15" class="pw-inp" placeholder="Mot de passe"><span class="pw-status pw-none" id="pw-15-status">&#9711; Non d&eacute;fini</span><button class="pw-del" onclick="deletePassword('15')" title="Supprimer">&#10006;</button></div>
+      <div class="pw-row"><div class="pw-num">23</div><div class="pw-name">Marquis, Louis</div><input type="password" id="pw-23" class="pw-inp" placeholder="Mot de passe"><span class="pw-status pw-none" id="pw-23-status">&#9711; Non d&eacute;fini</span><button class="pw-del" onclick="deletePassword('23')" title="Supprimer">&#10006;</button></div>
+      <div class="pw-row"><div class="pw-num">24</div><div class="pw-name">Lavergne, L&eacute;o</div><input type="password" id="pw-24" class="pw-inp" placeholder="Mot de passe"><span class="pw-status pw-none" id="pw-24-status">&#9711; Non d&eacute;fini</span><button class="pw-del" onclick="deletePassword('24')" title="Supprimer">&#10006;</button></div>
+      <div class="pw-row"><div class="pw-num">27</div><div class="pw-name">Fortier, James</div><input type="password" id="pw-27" class="pw-inp" placeholder="Mot de passe"><span class="pw-status pw-none" id="pw-27-status">&#9711; Non d&eacute;fini</span><button class="pw-del" onclick="deletePassword('27')" title="Supprimer">&#10006;</button></div>
+      <div class="pw-row"><div class="pw-num">33</div><div class="pw-name">B&eacute;dard, Guillaume</div><input type="password" id="pw-33" class="pw-inp" placeholder="Mot de passe"><span class="pw-status pw-none" id="pw-33-status">&#9711; Non d&eacute;fini</span><button class="pw-del" onclick="deletePassword('33')" title="Supprimer">&#10006;</button></div>
+      <div class="pw-row"><div class="pw-num">39</div><div class="pw-name">Turmel, L&eacute;o</div><input type="password" id="pw-39" class="pw-inp" placeholder="Mot de passe"><span class="pw-status pw-none" id="pw-39-status">&#9711; Non d&eacute;fini</span><button class="pw-del" onclick="deletePassword('39')" title="Supprimer">&#10006;</button></div>
+    </div>
+
+    <div class="row" style="margin-top:1.25rem;">
+      <button class="btn" onclick="savePasswords()">&#128274; Enregistrer les mots de passe</button>
+    </div>
+    <div id="pw-msg" style="display:none" class="msg"></div>
+  </div>
+
+
+</div>
+
+<script>
+
+console.log('%c Carnavals Bleus Admin v2026.1.0 (2026-05-18) ', 'background:#CC2200;color:#fff;font-weight:bold;border-radius:4px;padding:2px 6px;');
+var OWNER='sebastienaudet38-cloud';
+var REPO='carnavals-bleus-2026';
+var FILE='matches.json';
+var API='https://api.github.com/repos/'+OWNER+'/'+REPO+'/contents/'+FILE;
+
+var matches=[];
+var videos=[];
+var spraycharts={};
+var passwords={};
+var globalTeam={};
+var globalPlayers=[];
+var editIdx=null;
+var editVidIdx=null;
+var scParsed=null;
+
+
+// ──────────────────────────────────────────
+// ── STATS CSV ──
+// ──────────────────────────────────────────
+var OWNER_R='sebastienaudet38-cloud';
+var REPO_R='carnavals-bleus-2026';
+var INDEX_API='https://api.github.com/repos/'+OWNER_R+'/'+REPO_R+'/contents/index.html';
+var parsedBat=null,parsedPit=null,mergedStats=null;
+
+function dzOver(e,id){e.preventDefault();document.getElementById(id).classList.add('drag-over');}
+function dzLeave(id){document.getElementById(id).classList.remove('drag-over');}
+function dzDrop(e,type){
+  e.preventDefault();
+  var id=type+'-drop';
+  document.getElementById(id).classList.remove('drag-over');
+  var file=e.dataTransfer.files[0];
+  if(!file) return;
+  var reader=new FileReader();
+  reader.onload=function(ev){
+    document.getElementById(type+'-csv').value=ev.target.result;
+    document.getElementById(id).classList.add('loaded');
+    document.getElementById(id).innerHTML='&#9989; '+file.name+' charg&eacute;';
+  };
+  reader.readAsText(file,'UTF-8');
+}
+function readFile(input,type){
+  var file=input.files[0];if(!file)return;
+  var id=type+'-drop';
+  var reader=new FileReader();
+  reader.onload=function(ev){
+    document.getElementById(type+'-csv').value=ev.target.result;
+    document.getElementById(id).classList.add('loaded');
+    document.getElementById(id).innerHTML='&#9989; '+file.name+' charg&eacute;';
+  };
+  reader.readAsText(file,'UTF-8');
+}
+
+function parseCSVLine(line){
+  var vals=[];var cur='';var inQ=false;
+  for(var j=0;j<line.length;j++){
+    var ch=line[j];
+    if(ch==='"'){inQ=!inQ;}
+    else if(ch===','&&!inQ){vals.push(cur.trim().replace(/^"|"$/g,''));cur='';}
+    else cur+=ch;
+  }
+  vals.push(cur.trim().replace(/^"|"$/g,''));
+  return vals;
+}
+
+function isCategoryRow(vals){
+  if(vals[0]!=='') return false;
+  var joined=vals.join(',');
+  return joined.indexOf('Batting')!==-1 || joined.indexOf('Pitching')!==-1;
+}
+
+function parseCSV(text){
+  var lines=text.replace(/\r\n/g,'\n').replace(/\r/g,'\n').split('\n');
+  var data=[];
+  var headers=null;
+  for(var i=0;i<lines.length;i++){
+    var line=lines[i].trim();
+    if(!line) continue;
+    var vals=parseCSVLine(line);
+    if(!headers){
+      if(isCategoryRow(vals)) continue;
+      var seen={};
+      headers=vals.map(function(h){
+        var key=h.trim();
+        if(!key) return key;
+        if(seen[key]){seen[key]++;return key+'_'+seen[key];}
+        seen[key]=1;return key;
+      });
+      continue;
+    }
+    if(!vals.some(function(v){return v;})) continue;
+    var obj={};
+    headers.forEach(function(h,idx){obj[h.trim()]=(vals[idx]||'').trim();});
+    data.push(obj);
+  }
+  return data;
+}
+
+function fmtAvg(v){
+  v=(v||'').replace('%','').replace(',','.');
+  var n=parseFloat(v);
+  if(isNaN(n)) return '.000';
+  if(n>1.5) n=n/1000;
+  else if(n>1) n=n/100;
+  return '.'+String(Math.round(n*1000)).padStart(3,'0');
+}
+function fmtNum(v){return String(parseInt(v)||0);}
+function fmtDec(v,d){return (parseFloat(v)||0).toFixed(d||1);}
+function fmtEra(v){
+  v=(v||'').replace(',','.');
+  var n=parseFloat(v);
+  if(isNaN(n)) return '.000';
+  return n.toFixed(3);
+}
+function fmtPct(v){v=(v||'').replace('%','');return String(parseFloat(v)||0);}
+
+function mapBatRow(row){
+  var num=(row['Number']||row['#']||row['Num']||row['Jersey']||'').replace(/\D/g,'');
+  var last=row['Last Name']||row['Last']||'';
+  var first=row['First Name']||row['First']||'';
+  if(!last&&row['Name']){
+    var p=row['Name'].split(', ');
+    if(p.length>=2){last=p[0];first=p[1];}
+    else{var sp=row['Name'].split(' ');first=sp[0];last=sp.slice(1).join(' ');}
+  }
+  return {num:num,last:last,first:first,
+    gp:fmtNum(row['G']||row['GP']),pa:fmtNum(row['PA']),ab:fmtNum(row['AB']),
+    avg:fmtAvg(row['AVG']),obp:fmtAvg(row['OBP']),ops:row['OPS']||'.000',slg:fmtAvg(row['SLG']),
+    h:fmtNum(row['H']),b1:fmtNum(row['1B']),b2:fmtNum(row['2B']),b3:fmtNum(row['3B']),
+    hr:fmtNum(row['HR']),rbi:fmtNum(row['RBI']),r:fmtNum(row['R']),
+    bb:fmtNum(row['BB']),so:fmtNum(row['SO']||row['K']),sb:fmtNum(row['SB']),
+    cs:fmtNum(row['CS']),hbp:fmtNum(row['HBP']),
+    qabpct:parseFloat(fmtPct(row['QAB%']||row['QAB%  ']||'0'))||0,
+    xbh:fmtNum(row['XBH']),tb:fmtNum(row['TB']),pitching:null};
+}
+
+function mapPitRow(row){
+  var num=(row['Number']||row['#']||row['Num']||row['Jersey']||'').replace(/\D/g,'');
+  return {num:num,ip:fmtDec(row['IP'],1),gp:fmtNum(row['GP_2']||row['G_2']||row['G']||row['GP']),gs:fmtNum(row['GS']),
+    bf:fmtNum(row['BF']),np:fmtNum(row['#P']||row['NP']||row['Pitches']),
+    w:fmtNum(row['W']),l:fmtNum(row['L']),sv:fmtNum(row['SV']),
+    h_p:fmtNum(row['H_2']||row['H']),r_p:fmtNum(row['R_2']||row['R']),er:fmtNum(row['ER']),
+    bb_p:fmtNum(row['BB_2']||row['BB']),so_p:fmtNum(row['SO_2']||row['SO']||row['K']),
+    kl:fmtNum(row['K-L_2']||row['K-L']||row['KL']),hbp_p:fmtNum(row['HBP_2']||row['HBP']),
+    era:fmtEra(row['ERA']),whip:fmtDec(row['WHIP'],3),baa:fmtAvg(row['BAA']),
+    sp:parseFloat(fmtPct(row['S%']||'0'))||0,
+    pip:parseFloat(fmtDec(row['P/IP']||row['PIP']||'0',1))||0};
+}
+
+function ipToOuts(ip){var p=parseFloat(ip||0).toFixed(1).split('.');return (parseInt(p[0])||0)*3+(parseInt(p[1])||0);}
+function outsToIP(outs){return Math.floor(outs/3)+'.'+(outs%3);}
+
+function mergeCSV(batRows,pitRows){
+  var pitMap={};
+  if(pitRows) pitRows.filter(function(r){return parseFloat(r['IP']||0)>0;}).forEach(function(r){var p=mapPitRow(r);if(p.num)pitMap[p.num]=p;});
+  var players=batRows
+    .filter(function(r){var n=(r['Number']||r['#']||r['Num']||r['Jersey']||'').replace(/\D/g,'');return n&&!isNaN(parseInt(n));})
+    .map(function(r){
+      var p=mapBatRow(r);
+      if(pitMap[p.num]){var pit=Object.assign({},pitMap[p.num]);delete pit.num;p.pitching=pit;}
+      return p;
+    });
+  var totalH=0,totalAB=0,totalRBI=0,totalSB=0,totalER=0,totalOuts=0,totalNP=0,totalSO_P=0,maxGP=0;
+  players.forEach(function(p){
+    totalH+=parseInt(p.h)||0;totalAB+=parseInt(p.ab)||0;
+    totalRBI+=parseInt(p.rbi)||0;totalSB+=parseInt(p.sb)||0;
+    var gp=parseInt(p.gp)||0;if(gp>maxGP)maxGP=gp;
+    if(p.pitching){
+      totalER+=parseInt(p.pitching.er)||0;
+      totalOuts+=ipToOuts(p.pitching.ip);
+      totalNP+=parseInt(p.pitching.np)||0;
+      totalSO_P+=parseInt(p.pitching.so_p)||0;
+    }
+  });
+  var tIPd=totalOuts/3;
+  var era=tIPd>0?(totalER*7/tIPd).toFixed(3):'0.000';
+  var tIP=outsToIP(totalOuts);
+  var tAvg=totalAB>0?('.'+String(Math.round(totalH/totalAB*1000)).padStart(3,'0')):'.000';
+  var team={name:"Carnavals Bleus",level:"13UAA",season:"\u00c9t\u00e9 2026",
+    gp:maxGP,avg:tAvg,hits:String(totalH),rbi:String(totalRBI),sb:String(totalSB),
+    era:era,ip:tIP,so_p:String(totalSO_P),np:String(totalNP)};
+  return {team:team,players:players};
+}
+
+function analyzeStats(){
+  var csvText=document.getElementById('gc-csv').value.trim();
+  if(!csvText){showMsg('stats-msg','er','Chargez ou collez d\'abord le fichier CSV GameChanger.');return;}
+  try{
+    var rows=parseCSV(csvText);
+    parsedBat=rows;parsedPit=null;
+    mergedStats=mergeCSV(rows,rows);
+    globalTeam=mergedStats.team;
+    globalPlayers=mergedStats.players;
+    var p=mergedStats.players;
+    var preview='<strong>'+p.length+' joueurs d\u00e9tect\u00e9s</strong> &bull; ';
+    preview+='Moy. \u00e9quipe: <strong>'+mergedStats.team.avg+'</strong> &bull; ';
+    preview+='Coups s\u00fbrs: <strong>'+mergedStats.team.hits+'</strong> &bull; ';
+    preview+='IP: <strong>'+mergedStats.team.ip+'</strong>';
+    if(parsedPit) preview+=' &bull; ERA: <strong>'+mergedStats.team.era+'</strong>';
+    preview+='<br>Joueurs: '+p.map(function(pl){return '#'+pl.num+' '+pl.last+(pl.pitching?' (frappeur+lanceur)':' (frappeur)');}).join(', ');
+    var pv=document.getElementById('stats-preview');
+    pv.innerHTML=preview;pv.style.display='block';
+    document.getElementById('push-stats-btn').disabled=false;
+    showMsg('stats-msg','ok','Analyse r\u00e9ussie. V\u00e9rifiez l\'aper\u00e7u et cliquez Pousser.');
+  }catch(e){
+    showMsg('stats-msg','er','Erreur d\'analyse CSV : '+e.message);
+  }
+}
+
+function pushStats(){
+  if(!mergedStats){showMsg('stats-msg','er','Analysez d\'abord les CSV.');return;}
+  document.getElementById('push-stats-btn').disabled=true;
+  pushToGitHub('Statistiques mises \u00e0 jour',function(){
+    showMsg('stats-msg','ok','\u2705 Statistiques enregistr\u00e9es dans matches.json !');
+    document.getElementById('push-stats-btn').disabled=false;
+  },'stats-msg');
+}
+
+// ──────────────────────────────────────────
+// ── MOTS DE PASSE ──
+// ──────────────────────────────────────────
+var PLAYER_NUMS=['7','10','13','14','15','23','24','27','33','39'];
+
+async function hashSHA256(text){
+  var enc=new TextEncoder(),data=enc.encode(text);
+  var buf=await crypto.subtle.digest('SHA-256',data);
+  return Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,'0');}).join('');
+}
+
+function renderPasswordStatus(){
+  function setStatus(id,active){
+    var el=document.getElementById('pw-'+id+'-status');
+    if(!el) return;
+    if(active){el.className='pw-status pw-active';el.innerHTML='\u25cf Actif';}
+    else{el.className='pw-status pw-none';el.innerHTML='\u25cb Non d\u00e9fini';}
+  }
+  setStatus('admin',!!(passwords&&passwords.admin));
+  PLAYER_NUMS.forEach(function(n){setStatus(n,!!(passwords&&passwords[n]));});
+}
+
+function deletePassword(key){
+  if(!confirm('Supprimer le mot de passe pour '+( key==='admin'?'l\'administrateur':'le joueur #'+key)+' ?')) return;
+  var newPw=Object.assign({},passwords);
+  delete newPw[key];
+  pushPasswords(newPw);
+}
+
+async function savePasswords(){
+  var t=getTok();if(!t){showMsg('pw-msg','er','Token manquant.');return;}
+  var newPw=Object.assign({},passwords);
+  var changed=[];
+  var adminVal=document.getElementById('pw-admin').value.trim();
+  if(adminVal){newPw.admin=await hashSHA256(adminVal);document.getElementById('pw-admin').value='';changed.push('admin');}
+  for(var i=0;i<PLAYER_NUMS.length;i++){
+    var num=PLAYER_NUMS[i];
+    var el=document.getElementById('pw-'+num);
+    if(el&&el.value.trim()){newPw[num]=await hashSHA256(el.value.trim());el.value='';changed.push('#'+num);}
+  }
+  if(!changed.length){showMsg('pw-msg','inf','Aucun nouveau mot de passe \u00e0 enregistrer (champs vides).');return;}
+  pushPasswords(newPw,'Mots de passe mis \u00e0 jour: '+changed.join(', '));
+}
+
+function pushPasswords(newPw,successMsg){
+  var t=getTok();if(!t){showMsg('pw-msg','er','Token manquant.');return;}
+  showMsg('pw-msg','inf','Enregistrement\u2026');
+  fetch(API,{headers:{'Authorization':'token '+t,'Accept':'application/vnd.github.v3+json'}})
+    .then(function(r){return r.json();})
+    .then(function(d){
+      var sha=d.sha;if(!sha)throw new Error('SHA introuvable.');
+      var body=JSON.stringify({matches:matches,videos:videos,spraycharts:spraycharts,passwords:newPw,team:globalTeam,players:globalPlayers},null,2);
+      var encoded=btoa(unescape(encodeURIComponent(body)));
+      return fetch(API,{method:'PUT',
+        headers:{'Authorization':'token '+t,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'},
+        body:JSON.stringify({message:'[Admin] Mots de passe \u2014 '+new Date().toLocaleDateString('fr-CA'),content:encoded,sha:sha})
+      });
+    })
+    .then(function(r){if(!r.ok)return r.json().then(function(e){throw new Error(e.message||'HTTP '+r.status);});return r.json();})
+    .then(function(){
+      passwords=newPw;
+      renderPasswordStatus();
+      showMsg('pw-msg','ok','\u2705 '+(successMsg||'Mots de passe enregistr\u00e9s !'));
+    })
+    .catch(function(e){showMsg('pw-msg','er','\u274c Erreur : '+e.message);});
+}
+
+// ── TOKEN ──
+function getTok(){return localStorage.getItem('cb_tok')||'';}
+function saveTok(){
+  var t=document.getElementById('tok').value.trim();
+  if(!t){showMsg('tok-msg','er','Token vide.');return;}
+  localStorage.setItem('cb_tok',t);
+  showMsg('tok-msg','ok','Token mémorisé sur cet appareil.');
+  loadFromGitHub();
+}
+function testTok(){
+  var t=getTok()||document.getElementById('tok').value.trim();
+  if(!t){showMsg('tok-msg','er',"Entre un token d'abord.");return;}
+  showMsg('tok-msg','inf','Test en cours…');
+  fetch('https://api.github.com/repos/'+OWNER+'/'+REPO,{headers:{'Authorization':'token '+t}})
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(d.id) showMsg('tok-msg','ok','✅ Token valide — accès au dépôt confirmé.');
+      else showMsg('tok-msg','er','❌ Accès refusé : '+(d.message||'erreur inconnue'));
+    }).catch(function(e){showMsg('tok-msg','er','Erreur réseau : '+e.message);});
+}
+
+// ── CHARGER depuis GitHub ──
+function loadFromGitHub(){
+  var t=getTok();
+  if(!t){showMsg('list-msg','er','Token manquant.');return;}
+  showMsg('list-msg','inf','Chargement depuis GitHub…');
+  fetch(API,{headers:{'Authorization':'token '+t,'Accept':'application/vnd.github.v3+json'}})
+    .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status+' '+r.statusText);return r.json();})
+    .then(function(d){
+      var raw=decodeURIComponent(escape(atob(d.content.replace(/\n/g,''))));
+      var parsed=JSON.parse(raw);
+      matches=parsed.matches||[];
+      videos=parsed.videos||[];
+      spraycharts=parsed.spraycharts||{};
+      passwords=parsed.passwords||{};
+      if(parsed.team&&parsed.team.avg){globalTeam=parsed.team;}
+      if(parsed.players&&parsed.players.length){globalPlayers=parsed.players;}
+      document.getElementById('list-msg').style.display='none';
+      renderList();
+      renderVideoList();
+      renderSprayList();
+      renderPasswordStatus();
+      loadOpponents();
+    })
+    .catch(function(e){showMsg('list-msg','er','Erreur lecture GitHub : '+e.message);renderList();});
+}
+
+// ── ÉCRIRE sur GitHub ──
+function pushToGitHub(msg,onSuccess,errId){
+  var t=getTok();
+  if(!t){showMsg(errId||'save-msg','er','Token manquant.');return;}
+  var saveBtn=document.getElementById('save-btn');
+  if(saveBtn) saveBtn.disabled=true;
+  showMsg(errId||'save-msg','inf','Enregistrement en cours…');
+  fetch(API,{headers:{'Authorization':'token '+t,'Accept':'application/vnd.github.v3+json'}})
+    .then(function(r){return r.json();})
+    .then(function(d){
+      var sha=d.sha;
+      if(!sha) throw new Error('SHA introuvable.');
+      var body=JSON.stringify({matches:matches,videos:videos,spraycharts:spraycharts,passwords:passwords,team:globalTeam,players:globalPlayers},null,2);
+      var encoded=btoa(unescape(encodeURIComponent(body)));
+      return fetch(API,{
+        method:'PUT',
+        headers:{'Authorization':'token '+t,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'},
+        body:JSON.stringify({message:'[Admin] '+msg+' — '+new Date().toLocaleDateString('fr-CA'),content:encoded,sha:sha})
+      });
+    })
+    .then(function(r){if(!r.ok)return r.json().then(function(e){throw new Error(e.message||'HTTP '+r.status);});return r.json();})
+    .then(function(){
+      showMsg(errId||'save-msg','ok','✅ '+msg+' — publié sur GitHub !');
+      if(saveBtn) saveBtn.disabled=false;
+      renderList();renderVideoList();renderSprayList();
+      if(onSuccess) onSuccess();
+    })
+    .catch(function(e){
+      showMsg(errId||'save-msg','er','❌ Erreur : '+e.message);
+      if(saveBtn) saveBtn.disabled=false;
+    });
+}
+
+// ── MATCHS ──
+function ytId(s){
+  s=(s||'').trim();
+  var m=s.match(/(?:v=|youtu\.be\/|embed\/)([a-zA-Z0-9_-]{11})/);
+  return m?m[1]:(s.length===11?s:null);
+}
+function cancelEdit(){
+  editIdx=null;
+  document.getElementById('form-ttl').textContent='+ Nouveau match';
+  document.getElementById('m-date').valueAsDate=new Date();
+  document.getElementById('m-opp').value='';
+  document.getElementById('m-us').value='0';
+  document.getElementById('m-them').value='0';
+  document.getElementById('m-link').value='';
+  document.getElementById('m-yt').value='';
+  document.getElementById('save-msg').style.display='none';
+}
+function editMatch(idx){
+  var m=matches[idx];editIdx=idx;
+  document.getElementById('form-ttl').textContent='✎ Modifier le match';
+  document.getElementById('m-date').value=m.date||'';
+  document.getElementById('m-opp').value=m.opp||'';
+  document.getElementById('m-us').value=m.us!=null?m.us:'0';
+  document.getElementById('m-them').value=m.them!=null?m.them:'0';
+  document.getElementById('m-link').value=m.link||'';
+  document.getElementById('m-yt').value=m.ytid||'';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function deleteMatch(idx){
+  var m=matches[idx];
+  if(!confirm('Supprimer le match vs '+m.opp+' du '+m.date+' ?')) return;
+  matches.splice(idx,1);
+  pushToGitHub('Match supprimé', function(){renderList();}, 'list-msg');
+}
+function saveMatch(){
+  var date=document.getElementById('m-date').value;
+  var opp=document.getElementById('m-opp').value.trim();
+  var us=parseInt(document.getElementById('m-us').value)||0;
+  var them=parseInt(document.getElementById('m-them').value)||0;
+  var link=document.getElementById('m-link').value.trim()||null;
+  var yt=ytId(document.getElementById('m-yt').value)||null;
+  if(!date||!opp){showMsg('save-msg','er',"La date et l'adversaire sont requis.");return;}
+  var entry={date:date,opp:opp,us:us,them:them,link:link,ytid:yt};
+  var actionMsg;
+  if(editIdx!==null){matches[editIdx]=entry;actionMsg='Match modifié';}
+  else{matches.push(entry);actionMsg='Match ajouté';}
+  pushToGitHub(actionMsg,function(){cancelEdit();},'save-msg');
+}
+function renderList(){
+  var el=document.getElementById('list');
+  if(!matches.length){
+    el.innerHTML='<p style="color:var(--gr);font-size:13px;text-align:center;padding:1.5rem 0">Aucun match enregistré.</p>';
+    return;
+  }
+  var sorted=matches.map(function(m,i){return{m:m,i:i};}).sort(function(a,b){return b.m.date.localeCompare(a.m.date);});
+  el.innerHTML=sorted.map(function(x){
+    var m=x.m,i=x.i;
+    var win=m.us>m.them;
+    var lbl=new Date(m.date+'T12:00:00').toLocaleDateString('fr-CA',{weekday:'short',year:'numeric',month:'short',day:'numeric'});
+    return '<div class="mi">'
+      +'<div class="mi-d">'+lbl+'</div>'
+      +'<div class="mi-t">Carnavals vs '+m.opp+'</div>'
+      +'<div class="mi-s '+(win?'win':'loss')+'">'+m.us+' – '+m.them+'</div>'
+      +(m.link?'<a href="'+m.link+'" target="_blank" style="font-size:12px;color:var(--gr);text-decoration:none;">Spordle &#8599;</a>':'')
+      +(m.ytid?'<span style="font-size:12px;color:var(--gr);">▶ YouTube</span>':'')
+      +'<div class="mi-a">'
+      +'<button class="btn-e" onclick="editMatch('+i+')">✎ Modifier</button>'
+      +'<button class="btn-d" onclick="deleteMatch('+i+')">✕ Supprimer</button>'
+      +'</div></div>';
+  }).join('');
+}
+
+// ── VIDÉOS GÉNÉRALES ──
+function cancelEditVid(){
+  editVidIdx=null;
+  document.getElementById('vid-form-ttl').textContent='+ Nouvelle vidéo (sans match associé)';
+  document.getElementById('v-title').value='';
+  document.getElementById('v-yt').value='';
+  document.getElementById('v-date').value='';
+  document.getElementById('vid-msg').style.display='none';
+}
+function editVid(idx){
+  var v=videos[idx];editVidIdx=idx;
+  document.getElementById('vid-form-ttl').textContent='✎ Modifier la vidéo';
+  document.getElementById('v-title').value=v.title||'';
+  document.getElementById('v-yt').value=v.ytid||'';
+  document.getElementById('v-date').value=v.date||'';
+  window.scrollTo({top:document.getElementById('vid-form-ttl').offsetTop-40,behavior:'smooth'});
+}
+function deleteVid(idx){
+  var v=videos[idx];
+  if(!confirm('Supprimer la vidéo "'+v.title+'" ?')) return;
+  videos.splice(idx,1);
+  pushToGitHub('Vidéo supprimée',function(){renderVideoList();},'vid-msg');
+}
+function saveVideo(){
+  var title=document.getElementById('v-title').value.trim();
+  var yt=ytId(document.getElementById('v-yt').value)||null;
+  var date=document.getElementById('v-date').value||null;
+  if(!title){showMsg('vid-msg','er','Le titre est requis.');return;}
+  if(!yt){showMsg('vid-msg','er','Un lien YouTube valide est requis.');return;}
+  var entry={id:editVidIdx!==null?videos[editVidIdx].id:Date.now().toString(),title:title,ytid:yt,date:date};
+  var actionMsg;
+  if(editVidIdx!==null){videos[editVidIdx]=entry;actionMsg='Vidéo modifiée';}
+  else{videos.push(entry);actionMsg='Vidéo ajoutée';}
+  pushToGitHub(actionMsg,function(){cancelEditVid();},'vid-msg');
+}
+function renderVideoList(){
+  var el=document.getElementById('vlist');
+  if(!videos.length){
+    el.innerHTML='<p style="color:var(--gr);font-size:13px;text-align:center;padding:1.5rem 0">Aucune vidéo générale.</p>';
+    return;
+  }
+  el.innerHTML=videos.map(function(v,i){
+    return '<div class="mi">'
+      +'<div class="mi-t">'+v.title+'</div>'
+      +(v.date?'<div class="mi-d">'+v.date+'</div>':'')
+      +'<span style="font-size:12px;color:var(--gr);">▶ '+v.ytid+'</span>'
+      +'<div class="mi-a">'
+      +'<button class="btn-e" onclick="editVid('+i+')">✎ Modifier</button>'
+      +'<button class="btn-d" onclick="deleteVid('+i+')">✕ Supprimer</button>'
+      +'</div></div>';
+  }).join('');
+}
+
+// ── SPRAY CHARTS ──
+function parseSVG(){
+  var txt=document.getElementById('sc-svg').value.trim();
+  if(!txt){showMsg('sc-msg','er',"Collez d'abord le code SVG.");return;}
+  try{
+    if(!txt.startsWith('<svg')){
+      var tmp=new DOMParser().parseFromString(txt,'text/html');
+      var inner=tmp.querySelector('svg');
+      if(inner){txt=inner.outerHTML;}
+      else{showMsg('sc-msg','er','SVG introuvable dans le contenu collé.');return;}
+    }
+    var parser=new DOMParser();
+    var doc=parser.parseFromString(txt,'image/svg+xml');
+    var err=doc.querySelector('parsererror');
+    if(err){showMsg('sc-msg','er','SVG invalide. Vérifiez le code collé.');return;}
+    var circles=doc.querySelectorAll('circle');
+    var points=[];
+    circles.forEach(function(c){
+      var fill=(c.getAttribute('fill')||'').toLowerCase();
+      var cx=parseFloat(c.getAttribute('cx'));
+      var cy=parseFloat(c.getAttribute('cy'));
+      var r=parseFloat(c.getAttribute('r')||'0');
+      if(!isNaN(cx)&&!isNaN(cy)){
+        if(r>=3.5&&r<=4.5){
+          if(fill==='#00d682') points.push({cx:Math.round(cx*100)/100,cy:Math.round(cy*100)/100,type:'hit'});
+          else if(fill==='#b90018') points.push({cx:Math.round(cx*100)/100,cy:Math.round(cy*100)/100,type:'out'});
+        } else if(r>=8){
+          var grp=c.parentNode;
+          var txtEl=grp?grp.querySelector('text'):null;
+          var count=txtEl?Math.max(1,parseInt(txtEl.textContent)||1):1;
+          var type=null;
+          if(fill==='#00d682') type='hit';
+          else if(fill==='#b90018') type='out';
+          if(type){
+            for(var i=0;i<count;i++)
+              points.push({cx:Math.round(cx*100)/100,cy:Math.round(cy*100)/100,type:type,hr:true});
+          }
+        }
+      }
+    });
+    scParsed=points;
+    var hits=points.filter(function(p){return p.type==='hit';}).length;
+    var hrs=points.filter(function(p){return p.hr;}).length;
+    var outs=points.filter(function(p){return p.type==='out';}).length;
+    if(!points.length){
+      showMsg('sc-msg','er','Aucun coup sûr/retrait trouvé. Vérifiez que vous copiez bien le bon SVG depuis GameChanger.');
+      document.getElementById('sc-save-btn').disabled=true;
+      return;
+    }
+    document.getElementById('sc-preview').style.display='block';
+    document.getElementById('sc-preview').innerHTML='✅ Trouvé dans le SVG : <strong>'+hits+'</strong> coup'+(hits>1?'s':'')+' sûr'+(hits>1?'s':'')+(hrs?' (dont <strong>'+hrs+'</strong> circuit'+(hrs>1?'s':'')+')':'')+', <strong>'+outs+'</strong> retrait'+(outs>1?'s':'')+' &mdash; AVG .'+String(Math.round((hits/(hits+outs||1))*1000)).padStart(3,'0');
+    document.getElementById('sc-save-btn').disabled=false;
+    showMsg('sc-msg','ok','SVG analysé avec succès. Cliquez Enregistrer pour sauvegarder.');
+  }catch(e){showMsg('sc-msg','er','Erreur : '+e.message);}
+}
+function saveSprayChart(){
+  var player=document.getElementById('sc-player').value;
+  if(!player){showMsg('sc-msg','er','Sélectionnez un joueur.');return;}
+  if(!scParsed||!scParsed.length){showMsg('sc-msg','er',"Analysez d'abord un SVG valide.");return;}
+  spraycharts[player]=scParsed;
+  pushToGitHub('Spray chart mis à jour (#'+player+')',function(){
+    showMsg('sc-msg','ok','✅ Spray chart enregistré pour le joueur #'+player+' ('+scParsed.length+' points)');
+    scParsed=null;
+    document.getElementById('sc-svg').value='';
+    document.getElementById('sc-preview').style.display='none';
+    document.getElementById('sc-save-btn').disabled=true;
+  },'sc-msg');
+}
+function deleteSprayChart(playerNum){
+  if(!confirm('Supprimer le spray chart du joueur #'+playerNum+' ?')) return;
+  delete spraycharts[playerNum];
+  pushToGitHub('Spray chart supprimé (#'+playerNum+')',function(){renderSprayList();},'sc-msg');
+}
+function renderSprayList(){
+  var el=document.getElementById('sc-list');
+  var keys=Object.keys(spraycharts);
+  if(!keys.length){
+    el.innerHTML='<p style="color:var(--gr);font-size:13px;text-align:center;padding:1.5rem 0">Aucun spray chart enregistré.</p>';
+    return;
+  }
+  var names={
+    '7':'Dubé, Nicolas','10':'Audet, Zackary','13':'Goulet, Rafaël','14':'Germain, Léonard',
+    '15':'Stone, Edward','23':'Marquis, Louis','24':'Lavergne, Léo','27':'Fortier, James',
+    '33':'Bédard, Guillaume','39':'Turmel, Léo'
+  };
+  el.innerHTML=keys.sort(function(a,b){return parseInt(a)-parseInt(b);}).map(function(k){
+    var pts=spraycharts[k]||[];
+    var hits=pts.filter(function(p){return p.type==='hit';}).length;
+    var outs=pts.filter(function(p){return p.type==='out';}).length;
+    var avg='.'+String(Math.round((hits/(hits+outs||1))*1000)).padStart(3,'0');
+    return '<div class="mi">'
+      +'<div class="mi-d">#'+k+'</div>'
+      +'<div class="mi-t">'+(names[k]||'Joueur '+k)+'</div>'
+      +'<span style="font-size:12px;color:var(--gr);">'+hits+'H · '+outs+'O · AVG '+avg+'</span>'
+      +'<div class="mi-a"><button class="btn-d" onclick="deleteSprayChart('+k+')">✕ Supprimer</button></div>'
+      +'</div>';
+  }).join('');
+}
+
+// ──────────────────────────────────────────
+// ── DONNÉES ADVERSAIRES ──
+// ──────────────────────────────────────────
+var OPPONENTS_FILE='opponents.json';
+var OPPONENTS_API='https://api.github.com/repos/'+OWNER+'/'+REPO+'/contents/'+OPPONENTS_FILE;
+var opponents={teams:{},matches:[]};
+var oppParsed=null;
+var PARSER_VERSION='1.1';
+
+// ── CORRECTION 2026-05-21 : "Inning Changed by Scorekeeper" et
+//    "Current inning overridden by scorekeeper" ajoutés pour éviter
+//    la création de faux joueurs quand le marqueur corrige une manche. ──
+var KNOWN_EVENTS_OPP=[
+  'Home Run','Hit By Pitch',"Catcher's Interference",
+  'Ground Out','Fly Out','Line Out','Pop Out',
+  'Strikeout','Single','Double','Triple','Walk',
+  'Inning Ended','Pickoff','Wild Pitch','Passed Ball','Balk',
+  "Fielder's Choice",'Sac Fly','Sacrifice','Error',
+  'Caught Stealing','Stolen Base','Intentional Walk',
+  'Dropped 3rd Strike','Inning Changed by Scorekeeper'
+];
+var HIT_EVENTS_OPP=['Single','Double','Triple','Home Run'];
+var OUT_EVENTS_OPP=['Ground Out','Fly Out','Line Out','Pop Out','Strikeout'];
+var NO_AB_EVENTS_OPP=['Walk','Hit By Pitch',"Catcher's Interference",'Intentional Walk','Sac Fly','Sacrifice'];
+var NO_PITCH_EVENTS_OPP=['Inning Ended','Pickoff','Wild Pitch','Passed Ball','Balk','Caught Stealing','Stolen Base','Inning Changed by Scorekeeper'];
+
+// ── Normalisation pour la correspondance floue de noms ──
+function normalizeName(s){
+  return (s||'').toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/[^a-z\s]/g,'').replace(/\s+/g,' ').trim();
+}
+
+// ── Parser du format de lineup ──
+function parseLineupBlockFormat(text){
+  var result={};
+  if(!text.trim())return result;
+  var lines=text.split('\n').map(function(l){return l.trim();}).filter(function(l){return l;});
+  var i=0;
+  while(i<lines.length){
+    var line=lines[i];
+    var name=null,num=null,consumed=1;
+
+    var mC=line.match(/^#(\d+)(?:\s*\([^)]*\))?$/);
+    if(mC){
+      num=mC[1];
+      name='Joueur #'+num;
+      while(consumed<=7&&(i+consumed)<lines.length&&/^\d+$/.test(lines[i+consumed]))consumed++;
+    }
+    else{
+      var mA=line.match(/^(.+?)\s*#(\d+)(?:\s*\([^)]*\))?$/);
+      if(mA){
+        name=mA[1].trim(); num=mA[2];
+        while(consumed<=7&&(i+consumed)<lines.length&&/^\d+$/.test(lines[i+consumed]))consumed++;
+      }
+      else if(/^[A-ZÀ-Öa-zà-ö\u00C0-\u017E]/.test(line)&&(i+1)<lines.length){
+        var mB=lines[i+1].match(/^#(\d+)(?:\s*\([^)]*\))?$/);
+        if(mB){
+          name=line.trim(); num=mB[1];
+          consumed=2;
+          while(consumed<=9&&(i+consumed)<lines.length&&/^\d+$/.test(lines[i+consumed]))consumed++;
+        }
+      }
+    }
+
+    if(name&&num)result[normalizeName(name)]={name:name,num:num};
+    i+=consumed;
+  }
+  return result;
+}
+
+// ── Détecter les deux équipes depuis les entêtes de manches ──
+function detectTeamsFromSummary(text){
+  var lines=text.split('\n').map(function(l){return l.trim();});
+  var teams={top:null,bottom:null};
+  for(var i=0;i<lines.length;i++){
+    var m=lines[i].match(/^(Top|Bottom)\s+\d+\w*\s+-\s+(.+)$/i);
+    if(m){
+      var tb=m[1].toLowerCase();
+      var name=m[2].trim();
+      if(tb==='top'&&!teams.top)teams.top=name;
+      if(tb==='bottom'&&!teams.bottom)teams.bottom=name;
+      if(teams.top&&teams.bottom)break;
+    }
+  }
+  return teams;
+}
+
+// ── Extraire tous les noms de joueurs par équipe depuis le résumé ──
+function extractPlayersByTeamFromSummary(text){
+  var lines=text.split('\n').map(function(l){return l.trim();}).filter(function(l){return l;});
+  var byTeam={};
+  var currentBattingTeam=null;
+  var i=0;
+  while(i<lines.length){
+    var line=lines[i];
+    var inningM=line.match(/^(Top|Bottom)\s+\d+\w*\s+-\s+(.+)$/i);
+    if(inningM){currentBattingTeam=inningM[2].trim();i++;continue;}
+    if(!currentBattingTeam){i++;continue;}
+    if(line.endsWith('.')&&!/Ball\s+\d|Strike\s+\d|Foul|In play/i.test(line)){
+      var batter=extractBatterNameOpp(line);
+      if(batter&&batter.length>3){
+        if(!byTeam[currentBattingTeam])byTeam[currentBattingTeam]=[];
+        byTeam[currentBattingTeam].push(normalizeName(batter));
+      }
+    }
+    i++;
+  }
+  return byTeam;
+}
+
+// ── Assigner un joueur du lineup à une équipe par correspondance de nom ──
+function assignLineupToTeams(lineup,playersByTeam){
+  var result={};
+  Object.keys(lineup).forEach(function(normName){
+    var entry=lineup[normName];
+    var bestTeam=null,bestScore=0;
+    Object.keys(playersByTeam).forEach(function(team){
+      var names=playersByTeam[team];
+      for(var k=0;k<names.length;k++){
+        var score=nameSimilarity(normName,names[k]);
+        if(score>bestScore){bestScore=score;bestTeam=team;}
+      }
+    });
+    result[normName]={name:entry.name,num:entry.num,team:bestScore>0.5?bestTeam:null};
+  });
+  return result;
+}
+
+function nameSimilarity(a,b){
+  var wa=a.split(' '),wb=b.split(' ');
+  var common=0;
+  wa.forEach(function(w){
+    if(wb.indexOf(w)!==-1){common+=1;return;}
+    if(w.length===1){
+      wb.forEach(function(bw){if(bw.length>1&&bw.charAt(0)===w)common+=0.8;});
+    }
+  });
+  return common/Math.max(wa.length,wb.length,1);
+}
+
+// ── Extraction du nom du frappeur depuis la description ──
+var ACTION_VERBS_OPP=['grounds','flies','singles','doubles','triples','homers',
+  'strikes','walks','reaches','lines','is','gets','flied','pops','bunts','hit','hits',
+  'out','scores','advances','steals','thrown','caught'];
+
+function extractBatterNameOpp(desc){
+  var words=desc.split(/\s+/);
+  var parts=[];
+  for(var i=0;i<words.length;i++){
+    var w=words[i].toLowerCase().replace(/[.,]/g,'');
+    if(ACTION_VERBS_OPP.indexOf(w)!==-1)break;
+    if(parts.length>=4)break;
+    parts.push(words[i]);
+  }
+  return parts.join(' ').replace(/[.,]$/,'').trim();
+}
+
+// ── Position du champ ──
+function extractFieldPos(desc){
+  var map=[
+    {re:/\bpitcher\b/i,pos:1},{re:/\bcatcher\b/i,pos:2},
+    {re:/\bfirst baseman\b/i,pos:3},{re:/\bsecond baseman\b/i,pos:4},
+    {re:/\bthird baseman\b/i,pos:5},{re:/\bshortstop\b/i,pos:6},
+    {re:/\bleft field(er)?\b/i,pos:7},{re:/\bcenter field(er)?\b/i,pos:8},
+    {re:/\bright field(er)?\b/i,pos:9}
+  ];
+  for(var i=0;i<map.length;i++){if(map[i].re.test(desc))return map[i].pos;}
+  return null;
+}
+
+// ── Comptage des lancers ──
+function countPitchesOpp(pitchLine){
+  return{
+    balls:(pitchLine.match(/\bBall\s+\d/g)||[]).length,
+    strikes:(pitchLine.match(/\bStrike\s+\d/g)||[]).length,
+    fouls:(pitchLine.match(/\bFoul\b/g)||[]).length
+  };
+}
+
+// ── Extraction du lanceur depuis la description ──
+function extractPitcherNameOpp(desc){
+  var m1=desc.match(/([A-ZÀ-Öa-zà-ö\u00C0-\u017E][a-zà-ö\u00C0-\u017E\-]*(?:\s+[A-ZÀ-Öa-zà-ö\u00C0-\u017E][a-zà-ö\u00C0-\u017E\-]*)+)\s+pitching/i);
+  if(m1)return m1[1].trim();
+  var m2=desc.match(/\bpitcher\s+([A-ZÀ-Ö\u00C0-\u017E][a-zà-ö\u00C0-\u017E]*\s+[A-ZÀ-Ö\u00C0-\u017E][a-zà-ö\u00C0-\u017E\-]*)/i);
+  if(m2)return m2[1].trim();
+  return null;
+}
+
+// ── PARSER PRINCIPAL ──
+function parseMatchSummaryOpp(text,lineupText,canonicalT1,canonicalT2){
+  var teams=detectTeamsFromSummary(text);
+  if(!teams.top||!teams.bottom)throw new Error('Impossible de détecter les deux équipes depuis le résumé. Vérifiez le format.');
+
+  var toCanonical={};
+  toCanonical[teams.top]   = canonicalT1||teams.top;
+  toCanonical[teams.bottom]= canonicalT2||teams.bottom;
+  var team1=toCanonical[teams.top];
+  var team2=toCanonical[teams.bottom];
+
+  var playersByTeamRaw=extractPlayersByTeamFromSummary(text);
+  var playersByTeam={};
+  Object.keys(playersByTeamRaw).forEach(function(rawName){
+    var canon=toCanonical[rawName]||rawName;
+    playersByTeam[canon]=playersByTeamRaw[rawName];
+  });
+
+  var rawLineup=parseLineupBlockFormat(lineupText);
+  var assignedLineup=assignLineupToTeams(rawLineup,playersByTeam);
+
+  var nameLookup={};
+  Object.keys(assignedLineup).forEach(function(k){nameLookup[k]=assignedLineup[k];});
+
+  Object.keys(rawLineup).forEach(function(normFull){
+    var entry=rawLineup[normFull];
+    var parts=normFull.split(' ');
+    if(parts.length>=2){
+      var abbrev=parts[0]+' '+parts[parts.length-1].charAt(0);
+      if(!nameLookup[abbrev])nameLookup[abbrev]={name:entry.name,num:entry.num};
+    }
+  });
+
+  var result={
+    team1:team1, team2:team2,
+    players:{},
+    pitchers:{},
+    score:{top:0,bottom:0},
+    unknownEvents:[]
+  };
+
+  var currentBattingTeam=null;
+  var currentInningNum=0;
+  var activePitcher={};
+
+  function teamKey(name){
+    return name.toLowerCase().replace(/\s+/g,'_').replace(/[^a-z0-9_]/g,'').substring(0,20);
+  }
+
+  function getOrCreatePlayer(batterName,battingTeam){
+    var norm=normalizeName(batterName);
+    var lu=nameLookup[norm]||{};
+    var num=lu.num||null;
+    var tk=teamKey(battingTeam);
+    var id=num?(tk+'_'+num):(tk+'_'+norm.replace(/\s/g,'_').substring(0,20));
+    if(!result.players[id]){
+      result.players[id]={name:batterName,num:num,team:battingTeam,
+        AB:0,H:0,BB:0,SO:0,HBP:0,battedBalls:[]};
+    }
+    return id;
+  }
+
+  function getOrCreatePitcher(pitcherName,pitchingTeam){
+    var norm=normalizeName(pitcherName);
+    var lu=nameLookup[norm]||{};
+    var num=lu.num||null;
+    var tk=teamKey(pitchingTeam);
+    var id=num?(tk+'_'+num):(tk+'_'+norm.replace(/\s/g,'_').substring(0,20));
+    if(!result.pitchers[id]){
+      result.pitchers[id]={name:pitcherName,num:num,team:pitchingTeam,
+        balls:0,strikes:0,fouls:0,outs:0,R:0,H:0,BB:0,SO:0,HBP:0};
+    }
+    return id;
+  }
+
+  var lines=text.split('\n').map(function(l){return l.trim();}).filter(function(l){return l;});
+  var i=0;
+  while(i<lines.length){
+    var line=lines[i];
+    var inningM=line.match(/^(Top|Bottom)\s+(\d+)\w*\s+-\s+(.+)$/i);
+    if(inningM){
+      currentInningNum=parseInt(inningM[2]);
+      var rawBatting=inningM[3].trim();
+      currentBattingTeam=toCanonical[rawBatting]||rawBatting;
+      i++;continue;
+    }
+    if(/at bat$/i.test(line)){i++;continue;}
+
+    var eventType=null;
+    for(var e=0;e<KNOWN_EVENTS_OPP.length;e++){
+      if(line===KNOWN_EVENTS_OPP[e]){eventType=KNOWN_EVENTS_OPP[e];break;}
+    }
+    if(!eventType){i++;continue;}
+
+    // Collecter le bloc de la présence au bâton
+    var paLines=[line];i++;
+    while(i<lines.length){
+      var nl=lines[i];
+      if(/^(Top|Bottom)\s+\d+\w*\s+-\s+/i.test(nl))break;
+      var isEv=false;
+      for(var e2=0;e2<KNOWN_EVENTS_OPP.length;e2++){if(nl===KNOWN_EVENTS_OPP[e2]){isEv=true;break;}}
+      if(isEv)break;
+      if(/at bat$/i.test(nl))break;
+      paLines.push(nl);i++;
+    }
+
+    if(NO_PITCH_EVENTS_OPP.indexOf(eventType)!==-1)continue;
+    if(!currentBattingTeam)continue;
+
+    var fieldingTeam=currentBattingTeam===team1?team2:team1;
+
+    var descLine='',pitchText='';
+    for(var j=1;j<paLines.length;j++){
+      var pl=paLines[j];
+      if(/\d+\s+Outs?|Half-inning/i.test(pl))continue;
+      if(/^\w+\s+\d+\s*-\s*\w+\s+\d+/.test(pl))continue;
+      if(/Score changed/i.test(pl))continue;
+      if(/Ball\s+\d|Strike\s+\d|\bFoul\b|In play/i.test(pl)){
+        pitchText+=(pitchText?', ':'')+pl;continue;
+      }
+      if(pl.endsWith('.'))descLine=pl;
+    }
+
+    var pitchCount=countPitchesOpp(pitchText);
+
+    var pitcherInDesc=extractPitcherNameOpp(descLine);
+    if(pitcherInDesc){
+      var pitNorm=normalizeName(pitcherInDesc);
+      var resolved=nameLookup[pitNorm];
+      activePitcher[fieldingTeam]=resolved?resolved.name:pitcherInDesc;
+    }
+
+    var batterName=extractBatterNameOpp(descLine);
+    if(batterName&&batterName.length>1){
+      var batNorm=normalizeName(batterName);
+      var batResolved=nameLookup[batNorm];
+      if(batResolved)batterName=batResolved.name;
+      var pid=getOrCreatePlayer(batterName,currentBattingTeam);
+      var player=result.players[pid];
+      if(NO_AB_EVENTS_OPP.indexOf(eventType)===-1)player.AB++;
+      if(HIT_EVENTS_OPP.indexOf(eventType)!==-1)player.H++;
+      if(eventType==='Walk'||eventType==='Intentional Walk')player.BB++;
+      if(eventType==='Strikeout')player.SO++;
+      if(eventType==='Hit By Pitch')player.HBP++;
+      var pos=extractFieldPos(descLine);
+      var bip=HIT_EVENTS_OPP.concat(['Ground Out','Fly Out','Line Out','Pop Out']);
+      if(bip.indexOf(eventType)!==-1&&pos){
+        player.battedBalls.push({type:eventType,position:pos,inning:currentInningNum});
+      }
+    }
+
+    var curPit=activePitcher[fieldingTeam];
+    if(curPit){
+      var ptid=getOrCreatePitcher(curPit,fieldingTeam);
+      var pitcher=result.pitchers[ptid];
+      pitcher.balls+=pitchCount.balls;
+      pitcher.strikes+=pitchCount.strikes;
+      pitcher.fouls+=pitchCount.fouls;
+      if(OUT_EVENTS_OPP.indexOf(eventType)!==-1)pitcher.outs++;
+      if(HIT_EVENTS_OPP.indexOf(eventType)!==-1)pitcher.H++;
+      if(eventType==='Walk'||eventType==='Intentional Walk')pitcher.BB++;
+      if(eventType==='Strikeout')pitcher.SO++;
+      if(eventType==='Hit By Pitch')pitcher.HBP++;
+      if(/\bscores\b/i.test(descLine))pitcher.R++;
+    }
+  }
+
+  lines.forEach(function(l){
+    var sm=l.match(/(\w+)\s+(\d+)\s*-\s*(\w+)\s+(\d+)/i);
+    if(sm&&!l.match(/\bOuts?\b/i)){
+      result.score.lastLine=sm[0];
+    }
+  });
+
+  return result;
+}
+
+// ── Afficher/masquer le champ de nom personnalisé quand "Nouvelle équipe" ──
+function checkNewTeamName(slot) {
+  var sel = document.getElementById('opp-t'+slot+'-map');
+  var custom = document.getElementById('opp-t'+slot+'-custom');
+  if (!sel || !custom) return;
+  if (sel.value === '__new__') {
+    custom.style.display = 'block';
+    if (!custom.value) {
+      custom.value = document.getElementById('opp-t'+slot+'-detected').textContent;
+    }
+  } else {
+    custom.style.display = 'none';
+  }
+}
+
+// ── Vérifier doublon de partie ──
+function checkGameNumConflict(baseId) {
+  var gameNum = parseInt(document.getElementById('opp-game-num').value) || 1;
+  var matchId = gameNum > 1 ? baseId + '_g' + gameNum : baseId;
+  var hint = document.getElementById('opp-game-num-hint');
+  var exists = opponents.matches.some(function(m) { return m.id === matchId; });
+  if (exists && !document.getElementById('opp-overwrite').checked) {
+    var next = gameNum + 1;
+    while (opponents.matches.some(function(m) {
+      return m.id === (next > 1 ? baseId + '_g' + next : baseId);
+    })) { next++; }
+    document.getElementById('opp-game-num').value = next;
+    if (hint) { hint.style.display = 'inline'; hint.textContent = '⚠️ Doublon → auto-ajusté à la partie ' + next; }
+  } else {
+    if (hint) hint.style.display = 'none';
+  }
+}
+
+// ── Renommer une équipe ──
+function startRenameTeam(teamKey) {
+  var row = document.getElementById('opp-team-row-' + teamKey);
+  if (!row) return;
+  var nameEl = row.querySelector('.opp-team-name');
+  var editEl = row.querySelector('.opp-team-edit-wrap');
+  if (nameEl) nameEl.style.display = 'none';
+  if (editEl) editEl.style.display = 'flex';
+}
+
+function cancelRenameTeam(teamKey) {
+  var row = document.getElementById('opp-team-row-' + teamKey);
+  if (!row) return;
+  row.querySelector('.opp-team-name').style.display = '';
+  row.querySelector('.opp-team-edit-wrap').style.display = 'none';
+}
+
+function saveRenameTeam(teamKey) {
+  var inp = document.getElementById('opp-team-inp-' + teamKey);
+  if (!inp) return;
+  var newName = inp.value.trim();
+  if (!newName) { showMsg('opp-teams-msg', 'er', 'Le nom ne peut pas être vide.'); return; }
+  var oldName = opponents.teams[teamKey].name;
+  if (newName === oldName) { cancelRenameTeam(teamKey); return; }
+  if (!confirm('Renommer « ' + oldName + ' » en « ' + newName + ' » ?\nTous les matchs associés seront mis à jour.')) return;
+
+  opponents.teams[teamKey].name = newName;
+  opponents.matches.forEach(function(m) {
+    if (m.team1 === oldName) m.team1 = newName;
+    if (m.team2 === oldName) m.team2 = newName;
+    Object.values(m.players || {}).forEach(function(p) {
+      if (p.team === oldName) p.team = newName;
+    });
+    Object.values(m.pitchers || {}).forEach(function(p) {
+      if (p.team === oldName) p.team = newName;
+    });
+    var baseId = m.date + '_' + normalizeName(m.team1).replace(/\s/g,'_') + '_vs_' + normalizeName(m.team2).replace(/\s/g,'_');
+    var suffix = m.id.match(/_g(\d+)$/);
+    m.id = suffix ? baseId + '_g' + suffix[1] : baseId;
+  });
+
+  pushOpponents('Équipe renommée: ' + oldName + ' → ' + newName, function() {
+    renderOpponentTeamsList();
+    renderOpponentList();
+  }, 'opp-teams-msg');
+}
+
+// ── Fusionner les doublons d'équipes ──
+function mergeOpponentTeamDuplicates(){
+  var teams=opponents.teams;
+  var byName={};
+  Object.keys(teams).forEach(function(tk){
+    var norm=normalizeName(teams[tk].name);
+    if(!byName[norm])byName[norm]=[];
+    byName[norm].push(tk);
+  });
+  var merged=false;
+  Object.keys(byName).forEach(function(norm){
+    var keys=byName[norm];
+    if(keys.length<2)return;
+    keys.sort(function(a,b){return a.length-b.length;});
+    var masterKey=keys[0];
+    for(var i=1;i<keys.length;i++){
+      var dupKey=keys[i];
+      Object.assign(opponents.teams[masterKey].players,opponents.teams[dupKey].players);
+      var dupName=opponents.teams[dupKey].name;
+      opponents.matches.forEach(function(m){
+        if(m.team1===dupName)m.team1=opponents.teams[masterKey].name;
+        if(m.team2===dupName)m.team2=opponents.teams[masterKey].name;
+      });
+      delete opponents.teams[dupKey];
+      merged=true;
+    }
+  });
+  return merged;
+}
+
+// ── Renommer un joueur dans une équipe ──
+function startRenamePlayer(teamKey, playerKey){
+  var wrap=document.getElementById('opp-player-edit-'+teamKey+'-'+playerKey);
+  var lbl=document.getElementById('opp-player-lbl-'+teamKey+'-'+playerKey);
+  if(wrap)wrap.style.display='flex';
+  if(lbl)lbl.style.display='none';
+}
+function cancelRenamePlayer(teamKey,playerKey){
+  var wrap=document.getElementById('opp-player-edit-'+teamKey+'-'+playerKey);
+  var lbl=document.getElementById('opp-player-lbl-'+teamKey+'-'+playerKey);
+  if(wrap)wrap.style.display='none';
+  if(lbl)lbl.style.display='';
+}
+function saveRenamePlayer(teamKey,playerKey){
+  var inp=document.getElementById('opp-player-inp-'+teamKey+'-'+playerKey);
+  if(!inp)return;
+  var newName=inp.value.trim();
+  if(!newName){showMsg('opp-teams-msg','er','Le nom ne peut pas être vide.');return;}
+  var oldName=opponents.teams[teamKey].players[playerKey];
+  if(newName===oldName){cancelRenamePlayer(teamKey,playerKey);return;}
+  if(!confirm('Renommer « '+oldName+' » → « '+newName+' » ?\nTous les matchs seront mis à jour.'))return;
+
+  opponents.teams[teamKey].players[playerKey]=newName;
+  var teamName=opponents.teams[teamKey].name;
+
+  opponents.matches.forEach(function(match){
+    Object.values(match.players||{}).forEach(function(p){
+      if(p.team===teamName&&p.num===playerKey)p.name=newName;
+    });
+    Object.values(match.pitchers||{}).forEach(function(p){
+      if(p.team===teamName&&p.num===playerKey)p.name=newName;
+    });
+  });
+
+  pushOpponents('Joueur renommé #'+playerKey+': '+oldName+' → '+newName,function(){
+    renderOpponentTeamsList();
+  },'opp-teams-msg');
+}
+
+// ── Rendre la liste des équipes enregistrées ──
+function renderOpponentTeamsList() {
+  var el = document.getElementById('opp-teams-list');
+  if (!el) return;
+  var keys = Object.keys(opponents.teams || {});
+  if (!keys.length) {
+    el.innerHTML = '<p style="color:var(--gr);font-size:13px;text-align:center;padding:1rem 0">Aucune équipe enregistrée.</p>';
+    return;
+  }
+  el.innerHTML = keys.sort().map(function(tk) {
+    var team = opponents.teams[tk];
+    var players = team.players || {};
+    var playerKeys = Object.keys(players);
+    var mCount = opponents.matches.filter(function(m){return m.team1===team.name||m.team2===team.name;}).length;
+    var safeKey = tk.replace(/['"]/g,'');
+    var unknownCount = playerKeys.filter(function(k){return players[k].startsWith('Joueur #');}).length;
+
+    var html='<div class="mi" id="opp-team-row-'+safeKey+'">'
+      +'<div class="opp-team-name" style="flex:1;">'
+      +  '<div style="font-weight:600;">'+team.name+'</div>'
+      +  '<div style="font-size:11px;color:var(--gr);">'+playerKeys.length+' joueur(s) &bull; '+mCount+' match(s)'
+      +  (unknownCount?' &bull; <span style="color:var(--yl);">'+unknownCount+' sans nom</span>':'')
+      +  '</div>'
+      +'</div>'
+      +'<div class="opp-team-edit-wrap" style="display:none;flex:1;gap:.4rem;align-items:center;">'
+      +  '<input type="text" id="opp-team-inp-'+safeKey+'" class="inp" value="'+team.name.replace(/"/g,'&quot;')+'" style="flex:1;font-size:12px;">'
+      +  '<button class="btn-s" style="font-size:12px;padding:6px 10px;" onclick="saveRenameTeam(\''+safeKey+'\')">&#10003;</button>'
+      +  '<button class="btn-s" style="font-size:12px;padding:6px 10px;" onclick="cancelRenameTeam(\''+safeKey+'\')">&#10005;</button>'
+      +'</div>'
+      +'<div class="mi-a">'
+      +  (playerKeys.length?'<button class="btn-e" onclick="toggleTeamPlayers(\''+safeKey+'\')" id="opp-team-toggle-'+safeKey+'">&#9654; Joueurs</button>':'')
+      +  '<button class="btn-e" onclick="startRenameTeam(\''+safeKey+'\')">&#9998; Renommer</button>'
+      +'</div>'
+      +'</div>';
+
+    if(playerKeys.length){
+      html+='<div id="opp-team-players-'+safeKey+'" style="display:none;margin:0 0 .5rem 0;">';
+      playerKeys.sort(function(a,b){
+        var na=parseInt(a)||99999, nb=parseInt(b)||99999;
+        return na-nb;
+      }).forEach(function(pk){
+        var pname=players[pk];
+        var isUnknown=pname.startsWith('Joueur #');
+        var safePk=pk.replace(/['"]/g,'');
+        html+='<div class="mi" style="margin-left:1rem;padding:.5rem 1rem;background:rgba(0,0,0,.2);">'
+          +'<div style="min-width:40px;font-size:11px;color:var(--gr);">#'+pk+'</div>'
+          +'<div id="opp-player-lbl-'+safeKey+'-'+safePk+'" style="flex:1;font-size:12px;'+(isUnknown?'color:var(--yl);':'')+'">'+pname+'</div>'
+          +'<div id="opp-player-edit-'+safeKey+'-'+safePk+'" style="display:none;flex:1;gap:.4rem;align-items:center;">'
+          +  '<input type="text" id="opp-player-inp-'+safeKey+'-'+safePk+'" class="inp" value="'+pname.replace(/"/g,'&quot;')+'" style="flex:1;font-size:12px;" placeholder="Prénom Nom">'
+          +  '<button class="btn-s" style="font-size:12px;padding:5px 8px;" onclick="saveRenamePlayer(\''+safeKey+'\',\''+safePk+'\')">&#10003;</button>'
+          +  '<button class="btn-s" style="font-size:12px;padding:5px 8px;" onclick="cancelRenamePlayer(\''+safeKey+'\',\''+safePk+'\')">&#10005;</button>'
+          +'</div>'
+          +'<button class="btn-e" style="font-size:11px;padding:4px 8px;" onclick="startRenamePlayer(\''+safeKey+'\',\''+safePk+'\')">&#9998;</button>'
+          +'</div>';
+      });
+      html+='</div>';
+    }
+    return html;
+  }).join('');
+}
+
+function toggleTeamPlayers(teamKey){
+  var el=document.getElementById('opp-team-players-'+teamKey);
+  var btn=document.getElementById('opp-team-toggle-'+teamKey);
+  if(!el)return;
+  var open=el.style.display==='none';
+  el.style.display=open?'block':'none';
+  if(btn)btn.innerHTML=open?'&#9660; Joueurs':'&#9654; Joueurs';
+}
+
+// ── Construire les options du menu déroulant des équipes ──
+function buildTeamDropdownOptions(detectedName, selectId) {
+  var sel = document.getElementById(selectId);
+  if (!sel) return;
+  var existing = Object.keys(opponents.teams);
+  var options = '';
+  options += '<option value="__new__">✦ Nouvelle équipe : « ' + detectedName + ' »</option>';
+  if (existing.length) {
+    options += '<optgroup label="─── Équipes existantes ───">';
+    existing.sort().forEach(function(tk) {
+      var team = opponents.teams[tk];
+      var playerCount = Object.keys(team.players || {}).length;
+      var label = team.name + (playerCount ? ' (' + playerCount + ' joueurs)' : '');
+      var selected = nameSimilarity(normalizeName(detectedName), normalizeName(team.name)) > 0.5 ? ' selected' : '';
+      options += '<option value="' + tk + '"' + selected + '>' + label + '</option>';
+    });
+    options += '</optgroup>';
+  }
+  sel.innerHTML = options;
+}
+
+// ── Détecter les équipes et peupler les dropdowns ──
+function detectTeamMappings() {
+  var summaryText = document.getElementById('opp-summary').value.trim();
+  if (!summaryText) { showMsg('opp-msg', 'er', 'Collez d\'abord le résumé du match.'); return; }
+  try {
+    var teams = detectTeamsFromSummary(summaryText);
+    if (!teams.top || !teams.bottom) throw new Error('Impossible de détecter les deux équipes. Vérifiez le format du résumé.');
+    document.getElementById('opp-t1-detected').textContent = teams.top;
+    document.getElementById('opp-t2-detected').textContent = teams.bottom;
+    buildTeamDropdownOptions(teams.top, 'opp-t1-map');
+    buildTeamDropdownOptions(teams.bottom, 'opp-t2-map');
+    document.getElementById('opp-team-mapping').style.display = 'block';
+    var t1Sel = document.getElementById('opp-t1-map').value;
+    var t2Sel = document.getElementById('opp-t2-map').value;
+    var msgs = [];
+    if (t1Sel !== '__new__') msgs.push('« ' + teams.top + ' » → mappé vers « ' + opponents.teams[t1Sel].name + ' »');
+    if (t2Sel !== '__new__') msgs.push('« ' + teams.bottom + ' » → mappé vers « ' + opponents.teams[t2Sel].name + ' »');
+    if (msgs.length) showMsg('opp-msg', 'inf', '🔗 Correspondance automatique : ' + msgs.join(' | ') + ' — Vérifiez et ajustez si nécessaire.');
+    else showMsg('opp-msg', 'ok', '✅ Équipes détectées. Ajustez les menus si nécessaire puis cliquez Analyser.');
+  } catch(e) { showMsg('opp-msg', 'er', e.message); }
+}
+
+// ── Résoudre le nom canonique d'une équipe selon le dropdown ──
+function resolveTeamName(detectedName, selectId) {
+  var sel = document.getElementById(selectId);
+  var customInp = document.getElementById(selectId.replace('-map', '-custom'));
+  if (!sel) return { canonical: detectedName, key: null, isNew: true };
+  var val = sel.value;
+  if (val === '__new__' || !val) {
+    var customName = customInp && customInp.value.trim() ? customInp.value.trim() : detectedName;
+    return { canonical: customName, key: null, isNew: true };
+  }
+  var team = opponents.teams[val];
+  return { canonical: team ? team.name : detectedName, key: val, isNew: false };
+}
+
+// ── BOUTON ANALYSER ──
+function analyzeOpponentMatch(){
+  var date=document.getElementById('opp-date').value;
+  var summaryText=document.getElementById('opp-summary').value.trim();
+  var lineupText=document.getElementById('opp-lineup').value.trim();
+  if(!date){showMsg('opp-msg','er','La date du match est requise.');return;}
+  if(!summaryText){showMsg('opp-msg','er','Collez d\'abord le résumé du match.');return;}
+
+  try{
+    var mappingVisible = document.getElementById('opp-team-mapping').style.display !== 'none';
+    if (!mappingVisible) {
+      detectTeamMappings();
+      if (document.getElementById('opp-team-mapping').style.display === 'none') return;
+    }
+
+    var rawTeams = detectTeamsFromSummary(summaryText);
+    var r1 = resolveTeamName(rawTeams.top, 'opp-t1-map');
+    var r2 = resolveTeamName(rawTeams.bottom, 'opp-t2-map');
+    var canonicalT1 = r1.canonical;
+    var canonicalT2 = r2.canonical;
+
+    function enrichLineupFromExisting(teamKey, playersByTeamName) {
+      if (!teamKey || !opponents.teams[teamKey]) return;
+      var existingPlayers = opponents.teams[teamKey].players || {};
+      Object.keys(existingPlayers).forEach(function(num) {
+        var name = existingPlayers[num];
+        var norm = normalizeName(name);
+        if (!playersByTeamName[norm]) {
+          playersByTeamName[norm] = { name: name, num: num };
+        }
+      });
+    }
+
+    var parsed = parseMatchSummaryOpp(summaryText, lineupText, canonicalT1, canonicalT2);
+
+    var playersByTeam = extractPlayersByTeamFromSummary(summaryText);
+    if (!r1.isNew) enrichLineupFromExisting(r1.key, playersByTeam[rawTeams.top] ? {} : {});
+    if (!r2.isNew) enrichLineupFromExisting(r2.key, playersByTeam[rawTeams.bottom] ? {} : {});
+
+    function remapPlayerNums(teamKey, battingTeam) {
+      if (!teamKey || !opponents.teams[teamKey]) return;
+      var existing = opponents.teams[teamKey].players || {};
+      Object.keys(parsed.players).forEach(function(pid) {
+        var p = parsed.players[pid];
+        if (p.team !== battingTeam) return;
+        if (p.num) return;
+        Object.keys(existing).forEach(function(num) {
+          if (nameSimilarity(normalizeName(p.name), normalizeName(existing[num])) > 0.6) {
+            p.num = num;
+            var tk = p.team.toLowerCase().replace(/\s+/g,'_').replace(/[^a-z0-9_]/g,'').substring(0,20);
+            var newId = tk + '_' + num;
+            if (newId !== pid) {
+              parsed.players[newId] = p;
+              delete parsed.players[pid];
+            }
+          }
+        });
+      });
+      Object.keys(parsed.pitchers).forEach(function(pid) {
+        var p = parsed.pitchers[pid];
+        if (p.team !== battingTeam) return;
+        if (p.num) return;
+        Object.keys(existing).forEach(function(num) {
+          if (nameSimilarity(normalizeName(p.name), normalizeName(existing[num])) > 0.6) {
+            p.num = num;
+            var tk = p.team.toLowerCase().replace(/\s+/g,'_').replace(/[^a-z0-9_]/g,'').substring(0,20);
+            var newId = tk + '_' + num;
+            if (newId !== pid) {
+              parsed.pitchers[newId] = p;
+              delete parsed.pitchers[pid];
+            }
+          }
+        });
+      });
+    }
+    remapPlayerNums(r1.key, canonicalT1);
+    remapPlayerNums(r2.key, canonicalT2);
+
+    var gameNum = parseInt(document.getElementById('opp-game-num').value) || 1;
+    var baseId = date+'_'+normalizeName(canonicalT1).replace(/\s/g,'_')+'_vs_'+normalizeName(canonicalT2).replace(/\s/g,'_');
+    var matchId = gameNum > 1 ? baseId + '_g' + gameNum : baseId;
+    checkGameNumConflict(baseId);
+    var overwrite=document.getElementById('opp-overwrite').checked;
+    var existingIdx=opponents.matches.findIndex(function(m){return m.id===matchId;});
+    if(existingIdx!==-1&&!overwrite){
+      showMsg('opp-msg','er','⚠️ Ce match a déjà été importé. Cochez « Écraser » pour le remplacer.');
+      return;
+    }
+
+    oppParsed={id:matchId,date:date,gameNum:gameNum,team1:canonicalT1,team2:canonicalT2,
+      team1Key:r1.key,team2Key:r2.key,
+      parserVersion:PARSER_VERSION,score:parsed.score,
+      players:parsed.players,pitchers:parsed.pitchers,
+      unknownEvents:parsed.unknownEvents,existingIdx:existingIdx};
+
+    var pks=Object.keys(parsed.players);
+    var ptks=Object.keys(parsed.pitchers);
+    var totalBIP=0;
+    pks.forEach(function(k){totalBIP+=(parsed.players[k].battedBalls||[]).length;});
+
+    function teamStats(teamName){
+      var tpks=pks.filter(function(k){return parsed.players[k].team===teamName;});
+      var ab=0,h=0;
+      tpks.forEach(function(k){ab+=parsed.players[k].AB;h+=parsed.players[k].H;});
+      var avg=ab>0?('.'+String(Math.round(h/ab*1000)).padStart(3,'0')):'.000';
+      return{pks:tpks,ab:ab,h:h,avg:avg};
+    }
+    var s1=teamStats(canonicalT1),s2=teamStats(canonicalT2);
+
+    var html='<strong>'+canonicalT1+'</strong> vs <strong>'+canonicalT2+'</strong>';
+    if(gameNum>1)html+=' &mdash; <span style="color:var(--gn);">Partie '+gameNum+' de la journée</span>';
+    if(parsed.score.lastLine)html+=' &mdash; Score: '+parsed.score.lastLine;
+    if(!r1.isNew)html+='<br><span style="color:var(--gn);font-size:11px;">🔗 '+rawTeams.top+' → mappé vers équipe existante « '+canonicalT1+' »</span>';
+    if(!r2.isNew)html+='<br><span style="color:var(--gn);font-size:11px;">🔗 '+rawTeams.bottom+' → mappé vers équipe existante « '+canonicalT2+' »</span>';
+    html+='<br><br>';
+
+    [{label:canonicalT1,s:s1,pitchers:ptks.filter(function(k){return parsed.pitchers[k].team===canonicalT1;})},
+     {label:canonicalT2,s:s2,pitchers:ptks.filter(function(k){return parsed.pitchers[k].team===canonicalT2;})}
+    ].forEach(function(g){
+      html+='<strong>'+g.label+'</strong> &mdash; '+g.s.pks.length+' frappeurs | AB: '+g.s.ab+' H: '+g.s.h+' AVG: '+g.s.avg+'<br>';
+      g.s.pks.forEach(function(k){
+        var p=parsed.players[k];
+        var noNum=!p.num;
+        html+='&nbsp;&nbsp;'+(noNum?'<span style="color:var(--yl);">&#9888; ':'')+(p.num?'#'+p.num+' ':'')+p.name+' &mdash; '+p.AB+'AB '+p.H+'H '+p.BB+'BB '+p.SO+'K &bull; '+p.battedBalls.length+' BEJ'+(noNum?' (num&eacute;ro non r&eacute;solu)</span>':'')+'<br>';
+      });
+      if(g.pitchers.length){
+        html+='&nbsp;&nbsp;<em>Lanceurs:</em><br>';
+        g.pitchers.forEach(function(k){
+          var p=parsed.pitchers[k];
+          var ip=Math.floor(p.outs/3)+'.'+(p.outs%3);
+          html+='&nbsp;&nbsp;'+(p.num?'#'+p.num+' ':'')+p.name+' &mdash; '+ip+'IP '+p.R+'R '+p.H+'H '+p.BB+'BB '+p.SO+'K | '+p.balls+'B '+p.strikes+'S<br>';
+        });
+      } else {
+        html+='&nbsp;&nbsp;<span style="color:#ffaa00;">⚠️ Aucun lanceur détecté</span><br>';
+      }
+      html+='<br>';
+    });
+    html+='<strong>Balles en jeu totales (spray chart): '+totalBIP+'</strong>';
+    if(parsed.unknownEvents&&parsed.unknownEvents.length){
+      html+='<br><span style="color:#ffaa00;">⚠️ '+parsed.unknownEvents.length+' événement(s) non reconnu(s)</span>';
+    }
+
+    var pv=document.getElementById('opp-preview');
+    pv.innerHTML=html;pv.style.display='block';
+    document.getElementById('opp-save-btn').disabled=false;
+    showMsg('opp-msg',existingIdx!==-1?'inf':'ok',
+      existingIdx!==-1?'⚠️ Ce match existe déjà — il sera écrasé à la publication.':'✅ Analyse réussie. Vérifiez l\'aperçu et publiez.');
+  }catch(e){
+    showMsg('opp-msg','er','Erreur d\'analyse : '+e.message);
+    console.error(e);
+  }
+}
+
+
+function saveOpponentMatch(){
+  if(!oppParsed){showMsg('opp-msg','er','Analysez d\'abord un match.');return;}
+  var t=getTok();if(!t){showMsg('opp-msg','er','Token GitHub manquant.');return;}
+  document.getElementById('opp-save-btn').disabled=true;
+  var newMatch={id:oppParsed.id,date:oppParsed.date,gameNum:oppParsed.gameNum||1,
+    team1:oppParsed.team1,team2:oppParsed.team2,
+    parserVersion:oppParsed.parserVersion,score:oppParsed.score,
+    players:oppParsed.players,pitchers:oppParsed.pitchers,
+    unknownEvents:oppParsed.unknownEvents};
+  if(oppParsed.existingIdx!==-1){opponents.matches[oppParsed.existingIdx]=newMatch;}
+  else{opponents.matches.push(newMatch);}
+  [
+    {name:oppParsed.team1, key:oppParsed.team1Key},
+    {name:oppParsed.team2, key:oppParsed.team2Key}
+  ].forEach(function(entry){
+    var teamName=entry.name;
+    var tk=entry.key||normalizeName(teamName).replace(/\s+/g,'_');
+    if(!opponents.teams[tk])opponents.teams[tk]={name:teamName,players:{}};
+    else opponents.teams[tk].name=teamName;
+    Object.keys(oppParsed.players).forEach(function(k){
+      var p=oppParsed.players[k];
+      if(p.team!==teamName)return;
+      var regKey=p.num?p.num:normalizeName(p.name).replace(/\s/g,'_');
+      opponents.teams[tk].players[regKey]=p.name;
+    });
+    Object.keys(oppParsed.pitchers).forEach(function(k){
+      var p=oppParsed.pitchers[k];
+      if(p.team!==teamName)return;
+      var regKey=p.num?p.num:normalizeName(p.name).replace(/\s/g,'_');
+      if(!opponents.teams[tk].players[regKey])
+        opponents.teams[tk].players[regKey]=p.name;
+    });
+  });
+  pushOpponents('Match importé: '+oppParsed.team1+' vs '+oppParsed.team2+' '+oppParsed.date,function(){
+    oppParsed=null;
+    document.getElementById('opp-save-btn').disabled=true;
+    document.getElementById('opp-preview').style.display='none';
+    document.getElementById('opp-team-mapping').style.display='none';
+    document.getElementById('opp-summary').value='';
+    document.getElementById('opp-lineup').value='';
+    document.getElementById('opp-game-num').value=1;
+    document.getElementById('opp-game-num-hint').style.display='none';
+    renderOpponentList();
+    renderOpponentTeamsList();
+  },'opp-msg');
+}
+
+function pushOpponents(msg,onSuccess,errId){
+  var t=getTok();if(!t){showMsg(errId||'opp-msg','er','Token manquant.');return;}
+  showMsg(errId||'opp-msg','inf','Enregistrement en cours\u2026');
+  fetch(OPPONENTS_API,{headers:{'Authorization':'token '+t,'Accept':'application/vnd.github.v3+json'}})
+    .then(function(r){if(r.status===404)return{_new:true};return r.json();})
+    .then(function(d){
+      var sha=d._new?null:d.sha;
+      var body=JSON.stringify(opponents,null,2);
+      var encoded=btoa(unescape(encodeURIComponent(body)));
+      var payload={message:'[Admin] '+msg+' \u2014 '+new Date().toLocaleDateString('fr-CA'),content:encoded};
+      if(sha)payload.sha=sha;
+      return fetch(OPPONENTS_API,{method:'PUT',
+        headers:{'Authorization':'token '+t,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'},
+        body:JSON.stringify(payload)});
+    })
+    .then(function(r){if(!r.ok)return r.json().then(function(e){throw new Error(e.message||'HTTP '+r.status);});return r.json();})
+    .then(function(){
+      showMsg(errId||'opp-msg','ok','\u2705 '+msg+' \u2014 publi\u00e9 sur GitHub !');
+      if(onSuccess)onSuccess();
+    })
+    .catch(function(e){
+      showMsg(errId||'opp-msg','er','\u274c Erreur : '+e.message);
+      if(document.getElementById('opp-save-btn'))document.getElementById('opp-save-btn').disabled=false;
+    });
+}
+
+function runMergeDuplicates(){
+  var merged=mergeOpponentTeamDuplicates();
+  if(!merged){showMsg('opp-teams-msg','inf','Aucun doublon trouvé.');return;}
+  pushOpponents('Doublons d\'équipes fusionnés',function(){
+    renderOpponentTeamsList();
+    renderOpponentList();
+    showMsg('opp-teams-msg','ok','✅ Doublons fusionnés et sauvegardés.');
+  },'opp-teams-msg');
+}
+
+function loadOpponents(){
+  var t=getTok();if(!t)return;
+  fetch(OPPONENTS_API,{headers:{'Authorization':'token '+t,'Accept':'application/vnd.github.v3+json'}})
+    .then(function(r){if(r.status===404){renderOpponentList();return null;}return r.json();})
+    .then(function(d){
+      if(!d)return;
+      var raw=decodeURIComponent(escape(atob(d.content.replace(/\n/g,''))));
+      opponents=JSON.parse(raw);
+      var hadDuplicates=mergeOpponentTeamDuplicates();
+      if(hadDuplicates){
+        pushOpponents('Auto-fusion doublons au chargement',function(){
+          renderOpponentList();renderOpponentTeamsList();
+        },'opp-teams-msg');
+      } else {
+        renderOpponentList();renderOpponentTeamsList();
+      }
+    })
+    .catch(function(){renderOpponentList();});
+}
+
+function deleteOpponentMatch(idx){
+  var m=opponents.matches[idx];
+  if(!confirm('Supprimer le match '+m.team1+' vs '+m.team2+' du '+m.date+' ?'))return;
+  opponents.matches.splice(idx,1);
+  pushOpponents('Match supprimé',function(){renderOpponentList();},'opp-list-msg');
+}
+
+function renderOpponentList(){
+  var el=document.getElementById('opp-list');
+  if(!opponents.matches||!opponents.matches.length){
+    el.innerHTML='<p style="color:var(--gr);font-size:13px;text-align:center;padding:1.5rem 0">Aucun match adversaire import\u00e9.</p>';
+    return;
+  }
+  var sorted=opponents.matches.map(function(m,i){return{m:m,i:i};})
+    .sort(function(a,b){return b.m.date.localeCompare(a.m.date);});
+  el.innerHTML=sorted.map(function(x){
+    var m=x.m,i=x.i;
+    var pCount=Object.keys(m.players||{}).length;
+    var ptCount=Object.keys(m.pitchers||{}).length;
+    var bip=0;Object.values(m.players||{}).forEach(function(p){bip+=(p.battedBalls||[]).length;});
+    var lbl=new Date(m.date+'T12:00:00').toLocaleDateString('fr-CA',{weekday:'short',year:'numeric',month:'short',day:'numeric'});
+    return '<div class="mi">'
+      +'<div class="mi-d">'+lbl+'</div>'
+      +'<div class="mi-t">'+(m.team1||'')+' vs '+(m.team2||'')+(m.gameNum>1?' <span style="font-size:11px;color:var(--gn);">(Partie '+m.gameNum+')</span>':'')+'</div>'
+      +'<span style="font-size:12px;color:var(--gr);">'+pCount+' frappeurs &bull; '+ptCount+' lanceurs &bull; '+bip+' BEJ</span>'
+      +(m.unknownEvents&&m.unknownEvents.length?'<span style="font-size:11px;color:#ffaa00;">\u26a0\ufe0f '+m.unknownEvents.length+'</span>':'')
+      +'<div class="mi-a"><button class="btn-d" onclick="deleteOpponentMatch('+i+')">&#10005; Supprimer</button></div>'
+      +'</div>';
+  }).join('');
+}
+
+// ── UTILITAIRES ──
+function showMsg(id,type,txt){
+  var el=document.getElementById(id);
+  if(!el) return;
+  el.className='msg '+type;
+  el.innerHTML=txt;
+  el.style.display='block';
+  if(type==='ok') setTimeout(function(){if(el) el.style.display='none';},6000);
+}
+
+// ── INIT ──
+var savedTok=getTok();
+if(savedTok){
+  document.getElementById('tok').value=savedTok.substring(0,8)+'…';
+  loadFromGitHub();
+}else{
+  document.getElementById('list').innerHTML='<p style="color:var(--gr);font-size:13px;">Entre ton token GitHub ci-dessus pour charger les données.</p>';
+}
+document.getElementById('m-date').valueAsDate=new Date();
+</script>
+</body>
+</html>
