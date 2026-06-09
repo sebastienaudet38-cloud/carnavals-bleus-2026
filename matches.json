@@ -1036,7 +1036,7 @@
       "sb": "9",
       "cs": "0",
       "hbp": "0",
-      "qabpct": 64,
+      "qabpct": 64.0,
       "xbh": "1",
       "tb": "14",
       "pitching": {
@@ -1379,7 +1379,7 @@
       "sb": "2",
       "cs": "1",
       "hbp": "0",
-      "qabpct": 52,
+      "qabpct": 52.0,
       "xbh": "4",
       "tb": "13",
       "pitching": {
