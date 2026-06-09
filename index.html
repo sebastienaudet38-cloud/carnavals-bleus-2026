@@ -859,33 +859,6 @@ table.stats tfoot td.mono{font-family:var(--mono);}
   </div>
 </div>
 
-<!-- TAB: GITHUB -->
-<div id="tab-github" class="tab-panel">
-  <div id="github-lock" class="lock-panel" style="display:none">
-    <div class="lock-box" onclick="openPwd('github')">
-      <span class="lock-ico">🔒</span>
-      <div class="lock-title">Publication GitHub</div>
-      <div class="lock-sub">Accès restreint — administrateur seulement</div>
-    </div>
-  </div>
-  <div id="github-pwd" class="pwd-panel" style="display:none">
-    <div class="pwd-box">
-      <div class="pwd-title">Accès administrateur</div>
-      <div class="pwd-sub">Cette section est réservée au staff de l'équipe.</div>
-      <input type="password" id="github-input" class="pwd-input" placeholder="Mot de passe admin…"
-        onkeydown="if(event.key==='Enter')checkPwd('github')">
-      <div class="pwd-actions">
-        <button class="pwd-submit" onclick="checkPwd('github')">Déverrouiller</button>
-        <button class="pwd-cancel" onclick="closePwd('github')">Annuler</button>
-      </div>
-      <div id="github-err" class="pwd-err"></div>
-    </div>
-  </div>
-  <div id="github-content" style="display:none">
-    <iframe id="github-iframe" src="" title="Publication GitHub"></iframe>
-  </div>
-</div>
-
 <!-- SPRAY CHART MODAL -->
 <div class="modal-bg" id="spray-modal" onclick="closeModal()">
   <div class="modal-inner" onclick="event.stopPropagation()">
@@ -952,15 +925,10 @@ async function checkPwd(sec) {
     }
   } else {
     if (_passwords.admin && _passwords.admin === hash) {
-      if (sec === 'adversaires') {
-        sessionStorage.setItem('cb_adversaires', '1');
-        unlockAdv();
-      } else {
-        sessionStorage.setItem('cb_github', '1');
-        unlockGithub();
-      }
+      sessionStorage.setItem('cb_adversaires', '1');
+      unlockAdv();
     } else {
-      showErr(sec, 'Mot de passe administrateur incorrect.');
+      showErr('adversaires', 'Mot de passe administrateur incorrect.');
     }
   }
 }
@@ -995,13 +963,6 @@ function unlockAdv() {
     const local = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
     iframe.src = local ? '/adversaires-embedded' : 'adversaires.html';
   }
-}
-function unlockGithub() {
-  document.getElementById('github-lock').style.display   = 'none';
-  document.getElementById('github-pwd').style.display    = 'none';
-  document.getElementById('github-content').style.display = '';
-  const iframe = document.getElementById('github-iframe');
-  if (!iframe.getAttribute('src')) iframe.src = 'github.html';
 }
 function lockStats() {
   sessionStorage.removeItem('cb_stats');
@@ -1540,7 +1501,7 @@ function esc(s) {
 // ── INIT ──────────────────────────────────────────────────────────────
 async function init() {
   // Show lock panels immediately
-  ['stats','adversaires','github'].forEach(sec => {
+  ['stats','adversaires'].forEach(sec => {
     document.getElementById(sec + '-lock').style.display = 'flex';
   });
 
@@ -1563,7 +1524,6 @@ async function init() {
       else sessionStorage.removeItem('cb_stats');
     }
     if (sessionStorage.getItem('cb_adversaires')) unlockAdv();
-    if (sessionStorage.getItem('cb_github')) unlockGithub();
   } catch(e) {
     console.error(e);
     const fm = document.getElementById('featured-match');
