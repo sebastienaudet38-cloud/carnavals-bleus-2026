@@ -297,8 +297,8 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
   display:block;font-family:var(--mono);font-size:28px;font-weight:700;
   color:var(--text);line-height:1;
 }
-.sp-val.good{color:var(--green);}
-.sp-val.era{color:var(--gold);}
+.sp-val.good{color:var(--text);}
+.sp-val.era{color:var(--text);}
 .sp-lbl{
   display:block;font-size:10px;letter-spacing:2px;
   text-transform:uppercase;color:var(--gray-l);margin-top:6px;
@@ -436,11 +436,11 @@ table.stats tbody td.l{text-align:left;padding-left:16px;}
 table.stats tbody td.num-cell{font-family:var(--mono);font-size:11px;color:var(--gray-l);}
 table.stats tbody td.name-cell{font-weight:600;min-width:130px;}
 table.stats tbody td.mono{font-family:var(--mono);}
-table.stats tbody td.hi{font-family:var(--mono);font-weight:700;color:var(--green);}
-table.stats tbody td.lo{font-family:var(--mono);color:var(--gray-l);}
-table.stats tbody td.era-hi{font-family:var(--mono);font-weight:700;color:var(--green);}
-table.stats tbody td.era-lo{font-family:var(--mono);color:var(--gray-l);}
-table.stats tbody td.era-md{font-family:var(--mono);font-weight:700;color:var(--gold);}
+table.stats tbody td.hi{font-family:var(--mono);font-weight:700;color:var(--text);}
+table.stats tbody td.lo{font-family:var(--mono);color:var(--text);}
+table.stats tbody td.era-hi{font-family:var(--mono);font-weight:700;color:var(--text);}
+table.stats tbody td.era-lo{font-family:var(--mono);color:var(--text);}
+table.stats tbody td.era-md{font-family:var(--mono);font-weight:700;color:var(--text);}
 table.stats tbody tr:hover td{background:#fef5f5;cursor:pointer;}
 table.stats tbody tr.sel td{background:#fee2e2;}
 table.stats tfoot td{background:var(--bg);font-weight:700;font-size:12px;
@@ -461,9 +461,9 @@ table.stats tfoot td.mono{font-family:var(--mono);}
 .pc-big-stats{margin-left:auto;display:flex;gap:16px;}
 .pbs-item{text-align:center;}
 .pbs-val{font-family:var(--mono);font-size:28px;font-weight:700;line-height:1;}
-.pbs-val.good{color:var(--green);}
-.pbs-val.mid{color:var(--gold);}
-.pbs-val.lo{color:var(--gray);}
+.pbs-val.good{color:var(--text);}
+.pbs-val.mid{color:var(--text);}
+.pbs-val.lo{color:var(--text);}
 .pbs-lbl{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gray-l);margin-top:3px;}
 .pc-body{display:grid;grid-template-columns:1fr 220px;gap:24px;align-items:start;}
 .pc-stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
@@ -1184,8 +1184,8 @@ function renderStat(t, matches) {
   const hsEl = document.getElementById('home-stats-bar');
   if (hsEl) hsEl.innerHTML = `
     <div class="stat-pill"><span class="sp-val">${rec}</span><span class="sp-lbl">Fiche</span></div>
-    <div class="stat-pill"><span class="sp-val good">${t.avg||'—'}</span><span class="sp-lbl">MOY équipe</span></div>
-    <div class="stat-pill"><span class="sp-val era">${t.era||'—'}</span><span class="sp-lbl">MPM équipe</span></div>
+    <div class="stat-pill"><span class="sp-val">${t.avg||'—'}</span><span class="sp-lbl">MOY équipe</span></div>
+    <div class="stat-pill"><span class="sp-val">${t.era||'—'}</span><span class="sp-lbl">MPM équipe</span></div>
     <div class="stat-pill"><span class="sp-val">${t.sb||'—'}</span><span class="sp-lbl">Buts volés</span></div>
     <div class="stat-pill"><span class="sp-val">${t.hits||'—'}</span><span class="sp-lbl">Coups sûrs</span></div>
     <div class="stat-pill"><span class="sp-val">${gp||'—'}</span><span class="sp-lbl">PJ</span></div>`;
@@ -1285,7 +1285,7 @@ function renderAllStats(players) {
   });
   document.getElementById('bat-tbody').innerHTML = sorted.map(p => {
     const av = parseRate(p.avg);
-    const avgCls = av >= 0.350 ? 'hi' : av >= 0.250 ? 'mono' : 'lo';
+    const avgCls = 'mono';
     return `<tr onclick="openSprayModal('${p.num}')" title="Spray chart de ${esc(p.first)} ${esc(p.last)}">
       <td class="num-cell">${esc(p.num)}</td>
       <td class="l name-cell">${esc(p.last)}, ${esc(p.first)}</td>
@@ -1302,7 +1302,7 @@ function renderAllStats(players) {
   document.getElementById('pit-tbody').innerHTML = pitchers.map(p => {
     const pit = p.pitching;
     const era = parseFloat(pit.era || 99);
-    const eraCls = era < 3 ? 'era-hi' : era > 6 ? 'era-lo' : 'era-md';
+    const eraCls = 'mono';
     const whipN = parseFloat(pit.whip || 99);
     return `<tr>
       <td class="num-cell">${esc(p.num)}</td>
@@ -1321,8 +1321,8 @@ function renderAllStats(players) {
 function renderPlayerCard(p) {
   const av = parseRate(p.avg);
   const opsV = parseRate(p.ops);
-  const avgCls = av >= 0.350 ? 'good' : av >= 0.250 ? 'mid' : 'lo';
-  const opsCls = opsV >= 0.900 ? 'good' : opsV >= 0.700 ? 'mid' : 'lo';
+  const avgCls = '';
+  const opsCls = '';
   const spray = (_data && _data.spraycharts && _data.spraycharts[p.num]) || [];
   const pit = p.pitching;
   const hasPit = pit && parseFloat(pit.ip||0) > 0;
@@ -1337,7 +1337,7 @@ function renderPlayerCard(p) {
         <td>${pit.h_p||0}</td><td>${pit.r_p||0}</td><td>${pit.er||0}</td>
         <td>${pit.so_p||0}</td><td>${pit.bb_p||0}</td>
         <td class="mono">${pit.whip||'—'}</td>
-        <td style="font-weight:700;color:var(--blue)">${pit.era||'—'}</td>
+        <td style="font-weight:700">${pit.era||'—'}</td>
       </tr></tbody>
     </table></div></div>` : '';
   document.getElementById('player-card-content').innerHTML = `
