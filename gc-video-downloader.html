@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GC Video Downloader</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f5f5f0;
+    color: #1a1a1a;
+    padding: 2rem;
+    min-height: 100vh;
+  }
+  h1 { font-size: 20px; font-weight: 500; margin-bottom: 6px; }
+  .subtitle { font-size: 14px; color: #666; margin-bottom: 1.5rem; }
+  .card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    max-width: 860px;
+  }
+  label { font-size: 13px; color: #555; display: block; margin-bottom: 6px; }
+  textarea, input[type="text"] {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 12px;
+    background: #fafaf8;
+    color: #1a1a1a;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  textarea:focus, input[type="text"]:focus { border-color: #888; }
+  input[type="text"] { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; height: 38px; }
+  .row { display: flex; gap: 10px; margin-top: 10px; align-items: center; }
+  button {
+    padding: 8px 18px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+    color: #1a1a1a;
+    transition: background 0.1s;
+    white-space: nowrap;
+  }
+  button:hover { background: #f0f0ec; }
+  button.primary { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+  button.primary:hover { background: #333; }
+  button.small { padding: 4px 12px; font-size: 12px; }
+  .result-card { display: none; }
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 1rem;
+  }
+  .info-block {
+    background: #f5f5f0;
+    border-radius: 8px;
+    padding: 10px 14px;
+  }
+  .info-block .label { font-size: 12px; color: #888; margin-bottom: 4px; }
+  .info-block .value { font-size: 13px; font-weight: 500; word-break: break-all; }
+  .info-block .value.mono { font-family: monospace; font-weight: 400; font-size: 12px; }
+  .output-wrap { position: relative; margin-bottom: 1rem; }
+  .output-wrap textarea { padding-right: 80px; }
+  .copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 3px 10px;
+    font-size: 12px;
+  }
+  .error {
+    background: #fff0f0;
+    border: 1px solid #f0c0c0;
+    border-radius: 6px;
+    padding: 10px 14px;
+    color: #c00;
+    font-size: 13px;
+    margin-top: 10px;
+    display: none;
+  }
+  .section-title { font-size: 13px; color: #555; margin-bottom: 6px; }
+  .expiry-ok { color: #1a7a1a; }
+  .expiry-warn { color: #c07000; }
+  .expiry-bad { color: #c00000; }
+  .history-entry {
+    background: #f9f9f6;
+    border: 1px solid #e8e8e4;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    font-size: 13px;
+  }
+  .history-entry .ts { color: #999; font-size: 11px; }
+  .history-entry .cmd { font-family: monospace; font-size: 11px; color: #444; margin-top: 4px; word-break: break-all; }
+  .history-entry .copy-hist { float: right; }
+  h2 { font-size: 16px; font-weight: 500; margin-bottom: 10px; }
+  #history-section { display: none; }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    background: #e8f0e8;
+    color: #2a6a2a;
+    margin-left: 8px;
+  }
+  .badge.warn { background: #fff0d8; color: #8a5000; }
+</style>
+</head>
+<body>
+
+<h1>GC Video Downloader <span class="badge" id="history-badge" style="display:none"></span></h1>
+<p class="subtitle">Génère la commande yt-dlp à partir d'un script PowerShell copié depuis Edge DevTools</p>
+
+<div class="card">
+  <label>Script PowerShell (F12 → Network → clic droit sur une requête vod-archive → Copy → Copy as PowerShell)</label>
+  <textarea id="ps-input" rows="8" placeholder="Colle ici le contenu PowerShell..."></textarea>
+  <div class="row" style="margin-top:10px;">
+    <input type="text" id="out-name" placeholder="Nom du fichier de sortie (ex: match-2026-05-17)" style="flex:1;" />
+  </div>
+  <div class="row" style="margin-top:8px;">
+    <input type="text" id="ffmpeg-path" placeholder="Chemin ffmpeg (optionnel, ex: C:\Users\sebas\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_...\bin)" style="flex:1; font-size:11px;" />
+  </div>
+  <div class="row">
+    <button class="primary" onclick="generate()">⚙ Générer</button>
+    <button onclick="clearAll()">Effacer</button>
+  </div>
+  <div class="error" id="error-msg"></div>
+</div>
+
+<div class="card result-card" id="result-card">
+  <h2>Résultat</h2>
+  <div class="info-grid" id="info-grid"></div>
+
+  <p class="section-title">Commande yt-dlp :</p>
+  <div class="output-wrap">
+    <textarea id="cmd-output" rows="3" readonly></textarea>
+    <button class="small copy-btn" onclick="copyText('cmd-output', this)">Copier</button>
+  </div>
+
+  <p class="section-title">Contenu cookies.txt (à sauvegarder dans votre dossier Téléchargements) :</p>
+  <div class="output-wrap">
+    <textarea id="cookie-output" rows="4" readonly></textarea>
+    <button class="small copy-btn" onclick="copyText('cookie-output', this)">Copier</button>
+  </div>
+
+
+</div>
+
+<div class="card" id="history-section">
+  <h2>Historique</h2>
+  <div id="history-list"></div>
+  <button onclick="clearHistory()" style="margin-top: 6px; font-size: 12px; color: #999;">Effacer l'historique</button>
+</div>
+
+<script>
+let history = JSON.parse(localStorage.getItem('gc-dl-history') || '[]');
+
+function extract(ps, patterns) {
+  for (const p of patterns) {
+    const m = ps.match(p);
+    if (m && m[1]) return m[1];
+  }
+  return null;
+}
+
+function generate() {
+  const ps = document.getElementById('ps-input').value;
+  const outName = document.getElementById('out-name').value.trim() || 'video';
+  const ffmpegPath = document.getElementById('ffmpeg-path').value.trim();
+  const errEl = document.getElementById('error-msg');
+  errEl.style.display = 'none';
+
+  const kp = extract(ps, [
+    /New-Object System\.Net\.Cookie\("CloudFront-Key-Pair-Id",\s*"([^"]+)"/,
+    /CloudFront-Key-Pair-Id=([A-Z0-9]+)/
+  ]);
+  const sig = extract(ps, [
+    /New-Object System\.Net\.Cookie\("CloudFront-Signature",\s*"([^"]+)"/,
+    /CloudFront-Signature=([^\s;&"]+)/
+  ]);
+  const pol = extract(ps, [
+    /New-Object System\.Net\.Cookie\("CloudFront-Policy",\s*"([^"]+)"/,
+    /CloudFront-Policy=([^\s;&"]+)/
+  ]);
+
+  // Essaie d'abord l'URL stream complète (streams/st-...), sinon fallback sur master.m3u8
+  let baseUrl = null;
+  let urlType = '';
+  const streamMatch = ps.match(/https:\/\/vod-archive\.gc\.com\/ivs\/v1\/[^\s"\\]+streams\/st-[^\s"\\]+?\.m3u8/);
+  if (streamMatch) {
+    baseUrl = streamMatch[0];
+    urlType = 'stream';
+  } else {
+    const vodMatch = ps.match(/https:\/\/vod-archive\.gc\.com\/ivs\/v1\/[^\s"\\]+?\/media\/hls\//);
+    if (vodMatch) {
+      baseUrl = vodMatch[0] + 'master.m3u8';
+      urlType = 'master';
+    }
+  }
+
+  const errors = [];
+  if (!kp) errors.push('CloudFront-Key-Pair-Id introuvable');
+  if (!sig) errors.push('CloudFront-Signature introuvable');
+  if (!pol) errors.push('CloudFront-Policy introuvable');
+  if (!baseUrl) errors.push('URL vod-archive.gc.com introuvable');
+
+  if (errors.length > 0) {
+    errEl.textContent = 'Erreur : ' + errors.join(', ');
+    errEl.style.display = 'block';
+    return;
+  }
+
+  let exp = 9999999999;
+  try {
+    const padded = pol.replace(/-/g, '+').replace(/_/g, '/');
+    const json = JSON.parse(atob(padded + '=='.slice(0, (4 - padded.length % 4) % 4)));
+    exp = json.Statement[0].Condition.DateLessThan['AWS:EpochTime'];
+  } catch(e) {}
+
+  const expDate = new Date(exp * 1000);
+  const now = new Date();
+  const hoursLeft = Math.round((expDate - now) / 3600000);
+  const expStr = expDate.toLocaleString('fr-CA');
+  const expClass = hoursLeft > 4 ? 'expiry-ok' : hoursLeft > 0 ? 'expiry-warn' : 'expiry-bad';
+  const expLabel = hoursLeft > 0 ? `(${hoursLeft}h restantes)` : '(expiré!)';
+
+  const cookieTxt = `# Netscape HTTP Cookie File\nvod-archive.gc.com\tFALSE\t/\tTRUE\t${exp}\tCloudFront-Key-Pair-Id\t${kp}\nvod-archive.gc.com\tFALSE\t/\tTRUE\t${exp}\tCloudFront-Signature\t${sig}\nvod-archive.gc.com\tFALSE\t/\tTRUE\t${exp}\tCloudFront-Policy\t${pol}`;
+
+  const ffmpegArg = ffmpegPath ? ` --ffmpeg-location "${ffmpegPath}"` : '';
+  const cmd = `yt-dlp --cookies "c:\\temp\\cookies.txt" --add-header "Referer: https://web.gc.com/" --downloader ffmpeg --downloader-args "ffmpeg:-c copy"${ffmpegArg} -o "${outName}.mp4" "${baseUrl}"`;
+
+  document.getElementById('cmd-output').value = cmd;
+  document.getElementById('cookie-output').value = cookieTxt;
+
+  const urlTypeBadge = urlType === 'stream'
+    ? `<span style="color:#1a7a1a;font-size:11px;"> ✓ URL stream complète</span>`
+    : `<span style="color:#c07000;font-size:11px;"> ⚠ URL master.m3u8 (fallback)</span>`;
+
+  document.getElementById('info-grid').innerHTML = `
+    <div class="info-block">
+      <div class="label">URL détectée ${urlTypeBadge}</div>
+      <div class="value mono">${baseUrl}</div>
+    </div>
+    <div class="info-block">
+      <div class="label">Expiration cookies</div>
+      <div class="value ${expClass}">${expStr} ${expLabel}</div>
+    </div>
+    <div class="info-block">
+      <div class="label">Key-Pair-Id</div>
+      <div class="value mono">${kp}</div>
+    </div>
+    <div class="info-block">
+      <div class="label">Fichier de sortie</div>
+      <div class="value">${outName}.mp4</div>
+    </div>`;
+
+  document.getElementById('result-card').style.display = 'block';
+
+  window._cookieTxt = cookieTxt;
+  window._outName = outName;
+
+  const entry = {
+    ts: new Date().toLocaleString('fr-CA'),
+    name: outName,
+    cmd: cmd,
+    url: baseUrl
+  };
+  history.unshift(entry);
+  if (history.length > 20) history = history.slice(0, 20);
+  localStorage.setItem('gc-dl-history', JSON.stringify(history));
+  renderHistory();
+}
+
+function downloadCookies() {
+  if (!window._cookieTxt) return;
+  const blob = new Blob([window._cookieTxt], { type: 'text/plain' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'cookies.txt';
+  a.click();
+}
+
+function copyText(id, btn) {
+  navigator.clipboard.writeText(document.getElementById(id).value);
+  const orig = btn.textContent;
+  btn.textContent = 'Copié!';
+  setTimeout(() => btn.textContent = orig, 1500);
+}
+
+function clearAll() {
+  document.getElementById('ps-input').value = '';
+  document.getElementById('out-name').value = '';
+  document.getElementById('result-card').style.display = 'none';
+  document.getElementById('error-msg').style.display = 'none';
+}
+
+function renderHistory() {
+  const sec = document.getElementById('history-section');
+  const list = document.getElementById('history-list');
+  const badge = document.getElementById('history-badge');
+  if (history.length === 0) { sec.style.display = 'none'; return; }
+  sec.style.display = 'block';
+  badge.style.display = 'inline-block';
+  badge.textContent = history.length + ' vidéos';
+  list.innerHTML = history.map((e, i) => `
+    <div class="history-entry">
+      <button class="small copy-hist" onclick="copyHist(${i})">Copier cmd</button>
+      <strong>${e.name}.mp4</strong> <span class="ts">${e.ts}</span>
+      <div class="cmd">${e.cmd}</div>
+    </div>`).join('');
+}
+
+function copyHist(i) {
+  navigator.clipboard.writeText(history[i].cmd);
+}
+
+function clearHistory() {
+  history = [];
+  localStorage.removeItem('gc-dl-history');
+  renderHistory();
+}
+
+renderHistory();
+</script>
+</body>
+</html>
