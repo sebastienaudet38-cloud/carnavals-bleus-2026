@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classement 13U AA – Québec</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0a0a0a;--ink:#1a1a1a;--g2:#555;--g3:#888;--g4:#bbb;
+  --g5:#e8e8e8;--g6:#f4f4f4;--white:#fff;
+  --red:#c0392b;--green:#1a7a3f;--blue:#1a4a8a;--gold:#b8860b;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Source Sans 3',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--sans);background:var(--white);color:var(--ink);font-size:14px;line-height:1.5;}
+
+.masthead{background:linear-gradient(160deg,#060d18 0%,#0d1b2a 50%,#1c3d8e 100%);color:var(--white);
+  padding:16px 32px;display:flex;align-items:center;gap:16px;border-bottom:2px solid rgba(255,255,255,.15);}
+.masthead img.lg{width:52px;height:52px;border-radius:50%;object-fit:cover;
+  border:2px solid rgba(255,255,255,.25);flex-shrink:0;background:rgba(255,255,255,.08);}
+.masthead-title{font-family:var(--serif);font-size:22px;font-weight:900;line-height:1.1;}
+.masthead-sub{font-size:12px;color:rgba(255,255,255,.45);margin-top:3px;font-style:italic;}
+.masthead-nav{margin-left:auto;display:flex;gap:8px;flex-shrink:0;}
+.nav-btn{font-size:12px;color:rgba(255,255,255,.7);text-decoration:none;
+  border:1px solid rgba(255,255,255,.25);padding:5px 12px;border-radius:3px;
+  transition:all .15s;white-space:nowrap;}
+.nav-btn:hover{background:rgba(255,255,255,.12);color:var(--white);}
+
+.page{max-width:820px;margin:32px auto;padding:0 24px;}
+.section-title{font-family:var(--serif);font-size:18px;font-weight:700;
+  border-left:4px solid var(--blue);padding-left:10px;margin-bottom:16px;}
+
+.table-wrap{overflow-x:auto;}
+table.st{border-collapse:collapse;width:100%;font-size:13px;}
+table.st thead{background:var(--black);}
+table.st thead th{color:var(--white);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;
+  padding:9px 8px;text-align:center;font-weight:600;white-space:nowrap;}
+table.st thead th.left{text-align:left;padding-left:12px;}
+table.st tbody td{padding:8px;text-align:center;border-bottom:1px solid var(--g5);vertical-align:middle;}
+table.st tbody tr:nth-child(even) td{background:var(--g6);}
+table.st tbody tr:hover td{background:#eff4ff;cursor:default;}
+table.st tbody tr.our-team td{background:#dde8ff;border-left:4px solid var(--blue);}
+table.st tbody tr.our-team:hover td{background:#c8d8ff;}
+table.st tbody tr.our-team td:first-child{padding-left:4px;}
+
+.td-rank{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--g2);width:44px;}
+.td-team{text-align:left!important;min-width:190px;}
+.td-team a{color:var(--ink);text-decoration:none;font-weight:600;font-size:13px;}
+.td-team a:hover{color:var(--blue);}
+.team-logo-wrap{display:inline-block;width:28px;height:28px;margin-right:8px;vertical-align:middle;}
+.team-img{width:28px;height:28px;border-radius:50%;object-fit:cover;vertical-align:middle;}
+.team-img-ph{font-size:18px;display:inline-block;width:28px;text-align:center;line-height:28px;}
+.our-badge{display:inline-block;font-size:9px;letter-spacing:1px;text-transform:uppercase;
+  background:var(--blue);color:var(--white);padding:1px 5px;border-radius:2px;margin-left:6px;
+  vertical-align:middle;font-family:var(--sans);font-weight:700;}
+.td-v{color:var(--green);font-family:var(--mono);font-weight:700;}
+.td-d{color:var(--red);font-family:var(--mono);}
+.td-pts{font-family:var(--mono);font-weight:700;color:var(--blue);font-size:14px;}
+.td-pct{font-family:var(--mono);color:var(--g2);font-size:12px;}
+
+.footnote{font-size:11px;color:var(--g3);font-style:italic;margin-top:14px;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;}
+.footnote a{color:var(--blue);}
+
+@media(max-width:600px){
+  .page{padding:0 12px;margin:16px auto;}
+  .masthead{padding:12px 16px;gap:10px;flex-wrap:wrap;}
+  .masthead-title{font-size:17px;}
+  table.st{font-size:12px;}
+  .td-team{min-width:130px;}
+}
+@media print{
+  .nav-btn{display:none;}
+  table.st thead{background:#000!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  table.st tbody tr.our-team td{background:#c0d0ee!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <img class="lg" src="https://d1yykh3c16sa22.cloudfront.net/organizations/1eb7ee68-2cca-6a72-adb9-06ba8f7ba4e0/logos/1ebc017e-81f8-662a-99f2-020ca418dc48.gif" alt="LBMRQ" onerror="this.style.display='none'">
+  <div>
+    <div class="masthead-title">Classement 13U AA</div>
+    <div class="masthead-sub">Ligue de baseball mineur de la région de Québec — Saison 2026</div>
+  </div>
+  <div class="masthead-nav">
+    <a class="nav-btn" href="adversaires.html">Analytique</a>
+    <a class="nav-btn" href="https://page.spordle.com/fr/ligue-de-baseball-mineur-de-la-region-de-quebec/schedule-stats-standings/1ed21b25-fff6-6bf6-abb2-06bf14840f99?tab=standings&scheduleId=191959" target="_blank" rel="noopener">Spordle ↗</a>
+  </div>
+</div>
+
+<div class="page">
+  <div class="section-title">Classement — 13U AA Masculin</div>
+  <div class="table-wrap">
+    <table class="st">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th class="left">Équipe</th>
+          <th title="Matchs joués">MJ</th>
+          <th title="Victoires">V</th>
+          <th title="Défaites">D</th>
+          <th title="Nulles">N</th>
+          <th title="Points">PTS</th>
+          <th title="Pourcentage de points">%PTS</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="td-rank">1</td>
+        <td class="td-team"><span class="team-logo-wrap"><img src="https://d1omh11ncsvj0s.cloudfront.net/organizations/1ed7e19b-9bb4-68de-b622-0201cabbf318/logos/1ed7e19b-9bc5-6dfa-ba22-0201cabbf318.png" alt="MONARQUES GRIS" class="team-img" onerror="this.style.display='none'"></span><a href="https://page.spordle.com/fr/ligue-de-baseball-mineur-de-la-region-de-quebec/teams/163945" target="_blank" rel="noopener">MONARQUES GRIS</a></td>
+        <td>11</td>
+        <td class="td-v">8</td>
+        <td class="td-d">2</td>
+        <td>1</td>
+        <td class="td-pts">17</td>
+        <td class="td-pct">.773</td>
+      </tr>
+      <tr>
+        <td class="td-rank">2</td>
+        <td class="td-team"><span class="team-logo-wrap"><img src="https://d1omh11ncsvj0s.cloudfront.net/organizations/1ed7e19c-c2b4-610e-8559-063029350b04/logos/1ed7e19c-c2c8-6262-8b31-063029350b04.png" alt="CARNAVALS BLANCS" class="team-img" onerror="this.style.display='none'"></span><a href="https://page.spordle.com/fr/ligue-de-baseball-mineur-de-la-region-de-quebec/teams/163392" target="_blank" rel="noopener">CARNAVALS BLANCS</a></td>
+        <td>9</td>
+        <td class="td-v">7</td>
+        <td class="td-d">2</td>
+        <td>0</td>
+        <td class="td-pts">14</td>
+        <td class="td-pct">.778</td>
+      </tr>
+      <tr>
+        <td class="td-rank">3</td>
+        <td class="td-team"><span class="team-logo-wrap"><img src="https://d1omh11ncsvj0s.cloudfront.net/teams/1f0199e5-9cbb-62ec-85a5-02ad3b2a2e45/logos/1f02a7b5-24c0-6f56-99d4-0e4a22eadb9b.png" alt="ROYAUX" class="team-img" onerror="this.style.display='none'"></span><a href="https://page.spordle.com/fr/ligue-de-baseball-mineur-de-la-region-de-quebec/teams/163813" target="_blank" rel="noopener">ROYAUX</a></td>
+        <td>10</td>
+        <td class="td-v">6</td>
+        <td class="td-d">3</td>
+        <td>1</td>
+        <td class="td-pts">13</td>
+        <td class="td-pct">.650</td>
+      </tr>
+      <tr>
+        <td class="td-rank">4</td>
+        <td class="td-team"><span class="team-logo-wrap"><img src="https://d1omh11ncsvj0s.cloudfront.net/teams/1effc50a-e4d6-6ede-b8f9-062735ef680f/logos/1effc50a-e4a8-6ac0-b68a-062735ef680f.jpg" alt="COMBATTANTS" class="team-img" onerror="this.style.display='none'"></span><a href="https://page.spordle.com/fr/ligue-de-baseball-mineur-de-la-region-de-quebec/teams/163218" target="_blank" rel="noopener">COMBATTANTS</a></td>
+        <td>7</td>
+        <td class="td-v">5</td>
+        <td class="td-d">2</td>
+        <td>0</td>
+        <td class="td-pts">10</td>
+        <td class="td-pct">.714</td>
+      </tr>
+      <tr>
+        <td class="td-rank">5</td>
+        <td class="td-team"><span class="team-logo-wrap"><img src="https://d1omh11ncsvj0s.cloudfront.net/organizations/1ed7e19b-9bb4-68de-b622-0201cabbf318/logos/1ed7e19b-9bc5-6dfa-ba22-0201cabbf318.png" alt="MONARQUES ORANGE" class="team-img" onerror="this.style.display='none'"></span><a href="https://page.spordle.com/fr/ligue-de-baseball-mineur-de-la-region-de-quebec/teams/163135" target="_blank" rel="noopener">MONARQUES ORANGE</a></td>
+        <td>9</td>
+        <td class="td-v">5</td>
+        <td class="td-d">4</td>
+        <td>0</td>
+        <td class="td-pts">10</td>
+        <td class="td-pct">.556</td>
+      </tr>
+      <tr class="our-team">
+        <td class="td-rank">6</td>
+        <td class="td-team"><span class="team-logo-wrap"><img src="https://d1omh11ncsvj0s.cloudfront.net/organizations/1ed7e19c-c2b4-610e-8559-063029350b04/logos/1ed7e19c-c2c8-6262-8b31-063029350b04.png" alt="CARNAVALS BLEUS" class="team-img" onerror="this.style.display='none'"></span><a href="https://page.spordle.com/fr/ligue-de-baseball-mineur-de-la-region-de-quebec/teams/163393" target="_blank" rel="noopener">CARNAVALS BLEUS</a> <span class="our-badge">nous</span></td>
+        <td>8</td>
+        <td class="td-v">4</td>
+        <td class="td-d">3</td>
+        <td>1</td>
+        <td class="td-pts">9</td>
+        <td class="td-pct">.563</td>
+      </tr>
+      <tr>
+        <td class="td-rank">7</td>
+        <td class="td-team"><span class="team-logo-wrap"><img src="https://d1omh11ncsvj0s.cloudfront.net/organizations/1ed7e19c-c2b4-610e-8559-063029350b04/logos/1ed7e19c-c2c8-6262-8b31-063029350b04.png" alt="CARNAVALS ROUGES" class="team-img" onerror="this.style.display='none'"></span><a href="https://page.spordle.com/fr/ligue-de-baseball-mineur-de-la-region-de-quebec/teams/163400" target="_blank" rel="noopener">CARNAVALS ROUGES</a></td>
+        <td>9</td>
+        <td class="td-v">4</td>
+        <td class="td-d">5</td>
+        <td>0</td>
+        <td class="td-pts">8</td>
+        <td class="td-pct">.444</td>
+      </tr>
+      <tr>
+        <td class="td-rank">8</td>
+        <td class="td-team"><span class="team-logo-wrap"><img src="https://d1omh11ncsvj0s.cloudfront.net/organizations/1ed7e19b-9bb4-68de-b622-0201cabbf318/logos/1ed7e19b-9bc5-6dfa-ba22-0201cabbf318.png" alt="MONARQUES BLEU" class="team-img" onerror="this.style.display='none'"></span><a href="https://page.spordle.com/fr/ligue-de-baseball-mineur-de-la-region-de-quebec/teams/163133" target="_blank" rel="noopener">MONARQUES BLEU</a></td>
+        <td>9</td>
+        <td class="td-v">4</td>
+        <td class="td-d">5</td>
+        <td>0</td>
+        <td class="td-pts">8</td>
+        <td class="td-pct">.444</td>
+      </tr>
+      <tr>
+        <td class="td-rank">9</td>
+        <td class="td-team"><span class="team-logo-wrap"><img src="https://d1omh11ncsvj0s.cloudfront.net/teams/1edc3522-0b5a-6912-adbc-0e01086684f6/logos/1edc3522-0ba2-6794-adf2-0e01086684f6.jpg" alt="AIGLES ROUGES" class="team-img" onerror="this.style.display='none'"></span><a href="https://page.spordle.com/fr/ligue-de-baseball-mineur-de-la-region-de-quebec/teams/162897" target="_blank" rel="noopener">AIGLES ROUGES</a></td>
+        <td>9</td>
+        <td class="td-v">3</td>
+        <td class="td-d">6</td>
+        <td>0</td>
+        <td class="td-pts">6</td>
+        <td class="td-pct">.333</td>
+      </tr>
+      <tr>
+        <td class="td-rank">10</td>
+        <td class="td-team"><span class="team-logo-wrap"><img src="https://d1omh11ncsvj0s.cloudfront.net/organizations/1ed7e192-d7d1-650a-bc44-0201cabbf318/logos/1ed7e192-d7dd-618e-8821-0201cabbf318.jpg" alt="AIGLES NOIRS" class="team-img" onerror="this.style.display='none'"></span><a href="https://page.spordle.com/fr/ligue-de-baseball-mineur-de-la-region-de-quebec/teams/162896" target="_blank" rel="noopener">AIGLES NOIRS</a></td>
+        <td>9</td>
+        <td class="td-v">0</td>
+        <td class="td-d">8</td>
+        <td>1</td>
+        <td class="td-pts">1</td>
+        <td class="td-pct">.056</td>
+      </tr>
+      <tr>
+        <td class="td-rank">11</td>
+        <td class="td-team"><span class="team-logo-wrap"><img src="https://d1omh11ncsvj0s.cloudfront.net/teams/1f01af03-feb7-6c6a-ad5c-0e2b627afba3/logos/1f068d67-2f62-6dba-9154-064eb7ec0589.png" alt="ETOILES SAG-LAC" class="team-img" onerror="this.style.display='none'"></span><a href="https://page.spordle.com/fr/ligue-de-baseball-mineur-de-la-region-de-quebec/teams/163818" target="_blank" rel="noopener">ETOILES SAG-LAC</a></td>
+        <td>0</td>
+        <td class="td-v">0</td>
+        <td class="td-d">0</td>
+        <td>0</td>
+        <td class="td-pts">0</td>
+        <td class="td-pct">.000</td>
+      </tr>
+      <tr>
+        <td class="td-rank">11</td>
+        <td class="td-team"><span class="team-logo-wrap"><img src="https://d1omh11ncsvj0s.cloudfront.net/teams/1eff4ab7-091b-69e4-b7e6-0e84eb09d6ad/logos/1eff4ab7-08c0-608a-8f2b-0e84eb09d6ad.jpg" alt="RIVRIKI 13AA" class="team-img" onerror="this.style.display='none'"></span><a href="https://page.spordle.com/fr/ligue-de-baseball-mineur-de-la-region-de-quebec/teams/158509" target="_blank" rel="noopener">RIVRIKI 13AA</a></td>
+        <td>0</td>
+        <td class="td-v">0</td>
+        <td class="td-d">0</td>
+        <td>0</td>
+        <td class="td-pts">0</td>
+        <td class="td-pct">.000</td>
+      </tr>
+      <tr>
+        <td class="td-rank">13</td>
+        <td class="td-team"><span class="team-logo-wrap"><img src="https://d1omh11ncsvj0s.cloudfront.net/teams/1f0fbcad-713b-62a4-a311-0272aafe60f5/logos/small/1f0fbccc-93fd-60c0-ab69-06d2358bfa0f.jpeg" alt="RIVRDL13UAA" class="team-img" onerror="this.style.display='none'"></span><a href="https://page.spordle.com/fr/ligue-de-baseball-mineur-de-la-region-de-quebec/teams/158108" target="_blank" rel="noopener">RIVRDL13UAA</a></td>
+        <td>6</td>
+        <td class="td-v">0</td>
+        <td class="td-d">6</td>
+        <td>0</td>
+        <td class="td-pts">0</td>
+        <td class="td-pct">.000</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="footnote">
+    <span>Mis à jour le 2026-06-08 (données initiales) · Source : Spordle · Horaire 191959</span>
+    <a href="https://page.spordle.com/fr/ligue-de-baseball-mineur-de-la-region-de-quebec/schedule-stats-standings/1ed21b25-fff6-6bf6-abb2-06bf14840f99?tab=standings&scheduleId=191959" target="_blank" rel="noopener">Voir sur Spordle ↗</a>
+  </div>
+</div>
+
+</body>
+</html>
