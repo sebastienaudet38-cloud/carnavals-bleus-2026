@@ -897,7 +897,7 @@ function showTab(name) {
   document.querySelector(`.tab-btn[data-tab="${name}"]`).classList.add('active');
   if (name === 'classement') {
     const iframe = document.getElementById('classement-iframe');
-    if (!iframe.getAttribute('src')) iframe.src = 'classement.html';
+    if (!iframe.getAttribute('src')) iframe.src = 'classement.html?v=' + Date.now();
   }
 }
 
