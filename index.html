@@ -689,6 +689,16 @@ table.stats tfoot td.mono{font-family:var(--mono);}
     </div>
   </div>
 
+  <!-- CALENDRIER -->
+  <div class="home-section">
+    <div class="home-section-inner">
+      <div class="home-section-header">
+        <h2 class="home-section-title">Calendrier</h2>
+      </div>
+      <div id="gc-schedule-widget-op3f"></div>
+    </div>
+  </div>
+
   <!-- STATS BAR -->
   <div class="home-section home-section-alt">
     <div class="home-section-inner">
@@ -1620,6 +1630,15 @@ init();
     <button class="ios-popup-ok" onclick="closeIOSPopup()">J'ai compris</button>
   </div>
 </div>
+
+<script src="https://widgets.gc.com/static/js/sdk.v1.js"></script>
+<script>
+    window.GC.team.schedule.init({
+        target: "#gc-schedule-widget-op3f",
+        widgetId: "a6bc72e4-03cf-40ff-a266-64321f3f9354",
+        maxVerticalGamesVisible: 4,
+    })
+</script>
 
 </body>
 </html>
