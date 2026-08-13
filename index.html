@@ -425,6 +425,16 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
   cursor:pointer;transition:all .15s;font-family:var(--sans);}
 .sort-pill:hover{border-color:var(--red);color:var(--red);}
 .sort-pill.on{background:var(--red);border-color:var(--red);color:#fff;}
+.sort-hint{font-size:11px;color:var(--gray-l);margin-left:auto;font-style:italic;}
+
+/* ── TRI PAR ENTÊTE DE COLONNE ── */
+table.stats thead th.sortable{cursor:pointer;user-select:none;white-space:nowrap;}
+table.stats thead th.sortable:hover{color:var(--gold-l);}
+table.stats thead th.sortable::after{content:'↕';margin-left:4px;font-size:9px;opacity:.3;}
+table.stats thead th.sortable.on{color:var(--gold-l);}
+table.stats thead th.sortable.on::after{content:'↓';opacity:1;}
+table.stats thead th.sortable.on.asc::after{content:'↑';}
+@media print{table.stats thead th.sortable::after{content:'';}}
 table.stats{width:100%;border-collapse:collapse;}
 table.stats thead th{background:var(--navy);color:rgba(255,255,255,.7);
   font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:10px 8px;
@@ -509,6 +519,13 @@ table.stats tfoot td.mono{font-family:var(--mono);}
 .ligue-meta{font-size:12px;color:var(--gray);}
 .ligue-row{cursor:pointer;}
 .ligue-row:hover{background:var(--red-bg);}
+.lg-team{white-space:nowrap;}
+.lg-logo{width:20px;height:20px;border-radius:50%;object-fit:cover;
+  vertical-align:middle;margin-right:7px;}
+.lg-logo-ph{display:inline-block;width:20px;text-align:center;margin-right:7px;
+  vertical-align:middle;font-size:13px;}
+.lg-own{background:rgba(30,111,217,.14);color:var(--blue);border-radius:10px;
+  padding:1px 7px;font-size:10px;font-weight:700;letter-spacing:.5px;}
 .spray-zones{display:flex;flex-direction:column;gap:8px;margin-top:18px;}
 .zb-row{display:flex;align-items:center;gap:10px;font-size:12px;}
 .zb-label{width:82px;color:var(--text2);flex-shrink:0;}
@@ -801,23 +818,11 @@ table.stats tfoot td.mono{font-family:var(--mono);}
       <div class="stats-wrap">
         <div class="stats-head">
           <span class="stats-head-title">Tableau frappeurs — <span id="bat-count"></span></span>
-          <div class="sort-pills">
-            <button class="sort-pill on" data-key="avg" onclick="sortBat(this,'avg')">MOY</button>
-            <button class="sort-pill" data-key="ops" onclick="sortBat(this,'ops')">OPS</button>
-            <button class="sort-pill" data-key="h"   onclick="sortBat(this,'h')">CS</button>
-            <button class="sort-pill" data-key="rbi" onclick="sortBat(this,'rbi')">PP</button>
-            <button class="sort-pill" data-key="sb"  onclick="sortBat(this,'sb')">BV</button>
-          </div>
+          <span class="sort-hint">Cliquez une entête pour trier</span>
         </div>
         <div class="table-wrap">
           <table class="stats">
-            <thead><tr>
-              <th style="width:40px">#</th><th class="l">Joueur</th>
-              <th>PJ</th><th>PA</th><th>AB</th>
-              <th>CS</th><th>2B</th><th>3B</th><th>CC</th>
-              <th>PP</th><th>BB</th><th>K</th><th>BV</th>
-              <th>MOY</th><th>OBP</th><th>OPS</th>
-            </tr></thead>
+            <thead id="bat-head"></thead>
             <tbody id="bat-tbody"></tbody>
           </table>
         </div>
@@ -826,12 +831,7 @@ table.stats tfoot td.mono{font-family:var(--mono);}
       <div class="stats-wrap">
         <div class="table-wrap">
           <table class="stats">
-            <thead><tr>
-              <th style="width:40px">#</th><th class="l">Joueur</th>
-              <th>PJ</th><th>ML</th><th>V</th><th>D</th><th>SV</th>
-              <th>BR</th><th>RL</th><th>RM</th>
-              <th>K</th><th>BB</th><th>BLPC</th><th>MPM</th>
-            </tr></thead>
+            <thead id="pit-head"></thead>
             <tbody id="pit-tbody"></tbody>
           </table>
         </div>
@@ -917,10 +917,26 @@ table.stats tfoot td.mono{font-family:var(--mono);}
         </div>
       </div>
       <div class="ligue-bar">
-        <select id="ligue-team" class="ligue-select" onchange="renderLigueTeam(this.value)"></select>
+        <div class="sort-pills" id="ligue-role">
+          <button class="sort-pill on" onclick="setLigueRole('bat')">Frappeurs</button>
+          <button class="sort-pill" onclick="setLigueRole('pit')">Lanceurs</button>
+        </div>
+        <select id="ligue-min" class="ligue-select" onchange="renderLigue()"></select>
+        <select id="ligue-team" class="ligue-select" onchange="renderLigue()"></select>
         <span id="ligue-meta" class="ligue-meta"></span>
       </div>
-      <div id="ligue-body"><p class="no-data">Chargement…</p></div>
+      <div class="stats-wrap">
+        <div class="stats-head">
+          <span class="stats-head-title" id="ligue-count"></span>
+          <span class="sort-hint">Cliquez une entête pour trier</span>
+        </div>
+        <div class="table-wrap">
+          <table class="stats">
+            <thead id="ligue-head"></thead>
+            <tbody id="ligue-body"><tr><td class="no-data">Chargement…</td></tr></tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -949,7 +965,7 @@ const RAW_URL  = 'https://raw.githubusercontent.com/sebastienaudet38-cloud/carna
 // GitHub Contents API — pas de cache CDN, 60 req/h par IP (sans token)
 // ETag : les 304 "rien changé" ne consomment pas le quota → intervalle 60s viable
 const LIVE_API  = 'https://api.github.com/repos/sebastienaudet38-cloud/carnavals-bleus-2026/contents/live.json';
-let _data = null, _passwords = {}, _sortKey = 'avg', _selRow = null;
+let _data = null, _passwords = {}, _selRow = null;
 let _liveActive = false, _liveTimer = null, _liveEtag = null;
 const _failedLogos = new Set();
 
@@ -1055,7 +1071,41 @@ function lockLigue() {
 // ── LIGUE : stats de toutes les équipes de la catégorie ───────────────
 // Fichier séparé de matches.json : chargé une seule fois, après déverrouillage.
 const LEAGUE_URL = 'league_stats.json';
-let _league = null;
+let _league = null, _lgBat = [], _lgPit = [];
+let _lgRole = 'bat';
+
+// Seuils de qualification : sans minimum, un 2-en-3 domine le classement
+const LG_MIN_PA = [
+  {v:0, lbl:'Tous les frappeurs'}, {v:10, lbl:'10 PA et +'},
+  {v:20, lbl:'20 PA et +'}, {v:40, lbl:'40 PA et +'},
+];
+const LG_MIN_OUTS = [
+  {v:0, lbl:'Tous les lanceurs'}, {v:9,  lbl:'3 ML et +'},
+  {v:30, lbl:'10 ML et +'}, {v:60, lbl:'20 ML et +'},
+];
+const LG_BAT_COLS = [
+  {k:'rg',   lbl:'Rg',     w:'40px', sort:false},
+  {k:'last', lbl:'Joueur', cls:'l',  get:p => `${p.l} ${p.f}`, asc:true},
+  {k:'tn',   lbl:'Équipe', cls:'l',  get:p => shortTeam(p.tn), asc:true},
+  {k:'n',    lbl:'#',   get:p => +p.n || 0},
+  {k:'g',   lbl:'PJ'},  {k:'pa', lbl:'PA'}, {k:'ab', lbl:'AB'},
+  {k:'h',   lbl:'CS'},  {k:'2b', lbl:'2B'}, {k:'3b', lbl:'3B'}, {k:'hr', lbl:'CC'},
+  {k:'rbi', lbl:'PP'},  {k:'r',  lbl:'PM'}, {k:'bb', lbl:'BB'}, {k:'k', lbl:'K'},
+  {k:'sb',  lbl:'BV'},
+  {k:'avg', lbl:'MOY'}, {k:'obp', lbl:'OBP'}, {k:'ops', lbl:'OPS'},
+];
+const LG_PIT_COLS = [
+  {k:'rg',   lbl:'Rg',     w:'40px', sort:false},
+  {k:'last', lbl:'Joueur', cls:'l',  get:p => `${p.l} ${p.f}`, asc:true},
+  {k:'tn',   lbl:'Équipe', cls:'l',  get:p => shortTeam(p.tn), asc:true},
+  {k:'n',    lbl:'#',    get:p => +p.n || 0},
+  {k:'g',    lbl:'PJ'},
+  {k:'outs', lbl:'ML'},
+  {k:'bf',   lbl:'BR'},  {k:'np', lbl:'#L'},
+  {k:'h',    lbl:'CS'},  {k:'r',  lbl:'P'}, {k:'er', lbl:'PM'},
+  {k:'bb',   lbl:'BB'},  {k:'k',  lbl:'K'},
+  {k:'era',  lbl:'MPM',  asc:true}, {k:'whip', lbl:'BLPC', asc:true},
+];
 
 async function unlockLigue() {
   document.getElementById('ligue-lock').style.display    = 'none';
@@ -1074,13 +1124,24 @@ async function unlockLigue() {
   }
   const teams = _league.teams || [];
   document.getElementById('ligue-cat').textContent = _league.category || '';
-  document.getElementById('ligue-team').innerHTML = teams.map((t, i) =>
-    `<option value="${i}">${esc(t.name)}${t.own ? ' ★' : ''}</option>`).join('');
+
+  // Aplatit tous les joueurs de toutes les équipes — vue « meneurs »
+  _lgBat = []; _lgPit = [];
+  teams.forEach((t, ti) => {
+    (t.bat || []).forEach((p, pi) => _lgBat.push({...p, ti, pi, tn: t.name, tl: t.logo, own: t.own}));
+    (t.pit || []).forEach(p => {
+      const [w, o] = String(p.ip || '0.0').split('.');
+      _lgPit.push({...p, outs: (+w||0)*3 + (+o||0), ti, tn: t.name, tl: t.logo, own: t.own});
+    });
+  });
+
+  document.getElementById('ligue-team').innerHTML =
+    '<option value="">Toutes les équipes</option>' +
+    teams.map((t, i) => `<option value="${i}">${esc(shortTeam(t.name))}${t.own ? ' ★' : ''}</option>`).join('');
   const gen = (_league.generated || '').slice(0, 10);
   document.getElementById('ligue-meta').textContent =
-    `${teams.length} équipes · mis à jour le ${gen}`;
-  if (teams.length) renderLigueTeam(0);
-  else document.getElementById('ligue-body').innerHTML = '<p class="no-data">Aucune équipe.</p>';
+    `${teams.length} équipes · ${_lgBat.length} frappeurs · mis à jour le ${gen}`;
+  setLigueRole('bat');
 }
 
 function r3(v) {
@@ -1088,66 +1149,74 @@ function r3(v) {
   const s = n.toFixed(3);
   return n < 1 ? s.slice(1) : s;
 }
+// Retire les suffixes de catégorie/saison : « Monarques Bleus 13UAA 2026 » → « Monarques Bleus »
+function shortTeam(name) {
+  const noise = /^(1[23]U-?A{0,3}|U1[23]|A{1,3}|20\d\d)$/i;
+  const w = String(name || '').split(/\s+/).filter(Boolean);
+  while (w.length > 1 && noise.test(w[w.length-1])) w.pop();
+  while (w.length > 1 && noise.test(w[0]))          w.shift();
+  return w.join(' ');
+}
+function teamCell(p) {
+  const img = p.tl
+    ? `<img src="${esc(p.tl)}" alt="" class="lg-logo" loading="lazy" onerror="this.style.display='none'">`
+    : '<span class="lg-logo-ph">⚾</span>';
+  return `<td class="l lg-team">${img}<span>${esc(shortTeam(p.tn))}</span>${p.own ? ' <span class="lg-own">nous</span>' : ''}</td>`;
+}
 
-function renderLigueTeam(idx) {
-  const t = (_league && _league.teams || [])[idx];
-  if (!t) return;
-  const bat = [...t.bat].sort((a, b) => (b.avg - a.avg) || (b.ab - a.ab));
-  const pit = [...t.pit].sort((a, b) => (a.era - b.era) || (b.bf - a.bf));
+function setLigueRole(role) {
+  _lgRole = role;
+  document.querySelectorAll('#ligue-role .sort-pill').forEach((b, i) =>
+    b.classList.toggle('on', i === (role === 'bat' ? 0 : 1)));
+  const mins = role === 'bat' ? LG_MIN_PA : LG_MIN_OUTS;
+  document.getElementById('ligue-min').innerHTML =
+    mins.map((m, i) => `<option value="${m.v}"${i === 1 ? ' selected' : ''}>${m.lbl}</option>`).join('');
+  _sortCols['ligue-head'] = role === 'bat' ? LG_BAT_COLS : LG_PIT_COLS;
+  _sortState['ligue-head'] = role === 'bat' ? {k:'avg', asc:false} : {k:'era', asc:true};
+  renderLigue();
+}
 
-  const batRows = bat.map((p, i) => `
-    <tr class="ligue-row" onclick="openLeagueSpray(${idx},${t.bat.indexOf(p)})">
-      <td class="mono">${esc(p.n)}</td>
+function renderLigue() {
+  if (!_league) return;
+  const minV   = +document.getElementById('ligue-min').value || 0;
+  const teamV  = document.getElementById('ligue-team').value;
+  const isBat  = _lgRole === 'bat';
+  const cols   = isBat ? LG_BAT_COLS : LG_PIT_COLS;
+  const st     = _sortState['ligue-head'];
+
+  const rows = sortRows(
+    (isBat ? _lgBat : _lgPit)
+      .filter(p => (isBat ? p.pa : p.outs) >= minV)
+      .filter(p => teamV === '' || p.ti === +teamV),
+    cols, st);
+
+  document.getElementById('ligue-count').textContent =
+    `${isBat ? 'Frappeurs' : 'Lanceurs'} — ${rows.length} joueurs`;
+  buildHead('ligue-head', cols);
+
+  const body = rows.map((p, i) => isBat ? `
+    <tr class="ligue-row" onclick="openLeagueSpray(${p.ti},${p.pi})">
+      <td class="mono">${i + 1}</td>
       <td class="l">${esc(p.l)}, ${esc(p.f)}</td>
+      ${teamCell(p)}
+      <td class="mono">${esc(p.n)}</td>
       <td>${p.g}</td><td>${p.pa}</td><td>${p.ab}</td>
       <td>${p.h}</td><td>${p['2b']}</td><td>${p['3b']}</td><td>${p.hr}</td>
-      <td>${p.rbi}</td><td>${p.bb}</td><td>${p.k}</td><td>${p.sb}</td>
-      <td class="mono">${r3(p.avg)}</td><td class="mono">${r3(p.obp)}</td>
-      <td class="mono">${r3(p.ops)}</td>
-    </tr>`).join('');
-
-  const pitRows = pit.map(p => `
+      <td>${p.rbi}</td><td>${p.r}</td><td>${p.bb}</td><td>${p.k}</td><td>${p.sb}</td>
+      <td class="mono">${r3(p.avg)}</td><td class="mono">${r3(p.obp)}</td><td class="mono">${r3(p.ops)}</td>
+    </tr>` : `
     <tr>
-      <td class="mono">${esc(p.n)}</td>
+      <td class="mono">${i + 1}</td>
       <td class="l">${esc(p.l)}, ${esc(p.f)}</td>
+      ${teamCell(p)}
+      <td class="mono">${esc(p.n)}</td>
       <td>${p.g}</td><td class="mono">${p.ip}</td><td>${p.bf}</td><td>${p.np}</td>
       <td>${p.h}</td><td>${p.r}</td><td>${p.er}</td><td>${p.bb}</td><td>${p.k}</td>
       <td class="mono">${p.era.toFixed(2)}</td><td class="mono">${p.whip.toFixed(2)}</td>
     </tr>`).join('');
 
-  document.getElementById('ligue-body').innerHTML = `
-    <div class="stats-wrap">
-      <div class="stats-head">
-        <span class="stats-head-title">Frappeurs — ${bat.length} joueurs</span>
-        <span class="ligue-meta">Cliquez une ligne pour la carte de frappe</span>
-      </div>
-      <div class="table-wrap">
-        <table class="stats">
-          <thead><tr>
-            <th style="width:40px">#</th><th class="l">Joueur</th>
-            <th>PJ</th><th>PA</th><th>AB</th>
-            <th>CS</th><th>2B</th><th>3B</th><th>CC</th>
-            <th>PP</th><th>BB</th><th>K</th><th>BV</th>
-            <th>MOY</th><th>OBP</th><th>OPS</th>
-          </tr></thead>
-          <tbody>${batRows || '<tr><td colspan="16" class="no-data">Aucun frappeur.</td></tr>'}</tbody>
-        </table>
-      </div>
-    </div>
-    <div class="s-title" style="margin-top:8px">Lanceurs</div>
-    <div class="stats-wrap">
-      <div class="table-wrap">
-        <table class="stats">
-          <thead><tr>
-            <th style="width:40px">#</th><th class="l">Joueur</th>
-            <th>PJ</th><th>ML</th><th>BR</th><th>#L</th>
-            <th>CS</th><th>P</th><th>PM</th><th>BB</th><th>K</th>
-            <th>MPM</th><th>BLPC</th>
-          </tr></thead>
-          <tbody>${pitRows || '<tr><td colspan="13" class="no-data">Aucun lanceur.</td></tr>'}</tbody>
-        </table>
-      </div>
-    </div>`;
+  document.getElementById('ligue-body').innerHTML =
+    body || `<tr><td colspan="${cols.length}" class="no-data">Aucun joueur pour ce filtre.</td></tr>`;
 }
 
 // ── LIGUE : carte de frappe par zones (pas de coordonnées côté adversaire) ──
@@ -1574,20 +1643,89 @@ function playVid(id, el) {
 }
 
 // ── ALL-PLAYERS STATS ─────────────────────────────────────────────────
-function sortBat(btn, key) {
-  _sortKey = key;
-  document.querySelectorAll('.sort-pill').forEach(b => b.classList.remove('on'));
-  btn.classList.add('on');
-  if (_data) renderAllStats(_data.players);
+// ── TRI PAR ENTÊTE ────────────────────────────────────────────────────
+// Une spec de colonne = {k, lbl, cls?, w?, get?, asc?, sort:false?}
+// `get(row)` renvoie la valeur triable ; `asc:true` = premier clic croissant
+// (MPM, BLPC : plus petit = meilleur). Un 2e clic sur la même colonne inverse.
+const _sortState = {};   // {tableId: {k, asc}}
+
+function buildHead(tableId, cols) {
+  const st = _sortState[tableId] || {};
+  document.getElementById(tableId).innerHTML = '<tr>' + cols.map(c => {
+    if (c.sort === false)
+      return `<th class="${c.cls||''}"${c.w?` style="width:${c.w}"`:''}>${c.lbl}</th>`;
+    const on  = st.k === c.k;
+    const cls = ['sortable', c.cls||'', on ? 'on' : '', on && st.asc ? 'asc' : ''].filter(Boolean).join(' ');
+    return `<th class="${cls}"${c.w?` style="width:${c.w}"`:''} onclick="sortTable('${tableId}','${c.k}')">${c.lbl}</th>`;
+  }).join('') + '</tr>';
 }
+
+function sortRows(rows, cols, st) {
+  const col = cols.find(c => c.k === st.k);
+  if (!col) return rows;
+  const get = col.get || (r => r[col.k]);
+  return [...rows].sort((a, b) => {
+    const x = get(a), y = get(b);
+    let d;
+    if (typeof x === 'string' || typeof y === 'string')
+      d = String(x||'').localeCompare(String(y||''), 'fr', {numeric:true});
+    else d = (Number(x)||0) - (Number(y)||0);
+    return st.asc ? d : -d;
+  });
+}
+
+// Renderers à relancer après un clic d'entête, par table
+const _sortRenderers = {
+  'bat-head': () => renderAllStats(_data.players),
+  'pit-head': () => renderAllStats(_data.players),
+  'ligue-head': () => renderLigue(),
+};
+
+function sortTable(tableId, key) {
+  const st = _sortState[tableId] || {};
+  const cols = _sortCols[tableId] || [];
+  const col  = cols.find(c => c.k === key) || {};
+  _sortState[tableId] = st.k === key ? {k: key, asc: !st.asc} : {k: key, asc: col.asc === true};
+  (_sortRenderers[tableId] || function(){})();
+}
+
+const BAT_COLS = [
+  {k:'num',  lbl:'#',      w:'40px', get:p => +p.num || 0},
+  {k:'last', lbl:'Joueur', cls:'l',  get:p => `${p.last} ${p.first}`, asc:true},
+  {k:'gp',  lbl:'PJ'},  {k:'pa', lbl:'PA'}, {k:'ab', lbl:'AB'},
+  {k:'h',   lbl:'CS'},  {k:'b2', lbl:'2B'}, {k:'b3', lbl:'3B'}, {k:'hr', lbl:'CC'},
+  {k:'rbi', lbl:'PP'},  {k:'bb', lbl:'BB'}, {k:'so', lbl:'K'},  {k:'sb', lbl:'BV'},
+  {k:'avg', lbl:'MOY', get:p => parseRate(p.avg)},
+  {k:'obp', lbl:'OBP', get:p => parseRate(p.obp)},
+  {k:'ops', lbl:'OPS', get:p => parseRate(p.ops)},
+];
+const _pit = (k, f) => p => f(((p.pitching)||{})[k]);
+const PIT_COLS = [
+  {k:'num',  lbl:'#',      w:'40px', get:p => +p.num || 0},
+  {k:'last', lbl:'Joueur', cls:'l',  get:p => `${p.last} ${p.first}`, asc:true},
+  {k:'gp',   lbl:'PJ',   get:_pit('gp',   v => +v || 0)},
+  {k:'ip',   lbl:'ML',   get:_pit('ip',   v => parseFloat(v) || 0)},
+  {k:'w',    lbl:'V',    get:_pit('w',    v => +v || 0)},
+  {k:'l',    lbl:'D',    get:_pit('l',    v => +v || 0)},
+  {k:'sv',   lbl:'SV',   get:_pit('sv',   v => +v || 0)},
+  {k:'h_p',  lbl:'BR',   get:_pit('h_p',  v => +v || 0)},
+  {k:'r_p',  lbl:'RL',   get:_pit('r_p',  v => +v || 0)},
+  {k:'er',   lbl:'RM',   get:_pit('er',   v => +v || 0)},
+  {k:'so_p', lbl:'K',    get:_pit('so_p', v => +v || 0)},
+  {k:'bb_p', lbl:'BB',   get:_pit('bb_p', v => +v || 0)},
+  {k:'whip', lbl:'BLPC', get:_pit('whip', v => parseFloat(v) || 0), asc:true},
+  {k:'era',  lbl:'MPM',  get:_pit('era',  v => parseFloat(v) || 0), asc:true},
+];
+const _sortCols = {'bat-head': BAT_COLS, 'pit-head': PIT_COLS};
+_sortState['bat-head'] = {k:'avg', asc:false};
+_sortState['pit-head'] = {k:'ip',  asc:false};
+
 const parseRate = s => parseFloat(String(s||'0').replace(/^\./,'0.')) || 0;
 function renderAllStats(players) {
   document.getElementById('bat-count').textContent = players.length + ' joueurs';
-  const sorted = [...players].sort((a,b) => {
-    const isR = ['avg','ops','obp','slg'].includes(_sortKey);
-    return isR ? parseRate(b[_sortKey]) - parseRate(a[_sortKey])
-               : parseInt(b[_sortKey]||0,10) - parseInt(a[_sortKey]||0,10);
-  });
+  buildHead('bat-head', BAT_COLS);
+  buildHead('pit-head', PIT_COLS);
+  const sorted = sortRows(players, BAT_COLS, _sortState['bat-head']);
   document.getElementById('bat-tbody').innerHTML = sorted.map(p => {
     const av = parseRate(p.avg);
     const avgCls = 'mono';
@@ -1602,8 +1740,9 @@ function renderAllStats(players) {
       <td class="mono" style="font-weight:700">${p.ops||'.000'}</td>
     </tr>`;
   }).join('');
-  const pitchers = players.filter(p => p.pitching && parseFloat(p.pitching.ip||0) > 0)
-    .sort((a,b) => parseFloat(b.pitching.ip||0) - parseFloat(a.pitching.ip||0));
+  const pitchers = sortRows(
+    players.filter(p => p.pitching && parseFloat(p.pitching.ip||0) > 0),
+    PIT_COLS, _sortState['pit-head']);
   document.getElementById('pit-tbody').innerHTML = pitchers.map(p => {
     const pit = p.pitching;
     const era = parseFloat(pit.era || 99);
@@ -1815,6 +1954,7 @@ async function init() {
       else sessionStorage.removeItem('cb_stats');
     }
     if (sessionStorage.getItem('cb_adversaires')) unlockAdv();
+    if (sessionStorage.getItem('cb_ligue')) unlockLigue();
   } catch(e) {
     console.error(e);
     const fm = document.getElementById('featured-match');
