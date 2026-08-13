@@ -500,6 +500,24 @@ table.stats tfoot td.mono{font-family:var(--mono);}
 #classement-content{height:calc(100vh - 96px);}
 #classement-content iframe{width:100%;height:100%;border:none;display:block;}
 
+/* ── LIGUE ── */
+.ligue-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px;}
+.ligue-select{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--text);
+  background:var(--surface);border:1px solid var(--border);border-radius:10px;
+  padding:9px 14px;min-width:260px;cursor:pointer;}
+.ligue-select:focus{outline:2px solid var(--blue);outline-offset:1px;}
+.ligue-meta{font-size:12px;color:var(--gray);}
+.ligue-row{cursor:pointer;}
+.ligue-row:hover{background:var(--red-bg);}
+.spray-zones{display:flex;flex-direction:column;gap:8px;margin-top:18px;}
+.zb-row{display:flex;align-items:center;gap:10px;font-size:12px;}
+.zb-label{width:82px;color:var(--text2);flex-shrink:0;}
+.zb-bar{flex:1;height:9px;background:var(--gray-xl);border-radius:5px;overflow:hidden;}
+.zb-fill{height:100%;border-radius:5px;}
+.zb-pct{width:38px;text-align:right;font-family:var(--mono);font-weight:700;flex-shrink:0;}
+.spray-sub{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--gray);margin-top:20px;}
+
 /* ── MISC ── */
 .no-data{font-size:13px;color:var(--gray-l);font-style:italic;padding:24px 0;text-align:center;}
 .lock-badge{display:inline-flex;align-items:center;gap:6px;
@@ -667,6 +685,7 @@ table.stats tfoot td.mono{font-family:var(--mono);}
     <button class="tab-btn" data-tab="classement"  onclick="showTab('classement')">Classement</button>
     <button class="tab-btn" data-tab="videos"      onclick="showTab('videos')">Vidéos</button>
     <button class="tab-btn" data-tab="adversaires" onclick="showTab('adversaires')">Adversaires</button>
+    <button class="tab-btn" data-tab="ligue"       onclick="showTab('ligue')">Ligue</button>
     <button class="tab-btn" data-tab="matchs"      onclick="showTab('matchs')">Parties</button>
   </nav>
   <button id="pwa-install-btn" onclick="handleInstall()" title="Installer l'application sur votre téléphone">
@@ -861,6 +880,51 @@ table.stats tfoot td.mono{font-family:var(--mono);}
   </div>
 </div>
 
+<!-- TAB: LIGUE (toutes les équipes de la catégorie) -->
+<div id="tab-ligue" class="tab-panel">
+  <div id="ligue-lock" class="lock-panel" style="display:none">
+    <div class="lock-box" onclick="openPwd('ligue')">
+      <span class="lock-ico">🔒</span>
+      <div class="lock-title">Statistiques de la ligue</div>
+      <div class="lock-sub">Accès restreint — administrateur seulement</div>
+    </div>
+  </div>
+  <div id="ligue-pwd" class="pwd-panel" style="display:none">
+    <div class="pwd-box">
+      <div class="pwd-title">Accès administrateur</div>
+      <div class="pwd-sub">Cette section est réservée au staff de l'équipe.</div>
+      <input type="password" id="ligue-input" class="pwd-input" placeholder="Mot de passe admin…"
+        onkeydown="if(event.key==='Enter')checkPwd('ligue')">
+      <div class="pwd-actions">
+        <button class="pwd-submit" onclick="checkPwd('ligue')">Déverrouiller</button>
+        <button class="pwd-cancel" onclick="closePwd('ligue')">Annuler</button>
+      </div>
+      <div id="ligue-err" class="pwd-err"></div>
+    </div>
+  </div>
+  <div id="ligue-content" style="display:none">
+    <div class="page">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap">
+        <div class="s-title" style="margin-bottom:0">Ligue <span id="ligue-cat"></span></div>
+        <span class="lock-badge">🔓 Admin</span>
+        <div class="report-btns" style="margin-left:auto">
+          <button class="report-btn" onclick="window.print()">
+            <span class="btn-icon">🖨</span> Imprimer PDF
+          </button>
+          <button class="report-btn" onclick="lockLigue()">
+            <span class="btn-icon">🔒</span> Verrouiller
+          </button>
+        </div>
+      </div>
+      <div class="ligue-bar">
+        <select id="ligue-team" class="ligue-select" onchange="renderLigueTeam(this.value)"></select>
+        <span id="ligue-meta" class="ligue-meta"></span>
+      </div>
+      <div id="ligue-body"><p class="no-data">Chargement…</p></div>
+    </div>
+  </div>
+</div>
+
 <!-- TAB: PARTIES -->
 <div id="tab-matchs" class="tab-panel">
   <div class="page">
@@ -935,10 +999,10 @@ async function checkPwd(sec) {
     }
   } else {
     if (_passwords.admin && _passwords.admin === hash) {
-      sessionStorage.setItem('cb_adversaires', '1');
-      unlockAdv();
+      sessionStorage.setItem('cb_' + sec, '1');
+      if (sec === 'ligue') unlockLigue(); else unlockAdv();
     } else {
-      showErr('adversaires', 'Mot de passe administrateur incorrect.');
+      showErr(sec, 'Mot de passe administrateur incorrect.');
     }
   }
 }
@@ -980,6 +1044,223 @@ function lockStats() {
   document.getElementById('stats-player').style.display = 'none';
   document.getElementById('stats-pwd').style.display    = 'none';
   document.getElementById('stats-lock').style.display   = 'flex';
+}
+function lockLigue() {
+  sessionStorage.removeItem('cb_ligue');
+  document.getElementById('ligue-content').style.display = 'none';
+  document.getElementById('ligue-pwd').style.display     = 'none';
+  document.getElementById('ligue-lock').style.display    = 'flex';
+}
+
+// ── LIGUE : stats de toutes les équipes de la catégorie ───────────────
+// Fichier séparé de matches.json : chargé une seule fois, après déverrouillage.
+const LEAGUE_URL = 'league_stats.json';
+let _league = null;
+
+async function unlockLigue() {
+  document.getElementById('ligue-lock').style.display    = 'none';
+  document.getElementById('ligue-pwd').style.display     = 'none';
+  document.getElementById('ligue-content').style.display = '';
+  if (_league) return;
+  try {
+    const r = await fetch(LEAGUE_URL + '?v=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    _league = await r.json();
+  } catch (e) {
+    console.error(e);
+    document.getElementById('ligue-body').innerHTML =
+      '<p class="no-data">Statistiques de ligue non disponibles. Lancez l\'option 12 de GC Extractor.</p>';
+    return;
+  }
+  const teams = _league.teams || [];
+  document.getElementById('ligue-cat').textContent = _league.category || '';
+  document.getElementById('ligue-team').innerHTML = teams.map((t, i) =>
+    `<option value="${i}">${esc(t.name)}${t.own ? ' ★' : ''}</option>`).join('');
+  const gen = (_league.generated || '').slice(0, 10);
+  document.getElementById('ligue-meta').textContent =
+    `${teams.length} équipes · mis à jour le ${gen}`;
+  if (teams.length) renderLigueTeam(0);
+  else document.getElementById('ligue-body').innerHTML = '<p class="no-data">Aucune équipe.</p>';
+}
+
+function r3(v) {
+  const n = Number(v) || 0;
+  const s = n.toFixed(3);
+  return n < 1 ? s.slice(1) : s;
+}
+
+function renderLigueTeam(idx) {
+  const t = (_league && _league.teams || [])[idx];
+  if (!t) return;
+  const bat = [...t.bat].sort((a, b) => (b.avg - a.avg) || (b.ab - a.ab));
+  const pit = [...t.pit].sort((a, b) => (a.era - b.era) || (b.bf - a.bf));
+
+  const batRows = bat.map((p, i) => `
+    <tr class="ligue-row" onclick="openLeagueSpray(${idx},${t.bat.indexOf(p)})">
+      <td class="mono">${esc(p.n)}</td>
+      <td class="l">${esc(p.l)}, ${esc(p.f)}</td>
+      <td>${p.g}</td><td>${p.pa}</td><td>${p.ab}</td>
+      <td>${p.h}</td><td>${p['2b']}</td><td>${p['3b']}</td><td>${p.hr}</td>
+      <td>${p.rbi}</td><td>${p.bb}</td><td>${p.k}</td><td>${p.sb}</td>
+      <td class="mono">${r3(p.avg)}</td><td class="mono">${r3(p.obp)}</td>
+      <td class="mono">${r3(p.ops)}</td>
+    </tr>`).join('');
+
+  const pitRows = pit.map(p => `
+    <tr>
+      <td class="mono">${esc(p.n)}</td>
+      <td class="l">${esc(p.l)}, ${esc(p.f)}</td>
+      <td>${p.g}</td><td class="mono">${p.ip}</td><td>${p.bf}</td><td>${p.np}</td>
+      <td>${p.h}</td><td>${p.r}</td><td>${p.er}</td><td>${p.bb}</td><td>${p.k}</td>
+      <td class="mono">${p.era.toFixed(2)}</td><td class="mono">${p.whip.toFixed(2)}</td>
+    </tr>`).join('');
+
+  document.getElementById('ligue-body').innerHTML = `
+    <div class="stats-wrap">
+      <div class="stats-head">
+        <span class="stats-head-title">Frappeurs — ${bat.length} joueurs</span>
+        <span class="ligue-meta">Cliquez une ligne pour la carte de frappe</span>
+      </div>
+      <div class="table-wrap">
+        <table class="stats">
+          <thead><tr>
+            <th style="width:40px">#</th><th class="l">Joueur</th>
+            <th>PJ</th><th>PA</th><th>AB</th>
+            <th>CS</th><th>2B</th><th>3B</th><th>CC</th>
+            <th>PP</th><th>BB</th><th>K</th><th>BV</th>
+            <th>MOY</th><th>OBP</th><th>OPS</th>
+          </tr></thead>
+          <tbody>${batRows || '<tr><td colspan="16" class="no-data">Aucun frappeur.</td></tr>'}</tbody>
+        </table>
+      </div>
+    </div>
+    <div class="s-title" style="margin-top:8px">Lanceurs</div>
+    <div class="stats-wrap">
+      <div class="table-wrap">
+        <table class="stats">
+          <thead><tr>
+            <th style="width:40px">#</th><th class="l">Joueur</th>
+            <th>PJ</th><th>ML</th><th>BR</th><th>#L</th>
+            <th>CS</th><th>P</th><th>PM</th><th>BB</th><th>K</th>
+            <th>MPM</th><th>BLPC</th>
+          </tr></thead>
+          <tbody>${pitRows || '<tr><td colspan="13" class="no-data">Aucun lanceur.</td></tr>'}</tbody>
+        </table>
+      </div>
+    </div>`;
+}
+
+// ── LIGUE : carte de frappe par zones (pas de coordonnées côté adversaire) ──
+const LG_CX = 190, LG_CY = 295;
+const LG_ZONES = [
+  {key:'catcher',        lbl:'Rec', r1:0,   r2:30,  a1:62, a2:118},
+  {key:'pitcher',        lbl:'Lan', r1:30,  r2:75,  a1:58, a2:122},
+  {key:'first baseman',  lbl:'1B',  r1:75,  r2:148, a1:22, a2:60 },
+  {key:'second baseman', lbl:'2B',  r1:75,  r2:148, a1:60, a2:93 },
+  {key:'shortstop',      lbl:'AC',  r1:75,  r2:148, a1:93, a2:126},
+  {key:'third baseman',  lbl:'3B',  r1:75,  r2:148, a1:126,a2:162},
+  {key:'right fielder',  lbl:'CD',  r1:148, r2:268, a1:22, a2:64 },
+  {key:'center fielder', lbl:'CC',  r1:148, r2:268, a1:64, a2:118},
+  {key:'left fielder',   lbl:'CG',  r1:148, r2:268, a1:118,a2:162},
+];
+const LG_ALIASES = {'left field':'left fielder','right field':'right fielder','center field':'center fielder'};
+
+function lgArc(r1, r2, a1d, a2d) {
+  const a1 = a1d*Math.PI/180, a2 = a2d*Math.PI/180;
+  const c1 = Math.cos(a1), s1 = Math.sin(a1), c2 = Math.cos(a2), s2 = Math.sin(a2);
+  const lg = (a2d - a1d) > 180 ? 1 : 0;
+  const fx = (r,c) => (LG_CX + r*c).toFixed(1), fy = (r,s) => (LG_CY - r*s).toFixed(1);
+  if (r1 < 1) return `M${LG_CX},${LG_CY} L${fx(r2,c1)},${fy(r2,s1)} A${r2},${r2} 0 ${lg},0 ${fx(r2,c2)},${fy(r2,s2)} Z`;
+  return `M${fx(r1,c1)},${fy(r1,s1)} L${fx(r2,c1)},${fy(r2,s1)} A${r2},${r2} 0 ${lg},0 ${fx(r2,c2)},${fy(r2,s2)} L${fx(r1,c2)},${fy(r1,s2)} A${r1},${r1} 0 ${lg},1 ${fx(r1,c1)},${fy(r1,s1)} Z`;
+}
+function lgMid(z) {
+  const a = (z.a1 + z.a2)/2*Math.PI/180, r = (z.r1 + z.r2)/2;
+  return {x:(LG_CX + r*Math.cos(a)).toFixed(1), y:(LG_CY - r*Math.sin(a)).toFixed(1)};
+}
+function buildSprayZones(hc) {
+  const cnt = {};
+  LG_ZONES.forEach(z => { cnt[z.key] = 0; });
+  let hrCount = 0, placed = 0;
+  hc.forEach(e => {
+    const res = e.r || '';
+    if (res === 'Home Run' || res === 'home_run') { hrCount++; return; }
+    const pos = LG_ALIASES[e.p] || e.p || '';
+    if (cnt[pos] === undefined) return;
+    cnt[pos]++; placed++;
+  });
+  const total = placed + hrCount;
+  if (!total) return '';
+  function col(k) {
+    const tot = cnt[k];
+    if (!tot) return {bg:'#f2f2f2', stroke:'#e0e0e0', tc:'#ccc'};
+    const pct = tot/total;
+    if (pct >= .31) return {bg:'#1a5e38', stroke:'#777', tc:'#fff'};
+    if (pct >= .21) return {bg:'#4a9a60', stroke:'#888', tc:'#fff'};
+    if (pct >= .11) return {bg:'#8cc99a', stroke:'#999', tc:'#1a5e38'};
+    return {bg:'#c8e6c9', stroke:'#aaa', tc:'#1a5e38'};
+  }
+  const H = LG_CY + 80;
+  let s = `<svg viewBox="0 0 380 ${H}" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">`;
+  s += `<rect width="380" height="${H}" fill="#fafafa" rx="6" stroke="#e8e8e8" stroke-width="1"/>`;
+  const fR = 22*Math.PI/180, fL = 162*Math.PI/180;
+  s += `<line x1="${LG_CX}" y1="${LG_CY}" x2="${(LG_CX+270*Math.cos(fR)).toFixed(0)}" y2="${(LG_CY-270*Math.sin(fR)).toFixed(0)}" stroke="#ccc" stroke-width="1.2"/>`;
+  s += `<line x1="${LG_CX}" y1="${LG_CY}" x2="${(LG_CX+270*Math.cos(fL)).toFixed(0)}" y2="${(LG_CY-270*Math.sin(fL)).toFixed(0)}" stroke="#ccc" stroke-width="1.2"/>`;
+  [75,148].forEach(r => {
+    const a1 = 22*Math.PI/180, a2 = 162*Math.PI/180;
+    s += `<path d="M${(LG_CX+r*Math.cos(a1)).toFixed(1)},${(LG_CY-r*Math.sin(a1)).toFixed(1)} A${r},${r} 0 0,0 ${(LG_CX+r*Math.cos(a2)).toFixed(1)},${(LG_CY-r*Math.sin(a2)).toFixed(1)}" fill="none" stroke="#ddd" stroke-width="1"/>`;
+  });
+  LG_ZONES.forEach(z => {
+    const c = col(z.key), pct = Math.round(cnt[z.key]/total*100), m = lgMid(z);
+    s += `<path d="${lgArc(z.r1,z.r2,z.a1,z.a2)}" fill="${c.bg}" stroke="${c.stroke}" stroke-width="0.75"/>`;
+    s += `<text x="${m.x}" y="${(parseFloat(m.y)-6).toFixed(1)}" text-anchor="middle" dominant-baseline="middle" font-size="9" fill="${c.tc}" opacity="0.8">${z.lbl}</text>`;
+    s += `<text x="${m.x}" y="${(parseFloat(m.y)+7).toFixed(1)}" text-anchor="middle" dominant-baseline="middle" font-size="11" font-weight="700" fill="${c.tc}">${pct}%</text>`;
+  });
+  if (hrCount > 0) {
+    const hrPct = Math.round(hrCount/total*100);
+    const r1 = 272, r2 = 298, a1 = 22*Math.PI/180, a2 = 162*Math.PI/180;
+    const hrCol = hrPct >= 20 ? '#7b1fa2' : (hrPct >= 10 ? '#ab47bc' : '#ce93d8');
+    s += `<path d="M${(LG_CX+r1*Math.cos(a1)).toFixed(1)},${(LG_CY-r1*Math.sin(a1)).toFixed(1)} A${r1},${r1} 0 0,0 ${(LG_CX+r1*Math.cos(a2)).toFixed(1)},${(LG_CY-r1*Math.sin(a2)).toFixed(1)} L${(LG_CX+r2*Math.cos(a2)).toFixed(1)},${(LG_CY-r2*Math.sin(a2)).toFixed(1)} A${r2},${r2} 0 0,1 ${(LG_CX+r2*Math.cos(a1)).toFixed(1)},${(LG_CY-r2*Math.sin(a1)).toFixed(1)} Z" fill="${hrCol}" stroke="#888" stroke-width="0.75"/>`;
+    const aMid = 92*Math.PI/180, rMid = (r1+r2)/2;
+    const lx = (LG_CX+rMid*Math.cos(aMid)).toFixed(1), ly = (LG_CY-rMid*Math.sin(aMid)).toFixed(1);
+    s += `<text x="${lx}" y="${(parseFloat(ly)-5).toFixed(1)}" text-anchor="middle" font-size="8" fill="#fff">% CC</text>`;
+    s += `<text x="${lx}" y="${(parseFloat(ly)+6).toFixed(1)}" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">${hrPct}%</text>`;
+  }
+  s += `<polygon points="${LG_CX},${LG_CY+10} ${LG_CX-7},${LG_CY+4} ${LG_CX-7},${LG_CY} ${LG_CX+7},${LG_CY} ${LG_CX+7},${LG_CY+4}" fill="#555"/>`;
+  s += `<text x="16" y="16" font-size="10" fill="#aaa">BIP ${total}</text>`;
+  s += '</svg>';
+  return s;
+}
+function zbRow(lbl, v, tot, color) {
+  const pct = tot > 0 ? Math.round(v/tot*100) : 0;
+  return `<div class="zb-row"><span class="zb-label">${lbl}</span>
+    <div class="zb-bar"><div class="zb-fill" style="width:${pct}%;background:${color}"></div></div>
+    <span class="zb-pct" style="color:${color}">${pct}%</span></div>`;
+}
+function openLeagueSpray(teamIdx, playerIdx) {
+  const t = (_league && _league.teams || [])[teamIdx];
+  const p = t && t.bat[playerIdx];
+  if (!p) return;
+  const svg = buildSprayZones(p.hc || []);
+  const zT  = p.zl + p.zm + p.zr;
+  const cT  = p.cf + p.cg + p.cli + p.cp;
+  const zones = zT > 0
+    ? `<div class="spray-sub">Direction (GC)</div><div class="spray-zones">
+         ${zbRow('⬅ Gauche', p.zl, zT, '#1a7a3f')}
+         ${zbRow('⬆ Centre', p.zm, zT, '#1e6fd9')}
+         ${zbRow('➡ Droite', p.zr, zT, '#94a3b8')}
+       </div>` : '';
+  const contact = cT > 0
+    ? `<div class="spray-sub">Type de contact</div><div class="spray-zones">
+         ${zbRow('Ligne',   p.cli, cT, '#16a34a')}
+         ${zbRow('Roulant', p.cg,  cT, '#f0a500')}
+         ${zbRow('Ballon',  p.cf,  cT, '#1e6fd9')}
+         ${zbRow('Chandelle', p.cp, cT, '#94a3b8')}
+       </div>` : '';
+  document.getElementById('modal-player-name').textContent =
+    `#${p.n} ${p.f} ${p.l} — ${t.name}`;
+  document.getElementById('modal-spray-content').innerHTML =
+    (svg || '<p class="no-data">Aucune balle en jeu enregistrée.</p>') + zones + contact;
+  document.getElementById('spray-modal').classList.add('open');
 }
 
 // ── FEATURED MATCH (hero) ─────────────────────────────────────────────
@@ -1511,7 +1792,7 @@ function esc(s) {
 // ── INIT ──────────────────────────────────────────────────────────────
 async function init() {
   // Show lock panels immediately
-  ['stats','adversaires'].forEach(sec => {
+  ['stats','adversaires','ligue'].forEach(sec => {
     document.getElementById(sec + '-lock').style.display = 'flex';
   });
 
