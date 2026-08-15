@@ -21,22 +21,26 @@
   --gray:#64748b; --gray-l:#94a3b8; --gray-xl:#e2e8f0;
   --surface:#ffffff; --bg:#f2f4f7; --border:#e2e8f0;
   --text:#0f172a; --text2:#475569;
+  --header-h:96px;
   --script:'Pacifico',cursive;
   --serif:'Playfair Display',Georgia,serif;
   --sans:'Inter',system-ui,sans-serif;
   --mono:'JetBrains Mono',monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14px;line-height:1.5;}
+html{-webkit-text-size-adjust:100%;}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14px;line-height:1.5;
+  overflow-x:clip;}
+img{max-width:100%;}
 
 /* ── SITE HEADER ── */
 .site-header{
   background:var(--navy);
-  height:96px;display:flex;align-items:center;padding:0 36px;
+  height:var(--header-h);display:flex;align-items:center;padding:0 36px;
   position:sticky;top:0;z-index:100;
   box-shadow:0 3px 20px rgba(0,0,0,.6);
 }
-.brand{display:flex;align-items:center;gap:14px;flex-shrink:0;}
+.brand{display:flex;align-items:center;gap:14px;flex-shrink:0;min-width:0;}
 .brand-icon{display:flex;align-items:center;flex-shrink:0;}
 .brand-icon img{height:78px;width:auto;display:block;}
 .brand-name{
@@ -46,13 +50,36 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .site-nav{display:flex;margin-left:auto;gap:0;}
 .tab-btn{
   font-size:11px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;
-  padding:0 20px;height:96px;background:none;border:none;
+  padding:0 20px;height:var(--header-h);background:none;border:none;
   border-bottom:3px solid transparent;
   color:rgba(255,255,255,.5);cursor:pointer;font-family:var(--sans);
-  transition:all .2s;white-space:nowrap;
+  transition:all .2s;white-space:nowrap;-webkit-tap-highlight-color:transparent;
 }
 .tab-btn:hover{color:rgba(255,255,255,.9);background:rgba(255,255,255,.06);}
 .tab-btn.active{color:#fff;border-bottom-color:var(--red);}
+
+/* ── BURGER (mobile) ── */
+.nav-toggle{
+  display:none;margin-left:10px;flex-shrink:0;
+  width:42px;height:42px;border-radius:9px;
+  background:rgba(255,255,255,.10);border:1.5px solid rgba(255,255,255,.24);
+  cursor:pointer;align-items:center;justify-content:center;
+  -webkit-tap-highlight-color:transparent;
+}
+.nav-toggle:hover{background:rgba(255,255,255,.2);}
+.nav-toggle .bars{position:relative;width:20px;height:2px;background:#fff;border-radius:2px;
+  transition:background .2s;}
+.nav-toggle .bars::before,.nav-toggle .bars::after{
+  content:'';position:absolute;left:0;width:20px;height:2px;background:#fff;border-radius:2px;
+  transition:transform .2s,top .2s;
+}
+.nav-toggle .bars::before{top:-6px;}
+.nav-toggle .bars::after{top:6px;}
+.nav-toggle.open .bars{background:transparent;}
+.nav-toggle.open .bars::before{top:0;transform:rotate(45deg);}
+.nav-toggle.open .bars::after{top:0;transform:rotate(-45deg);}
+.nav-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:98;}
+.nav-backdrop.open{display:block;}
 
 /* ── TAB PANELS ── */
 .tab-panel{display:none;}
@@ -179,7 +206,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
   border:1px solid rgba(255,255,255,.1);
   box-shadow:0 4px 24px rgba(0,0,0,.4);
   font-family:var(--sans);
-  max-width:560px;
+  max-width:560px;width:100%;
 }
 /* Header bande live */
 .sb-hdr{
@@ -265,6 +292,10 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 /* Boutons */
 .sb-btns{display:flex;gap:8px;padding:10px 16px;
   background:#040c14;flex-wrap:wrap;}
+
+/* Widget calendrier tiers : jamais de débordement horizontal de la page */
+#gc-schedule-widget-op3f{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+#gc-schedule-widget-op3f iframe{max-width:100%;}
 
 /* ── HOME SECTIONS ── */
 .home-section{background:#fff;padding:52px 0;}
@@ -361,7 +392,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .report-btn .btn-icon{font-size:15px;}
 
 /* ── VIDEO GRID ── */
-.video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px;}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(310px,100%),1fr));gap:18px;}
 .vid-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;
   transition:box-shadow .15s,transform .15s;}
 .vid-card:hover{box-shadow:0 8px 24px rgba(0,0,0,.1);transform:translateY(-2px);}
@@ -486,6 +517,7 @@ table.stats tfoot td.mono{font-family:var(--mono);}
 .spray-section{text-align:center;}
 .spray-title{font-size:11px;letter-spacing:2px;text-transform:uppercase;
   color:var(--text2);font-weight:600;margin-bottom:10px;}
+.spray-svg-wrap svg{width:100%;height:auto;display:block;}
 .spray-svg-wrap{position:relative;border-radius:10px;overflow:hidden;
   border:1px solid var(--border);background:#f8f8f8;}
 .spray-legend{display:flex;gap:14px;justify-content:center;margin-top:10px;flex-wrap:wrap;}
@@ -505,9 +537,9 @@ table.stats tfoot td.mono{font-family:var(--mono);}
 .modal-name{font-family:var(--serif);font-size:18px;font-weight:900;margin-bottom:16px;}
 
 /* ── ADVERSAIRES IFRAME ── */
-#adversaires-content{height:calc(100vh - 96px);}
+#adversaires-content{height:calc(100vh - var(--header-h));height:calc(100dvh - var(--header-h));}
 #adversaires-content iframe{width:100%;height:100%;border:none;display:block;}
-#classement-content{height:calc(100vh - 96px);}
+#classement-content{height:calc(100vh - var(--header-h));height:calc(100dvh - var(--header-h));}
 #classement-content iframe{width:100%;height:100%;border:none;display:block;}
 
 /* ── LIGUE ── */
@@ -544,19 +576,67 @@ table.stats tfoot td.mono{font-family:var(--mono);}
 
 
 /* ── RESPONSIVE ── */
+/* Tablette / petit écran : le menu passe en burger */
+@media(max-width:1024px){
+  :root{--header-h:72px;}
+  .site-header{padding:0 20px;}
+  .brand-icon img{height:56px;}
+  .brand{flex:1;}
+  .nav-toggle{display:flex;}
+  .site-nav{
+    position:fixed;top:var(--header-h);left:0;right:0;
+    flex-direction:column;margin-left:0;
+    background:var(--navy);
+    border-top:1px solid rgba(255,255,255,.08);
+    box-shadow:0 14px 34px rgba(0,0,0,.55);
+    max-height:calc(100vh - var(--header-h));
+    max-height:calc(100dvh - var(--header-h));
+    overflow-y:auto;-webkit-overflow-scrolling:touch;
+    z-index:99;
+    opacity:0;transform:translateY(-10px);pointer-events:none;
+    transition:opacity .18s ease,transform .18s ease;
+  }
+  .site-nav.open{opacity:1;transform:none;pointer-events:auto;}
+  .tab-btn{
+    height:auto;width:100%;text-align:left;
+    padding:16px 22px;font-size:12px;letter-spacing:1.4px;
+    border-bottom:1px solid rgba(255,255,255,.07);
+    border-left:3px solid transparent;
+  }
+  .tab-btn.active{
+    background:rgba(255,255,255,.06);
+    border-bottom-color:rgba(255,255,255,.07);
+    border-left-color:var(--red);
+  }
+  #pwa-install-btn{margin-left:0;}
+}
 @media(max-width:900px){
-  .hero-section{grid-template-columns:1fr;}
-  .hero-visual{display:none;}
-  .hero-content{padding:36px 28px;}
+  .hero-section-inner{flex-direction:column;}
+  .hero-content{padding:32px 24px;border-right:none;}
+  .hero-visual{
+    width:100%;max-width:100%;max-height:none;
+    align-self:stretch;order:-1;
+  }
+  /* hqdefault contient des bandes noires : ratio 16/9 + cover les supprime */
+  .hero-yt-thumb{width:100%;height:auto;aspect-ratio:16/9;max-height:none;object-fit:cover;}
+  .hero-visual-live{min-height:220px;padding:24px 20px;}
+  .hlv-score-big{font-size:48px;}
+  .hero-play-btn{width:60px;height:60px;font-size:24px;}
   .home-video-strip{grid-template-columns:repeat(2,1fr);}
+  .home-section-header{flex-wrap:wrap;gap:12px;}
 }
 @media(max-width:720px){
-  .site-header{padding:0 16px;}
+  .site-header{padding:0 14px;}
   .brand-name{font-size:24px;}
-  .tab-btn{padding:0 10px;font-size:10px;letter-spacing:1px;}
+  .brand-icon img{height:46px;}
   .page{padding:18px 14px;}
+  .home-section-inner{padding:0 18px;}
   .pc-body{grid-template-columns:1fr;}
-  .pc-big-stats{flex-wrap:wrap;gap:10px;}
+  .pc-stats-grid{grid-template-columns:1fr 1fr;}
+  .player-card{padding:18px;}
+  .pc-header{flex-wrap:wrap;gap:14px;}
+  .pc-name{font-size:21px;}
+  .pc-big-stats{margin-left:0;width:100%;justify-content:space-between;flex-wrap:wrap;gap:10px;}
   .report-btns{gap:6px;}
   .report-btn{font-size:11px;padding:7px 12px;}
   .home-stats-bar{gap:10px;}
@@ -564,9 +644,49 @@ table.stats tfoot td.mono{font-family:var(--mono);}
   .sp-val{font-size:20px;}
   .home-section,.home-section-alt{padding:32px 0;}
   .home-section-title{font-size:20px;}
+  .hero-eyebrow{font-size:16px;}
+  .hero-score-line{font-size:22px;}
+  .hero-live-score{font-size:38px;}
+  .stats-head{flex-wrap:wrap;gap:10px;}
+  .sort-pills{margin-left:0;width:100%;}
+  .sort-hint{margin-left:0;}
+  /* Colonne « Joueur » figée pendant le défilement horizontal du tableau */
+  #bat-head th.l,#pit-head th.l{position:sticky;left:0;z-index:3;background:var(--navy);}
+  table.stats tbody td.name-cell{
+    position:sticky;left:0;z-index:2;background:var(--surface);
+    min-width:112px;box-shadow:1px 0 0 var(--border);
+  }
+  table.stats tbody tr:hover td.name-cell{background:#fef5f5;}
+  table.stats tbody tr.sel td.name-cell{background:#fee2e2;}
+  .ligue-select{min-width:0;width:100%;}
+  .ligue-bar{gap:10px;}
+  .modal-inner{width:94%;padding:20px 18px;}
+  .lock-panel,.pwd-panel{padding:24px 16px;min-height:300px;}
+  .lock-box{padding:34px 22px;width:100%;}
+  .lock-title{font-size:19px;}
+  .pwd-box{padding:26px 20px;}
+  .match-card{flex-wrap:wrap;gap:10px;padding:12px 14px;}
+  .mc-date{min-width:0;}
+  .mc-score{min-width:0;}
+  .mc-opp{flex:1 1 100%;order:9;}
+  .mc-links{margin-left:auto;order:10;}
 }
 @media(max-width:480px){
   .home-video-strip{grid-template-columns:1fr;}
+  .hero-content{padding:26px 18px;}
+  .hero-score-line{font-size:19px;}
+  .hero-cta,.hero-live-btn{padding:12px 18px;font-size:12px;}
+  .pc-stats-grid{grid-template-columns:1fr;}
+  .sb-trow{padding:10px 10px;}
+  .sb-trow:not(.us){padding-left:7px;}
+  .sb-tlogo{height:30px;max-width:40px;}
+  .sb-tname{font-size:11px;letter-spacing:.8px;}
+  .sb-tscore{font-size:24px;min-width:34px;}
+  .sb-mid{min-width:62px;padding:8px 8px;}
+  .sb-right{min-width:56px;padding:8px 10px;}
+  .sb-inn-num,.sb-count-big{font-size:22px;}
+  .sb-player{padding:8px 10px;}
+  .spray-legend{gap:10px;}
 }
 @media print{
   .site-header,.report-btns,.modal-bg{display:none!important;}
@@ -696,7 +816,7 @@ table.stats tfoot td.mono{font-family:var(--mono);}
       <img src="logo.png" alt="Carnavals Bleus">
     </div>
   </div>
-  <nav class="site-nav">
+  <nav class="site-nav" id="site-nav">
     <button class="tab-btn active" data-tab="accueil" onclick="showTab('accueil')">Accueil</button>
     <button class="tab-btn" data-tab="stats"       onclick="showTab('stats')">Statistiques</button>
     <button class="tab-btn" data-tab="classement"  onclick="showTab('classement')">Classement</button>
@@ -709,7 +829,12 @@ table.stats tfoot td.mono{font-family:var(--mono);}
     <span class="pwa-icon">📲</span>
     <span class="pwa-label">Installer l'app</span>
   </button>
+  <button id="nav-toggle" class="nav-toggle" onclick="toggleNav()"
+          aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
+    <span class="bars"></span>
+  </button>
 </header>
+<div id="nav-backdrop" class="nav-backdrop" onclick="toggleNav(false)"></div>
 
 <!-- TAB: HOME / ACCUEIL -->
 <div id="tab-accueil" class="tab-panel active">
@@ -969,12 +1094,33 @@ let _data = null, _passwords = {}, _selRow = null;
 let _liveActive = false, _liveTimer = null, _liveEtag = null;
 const _failedLogos = new Set();
 
+// ── NAV MOBILE (burger) ──────────────────────────────────────────────
+function toggleNav(force) {
+  const nav  = document.getElementById('site-nav');
+  const btn  = document.getElementById('nav-toggle');
+  const back = document.getElementById('nav-backdrop');
+  const open = (force === undefined) ? !nav.classList.contains('open') : !!force;
+  nav.classList.toggle('open', open);
+  btn.classList.toggle('open', open);
+  back.classList.toggle('open', open);
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  toggleNav(false);
+  closeModal();
+});
+window.addEventListener('resize', () => { if (window.innerWidth > 1024) toggleNav(false); });
+
 // ── TABS ─────────────────────────────────────────────────────────────
 function showTab(name) {
+  toggleNav(false);
+  document.getElementById('spray-modal').classList.remove('open');
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-' + name).classList.add('active');
   document.querySelector(`.tab-btn[data-tab="${name}"]`).classList.add('active');
+  window.scrollTo(0, 0);
   if (name === 'classement') {
     const iframe = document.getElementById('classement-iframe');
     if (!iframe.getAttribute('src')) iframe.src = 'classement.html?v=' + Date.now();
